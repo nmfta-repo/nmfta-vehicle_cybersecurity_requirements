@@ -68,3 +68,5 @@ The initial work to create these requirements started with a vehicle network arc
 The (large) spreadsheet work product of this activity is available in this repo under the `resources/` folder.
 
 Some preliminary work on capturing security (and functional) requirements for vehicle gateways performed during the Nov 2021 CTSRP meeting was done in the https://github.com/nmfta-repo/vcr-experiment where the [`strictdoc`](https://github.com/strictdoc-project/strictdoc) requirements format was assessed.
+
+The test plan used by the CTSRP for onsite vehicle testing is provided as a starting point for an eventual acceptance test plan for these requirements; available here: [`resources/heavy vehicle testing plan.md`](resources/heavy_vehicle_testing_plan.md)
