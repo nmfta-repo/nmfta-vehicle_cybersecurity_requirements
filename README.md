@@ -18,9 +18,9 @@ We recommend that fleets use these requirements by following some steps during t
 
 ## Device Classes
 
-TODO
-
 There are specifications of cybersecurity requirements for each of the following device classes here in this project. The device class examples should be used by fleets and OEMs to determine the class membership of modules from a particular truck first and the characteristics second.
+
+In addition to the complete list of devices known to be in each class here, there is also a "order sheet" view which groups each device (along with its assigned device class) by its truck order sheet line here: [`resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v0_DIST.docx`](resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v0_DIST.docx)
 
 | Class           | Characteristics                                                                                                                    | Examples                                                                                                                                                                                      |
 | --------------- | ---------------                                                                                                                    | ---------                                                                                                                                                                                     |
@@ -60,12 +60,10 @@ SOFTWARE.
 The previous work on cybersecurity requirements by the NMFTA CTSRP (then, HVCS) was to create the Telematics Security Requirements Matrix https://github.com/nmfta-repo/nmfta-telematics_security_requirements . These requirements were ported to this project and re-applied where possible. The questionnaires for those requirements and also contract template language was captured in the https://github.com/nmfta-repo/nmfta-rfp_templates repo.
 
 The initial work to create these requirements started with a vehicle network architecture survey in collaboration with OEMs. The results were:
-* a picture of 'typical' Class 7-8 truck networks, circa 2021
-* a list of common components/modules/devices names and aliases -- mapped to the J1939 names wherever possible
+* a picture of 'typical' Class 7-8 truck networks, circa 2021 -- can be found in the "degrees of separation" captured in the [`resources/Component_Class_Assignment_v16_DIST.xlsx`](resources/Component_Class_Assignment_v16_DIST.xlsx)
+* a list of common components/modules/devices names and aliases -- mapped to the J1939 names wherever possible -- can be found in the "reference names" captured in the [`resources/Component_Class_Assignment_v16_DIST.xlsx`](resources/Component_Class_Assignment_v16_DIST.xlsx)
 * a risk analysis of components/modules/devices in those networks as it pertains to fleets (aka fleet risk)
-* the assignment of the components/modules/devices to *Device Classes* as captured above
-
-The (large) spreadsheet work product of this activity is available in this repo under the `resources/` folder.
+* the assignment of the components/modules/devices to *Device Classes* as captured above -- can be found in the "proposed device class" captured in the [`resources/Component_Class_Assignment_v16_DIST.xlsx`](resources/Component_Class_Assignment_v16_DIST.xlsx)
 
 Some preliminary work on capturing security (and functional) requirements for vehicle gateways performed during the Nov 2021 CTSRP meeting was done in the https://github.com/nmfta-repo/vcr-experiment where the [`strictdoc`](https://github.com/strictdoc-project/strictdoc) requirements format was assessed.
 
