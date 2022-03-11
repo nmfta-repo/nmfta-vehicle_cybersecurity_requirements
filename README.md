@@ -1,6 +1,6 @@
 # NMFTA Heavy Duty Vehicle Cybersecurity Requirements (HDVCR)
 
-Cybersecurity requirements for telematics systems developed in collaboration with motor freight carriers, OEMs and cybersecurity experts.
+Cybersecurity requirements for heavy duty vehicles developed in collaboration with motor freight carriers, OEMs and cybersecurity experts.
 
 The cybersecurity requirements captured here are for use by fleets to include in their procurement process with OEMs. The requirements are intended to cover the following truck body configurations, which we intend to cover most of what LTL carriers need:
 * North America "on highway" Class 7-8 trucks e.g. the classic truck w/ trailer or double as the  most common configuration
