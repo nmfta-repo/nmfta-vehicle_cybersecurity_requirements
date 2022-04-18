@@ -171,20 +171,20 @@ class TsrmExcelPreparer:
 TsrmExcelPreparer('tsrm.xls').do_prep()
 
 # convert the master sheet to sdoc
-write_document(ExcelToSDocConverter.parse('out/main_tsrm.xls',
+write_document(ExcelToSDocConverter.convert('out/main_tsrm.xls',
     "NMFTA Telematics Security Requirements Matrix"
 ), 'out/main_tsrm.sdoc')
 
 # convert each component sheet to an sdoc
-write_document(ExcelToSDocConverter.parse('out/mobile_app_tsrm.xls',
+write_document(ExcelToSDocConverter.convert('out/mobile_app_tsrm.xls',
     "NMFTA Telematics (Mobile App Component) Security Requirements"
 ), 'out/mobile_app_tsrm.sdoc')
-write_document(ExcelToSDocConverter.parse('out/vehicle_connection_tsrm.xls',
+write_document(ExcelToSDocConverter.convert('out/vehicle_connection_tsrm.xls',
     "NMFTA Telematics (Vehicle Connection Component) Security Requirements"
 ), 'out/vehicle_connection_tsrm.sdoc')
-write_document(ExcelToSDocConverter.parse('out/connectivity_tsrm.xls',
+write_document(ExcelToSDocConverter.convert('out/connectivity_tsrm.xls',
     "NMFTA Telematics (Connectivity or Communications Component) Security Requirements"
 ), 'out/connectivity_tsrm.sdoc')
-write_document(ExcelToSDocConverter.parse('out/cloud_tsrm.xls',
+write_document(ExcelToSDocConverter.convert('out/cloud_tsrm.xls',
     "NMFTA Telematics (Cloud Component) Security Requirements"
 ), 'out/cloud_tsrm.sdoc')
