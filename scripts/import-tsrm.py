@@ -3,6 +3,7 @@
 # See the file "LICENSE" for the full license governing this code.
 #
 import os
+import re
 from pathlib import Path
 from typing import Optional, List, Tuple, Any, Union
 
@@ -20,7 +21,7 @@ def write_document(document, output_path):
     output_folder = os.path.dirname(output_path)
     Path(output_folder).mkdir(parents=True, exist_ok=True)
     with open(
-        output_path, "w", encoding="utf8"
+            output_path, "w", encoding="utf8"
     ) as output_file:
         output_file.write(document_content)
 
@@ -81,6 +82,16 @@ class TsrmExcelPreparer:
         x = x.replace('/', '_OR_')
         return x
 
+    @staticmethod
+    def header_rename(header_name):
+        header_name = TsrmExcelPreparer.safe_name(header_name)
+        if "PUBLIC_REQUIREMENTS_REFERENCES_OR_DESCRIPTIONS" in header_name:
+            return "Pub_Ref"
+        elif "VERIFICATION_INSPECTION__DEMONSTRATION__TEST__OR_ANALYSIS" in header_name:
+            return "Verification"
+        else:
+            return header_name
+
     def identify_all_columns(self):
         self.all_columns_to_preserve = list(range(self.first_sheet.ncols))
 
@@ -111,6 +122,8 @@ class TsrmExcelPreparer:
     def copy_preserved_columns(self, row_num_in, row_num_out, out_sheet):
         column_num_out = 0
         for value in map(lambda x: self.first_sheet.row_values(row_num_in)[x], self.all_columns_to_preserve):
+            if row_num_in == 0:
+                value = self.header_rename(value)
             out_sheet.write(row_num_out, column_num_out, value)
             column_num_out = column_num_out + 1
 
@@ -127,7 +140,7 @@ class TsrmExcelPreparer:
 
         out_book.save(output_xls)
 
-    def create_sub_workbook(self, predicate_column, prefix, output_xls):
+    def create_stub_workbook(self, predicate_column, prefix, output_xls):
         out_book = xlwt.Workbook()
         out_sheet = out_book.add_sheet('dummy name')
         out_sheet.write(0, 0, "UID")
@@ -157,11 +170,24 @@ class TsrmExcelPreparer:
 
         self.create_filtered_workbook(None, 'out/main_tsrm.xls')
 
-        self.create_sub_workbook(self.mobile_app_yn_column, 'MOBILE', 'out/mobile_app_tsrm.xls')
-        self.create_sub_workbook(self.vehicle_connection_yn_column, 'VEH', 'out/vehicle_connection_tsrm.xls')
-        self.create_sub_workbook(self.connectivity_comms_yn_column, 'COMMS', 'out/connectivity_tsrm.xls')
-        self.create_sub_workbook(self.cloud_yn_column, 'CLOUD', 'out/cloud_tsrm.xls')
+        self.create_stub_workbook(self.mobile_app_yn_column, 'MOBILE', 'out/mobile_app_tsrm.xls')
+        self.create_stub_workbook(self.vehicle_connection_yn_column, 'VEH', 'out/vehicle_connection_tsrm.xls')
+        self.create_stub_workbook(self.connectivity_comms_yn_column, 'COMMS', 'out/connectivity_tsrm.xls')
+        self.create_stub_workbook(self.cloud_yn_column, 'CLOUD', 'out/cloud_tsrm.xls')
         return
+
+
+def sdoc_to_fragment(filename):
+    with open(filename, 'r') as f:
+        text = f.read()
+    text = "[FRAGMENT]\n\n" + text[text.index("[REQUIREMENT]"):]
+    with open(filename, 'w') as f:
+        f.write(text)
+
+
+def append_include(to_filename, inc_filename, section_title):
+    with open(to_filename, 'a', encoding='utf-8') as f:
+        f.write(f"\n[SECTION]\nTITLE: {section_title}\n\n[FRAGMENT_FROM_FILE]\nFILE: {inc_filename}\n\n[/SECTION]\n")
 
 
 # create:
@@ -172,19 +198,31 @@ TsrmExcelPreparer('tsrm.xls').do_prep()
 
 # convert the master sheet to sdoc
 write_document(ExcelToSDocConverter.convert('out/main_tsrm.xls',
-    "NMFTA Telematics Security Requirements Matrix"
-), 'out/main_tsrm.sdoc')
+                                            "NMFTA Telematics Security Requirements Matrix"
+                                            ), 'out/00_tsrm.sdoc')
 
 # convert each component sheet to an sdoc
 write_document(ExcelToSDocConverter.convert('out/mobile_app_tsrm.xls',
-    "NMFTA Telematics (Mobile App Component) Security Requirements"
-), 'out/mobile_app_tsrm.sdoc')
+                                            "NMFTA Telematics (Mobile App Component) Security Requirements"
+                                            ), 'out/mobile_app_tsrm.sinc')
 write_document(ExcelToSDocConverter.convert('out/vehicle_connection_tsrm.xls',
-    "NMFTA Telematics (Vehicle Connection Component) Security Requirements"
-), 'out/vehicle_connection_tsrm.sdoc')
+                                            "NMFTA Telematics (Vehicle Connection Component) Security Requirements"
+                                            ), 'out/vehicle_connection_tsrm.sinc')
 write_document(ExcelToSDocConverter.convert('out/connectivity_tsrm.xls',
-    "NMFTA Telematics (Connectivity or Communications Component) Security Requirements"
-), 'out/connectivity_tsrm.sdoc')
+                                            "NMFTA Telematics (Connectivity or Communications Component) Security Requirements"
+                                            ), 'out/connectivity_tsrm.sinc')
 write_document(ExcelToSDocConverter.convert('out/cloud_tsrm.xls',
-    "NMFTA Telematics (Cloud Component) Security Requirements"
-), 'out/cloud_tsrm.sdoc')
+                                            "NMFTA Telematics (Cloud Component) Security Requirements"
+                                            ), 'out/cloud_tsrm.sinc')
+
+# replace the [DOCUMENT]...[GRAMMAR].... stuff with [FRAGMENT] in the .sinc files
+for f in ['out/mobile_app_tsrm.sinc',
+          'out/vehicle_connection_tsrm.sinc',
+          'out/connectivity_tsrm.sinc',
+          'out/cloud_tsrm.sinc']:
+    sdoc_to_fragment(f)
+
+append_include('out/00_tsrm.sdoc', 'cloud_tsrm.sinc', "NMFTA Telematics (Cloud Component) Security Requirements")
+append_include('out/00_tsrm.sdoc', 'connectivity_tsrm.sinc', "NMFTA Telematics (Connectivity or Communications Component) Security Requirements")
+append_include('out/00_tsrm.sdoc', 'vehicle_connection_tsrm.sinc', "NMFTA Telematics (Vehicle Connection Component) Security Requirements")
+append_include('out/00_tsrm.sdoc', 'mobile_app_tsrm.sinc', "NMFTA Telematics (Mobile App Component) Security Requirements")
