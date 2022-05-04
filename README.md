@@ -18,7 +18,7 @@ We recommend that fleets use these requirements by following some steps during t
 
 ## Device Classes
 
-The VCRWG analyzed several truck vehicle network architectures and performed a risk analysis to classify the known truck electronic components into a series of device classes. The cybersecurity requirements for procurement are assigned to these classes. Each device identified, it's assigned class and the rationale for assigning that class are captured here in a truck order sheet view for ease of use by the fleets. This is also avaialble in a word docx file at here: [`resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v0_DIST.docx`](resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v0_DIST.docx).
+The VCRWG analyzed several truck vehicle network architectures and performed a risk analysis to classify the known truck electronic components into a series of device classes. The cybersecurity requirements for procurement are assigned to these classes. Each device identified, its assigned class and the rationale for assigning that class are captured here in a truck order sheet view for ease of use by the fleets. This is also available in a word docx file here: [`resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v0_DIST.docx`](resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v0_DIST.docx).
 
 > ENGINE
 
