@@ -86,7 +86,7 @@ class TsrmExcelPreparer:
     def header_rename(header_name):
         header_name = TsrmExcelPreparer.safe_name(header_name)
         if "PUBLIC_REQUIREMENTS_REFERENCES_OR_DESCRIPTIONS" in header_name:
-            return "Pub_Ref"
+            return "Pub_Refs"
         elif "VERIFICATION_INSPECTION__DEMONSTRATION__TEST__OR_ANALYSIS" in header_name:
             return "Verification"
         else:
