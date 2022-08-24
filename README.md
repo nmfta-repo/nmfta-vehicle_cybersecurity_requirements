@@ -18,7 +18,20 @@ We recommend that fleets use these requirements by following some steps during t
 
 ## Device Classes by Order Sheet Lines
 
-The VCRWG analyzed several truck vehicle network architectures and performed a risk analysis to classify the known truck electronic components into a series of device classes. The devices classes were created to group the devices into similar risk profiles; i.e. cybersecurity requirements for procurement are assigned to these classes instead of to each devices individually. Each device identified, its assigned class and the rationale for assigning that class are captured here in a truck order sheet view for ease of use by the fleets. This is also available in a word docx file here: [`resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v2_DRAFT.docx`](resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v2_DRAFT.docx).
+The VCRWG analyzed several truck vehicle network architectures and performed a risk analysis to classify the known truck
+electronic components into a series of device classes. The devices classes were created to group the devices into
+similar risk profiles; i.e. cybersecurity requirements for procurement are assigned to these classes instead of to each
+devices individually.
+
+Each device identified, its assigned class and the rationale for assigning that class are captured here in a truck order
+sheet view for ease of use by the fleets. This is also available in a word docx file here:
+[`resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v2_DRAFT.docx`](resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v2_DRAFT.docx).
+
+Note that the analysis(and hence the rationales below) assume that the Next Generation Tractor Trailer Interface
+(NGTTI) will not use J2497 for any function other than regulation required LAMP messages, if that is not the case then
+the devices using J2497 for those other functions(especially diagnostics) should be classified instead as class
+2 *Multi Segment with Wireless*.
+
 
 > ENGINE
 
