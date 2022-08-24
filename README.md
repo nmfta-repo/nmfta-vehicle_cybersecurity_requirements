@@ -27,11 +27,30 @@ Each device identified, its assigned class and the rationale for assigning that 
 sheet view for ease of use by the fleets. This is also available in a word docx file here:
 [`resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v2_DRAFT.docx`](resources/Truck_Component_Order_Sheet_Breakdown_for_Cybersecurity_Matrix_v2_DRAFT.docx).
 
-Note that the analysis(and hence the rationales below) assume that the Next Generation Tractor Trailer Interface
+Note 1: the analysis (and hence the rationales below) assumes that the Next Generation Tractor Trailer Interface
 (NGTTI) will not use J2497 for any function other than regulation required LAMP messages, if that is not the case then
 the devices using J2497 for those other functions(especially diagnostics) should be classified instead as class
 2 *Multi Segment with Wireless*.
 
+Note 2: the analysis makes the distinction between *Untrusted Network Domains* and *Trusted Network Domains* of the vehicle networks.
+
+<dl>
+<dt>Untrusted Network Domain (<em>UND</em>):</dt>
+<dd>A <em>UND</em> is a network domain (or segment) that contains <strong>any</strong> of the following:<br>
+    a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, BlueTooth, WiFi)<br>
+    b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)<br>
+    c) a telematics device that does not satisfy the HD VCR requirements<br>
+    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements<br>
+</dd>
+
+<dt>Trusted Network Domain (<em>TND</em>):</dt>
+<dd>A <em>TND</em> is a network domain (or segment) that <strong>does not contain any</strong> of the following:<br>
+    a) wireless communication or reachable wirelessly (e.g J2497)<br>
+    b) an interface for aftermarket devices or operator access (e.g. an OBD port)<br>
+    c) a telematics device that does not satisfy the HD VCR requirements<br>
+    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements<br>
+</dd>
+</dl>
 
 > ENGINE
 
