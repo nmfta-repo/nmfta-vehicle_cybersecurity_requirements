@@ -45,8 +45,8 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 <dt>Trusted Network Domain (<em>TND</em>):</dt>
 <dd>A <em>TND</em> is a network domain (or segment) that <strong>does not contain any</strong> of the following:<br>
-    a) wireless communication or reachable wirelessly (e.g J2497)<br>
-    b) an interface for aftermarket devices or operator access (e.g. an OBD port)<br>
+    a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, BlueTooth, WiFi)<br>
+    b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)<br>
     c) a telematics device that does not satisfy the HD VCR requirements<br>
     d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements<br>
 </dd>
@@ -65,20 +65,20 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 | Propulsion Battery Charger (J1939 SA 73)                                                                                    | **1**              | has a CCS/ISO 15118 interface which is accessible wirelessly and connects to J1939   |
 | --------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| Thermal Management System Controller (J1939 SA 49)                                                                          | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Water Pump Controller (J1939 SA 57)                                                                                         | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Low-Voltage Disconnect (J1939 SA 49)                                                                                        | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Fan Drive Controller (aka Fan Hub) (J1939 SA 78)                                                                            | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Powertrain Control Module (aka Common Powertrain Controller Module (CPC)) (J1939 SA 90)                                     | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Ignition Control Module \#2 (J1939 SA 57)                                                                                   | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Starter System (J1939 SA 00, 03)                                                                                            | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Fuel Heater, In-Tank (J1939 SA 72)                                                                                          | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Oil Sensor (J1939 SA 00)                                                                                                    | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Retarder - Engine (J1939 SA 15)                                                                                             | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Radiator (aka Radiator Fan Control) (J1939 SA 78, 00, 255)                                                                  | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Oil Pan Heater (J1939 SA 00)                                                                                                | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Engine Injection Control Module (J1939 SA 00)                                                                               | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Ignition Control Module \#1 (J1939 SA 52)                                                                                   | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
+| Thermal Management System Controller (J1939 SA 49)                                                                          | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Water Pump Controller (J1939 SA 57)                                                                                         | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Low-Voltage Disconnect (J1939 SA 49)                                                                                        | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Fan Drive Controller (aka Fan Hub) (J1939 SA 78)                                                                            | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Powertrain Control Module (aka Common Powertrain Controller Module (CPC)) (J1939 SA 90)                                     | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Ignition Control Module \#2 (J1939 SA 57)                                                                                   | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Starter System (J1939 SA 00, 03)                                                                                            | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Fuel Heater, In-Tank (J1939 SA 72)                                                                                          | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Oil Sensor (J1939 SA 00)                                                                                                    | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Retarder - Engine (J1939 SA 15)                                                                                             | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Radiator (aka Radiator Fan Control) (J1939 SA 78, 00, 255)                                                                  | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Oil Pan Heater (J1939 SA 00)                                                                                                | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Engine Injection Control Module (J1939 SA 00)                                                                               | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Ignition Control Module \#1 (J1939 SA 52)                                                                                   | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
 | Idle Control System (J1939 SA 68)                                                                                           | **5**              | 'high' overall fleet risk                                                            |
 | Aftertreatment \#1 system gas intake (J1939 SA 81)                                                                          | **5**              | 'high' overall fleet risk                                                            |
 | Aftertreatment \#2 system gas intake (J1939 SA 86)                                                                          | **5**              | 'high' overall fleet risk                                                            |
@@ -106,8 +106,8 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 | Transmission Telematics                                                | **0** | telematics device                                                                    |
 | ---------------------------------------------------------------------- | ----- | ------------------------------------------------------------------------------------ |
-| Transmission \#1 (aka Transmission Control Module (TCM)) (J1939 SA 03) | **3** | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Electronic Clutch Actuator (J1939 SA 03)                               | **4** | medium' scope change risk (connected to two or more vehicle networks)                |
+| Transmission \#1 (aka Transmission Control Module (TCM)) (J1939 SA 03) | **3** | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Electronic Clutch Actuator (J1939 SA 03)                               | **4** | 'medium' scope change risk (connected to two or more vehicle networks)                |
 | Power TakeOff (Front or Secondary) (J1939 SA 07)                       | **5** | 'high' overall fleet risk                                                            |
 | Retarder - Driveline (J1939 SA 16)                                     | **5** | 'high' overall fleet risk                                                            |
 | Power TakeOff - (Main or Rear) (J1939 SA 07)                           | **5** | 'high' overall fleet risk                                                            |
@@ -131,10 +131,10 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 | ---------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
 | Brakes - Drive axle \#1 (J1939 SA 13)                | **1**              | has J2497 interface (in NA) which is accessible wirelessly                           |
 | Brakes - Drive Axle \#2 (J1939 SA 14)                | **1**              | has J2497 interface (in NA) which is accessible wirelessly                           |
-| Traction Control (J1939 SA 138, 39)                  | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Differential Lock Controller (J1939 SA 138, 72, 39 ) | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Axle - Drive \#1 (J1939 SA 09)                       | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Axle - Drive \#2 (J1939 SA 10)                       | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
+| Traction Control (J1939 SA 138, 39)                  | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Differential Lock Controller (J1939 SA 138, 72, 39 ) | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Axle - Drive \#1 (J1939 SA 09)                       | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Axle - Drive \#2 (J1939 SA 10)                       | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
 | Electric Propulsion Control Unit \#1                 | **7**              | 'low' overall fleet risk                                                             |
 | Electric Propulsion Control Unit \#2                 | **None Specified** | no responses / not common component                                                  |
 | Electric Propulsion Control Unit \#4                 | **None Specified** | no responses / not common component                                                  |
@@ -148,16 +148,16 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 > REAR SUSPENSION
 
-| Suspension - Drive Axle \#1 (J1939 SA 138, 72, 39) | **3** | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Suspension - Drive Axle \#1 (J1939 SA 138, 72, 39) | **3** | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | -------------------------------------------------- | ----- | ------------------------------------------------------------------------------------ |
-| Suspension - Drive Axle \#2 (J1939 SA 22)          | **3** | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Suspension - Drive Axle \#2 (J1939 SA 22)          | **3** | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | Vehicle Dynamic Stability Controller (J1939 SA 62) | **6** | 'medium' overall fleet risk                                                          |
 
 > TRAILER CONNECTIONS
 
-| Tractor/Trailer Bridge \#2 (J1939 SA 138, 39) | **3** | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Tractor/Trailer Bridge \#2 (J1939 SA 138, 39) | **3** | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | --------------------------------------------- | ----- | ------------------------------------------------------------------------------------ |
-| Tractor-Trailer Bridge \#1 (J1939 SA 32)      | **3** | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Tractor-Trailer Bridge \#1 (J1939 SA 32)      | **3** | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 
 > TIRES & WHEELS
 
@@ -167,11 +167,11 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 > FRAME & EQUIPMENT
 
-| Fifth Wheel Smart System (J1939 SA 138, 39)                                                                                                                                                                            | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Fifth Wheel Smart System (J1939 SA 138, 39)                                                                                                                                                                            | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| ADAS Lane Keep (aka LCS Side Sensor (blind spot only) / Lane Warning / Lane Departure Warning System / Bendix Fusion / Exterior Camera for Lane Departune Warning / Driver Assistance Camera (MPC)) (J1939 SA 232, 19) | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Body-to-Vehicle Interface Control (aka VECU - Vehicle ECU) (J1939 SA 33)                                                                                                                                               | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Forward Road Image Processor (J1939 SA 232)                                                                                                                                                                            | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| ADAS Lane Keep (aka LCS Side Sensor (blind spot only) / Lane Warning / Lane Departure Warning System / Bendix Fusion / Exterior Camera for Lane Departune Warning / Driver Assistance Camera (MPC)) (J1939 SA 232, 19) | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Body-to-Vehicle Interface Control (aka VECU - Vehicle ECU) (J1939 SA 33)                                                                                                                                               | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Forward Road Image Processor (J1939 SA 232)                                                                                                                                                                            | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | Automated Driving (L0-L2) (aka Bendix FLR and FLC (Forward looking Camera / Radar))                                                                                                                                    | **6**              | 'medium' overall fleet risk                                                          |
 | Collision Avoidance (J1939 SA 42)                                                                                                                                                                                      | **6**              | 'medium' overall fleet risk                                                          |
 | Slope Sensor (aka Hill Start Assist)                                                                                                                                                                                   | **7**              | 'low' overall fleet risk                                                             |
@@ -183,7 +183,7 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 > FUEL TANK & EQUIPMENT
 
-| Fuel Actuator (J1939 SA 15) | **4**              | medium' scope change risk (connected to two or more vehicle networks) |
+| Fuel Actuator (J1939 SA 15) | **4**              | 'medium' scope change risk (connected to two or more vehicle networks) |
 | --------------------------- | ------------------ | --------------------------------------------------------------------- |
 | Fuel System (J1939 SA 18)   | **None Specified** | no responses / not common component                                   |
 
@@ -191,7 +191,7 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 | Exterior Camera Telematics               | **0**              | telematics device                                                     |
 | ---------------------------------------- | ------------------ | --------------------------------------------------------------------- |
-| Mirrors (J1939 SA 40)                    | **4**              | medium' scope change risk (connected to two or more vehicle networks) |
+| Mirrors (J1939 SA 40)                    | **4**              | 'medium' scope change risk (connected to two or more vehicle networks) |
 | Body Controller (aka Key-Lock Options)   | **6**              | 'medium' overall fleet risk                                           |
 | Body Controller \#2                      | **7**              | 'low' overall fleet risk                                              |
 | Door Controller (J1939 SA 236)           | **7**              | 'low' overall fleet risk                                              |
@@ -209,15 +209,15 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 | --------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
 | Vehicle Navigation (J1939 SA 84)                                                                                      | **1**              | has a wireless interface and connects to J1939                                       |
 | Radio (aka Head Unit / Infotainment) (J1939 SA 76, 84)                                                                | **1**              | likely to have wireless interfaces and a J1939 interface                             |
-| Cab Controller - Primary (aka SAM CAB) (J1939 SA 49)                                                                  | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Cab Controller - Secondary (J1939 SA 50)                                                                              | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Cruise Control (J1939 SA 17)                                                                                          | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Object Detection Display (aka Active Safety Components / Bendix Fusion (Display))                                     | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Lighting - Operator Controls (J1939 SA 71)                                                                            | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Throttle (J1939 SA 0)                                                                                                 | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Transmission Display - Primary (J1939 SA 59)                                                                          | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Trip Recorder (J1939 SA 24)                                                                                           | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Switch Field (aka Additional Switches / Modular Switch Field (MSF)) (J1939 SA 138)                                    | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
+| Cab Controller - Primary (aka SAM CAB) (J1939 SA 49)                                                                  | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Cab Controller - Secondary (J1939 SA 50)                                                                              | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Cruise Control (J1939 SA 17)                                                                                          | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Object Detection Display (aka Active Safety Components / Bendix Fusion (Display))                                     | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Lighting - Operator Controls (J1939 SA 71)                                                                            | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Throttle (J1939 SA 0)                                                                                                 | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Transmission Display - Primary (J1939 SA 59)                                                                          | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Trip Recorder (J1939 SA 24)                                                                                           | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Switch Field (aka Additional Switches / Modular Switch Field (MSF)) (J1939 SA 138)                                    | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
 | Power TakeOff (PTO) Switches (J1939 SA 07)                                                                            | **5**              | 'high' overall fleet risk                                                            |
 | Shift Console - Primary (aka Gearshift ECU) (J1939 SA 05)                                                             | **6**              | 'medium' overall fleet risk                                                          |
 | Safety Restraint System (SRS) (J1939 SA 83)                                                                           | **6**              | 'medium' overall fleet risk                                                          |
@@ -243,12 +243,12 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 > INSTRUMENTS & CONTROLS
 
-| Ammeter (J1939 SA 23, 39)                                      | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Ammeter (J1939 SA 23, 39)                                      | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | -------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| Instrument Cluster \#1 (aka Gauges) (J1939 SA 23)              | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| ADAS Adaptive Cruise Control (aka Bendix Fusion) (J1939 SA 42) | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Headway Controller (J1939 SA 42)                               | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
-| Engine Display                                                 | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
+| Instrument Cluster \#1 (aka Gauges) (J1939 SA 23)              | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| ADAS Adaptive Cruise Control (aka Bendix Fusion) (J1939 SA 42) | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Headway Controller (J1939 SA 42)                               | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
+| Engine Display                                                 | **4**              | 'medium' scope change risk (connected to two or more vehicle networks)                |
 | Pyrometer                                                      | **6**              | 'medium' overall fleet risk                                                          |
 | Instrument Cluster \#2 (aka Auxiliary Gauges)                  | **None Specified** | no responses / not common component                                                  |
 
@@ -267,7 +267,7 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 > LIGHTS & SIGNALS
 
-| Chassis Controller \#2 (J1939 SA 72)                   | **4** | medium' scope change risk (connected to two or more vehicle networks) |
+| Chassis Controller \#2 (J1939 SA 72)                   | **4** | 'medium' scope change risk (connected to two or more vehicle networks) |
 | ------------------------------------------------------ | ----- | --------------------------------------------------------------------- |
 | Adaptive Front Lighting System (J1939 SA 71)           | **6** | 'medium' overall fleet risk                                           |
 | Chassis Controller \#1 (aka SAM Chassis) (J1939 SA 71) | **7** | 'low' overall fleet risk                                              |
@@ -277,7 +277,7 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 | Brake Telematics                                                         | **0**              | telematics device                                                                    |
 | ------------------------------------------------------------------------ | ------------------ | ------------------------------------------------------------------------------------ |
 | Brakes - System Controller (J1939 SA 11)                                 | **1**              | has J2497 interface (in NA) which is accessible wirelessly                           |
-| Parking Brake Controller (J1939 SA 80)                                   | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Parking Brake Controller (J1939 SA 80)                                   | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | Pneumatic - System Controller (J1939 SA 48)                              | **5**              | 'high' overall fleet risk                                                            |
 | Auxiliary Valve Control or Engine Air System Valve Control (J1939 SA 34) | **7**              | 'low' overall fleet risk                                                             |
 | Brake Stroke Alert                                                       | **None Specified** | no responses / not common component                                                  |
