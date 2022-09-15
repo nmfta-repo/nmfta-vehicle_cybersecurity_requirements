@@ -57,7 +57,7 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 | **Component Reference Name**                                                                                                 | **Cybersecurity Requirements Class** | **Class Assignment Rationale**                                                       |
 | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------ |
 | Engine Telematics (J1939 SA 249)                                                                                             | **0**                                | telematics device                                                                    |
-| Engine \#1 (aka Motor Control Module (MCM) / Engine Management System (EMS) / Engine Control Module (ECM)) (J1939 SA 00, 01) | **3**                                | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Engine \#1 (aka Motor Control Module (MCM) / Engine Management System (EMS) / Engine Control Module (ECM)) (J1939 SA 00, 01) | **3**                                | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | Engine Cylinder Pressure Monitoring System                                                                                   | **5**                                | 'high' overall fleet risk                                                            |
 | Engine \#2                                                                                                                   | **None Specified**                   | no responses / not common component                                                  |
 
@@ -118,7 +118,8 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 | Steering Input Unit (aka Steering Angle Sensor (SAS))                                                                                    | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ------------------------------------------------------------------------------------ |
-| Steering Controller (aka Front Axle Steering (FAS) / VDS / MCS) (J1939 SA 19)                                                            | **4**              | medium' scope change risk (connected to two or more vehicle networks)                |
+| Steering Controller (aka Front Axle Steering (FAS) / VDS / MCS) (J1939 SA 19)                                                            | **4**              | 
+'medium' scope change risk (connected to two or more vehicle networks)                |
 | Suspension - Steer Axle (aka Electronically Controlled Suspension (ECS) / Electronically Controlled Air Suspension (ECAS)) (J1939 SA 20) | **6**              | 'medium' overall fleet risk                                                          |
 | Suspension - System Controller \#1 (J1939 SA 47)                                                                                         | **6**              | 'medium' overall fleet risk                                                          |
 | Axle - Steering (J1939 SA 08)                                                                                                            | **7**              | 'low' overall fleet risk                                                             |
@@ -144,7 +145,7 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 
 |                              |       |                                                                       |
 | ---------------------------- | ----- | --------------------------------------------------------------------- |
-| Lift Axle (J1939 SA 138, 71) | **4** | medium' scope change risk (connected to two or more vehicle networks) |
+| Lift Axle (J1939 SA 138, 71) | **4** | 'medium' scope change risk (connected to two or more vehicle networks) |
 
 > REAR SUSPENSION
 
@@ -259,9 +260,9 @@ Note 2: the analysis makes the distinction between *Untrusted Network Domains* a
 | Onboard Diagnostics Connector Gateway (aka Gateway (CGW)) (J1939 SA 39, 17, 44, 49, 50, 77)                                                        | **2**              | gateway device                                                                       |
 | 3rd Party Equipment Gateway (J1939 SA 249)                                                                                                         | **2**              | gateway device                                                                       |
 | Telematics Interface Gateway                                                                                                                       | **2**              | gateway device                                                                       |
-| On Board Diagnostic Unit (aka OEM Factory & Service tool) (J1939 SA 250)                                                                           | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| On-Board Data Logger (J1939 SA 251)                                                                                                                | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
-| Predictive Cruise Control (aka E-Horizon / Intelligent Predictive Powertrain Control (IPPC)) (J1939 SA 75)                                         | **3**              | high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| On Board Diagnostic Unit (aka OEM Factory & Service tool) (J1939 SA 250)                                                                           | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| On-Board Data Logger (J1939 SA 251)                                                                                                                | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
+| Predictive Cruise Control (aka E-Horizon / Intelligent Predictive Powertrain Control (IPPC)) (J1939 SA 75)                                         | **3**              | 'high' scope change risk (assumes NGTTI with no J2497) and untrusted wired connection |
 | Information System Controller \#1                                                                                                                  | **None Specified** | no responses / not common component                                                  |
 | On Board Diagnostic Unit \#2                                                                                                                       | **None Specified** | no responses / not common component                                                  |
 
