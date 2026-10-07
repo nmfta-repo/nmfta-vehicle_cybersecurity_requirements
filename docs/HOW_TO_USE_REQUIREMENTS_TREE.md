@@ -199,6 +199,19 @@ python scripts/export_questionnaires.py . --output-dir docs/html/
     - `Class 0 - Mobile App` (driver interfaces, cab displays, and mobile applications)
   - **Classes 1 through 7**: Generates dedicated worksheets for each physical controller class.
 
+### Step 4: Validate Cascaded Requirements & Text Fidelity
+
+To verify that the cascaded requirement statements, criticalities, and verification criteria match upstream reference models:
+
+```bash
+python scripts/validate_cascaded_requirements.py \
+    --vcr-dir . \
+    --tsrm-dir /path/to/nmfta-telematics_security_requirements \
+    --vcr-exp-dir /path/to/vcr-experiment
+```
+
+This ensures zero unintended text drift across telematics components and vehicle gateway controls.
+
 
 ---
 
