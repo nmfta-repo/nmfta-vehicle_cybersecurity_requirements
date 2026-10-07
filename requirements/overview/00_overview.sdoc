@@ -91,10 +91,55 @@ Trusted Network Domain (TND):
 [[/SECTION]]
 
 [[SECTION]]
-TITLE: Telematics Systems in Commercial Fleets: Scope & Evaluation Guidance
+TITLE: Purpose, Architectural Scope & Classification Approach
 
 [TEXT]
 STATEMENT: >>>
+The **NMFTA Heavy-Duty Vehicle Cybersecurity Requirements (HD VCR)** specification establishes a comprehensive, structured set of cybersecurity requirements and verification procedures for Electronic Control Units (ECUs) and interconnected subsystems in commercial motor vehicles.
+
+As modern commercial vehicles incorporate sophisticated electronic architectures, vehicle networks, and off-board connectivity, fleet managers and motor freight carriers bear increasing operational risk. The primary objectives of this specification are to:
+
+1. **Empower Fleet Procurement**: Provide commercial fleets, motor carriers, and vehicle purchasers with actionable, prioritized cybersecurity criteria for evaluating vehicles, systems, and supplier proposals (RFPs).
+2. **Standardize Supplier Expectations**: Define unambiguous, testable security controls for OEMs, Tier-1 suppliers, and aftermarket device manufacturers.
+3. **Establish Verifiable Assurance**: Equip purchasers and independent testing laboratories with concrete verification procedures to validate that required controls are present and effective upon delivery.
+
+Architectural Approach & ECU Classification:
+=============================================
+Commercial vehicle architectures partition electronic controllers into distinct device classes based on their network topology, external interfaces, gatewaying responsibilities, and overall risk profile:
+
+- **Class 0 (Telematics)**: Systems possessing off-board Wide Area Network (WAN) connectivity (cellular, satellite, internet).
+- **Class 1 (Multi-Segment with Wireless)**: Controllers connected to multiple internal buses with short-range wireless interfaces (Bluetooth, Wi-Fi, TPMS RF).
+- **Class 2 (Vehicle Gateway)**: Dedicated routing, isolation, and message-filtering controllers (Central Gateway / CGW).
+- **Class 3 (Multi-Segment with Untrusted Wired)**: Controllers bridging internal networks to untrusted physical connectors (OBD-II, RP1226, trailer bridges).
+- **Class 4 (Multi-Segment Trusted)**: Multi-segment controllers where all attached buses are internal and trusted.
+- **Class 5 (Single-Segment High Risk)**: Single-segment controllers whose disruption presents critical operational or safety impact (e.g., emissions/aftertreatment, retarders).
+- **Class 6 (Single-Segment Medium Risk)**: Single-segment controllers of moderate operational risk (e.g., suspension, automated steering assists).
+- **Class 7 (Single-Segment Low Risk)**: Single-segment controllers of low fleet risk (e.g., cab convenience, HVAC, door modules).
+
+For physical vehicle controllers (Classes 1 through 7), requirements apply directly to the physical ECU hardware and its firmware. However, telematics systems (Class 0) represent a distributed system architecture requiring specialized decomposition, as described in the following section.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Telematics Systems in Commercial Fleets: Special Handling & Evaluation Guidance
+
+[TEXT]
+STATEMENT: >>>
+Special Handling for Class 0 Telematics Systems:
+================================================
+Unlike traditional on-vehicle ECUs (Classes 1 through 7) which are evaluated as individual physical modules, **Class 0 Telematics Systems** encompass a distributed ecosystem extending beyond the vehicle. A telematics solution typically spans four distinct architectural components:
+1. An on-vehicle physical unit (*Vehicle Connection Component*),
+2. A wireless pipe (*Connectivity or Communications Component*),
+3. An off-board server infrastructure (*Cloud or Back-End Component*), and
+4. A driver interface (*Mobile App or Driver Display Component*).
+
+Because of this distributed nature, the telematics requirements derived from the NMFTA Telematics Security Requirements Matrix (TSRM) are handled specially:
+- The specification partitions telematics controls across the four component boundaries.
+- The supplier questionnaires generate four dedicated evaluation worksheets so that procuring fleets can obtain specific attestations from the respective engineering and operations teams.
+
+Scope Guidance: Multiple Telematics Systems per Vehicle:
+========================================================
 Modern commercial motor vehicles frequently deploy **multiple distinct telematics systems** simultaneously. A single tractor or trailer may incorporate:
 
 - An OEM factory telematics gateway / off-vehicle connectivity unit.
