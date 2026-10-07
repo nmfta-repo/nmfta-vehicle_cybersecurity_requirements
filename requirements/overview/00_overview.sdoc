@@ -1,0 +1,172 @@
+[DOCUMENT]
+TITLE: Vehicle Cybersecurity Requirements Overview and General Information
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @vcr_grammar
+
+[TEXT]
+STATEMENT: >>>
+These recommended security requirements are intended to be informative, not directional in nature. While all reasonable steps have been taken to ensure that the recommendations are well-supported by our research and third-party verification, NMFTA and the parties contributing to these recommendations do not accept liability or responsibility for any damage or harm incurred as a result of actions taken based upon these recommendations.
+<<<
+
+[[SECTION]]
+TITLE: Preface and Disclaimer of Liability
+
+[TEXT]
+STATEMENT: >>>
+THE INFORMATION CONTAINED HEREIN IS PROVIDED “AS IS” WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
+INFORMATION IS WITH THE USER.
+
+NMFTA and contributing industry working group participants disclaim any
+liability for direct, indirect, incidental, special, or consequential damages
+resulting from the implementation, procurement, or use of these cybersecurity
+requirements or associated verification procedures.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Glossary and List of Abbreviations
+
+[TEXT]
+STATEMENT: >>>
+============== =======================================================
+Abbreviation   Term
+============== =======================================================
+ASVS           Application Security Verification Standard
+BSIMM          Building Security in Maturity Model
+CAIQ           Consensus Assessment Initiative Questionnaire
+CAN            Controller Area Network
+CGW            Central Gateway
+CTIA           Cellular Telecommunications and Internet Association
+Cyber ITL      Cyber Independent Testing Labs
+DHS            Department of Homeland Security
+DOT            Department of Transportation
+ECU            Electronic Control Unit
+ELD            Electronic Logging Device
+ETSI           European Telecommunications Standards Institute
+FM             Fleet Manager
+FMI            Fleet Management Information
+FMIS           Fleet Management Information System
+HMI            Human Machine Interface
+HDVCR          Heavy Duty Vehicle Cybersecurity Requirements
+IEC            International Electrotechnical Commission
+IS             Information System
+ISO            International Organization for Standardization
+IVG            Intelligent Vehicle Gateway
+MAC            Mandatory Access Controls
+MASVS          Mobile Application Security Verification Standard
+MSTG           Mobile Security Testing Guide
+NIST           National Institute of Standards and Technology
+NMFTA          National Motor Freight Traffic Association, Inc.
+OBD            On-Board Diagnostics
+OEM            Original Equipment Manufacturer
+OTA            Over-The-Air Update
+OWASP          Open Web Application Security Project
+RFP            Request for Proposal
+RFPCTL         Request for Proposal Contract Template Language
+TND            Trusted Network Domain
+TSP            Telematics Service Provider
+UID            Unique Identifier
+UND            Untrusted Network Domain
+VCR            Vehicle Cybersecurity Requirements
+VCRWG          Vehicle Cybersecurity Requirements Working Group
+WAN            Wide Area Network
+============== =======================================================
+
+Untrusted Network Domain (UND):
+    A network domain (or segment) that contains **any** of the following:
+    a) wireless communication or reachable wirelessly (e.g. J2497, ISO 15118, Bluetooth, Wi-Fi, cellular)
+    b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
+    c) a telematics device that does not satisfy the HD VCR requirements
+    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements
+
+Trusted Network Domain (TND):
+    A network domain (or segment) that **does not contain any** of the untrusted attributes listed above.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Purpose, Architectural Scope & Classification Approach
+
+[TEXT]
+STATEMENT: >>>
+The **NMFTA Heavy-Duty Vehicle Cybersecurity Requirements (HD VCR)** specification establishes a comprehensive, structured set of cybersecurity requirements and verification procedures for Electronic Control Units (ECUs) and interconnected subsystems in commercial motor vehicles.
+
+As modern commercial vehicles incorporate sophisticated electronic architectures, vehicle networks, and off-board connectivity, fleet managers and motor freight carriers bear increasing operational risk. The primary objectives of this specification are to:
+
+1. **Empower Fleet Procurement**: Provide commercial fleets, motor carriers, and vehicle purchasers with actionable, prioritized cybersecurity criteria for evaluating vehicles, systems, and supplier proposals (RFPs).
+2. **Standardize Supplier Expectations**: Define unambiguous, testable security controls for OEMs, Tier-1 suppliers, and aftermarket device manufacturers.
+3. **Establish Verifiable Assurance**: Equip purchasers and independent testing laboratories with concrete verification procedures to validate that required controls are present and effective upon delivery.
+
+Architectural Approach & ECU Classification:
+=============================================
+Commercial vehicle architectures partition electronic controllers into distinct device classes based on their network topology, external interfaces, gatewaying responsibilities, and overall risk profile:
+
+- **Class 0 (Telematics)**: Systems possessing off-board Wide Area Network (WAN) connectivity (cellular, satellite, internet).
+- **Class 1 (Multi-Segment with Wireless)**: Controllers connected to multiple internal buses with short-range wireless interfaces (Bluetooth, Wi-Fi, TPMS RF).
+- **Class 2 (Vehicle Gateway)**: Dedicated routing, isolation, and message-filtering controllers (Central Gateway / CGW).
+- **Class 3 (Multi-Segment with Untrusted Wired)**: Controllers bridging internal networks to untrusted physical connectors (OBD-II, RP1226, trailer bridges).
+- **Class 4 (Multi-Segment Trusted)**: Multi-segment controllers where all attached buses are internal and trusted.
+- **Class 5 (Single-Segment High Risk)**: Single-segment controllers whose disruption presents critical operational or safety impact (e.g., emissions/aftertreatment, retarders).
+- **Class 6 (Single-Segment Medium Risk)**: Single-segment controllers of moderate operational risk (e.g., suspension, automated steering assists).
+- **Class 7 (Single-Segment Low Risk)**: Single-segment controllers of low fleet risk (e.g., cab convenience, HVAC, door modules).
+
+For physical vehicle controllers (Classes 1 through 7), requirements apply directly to the physical ECU hardware and its firmware. However, telematics systems (Class 0) represent a distributed system architecture requiring specialized decomposition, as described in the following section.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Telematics Systems in Commercial Fleets: Special Handling & Evaluation Guidance
+
+[TEXT]
+STATEMENT: >>>
+Special Handling for Class 0 Telematics Systems:
+================================================
+Unlike traditional on-vehicle ECUs (Classes 1 through 7) which are evaluated as individual physical modules, **Class 0 Telematics Systems** encompass a distributed ecosystem extending beyond the vehicle. A telematics solution typically spans four distinct architectural components:
+1. An on-vehicle physical unit (*Vehicle Connection Component*),
+2. A wireless pipe (*Connectivity or Communications Component*),
+3. An off-board server infrastructure (*Cloud or Back-End Component*), and
+4. A driver interface (*Mobile App or Driver Display Component*).
+
+Because of this distributed nature, the telematics requirements derived from the NMFTA Telematics Security Requirements Matrix (TSRM) are handled specially:
+- The specification partitions telematics controls across the four component boundaries.
+- The supplier questionnaires generate four dedicated evaluation worksheets so that procuring fleets can obtain specific attestations from the respective engineering and operations teams.
+
+Scope Guidance: Multiple Telematics Systems per Vehicle:
+========================================================
+Modern commercial motor vehicles frequently deploy **multiple distinct telematics systems** simultaneously. A single tractor or trailer may incorporate:
+
+- An OEM factory telematics gateway / off-vehicle connectivity unit.
+- An aftermarket Electronic Logging Device (ELD) or Fleet Management Information System (FMIS).
+- Component-specific telematics devices (e.g., Engine, Transmission, or Braking/ABS telematics units).
+- Camera, vision safety, and trailer tracking subsystems.
+
+Because each deployed telematics system introduces network interfaces and potential attack vectors into the vehicle, **fleets and purchasers must evaluate ALL telematics systems installed on the vehicle**. 
+
+When issuing supplier questionnaires or evaluating vendor compliance:
+- Procuring fleets MUST ensure that questionnaire recipients complete responses for **ALL** telematics systems present on or integrated with the vehicle.
+- A vendor or supplier providing multiple telematics subsystems must submit separate questionnaire responses for each individual system.
+- An assessment of only one system (e.g., the primary ELD) does not confer cybersecurity assurance to other co-existing telematics systems (e.g., powertrain or trailer telematics).
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Acknowledgements
+
+[TEXT]
+STATEMENT: >>>
+We would like to acknowledge the contributions of DOT/Volpe Center, motor freight carrier members, and the participants of the NMFTA Vehicle Cybersecurity Requirements Working Group (VCRWG) and Telematics Security Requirements working group.
+
+Named participants include Derek Held of Zonar Systems, representatives from Geotab, Altaz Valani of Security Compass, Mark Zachos of DG Technologies, Richard M. Litwinczuk (Senior Cybersecurity Engineer, Land Cyber Mission Assurance Program DND), Jacob D'Aoust (Junior Researcher, DeepMicro Limited), as well as numerous fleet managers, motor carriers, and telematics service providers (TSPs).
+
+The authors also acknowledge the contributions of the NMFTA Request for Proposal Contract Template Language (RFPCTL) working group.
+<<<
+
+[[/SECTION]]

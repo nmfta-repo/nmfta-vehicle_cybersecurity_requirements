@@ -1,0 +1,2007 @@
+[DOCUMENT]
+TITLE: Class 1 Multi-Segment with Wireless Security Requirements
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @vcr_grammar
+
+[TEXT]
+STATEMENT: >>>
+This document specifies cybersecurity requirements for Class 1 vehicle components: **Multi Segment with Wireless**.
+
+Class 1 devices include truck modules that may or may not be intended to perform gateway functions (transport, translate, transform, filter, or encapsulate data) and possess at least one wireless interface (such as Bluetooth, Wi-Fi, cellular, TPMS RF, or wireless sensor bridges).
+
+Examples include:
+- Antilock Brake System (ABS) (J1939 SA 11)
+- Brakes - System Controller (J1939 SA 11)
+- Tire Pressure Controller / TPMS (J1939 SA 51)
+- Wheel End Monitoring
+- Propulsion Battery Charger (J1939 SA 73)
+- Brakes - Drive Axle #1 / #2 (J1939 SA 13, 14)
+- Vehicle Navigation (J1939 SA 84)
+- Radio / Head Unit / Infotainment (J1939 SA 76, 84)
+<<<
+
+[[SECTION]]
+TITLE: Baseline Security Requirements Applicability
+
+[REQUIREMENT]
+UID: C1-AA-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-040
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-041
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-050
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-060
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-061
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-061.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-061
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-062
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-062.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-062
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-063
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-063.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-063
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-070
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-070.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-070
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-AC-080
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement AC-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-CM-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement CM-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-CM-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement CM-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-CM-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement CM-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-CM-040
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement CM-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-IA-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement IA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-IA-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement IA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-IA-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement IA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-IR-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement IR-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IR-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-M-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement M-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-M-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement M-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-M-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement M-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-M-031
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement M-031.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-031
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-M-032
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement M-032.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-032
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-M-040
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement M-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-P-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement P-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: P-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-P-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement P-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: P-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-P-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement P-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: P-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-PS-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement PS-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: PS-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-RA-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement RA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: RA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-RA-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement RA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: RA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SAA-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SAA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SAA-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SAA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SAA-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SAA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SAA-040
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SAA-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SAA-050
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SAA-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-011
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-040
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-050
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-060
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-090
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-091
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-091.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-091
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-092
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-092.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-092
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-100
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-100.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-100
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-110
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-110.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-110
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-120
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-130
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SCP-140
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SCP-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-010
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-011
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-020
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-021
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-021.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-021
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-030
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-040
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-041
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-060
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-070
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-070.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-070
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-071
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-071.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-071
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-080
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-081
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-081.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-081
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-090
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-100
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-100.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-100
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-110
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-110.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-110
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-120
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-130
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-140
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-150
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-150.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-150
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-170
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-170.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-170
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-171
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-171.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-171
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-180
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-180.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-180
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-190
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-190.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-190
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-SII-200
+STATEMENT: >>>
+Class 1 devices SHALL satisfy baseline requirement SII-200.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-200
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Wireless Connectivity Security Requirements Applicability
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-030
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-040
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-041
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-050
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-060
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-061
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-061.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-061
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-062
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-062.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-062
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-063
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-063.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-063
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-AC-080
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-AC-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-CM-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-CM-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-CM-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-CM-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-CM-030
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-CM-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-CM-040
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-CM-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-IA-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-IA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-IA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-IA-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-IA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-IA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-IA-030
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-IA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-IA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-IR-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-IR-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-IR-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-M-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-M-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-M-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-M-040
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-M-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-M-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-PS-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-PS-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-PS-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-RA-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-RA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-RA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-RA-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-RA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-RA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SAA-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SAA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SAA-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SAA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SAA-030
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SAA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SAA-040
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SAA-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SAA-050
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SAA-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-011
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-030
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-040
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-060
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-090
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-091
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-091.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-091
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-120
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-130
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SCP-140
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SCP-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-010
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-011
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-020
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-021
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-021.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-021
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-030
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-040
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-041
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-060
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-070
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-070.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-070
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-071
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-071.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-071
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-080
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-081
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-081.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-081
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-090
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-110
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-110.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-110
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-120
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-130
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-140
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-150
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-150.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-150
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-170
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-170.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-170
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-171
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-171.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-171
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-180
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-180.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-180
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-COMMS-SII-200
+STATEMENT: >>>
+Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-200.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: COMMS-SII-200
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Vehicle Bus Connection Security Requirements Applicability
+
+[REQUIREMENT]
+UID: C1-VEH-AC-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-030
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-040
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-041
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-050
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-060
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-061
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-061.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-061
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-062
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-062.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-062
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-063
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-063.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-063
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-AC-080
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-AC-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-CM-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-CM-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-CM-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-CM-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-CM-030
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-CM-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-CM-040
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-CM-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-IA-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-IA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-IA-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-IA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-IA-030
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-IA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-IR-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IR-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-IR-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-M-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-M-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-M-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-M-040
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-M-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-M-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-PS-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-PS-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-PS-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-RA-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-RA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-RA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-RA-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-RA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-RA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SAA-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SAA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SAA-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SAA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SAA-030
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SAA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SAA-040
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SAA-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SAA-050
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SAA-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-011
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-030
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-040
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-060
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-100
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-100.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-100
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SCP-140
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SCP-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-010
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-011
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-020
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-021
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-021.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-021
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-030
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-040
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-041
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-060
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-070
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-070.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-070
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-071
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-071.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-071
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-080
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-081
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-081.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-081
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-090
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-120
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-130
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-140
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-150
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-150.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-150
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-170
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-170.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-170
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-171
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-171.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-171
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-180
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-180.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-180
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C1-VEH-SII-200
+STATEMENT: >>>
+Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-200.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SII-200
+  ROLE: Refines
+
+[[/SECTION]]

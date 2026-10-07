@@ -1,0 +1,798 @@
+[DOCUMENT]
+TITLE: Class 5 Single Segment High Risk Security Requirements
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @vcr_grammar
+
+[TEXT]
+STATEMENT: >>>
+This document specifies cybersecurity requirements for Class 5 vehicle components: **Single Segment High Risk**.
+
+Class 5 devices are truck modules connected to a single vehicle network segment found to have a high overall fleet risk based on system criticality and vehicle operational impact.
+
+Examples include:
+- Power TakeOff (Front or Secondary) (J1939 SA 07)
+- Idle Control System (J1939 SA 68)
+- Pneumatic System Controller (J1939 SA 48)
+- Power TakeOff (PTO) Switches (J1939 SA 07)
+- Engine Cylinder Pressure Monitoring System
+- Aftertreatment #1 / #2 system gas intake (J1939 SA 81, 86)
+- Diesel Particulate Filter Controller / Aftertreatment Control Module (ACM) (J1939 SA 211)
+- Engine Exhaust Backpressure (J1939 SA 34)
+- Retarder - Driveline / Exhaust / Engine (J1939 SA 16)
+<<<
+
+[[SECTION]]
+TITLE: Baseline Security Requirements Applicability
+
+[REQUIREMENT]
+UID: C5-AA-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-040
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-041
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-050
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-060
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-061
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-061.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-061
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-062
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-062.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-062
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-063
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-063.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-063
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-070
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-070.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-070
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-AC-080
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement AC-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AC-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-CM-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement CM-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-CM-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement CM-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-CM-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement CM-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-CM-040
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement CM-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: CM-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-IA-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement IA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-IA-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement IA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-IA-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement IA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-IR-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement IR-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: IR-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-M-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement M-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-M-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement M-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-M-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement M-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-M-031
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement M-031.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-031
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-M-032
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement M-032.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-032
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-M-040
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement M-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: M-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-P-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement P-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: P-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-P-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement P-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: P-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-P-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement P-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: P-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-PS-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement PS-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: PS-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-RA-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement RA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: RA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-RA-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement RA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: RA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SAA-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SAA-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SAA-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SAA-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SAA-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SAA-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SAA-040
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SAA-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SAA-050
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SAA-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SAA-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-011
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-040
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-050
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-050.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-050
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-060
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-090
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-091
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-091.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-091
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-092
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-092.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-092
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-100
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-100.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-100
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-110
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-110.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-110
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-120
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-130
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SCP-140
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SCP-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-010
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-011
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-011.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-011
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-020
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-020.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-020
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-021
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-021.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-021
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-030
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-030.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-030
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-040
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-040.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-040
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-041
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-041.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-041
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-060
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-060.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-060
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-070
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-070.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-070
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-071
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-071.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-071
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-080
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-080.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-080
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-081
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-081.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-081
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-090
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-090.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-090
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-100
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-100.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-100
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-110
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-110.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-110
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-120
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-120.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-120
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-130
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-130.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-130
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-140
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-140.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-140
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-150
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-150.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-150
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-170
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-170.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-170
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-171
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-171.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-171
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-180
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-180.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-180
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-190
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-190.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-190
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C5-SII-200
+STATEMENT: >>>
+Class 5 devices SHALL satisfy baseline requirement SII-200.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SII-200
+  ROLE: Refines
+
+[[/SECTION]]
