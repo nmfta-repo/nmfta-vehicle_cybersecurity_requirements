@@ -1,0 +1,964 @@
+[DOCUMENT]
+TITLE: Vehicle Network Gateway Security Requirements
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @vcr_grammar
+
+[TEXT]
+STATEMENT: >>>
+This document captures security requirements for vehicle network gateway devices: both devices intended to be gateways and those devices which *could be a gateway* (due to malicious code). There will be devices which are connected to multiple vehicle networks but not all of them are intended to perform gatewaying functions. The design intent of the device dictactes what security requirements it must satisfy.
+
+These recommended security requirements are intended to be informative, not directional in nature. While all reasonable steps have been taken to ensure that the recommendations are well-supported by our research and third-party verification, NMFTA and the parties contributing to these recommendations do not accept liability or responsibility for any damage or harm incurred as a result of actions taken based upon these recommendations.
+
+First let us define the two types of network domains (or segments) to which the Gateway devices will connect:
+
+Untrustworthy Network Domain (*UND*):
+    A *UND* is a network domain (or segment) that contains **any** of the following:
+
+    a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, Bluetooth, Wi-Fi)
+    b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
+    c) a telematics device that does not satisfy the HD VCR requirements
+    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements
+
+Trustworthy Network Domain (*TND*):
+    A *TND* is a network domain (or segment) that **does not contain any** of (those above):
+
+    a) wireless communication or reachable wirelessly
+    b) an interface for aftermarket devices or operator access
+    c) a telematics device that does not satisfy the HD VCR requirements
+    d) a multi-network device that does not satisfy the HD VCR requirements
+
+Some Examples of TND and UND:
+
+The RP1226 connector is made for connecting aftermarket devices; therefore the databuses there are UNDs.
+::
+
+            +───────────────+                 +──────────────+                     +─+
+            │  Gateway sat  │                 │              │                     │+│
+    ────────+   all HDVCR   +─────────────────+    RP1226    +─────────────────────++│
+      TND   │  requirements │     UND         │   Connector  │      UND            │+│
+            +───────────────+                 +──────────────+                     +─+
+
+The OBD connector is _the_ operator access port; therefore the databuses there are UNDs.
+::
+
+            +───────────────+                 +──────────────+                     +─+
+            │  Gateway sat  │                 │              │                     │+│
+    ────────+   all HDVCR   +─────────────────+      OBD     +─────────────────────++│
+      TND   │  requirements │     UND         │   Connector  │      UND            │+│
+            +───────────────+                 +──────────────+                     +─+
+
+The TPMS gateways on RP1226 databus connect to a wireless medium and are on the aftermarket bus; therefore the databuses there are UNDs.
+::
+
+            +───────────────+     +──────────────+     +──────────────+
+            │  Gateway sat  │     │              │     │              │     Wireless
+    ────────+   all HDVCR   +─────+    RP1226    +─────+     TPMS     +───────~~)))
+      TND   │  requirements │ UND │   Connector  │ UND │   Gateway    │      UND
+            +───────────────+     +──────────────+     +──────────────+
+
+Then we can define (Intended) Gateways
+
+(Intended) Gateway:
+    A device which has connections to multiple vehicle network domains (or segments) and performs one or more gateway functions between a Untrustworthy Network Domain (*UND*) and Trustworthy Network Domains (*TND*). (Intended) Gateways must satisfy the requirements in section *Security Requirements for Abstract (Intended) Gateways*.
+
+Unintended Gateway:
+    A device which has connections to two or more vehicle network domains (or segments), one or more of which are connections to Untrustworthy Network Domains (*UNDs*), and performs none of the gateway functions. These devices could perform gateway functions (due to malicious code) but are not intended to. Unintended Gateways must satisfy the requirements in section *Security Requirements for Abstract Unintended Gateways*.
+
+Interior Device:
+    A device which has connections to one or more vehicle network domains (or segments), and none of those connections are to Untrustworthy Network Domains (*UNDs*). These devices may or may not perform gateway functions. None of the requirements of either *Security Requirements for Abstract (Intended) Gateways* or *Security Requirements for Abstract Unintended Gateways* are applicable to these devices; however, there will be generic security requirements that should be found to be applicable during procurement and/or development (as per e.g. ISO 21434 / UNECE WP.29).
+
+The gateway functions that duck type the gateway devices are as follows:
+
+Transports:
+    These devices transport/'move' information between two separate network 'domains,' **bi-directionally.**
+
+Translates:
+    These devices translate/transform the information between the separate network domains but intentions of the data are preserved.
+
+Filter/Drop/Rate-Limit:
+    These devices select which information is transported based on rules matching content or metadata before (ingress) or after (egress) processing steps in preparation for transport/translate/encapsulate or other forwarding actions. These devices select which information is transported in a time varying fashion for the purposes of limiting the rate at which the information is put on a network domain.
+
+Encapsulates:
+    These devices encapsulate information as it is transported and/or translated between the network domains.
+
+Note that (Intended) Gateways may optionally perform the following functions as well -- and to do so would be beneficial; however, performing one or more of these functions does not make a device a gateway as were the case with the gateway functions above.
+
+* These devices may be controllable by users with necessary authentication and authorization
+* These devices may be configurable by users with necessary authentication and authorization
+* These devices may report status of operation to users with necessary authentication and authorization
+* These devices may provide diagnostic commands to users with necessary authentication and authorization
+
+Note on options for requirements: This document contains requirements where the working group cannot reasonably require a particular implementation option, only that one of the satisfactory ways to satisfy the requirement is implemented. Modelling these 'options' requirements is not possible nor reccomended: the sheer number of requirements which will be captured for heavy vehicles means that the requirements must remain machine readable and there is no machine readable way to communicate options to implementors (for good reason). The approach that is taken is to a) include the options as notes to the implementers of these requirements and b) to tag all requirements with `CONTAINS_OPTIONS` so the entire list of requirements containing notes to the implementers can be indexed for easy reference by them.
+<<<
+
+[[SECTION]]
+TITLE: Security Requirements for Abstract (Intended) Gateways
+
+[TEXT]
+STATEMENT: >>>
+The following requirements must be satisfied by any device intended to be a gateway on *any type of* vehicle networks. There are CAN-specific and J1939-sepcific requirements in the CGW- and J1939GW- series below.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-000
+CRITICALITY: High
+TITLE: Gateway Configuration Protected
+STATEMENT: >>>
+The device SHALL accept and react only to configuration changes which are correctly authorized and authenticated, regardless of origin of network domain.
+<<<
+COMMENT: >>>
+This can be achieved by use of a Hardware Security Module (HSM) containing keys for verifying a configuration using a secure message authentication code (MAC) and where the HSM has a secure mechanism for remotely programming the MAC key.
+<<<
+PUB_REFS: >>>
+* https://www.autosar.org/fileadmin/user_upload/standards/foundation/19-11/AUTOSAR_TR_SecureHardwareExtensions.pdf for an example of a suitable HSM (the SHE+ HSM).
+
+    Access control mechanisms to restrict access to critical Electronic Control Units (ECUs), critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Mechanisms that effectively secure maintenance operations, including both diagnostic procedures and update procedures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, g.
+<<<
+VERIFICATION: >>>
+Test to confirm that replay of traffic for a valid configuration change, on any interface, does not result in any configuration changes to the device.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-001
+CRITICALITY: High
+TITLE: Conditionally Prevents OTA
+STATEMENT: >>>
+The device SHALL prevent Over The Air updates (OTA) (including parameter flash) from *UND* to *TND*, unless with explicitly authorized and authenticated configuration changes via the mode switch.
+<<<
+PUB_REFS: >>>
+    Access control mechanisms to restrict access to critical ECUs, critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Mechanisms that effectively secure maintenance operations, including both diagnostic procedures and update procedures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, g.
+<<<
+VERIFICATION: >>>
+Test to confirm that both:
+    1. OTA and parameter reflash are permitted from UND to TND when the mode switch is set to allow
+    2. OTA and parameter reflash are _prevented_ from UND to TND when the mode switch is not set to allow
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-002
+CRITICALITY: High
+TITLE: Prevents DoS
+STATEMENT: >>>
+The device SHALL prevent generating Denial of Service (DoS) on *TND* from messages originating on *UND*.
+<<<
+PUB_REFS: >>>
+    It is recommended to isolate safety-critical ECUs on their own CAN bus, with some sort of gateway between them and other ECUs
+
+    -- FMCSA GDL 37
+
+    Isolation/partitioning of systems that have external access (e.g., Wi Fi, Bluetooth, OBD) from safety-critical systems and systems that can have important impacts on the operation of the vehicle.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, a.
+<<<
+VERIFICATION: >>>
+Test to confirm that denying access to the UND medium has no effect on TND performance.
+
+AND
+
+Test to confirm that for each permitted UND->TND transport, translation or encapsulation by the gateway: that sending the highest rate of traffic from UND to TND with it (one of the transport, translation or encapsulation) does not cause any performance degradation to the target device(s), nor TND in its entirety.
+
+AND
+
+All the verification steps of all the applicable derivative requirements.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-003
+CRITICALITY: High
+TITLE: Prevents Spoofing
+STATEMENT: >>>
+The device SHALL prevent spoofing/masquerading/injection onto *TND*
+<<<
+PUB_REFS: >>>
+    It is recommended to isolate safety-critical ECUs on their own CAN bus, with some sort of gateway between them and other ECUs
+
+    -- FMCSA GDL 37
+
+    Isolation/partitioning of systems that have external access (e.g., Wi Fi, Bluetooth, OBD) from safety-critical systems and systems that can have important impacts on the operation of the vehicle.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, a.
+<<<
+VERIFICATION: >>>
+Test to confirm that for each permitted UND->TND transport, translation or encapsulation by the gateway: that sending traffic from UND to TND with it (one of the transport, translation or encapsulation) does not cause any traffic that will be interpreted by any nodes in TND as being traffic that originated from a node in a TND.
+
+AND
+
+Inspection of design artifacts or a third party analysis to confirm that there is no possible traffic on UND that will result in traffic on TND that would be interpreted by any nodes in TND as being traffic that originated from a node in a TND.
+
+AND
+
+All the verification steps of all the applicable derivative requirements.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-004
+TAGS: CONTAINS_OPTIONS
+CRITICALITY: High
+TITLE: Prevents Exfiltration
+STATEMENT: >>>
+The device SHALL prevent exfiltration of data from *TND* to *UND*, or vice-versa, by satisfying one or more of these methods:
+
+* Protect Confidentiality: These devices MAY encapsulate and/or translate (e.g. encrypt) information as it is transported between the network domains for the purposes of protecting confidentiality of the information in the domain to which the information is moved.
+* Re-Write / Masking: The device SHALL provide a means of masking or otherwise re-writing data to prevent exfiltration of sensitive information from *TND* to *UND*.
+<<<
+PUB_REFS: >>>
+    Access control mechanisms that tend to restrict access to information about the operational state of the vehicle, privacy sensitive information, financially sensitive information, detailed design information, etc.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, c.
+<<<
+VERIFICATION: >>>
+Test to confirm that for each permitted TND->UND transport, translation or encapsulation by the gateway and for each information in TND that is configured for confidentiality protection or masking: that canary values sent on TND do not show up in any traffic on UND.
+
+AND
+
+For non-masking: Inspection of a 3rd party implementation review report or a demonstration by the vendor that asserts the use of cryptographic protections for the confidentiality and integrity of all external communications channels. The cryptographic protections must be industry standard.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-005
+CRITICALITY: High
+TITLE: Conditionally Prevents Elevation
+STATEMENT: >>>
+The device SHALL prevent abuse of *TND* network domain functionality from *UND* to *TND*, unless with explicitly authorized and authenticated configuration changes via the mode switch.
+
+The specifics of what *TND* network domain functionality could be abused will depend on what is implemented in the vehicle networks. Examples of vehicle network functionality which could be abused in passenger cars is captured in the J3138 "intrusive services" it lists: e.g. *Request control of on-board system, test or component*, *ECUProgrammingSession*, *ECUReset*, *WriteByIdentifier*, etc.
+<<<
+PUB_REFS: >>>
+    It is recommended to isolate safety-critical ECUs on their own CAN bus, with some sort of gateway between them and other ECUs
+
+    -- FMCSA GDL 37
+
+    Isolation/partitioning of systems that have external access (e.g., Wi Fi, Bluetooth, OBD) from safety-critical systems and systems that can have important impacts on the operation of the vehicle.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, a.
+
+    Access control mechanisms to restrict access to critical ECUs, critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Central gateway or domain controller based architectures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, e.
+
+* Example *Intrusive Services*, SAE J3138.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that TND functionality prevented when the mode switch is set to disabled includes all the known critical and dangerous features of the vehicle TND in question. E.g. that diagnostics and influence of vehicle uptime are prevented when the mode switch is set to disabled.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-006
+CRITICALITY: High
+TITLE: Prevents Data Loss
+STATEMENT: >>>
+The device SHALL prevent all data loss and/or corruption of information in the bidirectional *UND* <-> *TND* operation, unless with explicit configuration for rate limiting (AGW-F-006) or translation (AGW-F-002).
+<<<
+VERIFICATION: >>>
+Inspection of vendor reliability testing reports to confirm that the device will not cause data loss or corruption at sustained loads of expected maximum traffic on TND and UND.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-007
+CRITICALITY: High
+TITLE: Preserves High Side Operation
+STATEMENT: >>>
+The device SHALL prevent degradation of any *TND* operation due to *UND* activity.
+<<<
+PUB_REFS: >>>
+    Isolation/partitioning of systems that have external access (e.g., Wi Fi, Bluetooth, OBD) from safety-critical systems and systems that can have important impacts on the operation of the vehicle.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, a.
+
+    Access control mechanisms to restrict access to critical ECUs, critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Central gateway or domain controller based architectures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, e.
+<<<
+VERIFICATION: >>>
+All the verification steps of all the applicable derivative requirements.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-008
+CRITICALITY: High
+TITLE: Security Assurance
+STATEMENT: >>>
+These devices SHALL satisfy a comprehensive set of product security requirements to yield high assurance of correct operation in the face of adversarial inputs to the device.
+<<<
+PUB_REFS: >>>
+    Access control mechanisms to restrict access to critical ECUs, critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Access control mechanisms that tend to restrict access to information about the operational state of the vehicle, privacy sensitive information, financially sensitive information, detailed design information, etc.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, c.
+
+    Mechanisms that effectively secure maintenance operations, including both diagnostic procedures and update procedures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, g.
+<<<
+VERIFICATION: >>>
+Inspection of a third party report to confirm that the device has no known vulnerabilities that could undermine the preventions listed previously, the security requirements of this series, or other the security requirements of derivative series.
+
+AND
+
+All the verification steps of all the applicable derivative requirements.
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-009
+CRITICALITY: Medium
+TITLE: Preserves Performance
+STATEMENT: >>>
+The device SHALL be scoped to sufficient detail to preserve network domain performance guarantees in *TND*.
+<<<
+VERIFICATION: >>>
+Inspection of vendor reliability testing reports to confirm that the device will not cause loss of performance in TND.
+
+AND
+
+All the verification steps of all the applicable derivative requirements.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: AGW-S-010
+TAGS: CONTAINS_OPTIONS
+CRITICALITY: High
+TITLE: Mode Switch Interlock
+STATEMENT: >>>
+The device SHALL have a means to temporarily disable the preventions listed previously and as noted with "unless with explicity authorized and authenticated configuration changes via the mode switch" The means must be impossible to use without explicit authorization by the vehicle owner. The device SHALL satisfy one or more of these methods to enable a switch into modes which allow OTA, spoofing, etc. from *UND* to *TND*. If more than one is satisfied then the effects of either switch could be in effect concurrently (i.e. a logical OR operation).
+
+* Physical Mode Switch Interlock: The device SHALL have at least one physical input that when grounded enables a switch into modes which allow OTA, spoofing, etc. from *UND* to *TND*.
+
+  * Example: Physical switch on dash
+
+* Virtual Mode Switch Interlock: The device SHALL allow a explicitly authorized and authenticated input over a connection to enable a switch into modes which allow OTA, spoofing, etc. from *UND* to *TND*.
+
+  * Example: Consent on Instrument cluster or infotainment device (and thus internal networks - possibly but not necessarily *TND*)
+
+  * Example: Consent from third party device / application that is signed with infrastructure Original Equiment Manufacturer (OEM) has access to verify
+<<<
+COMMENT: >>>
+A Virtual Mode Switch can be achieved by use of a Hardware Security Module (HSM) that can verify a Message Authentication Code (MAC) of a mode change message, and where the key used for verifying the MAC can be programmed securely via remote commands.
+
+Replay attacks are prevented by using a challenge-response protocol between the gateway and the remote device to exchange a sequence number or timestamp, for example the SKID3 protocol (ISO 9798-4, Chapter 5.2.2).
+<<<
+PUB_REFS: >>>
+* https://www.autosar.org/fileadmin/user_upload/standards/foundation/19-11/AUTOSAR_TR_SecureHardwareExtensions.pdf for an example of a suitable HSM (the SHE+ HSM).
+
+    Access control mechanisms to restrict access to critical ECUs, critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Access control mechanisms that tend to restrict access to information about the operational state of the vehicle, privacy sensitive information, financially sensitive information, detailed design information, etc.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, c.
+
+    Mechanisms that effectively secure maintenance operations, including both diagnostic procedures and update procedures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, g.
+<<<
+VERIFICATION: >>>
+For Virtual Mode Switch Interlock option:
+
+Inspection of a third party report confirming that virtual mode switch operation cannot be simulated, initiated, sustained or denied by attacker control of devices connected to a vehicle UND.
+
+For Physical Mode Switch Interlock option:
+
+Test to confirm that device disables preventions only when physical input is grounded
+<<<
+
+[REQUIREMENT]
+UID: AGW-S-011
+CRITICALITY: Medium
+TITLE: Mode Switch Indicated
+STATEMENT: >>>
+The device SHALL indicate to all domains that it is not performing normal operations.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that there is traffic sent on TND and UND when the mode switch is set to allow.
+
+AND
+
+Test to confirm that when the mode switch is set to allow, this state is communicated by sending traffic to TND and UND as documented.
+
+AND
+
+Test to confirm that for each TND and UND, replaying the status indicated traffic by the tester does not cause the (gateway) device to then permit the preventions. Performed by repeating the tests of AGW-S-001 and AGW-S-005 while replaying.
+<<<
+
+[[SECTION]]
+TITLE: Security Requirements for CAN Gateways
+
+[TEXT]
+STATEMENT: >>>
+The following security requirements must be satisfied by CAN gateways specifically. These CAN gateways are expected to meet all of the AGW-S-* Abstract Gateway security requirements and to also satisfy the CGW-S-* security requirements of this section.
+<<<
+
+[REQUIREMENT]
+UID: CGW-S-001
+CRITICALITY: Medium
+TITLE: Performant
+STATEMENT: >>>
+The device SHALL process and move CAN frames quickly enough to preserve performance on all network domains.
+<<<
+VERIFICATION: >>>
+Inspection of vendor reports to confirm that performance is sufficient for all vehicle TNDs.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-009
+  ROLE: Refines
+
+[[SECTION]]
+TITLE: Preserves Atomic Multicast: CGW-S-005* Series
+
+[TEXT]
+STATEMENT: >>>
+The device SHALL preserve the atomic multicast property of CAN buses. All CGW-S-005* requirements must be satisfied.
+<<<
+
+[REQUIREMENT]
+UID: CGW-S-005a
+CRITICALITY: High
+TITLE: Won't Drop Frames
+STATEMENT: The device SHALL NOT drop CAN frames in its bidirectional *UND* <-> *TND* operation, unless with explicit configuration for rate limiting or translating.
+VERIFICATION: >>>
+Inspection of vendor reports to confirm that CAN frames are, by design, not dropped.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-005b
+CRITICALITY: High
+TITLE: No Priority Inversion
+STATEMENT: The device SHALL schedule egress frames according to the CAN arbitration ID priority in its bidirectional *UND* <-> *TND* operation, to prevent priority inversion.
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that device's implementation follows the rules for CAN arbitration ID priority and the prevention of priority inversion.
+
+AND
+
+Inspection of vendor report detailing the use of a test environment that simulates a bidirectional UND <-> TND operation, with different arbitration ID priorities. Where, with the test environment set up, a CAN analyzer or other monitoring tool was used to observe the device's scheduling of egress frames and verify that it followed the correct arbitration ID priority: that higher-priority frames are always transmitted before lower-priority frames. The test methodoly described in the report should be comparable to the following:
+
+::
+
+       +---------+                                      +---------+
+       |         |                                      |         |
+       | Monitor |                                      | Monitor |
+       |         |                                      |         |
+       +---+-----+          +--------------+            +---+-----+
+    +-+    |        UND     |              |    TND         |       +-+
+    |+|    |                |   Security   |                |       |+|
+    |++----+----------+-----+    Gateway   +-------+--------+-------++|
+    |+|               |     |              |       |                |+|
+    +-+               |     +--------------+       |                +-+
+                      |                            |
+                      |                            |
+                      |        +--------+          |
+                      |        |        |          |
+                      +--------+ Tester +----------+
+                               |        |
+                               +--------+
+
+Figure 1
+
+The hardware setup is shown in Figure 1. The device under test (Security gateway) is connected to an untrustworthy network and a trustworthy network. A tester is connected to both networks and on each there is a monitor. The monitor is set up to receive traffic and acknowledge CAN frames.
+
+The tester operates a frame transmission process on the Trustworthy network. This performs the following steps:
+
+1. Wait until frame with ID 0x010 is seen on the Trustworthy network.
+2. Queue in FIFO order on the Trustworthy bus CAN frames with the following IDs (’S’ indicates a standard 11-bit CAN ID):
+
+   * 0x005 (S)
+   * 0x006 (S)
+
+   and repeat this queueing of the IDs until the process is stopped.
+
+The time between steps 1 and 2 must be less than 50 microseconds (i.e. much shorter than a CAN frame transmission time).
+
+The frames must be queued such that no idle time can appear between them. This is achieved by queueing the first frame and then immediately the second frame. When the first frame is transmitted then the third frame is queued. When the second frame is transmitted then the fourth frame is queued. And so on.
+
+The main test process is carried out in the following steps:
+
+1. The tester queues in FIFO order on the Untrustworthy network CAN frames with the following IDs:
+
+   * 0x010 (S)
+   * 0x011 (S)
+   * 0x00240000 (E)
+   * 0x008 (S)
+   * 0x001c0000 (E)
+   * 0x00100000 (E)
+   * 0x003 (S)
+   * 0x00080000 (E)
+   * 0x001 (S)
+
+   ,where ’S’ indicates a standard 11-bit CAN ID, ‘E’ indicates an extended 29-bit CAN ID.
+
+   The security gateway is programmed to allow these frames through from the Untrustworthy to the Trustworthy bus.
+
+   The frames are queued such that there is no idle time between them (using the technique described above).
+
+2. When the frame with ID 0x00100000 is seen on the Trustworthy bus then Trustworthy network process above is halted. If the frame is never seen then the Security gateway has failed the test.
+
+   The sequence of frames seen by the Monitor on the Untrustworthy bus should be:
+
+   * 0x010 (S)
+   * 0x011 (S)
+   * 0x00240000 (E)
+   * 0x008 (S)
+   * 0x001c0000 (E)
+   * 0x00100000 (E)
+   * 0x003 (S)
+   * 0x00080000 (E)
+   * 0x001 (S)
+
+   If this sequence is not seen then there is a fault in the tester.
+
+   The sequence of frames seen by the Monitor on the Trustworthy bus should be:
+
+   * 0x010 (S)
+   * 0x005 (S)
+   * 0x006 (S)
+     … (0x005 and 0x006 repeated for some number of times, the exact number depending on the speed of either bus and the payloads used for the frames)
+   * 0x001 (S)
+   * 0x00080000 (E)
+   * 0x003 (S)
+   * 0x00100000 (E)
+   * 0x005 (S)
+   * 0x006 (S)
+     … (0x005 and 0x006 may appear again, depending on how long it takes for the tester to halt the Trustworthy network process)
+   * 0x001c0000 (E)
+   * 0x008 (S)
+   * 0x00240000 (E)
+   * 0x011 (S)
+
+   If the sequence seen by the Monitor deviates from the above then the Security gateway has failed the test.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-005c
+CRITICALITY: High
+TITLE: Preserves Ordering
+STATEMENT: The device SHALL preserve ordering egress frames with respect to their ingress order within an equivalence class of CAN arbitration ID priorities, to prevent out-of-order delivery.
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that the device is NOT implemented using SocketCAN -- SocketCAN drivers will randomly switch order of frames at both the same arbitration ID and among varied arbitration IDs.
+
+AND
+
+Inspection of vendor report detailing the use of a test environment that simulates a bidirectional UND <-> TND operation, with multiple nodes transmitting frames with different arbitration ID priorities. Where, with the test environment set up, a CAN analyzer or other monitoring tool was used to observe the device's scheduling of egress frames and verify that it followed the correct ordering within the same arbitration IDs: that frames are sent in the order received within the same arbitration ID.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-005d
+CRITICALITY: High
+TITLE: FIFO but Also Priority
+STATEMENT: The device SHALL schedule egress for in-order send but not across CAN arbitration ID priorities.
+VERIFICATION: >>>
+Inspection of vendor report detailing the use of a test environment that simulates a bidirectional UND <-> TND operation, with multiple nodes transmitting frames with different arbitration ID priorities. Where, with the test environment set up, a CAN analyzer or other monitoring tool was used to observe the device's scheduling of egress frames and verify that it followed the correct ordering within the same arbitration IDs: that frames are sent in the order received within the same arbitration ID but that also priority of arbitration IDs are respected.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-005e
+CRITICALITY: Medium
+TITLE: Preserves Jitter
+STATEMENT: The device SHALL have ingress-to-egress latency variability (jitter) low enough to not affect the *TND* network domain performance requirements in the worst case.
+VERIFICATION: >>>
+Inspection of vendor report detailing the use of a test environment that simulates a network load to measure jitter of the device. Where, with the test environment set up, a CAN analyzer or other monitoring tool was used to observe the device's scheduling of egress frames and verify the jitter introduced. The test methodoly described in the report should be comparable to the following:
+
+::
+
+       +---------+                                      +---------+
+       |         |                                      |         |
+       | Monitor |                                      | Monitor |
+       |         |                                      |         |
+       +---+-----+          +--------------+            +---+-----+
+    +-+    |        UND     |              |    TND         |       +-+
+    |+|    |                |   Security   |                |       |+|
+    |++----+----------+-----+    Gateway   +-------+--------+-------++|
+    |+|               |     |              |       |                |+|
+    +-+               |     +--------------+       |                +-+
+                      |                            |
+                      |                            |
+                      |        +--------+          |
+                      |        |        |          |
+                      +--------+ Tester +----------+
+                               |        |
+                               +--------+
+
+Figure 1
+
+The security gateway is configured to allow a test frame through the security gateway. Both the Untrustworthy and Trustworthy networks are free of any other traffic. Monitor units are set up to listen to and acknowledge CAN frames.
+
+The tester checks for jitter removal by injecting a sequence of periodic frames on to the Untrustworthy network and measuring the timing of frames on the Trustworthy network.
+
+In the tester, a send process is defined to run from a periodic timer event set to 100ms:
+
+1. Wait for timing event
+2. Delay for a time t
+3. Queue a frame in the CAN controller connected to the Untrustworthy network
+
+The tester must complete the queueing of the CAN frame within 5 microseconds of the timer delay.
+
+Repeat steps 1 to 3 for a sequence of values of t. The values of t should be as follows:
+
+* 0.5ms
+* 99.0ms
+* 0.5ms
+* 80.0ms
+* 0.5ms
+* 70.0ms
+* 0.5ms
+* 60.0ms
+* 0.5ms
+* 50.0ms
+* 60.0ms
+* 70.0ms
+* 80.0ms
+* 90.0ms
+* 90.0ms
+
+The tester should take accurate (1 microsecond) start-of-frame (SOF) timestamps for each CAN frame on the Trustworthy network.
+
+The test fails if a total of 15 frames were not received from the Trustworthy network.
+
+The test fails if time between the SOF timestamp of the first frame received and the SOF timestamp of the last frame received exceeds 1490.055ms or is less than 1489.945ms.
+
+The test fails if the difference between the SOF timestamp of a frame and its subsequent frame exceeds 100.055ms or is less than 99.945ms.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Prevents CAN Attacks
+
+[REQUIREMENT]
+UID: CGW-S-006
+CRITICALITY: High
+TITLE: Prevents Bus Flood Attacks
+STATEMENT: The device SHALL prevent generating bus flood attacks on *TND* from messages originating on *UND*.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.1 for a description of the bus flood attack.
+<<<
+VERIFICATION: >>>
+Test to confirm that, for both permitted and prevented UND->TND transport, translation or encapsulation by the gateway: that sending the highest rate of traffic on UND does not result in transmit at the highest rate on TND.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-002
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-007
+CRITICALITY: High
+TITLE: Prevents (Simple) Frame Spoofing
+STATEMENT: The device SHALL prevent generating simple frame spoofing attacks on *TND* from messages originating on *UND*.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.2 for a description of simple frame spoofing attack.
+<<<
+VERIFICATION: >>>
+Test to confirm that for each permitted UND->TND transport, translation or encapsulation by the gateway: that sending CAN frames from UND to TND with it (one of the transport, translation or encapsulation) does not cause any CAN frames that will be interpreted by any nodes in TND as being traffic that originated from a node in a TND.
+
+AND
+
+Inspection of design artifacts or a third party analysis to confirm that there is no possible CAN frames on UND that will result in CAN frames on TND that would be interpreted by any nodes in TND as being traffic that originated from a node in a TND.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-003
+  ROLE: Refines
+
+[[SECTION]]
+TITLE: Prevents CAN Protocol Attacks: CGW-S-008* Series
+
+[TEXT]
+STATEMENT: >>>
+The CAN gateways must prevent CAN protocol attacks in *TND*. At the time of drafting these requirements this can be accomplished by satisfying all of the CGW-S-008* requirements that follow.
+
+CAN Protocol Attack
+    Attacks on CAN networks requiring GPIO control of CAN_TX (and optionally CAN_RX) pins.
+
+c.f. https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.1 for further definition of CAN protocol attacks.
+<<<
+
+[REQUIREMENT]
+UID: CGW-S-008a
+CRITICALITY: High
+TITLE: Prevents Adaptive Frame Spoofing
+STATEMENT: The device SHALL prevent generating adaptive frame spoofing attacks on *TND* from messages originating on *UND*.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.3 for a description of adaptive frame spoofing attack.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that the (gateway) device is not implemented using direct-wired transceivers from TND to UND. In all other cases the delays introduced by the gateway will implicitly prevent Adaptive Frame Spoofing Attacks.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-003
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-008b
+CRITICALITY: High
+TITLE: Prevents Error Passive Attack Step
+STATEMENT: The device SHALL prevent generating attacks that drive a ECU on *TND* into error passive state from messages originating on *UND*. This will in turn prevent error passive spoofing attacks.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.4 for a description of error passive spoofing attack.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that the (gateway) device does not permit direct (GPIO-like) control of the TND CAN bus from UND (e.g. anything other than direct-wiring). In all other cases the separation of UND and TND will preclude the possibility of an error passive attack step.
+
+AND
+
+Inspection of vendor documentation to confirm that the (gateway) device is not implemented with SoC-integrated CAN controllers whose pins can be multiplexed with GPIOs. OR To confirm that the device software has very high security assurance to guarantee that malicious software could never control the GPIOs or the pinmuxing.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-008c
+CRITICALITY: High
+TITLE: Prevents Double Receive Attack
+STATEMENT: The device SHALL prevent generating double receive attacks on *TND* from messages originating on *UND*.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.5 for a description of the double receive attack.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that the (gateway) device does not permit direct (GPIO-like) control of the TND CAN bus from UND (e.g. anything other than direct-wiring). In all other cases the separation of UND and TND will preclude the possibility of a double receive attack.
+
+AND
+
+Inspection of vendor documentation to confirm that the (gateway) device is not implemented with SoC-integrated CAN controllers whose pins can be multiplexed with GPIOs. OR To confirm that the device software has very high security assurance to guarantee that malicious software could never control the GPIOs or the pinmuxing.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-007
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-008d
+CRITICALITY: High
+TITLE: Prevents Bus-Off Attack
+STATEMENT: The device SHALL prevent generating bus-off attacks on *TND* from messages originating on *UND*.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.6 for a description of the bus-off attack.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that the (gateway) device does not permit direct (GPIO-like) control of the TND CAN bus from UND (e.g. anything other than direct-wiring). In all other cases the separation of UND and TND will preclude the possibility of a bus off attack.
+
+AND
+
+Inspection of vendor documentation to confirm that the (gateway) device is not implemented with SoC-integrated CAN controllers whose pins can be multiplexed with GPIOs. OR To confirm that the device software has very high security assurance to guarantee that malicious software could never control the GPIOs or the pinmuxing.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-002
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: CGW-S-008e
+CRITICALITY: High
+TITLE: Prevents Freeze Doom Loop Attack
+STATEMENT: The device SHALL prevent generating freeze doom loop attacks on *TND* from messages originating on *UND*.
+PUB_REFS: >>>
+* https://canislabs.com/downloads/2020-02-14-White-Paper-CAN-Security.pdf section 2.7 for a description of the freeze doom loop attack.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that the (gateway) device does not permit direct (GPIO-like) control of the TND CAN bus from UND (e.g. anything other than direct-wiring). In all other cases the separation of UND and TND will preclude the possibility of a freeze doom loop attack
+
+AND
+
+Inspection of vendor documentation to confirm that the (gateway) device is not implemented with SoC-integrated CAN controllers whose pins can be multiplexed with GPIOs. OR To confirm that the device software has very high security assurance to guarantee that malicious software could never control the GPIOs or the pinmuxing.
+
+AND
+
+Inspection of design artifacts or a third party analysis to confirm that there is no possible CAN frames on UND that will result in CAN frames on TND that would match any arbitration IDs sent by nodes on TND. Otherwise there is a non-zero probability that the gateway's TND CAN controller could enter a freeze doom loop with a node on TND.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-002
+  ROLE: Refines
+
+[[/SECTION]]
+
+[REQUIREMENT]
+UID: CGW-S-013
+CRITICALITY: Medium
+TITLE: Impervious to Janus Attack
+STATEMENT: The device SHALL not enable Janus Attacks in any group of OEM supplied components on any of its interfaces.
+COMMENT: Susceptibility to Janus Attacks is a property of a network of devices, not only of a single device. The entire *TND* is expected to be impervious to Janus Attacks since it should all be OEM supplied components there. In *UND* it is not possible to require that this device nor all the devices are impervious to Janus Attacks since *UND* is explicitly permitted to contain non-OEM supplied components. What is required of this device on *UND* is that if there are other OEM supplied devices on *UND* then this device cannot enable Janus Attacks on that collection of all those OEM supplied devices on *UND*.
+PUB_REFS: >>>
+* https://kentindell.github.io/2021/07/15/janus-attack/ for a description of the Janus Attack
+<<<
+VERIFICATION: >>>
+Inspection of vendor report to confirm that all devices on TND have been tested to demonstrate the same configured CAN sampling point.
+
+AND
+
+Inspection of vendor report to confirm that all original devices on UND have been tested to demonstrate the same configured CAN sampling point.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-008
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Security Requirements for J1939 Gateways
+
+[TEXT]
+STATEMENT: >>>
+J1939 Gateways are expected to meet all of the CGW-S-* CAN Gateway Security Requirements and to also satisfy the J1939GW-S-* security requirements of this section.
+<<<
+
+[REQUIREMENT]
+UID: J1939GW-S-039
+CRITICALITY: Medium
+TITLE: Prevents J1939 Address Spoofing
+STATEMENT: The device shall prevent the gatewaying (any of transport, translate, filter, or encapsulate) of any traffic onto *TND* with a J1939 address which is claimed by any of the devices in *TND*.
+VERIFICATION: >>>
+Test to confirm that for all source addresses claimed on TND, sending J1939 frames with any such source address is prevented from being transported, translated or encapsulated by the gateway to the TND; regardless of  permitted UND->TND transport, translation or encapsulation mechanisms that maybe configured on the gateway.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-003
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: J1939GW-S-029
+CRITICALITY: High
+TITLE: Prevents Address Claim Attacks
+STATEMENT: The device SHALL prevent generating address claim attacks on *TND* from messages originating on *UND*.
+COMMENT: **Note to implementors**: Performing no gatewaying (any of transport, translate, filter, or encapsulate) of address claims onto *TND* would satisfy this requirement.
+PUB_REFS: >>>
+* https://www.aut.upt.ro/~bgroza/Papers/j1939.pdf and https://doi.org/10.4271/02-14-03-0026 for a description of the address claim attack.
+<<<
+VERIFICATION: >>>
+Test to confirm that for all source addresses claimed on TND, no address claims can be sent from UND for that address regardless of permitted transports, translations or encapsulations configured.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-002
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: J1939GW-S-089
+CRITICALITY: High
+TITLE: Impervious to Address Claim Attacks
+STATEMENT: The device SHALL not be susceptible to address claim attacks on any of its interfaces (e.g. *TND* and *UND*)
+PUB_REFS: >>>
+* https://www.aut.upt.ro/~bgroza/Papers/j1939.pdf and https://doi.org/10.4271/02-14-03-0026 for a description of the address claim attack.
+<<<
+VERIFICATION: >>>
+Inspection of vendor documentation to confirm that mitigations against address claim attacks are implemented on all of the interfaces of the device.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: AGW-S-008
+  ROLE: Refines
+
+[[/SECTION]]
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Security Requirements for Abstract Unintended Gateways
+
+[TEXT]
+STATEMENT: >>>
+Security requirements that must be satisfied by any device which *could be* a gateway (due to malicious code) but is not intended to be one.
+<<<
+
+[REQUIREMENT]
+UID: NGW-S-001
+CRITICALITY: High
+TITLE: Security Assurance
+STATEMENT: These devices SHALL satisfy a comprehensive set of product security requirements to yield high assurance of correct operation in the face of adversarial inputs to the device.
+PUB_REFS: >>>
+    Access control mechanisms to restrict access to critical ECUs, critical modes of every ECU (diagnostic mode), and their data.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+
+    Access control mechanisms that tend to restrict access to information about the operational state of the vehicle, privacy sensitive information, financially sensitive information, detailed design information, etc.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, c.
+
+    Mechanisms that effectively secure maintenance operations, including both diagnostic procedures and update procedures.
+
+    -- SAE J3061: Appendix F - VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, g.
+<<<
+
+[[SECTION]]
+TITLE: Prevents Gateway Functions
+
+[REQUIREMENT]
+UID: NGW-S-002
+CRITICALITY: High
+TITLE: Won't Transport
+STATEMENT: These devices SHALL NOT transport/'move' information between two separate network 'domains,' in either bidirection.
+
+[REQUIREMENT]
+UID: NGW-S-003
+CRITICALITY: High
+TITLE: Won't Translate
+STATEMENT: These devices SHALL NOT translate/transform the information between the separate network domains.
+
+[REQUIREMENT]
+UID: NGW-S-004
+CRITICALITY: High
+TITLE: Won't Filter, Drop or Rate Limit
+STATEMENT: These devices SHALL NOT select which information is transported and/or translated between the network domains.
+
+[REQUIREMENT]
+UID: NGW-S-005
+CRITICALITY: High
+TITLE: Won't Encapsulate
+STATEMENT: These devices SHALL NOT encapsulate information as it is transported and/or translated between the network domains.
+
+[[/SECTION]]
+
+[[/SECTION]]

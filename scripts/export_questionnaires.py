@@ -39,6 +39,58 @@ class ExportQuestionnaires:
             print(exc.to_print_message())  # noqa: T201
             sys.exit(1)
 
+    def resolve_ancestor_meta(self, node: SDocNode):
+        """
+        Recursively look up criticality and statement from the requirement
+        or its parent/ancestor nodes in the traceability graph.
+        """
+        assert self.traceability_index is not None
+
+        crit = node.get_meta_field_value_by_title("CRITICALITY")
+        title = node.get_meta_field_value_by_title("TITLE")
+        stmt = node.get_meta_field_value_by_title("STATEMENT")
+
+        current = node
+        parents = self.traceability_index.graph_database.get_link_values(
+            link_type=GraphLinkType.NODE_TO_PARENT_NODES,
+            lhs_node=current,
+            edge=ALL_EDGES,
+        )
+
+        parent_title = ""
+        parent_stmt = ""
+        while parents:
+            p_node = parents[0]
+            p_crit = p_node.get_meta_field_value_by_title("CRITICALITY")
+            if not crit and p_crit:
+                crit = p_crit
+
+            p_t = p_node.get_meta_field_value_by_title("TITLE")
+            if not parent_title and p_t:
+                parent_title = p_t
+
+            p_s = p_node.get_meta_field_value_by_title("STATEMENT")
+            if p_s:
+                parent_stmt = p_s
+
+            parents = self.traceability_index.graph_database.get_link_values(
+                link_type=GraphLinkType.NODE_TO_PARENT_NODES,
+                lhs_node=p_node,
+                edge=ALL_EDGES,
+            )
+
+        crit_str = crit.strip() if crit else "None"
+        display_title = title.strip() if title else parent_title.strip()
+        display_stmt = stmt.strip() if stmt else ""
+        if parent_stmt and parent_stmt.strip() != display_stmt:
+            if display_stmt:
+                display_stmt = f"{display_stmt}\n\nParent Requirement Details:\n{parent_stmt.strip()}"
+            else:
+                display_stmt = parent_stmt.strip()
+
+        display_text = f"{display_title}\n{display_stmt}" if display_title else display_stmt
+        return crit_str, display_text
+
     def export(self) -> None:
         assert self.traceability_index is not None
 
@@ -49,7 +101,7 @@ class ExportQuestionnaires:
         fields = [
             "UID",
             "Criticality",
-            "Title / Statement",
+            "Requirement Specification",
             "Yes",
             "In-Part",
             "No",
@@ -57,8 +109,8 @@ class ExportQuestionnaires:
             "Notes",
         ]
         column_widths = ExcelGenerator._init_columns_width(fields)
-        column_widths["Title / Statement"].update(
-            {"max_width": column_widths["Title / Statement"]["max_width"] * 5}
+        column_widths["Requirement Specification"].update(
+            {"max_width": column_widths["Requirement Specification"]["max_width"] * 5}
         )
         column_widths["Notes"].update(
             {"max_width": column_widths["Notes"]["max_width"] * 4}
@@ -79,13 +131,16 @@ class ExportQuestionnaires:
             wrap_format = workbook.add_format({"text_wrap": True})
 
             for document in self.traceability_index.document_tree.document_list:
+                # Only generate worksheets for ECU Class specifications
+                if not document.title.startswith("Class "):
+                    continue
+
                 document_iterator = SDocDocumentIterator(document)
                 req_nodes = []
                 for node, _ in document_iterator.all_content(print_fragments=False):
                     if isinstance(node, SDocNode) and node.node_type == "REQUIREMENT":
                         req_nodes.append(node)
 
-                # Skip overview or descriptive documents that do not define requirements
                 if not req_nodes:
                     continue
 
@@ -97,31 +152,18 @@ class ExportQuestionnaires:
 
                 # Sort by criticality descending
                 def sort_key(node: SDocNode):
-                    crit_val = node.get_meta_field_value_by_title("CRITICALITY")
-                    if crit_val:
-                        crit_val = crit_val.strip()
-                    else:
-                        crit_val = "None"
-                    return criticality_order.get(crit_val, 0)
+                    crit_str, _ = self.resolve_ancestor_meta(node)
+                    return criticality_order.get(crit_str, 0)
 
                 req_nodes.sort(key=sort_key, reverse=True)
 
                 row = 0
                 for row, node in enumerate(req_nodes):
                     uid = node.reserved_uid or ""
-                    crit_raw = node.get_meta_field_value_by_title("CRITICALITY")
-                    crit = crit_raw.strip() if crit_raw else ""
-
-                    stmt_raw = node.get_meta_field_value_by_title("STATEMENT")
-                    stmt = stmt_raw.strip() if stmt_raw else ""
-
-                    title_raw = node.get_meta_field_value_by_title("TITLE")
-                    title = title_raw.strip() if title_raw else ""
-
-                    display_text = f"{title}\n{stmt}" if title else stmt
+                    crit_str, display_text = self.resolve_ancestor_meta(node)
 
                     worksheet.write(row + 1, 0, uid, wrap_format)
-                    worksheet.write(row + 1, 1, crit, wrap_format)
+                    worksheet.write(row + 1, 1, crit_str, wrap_format)
                     worksheet.write(row + 1, 2, display_text, wrap_format)
 
                 if req_nodes:

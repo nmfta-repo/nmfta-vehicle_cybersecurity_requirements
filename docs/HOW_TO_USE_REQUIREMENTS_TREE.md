@@ -23,9 +23,12 @@ Commercial truck architectures partition ECUs into distinct device classes based
 
 ---
 
-## 2. Directory Layout
+## 2. Directory Layout & Modular Architecture
 
-The repository is organized by class under the `requirements/` directory:
+The repository employs a DRY (Don't Repeat Yourself) modular architecture:
+- **Canonical requirements** are defined once under `requirements/common/` by capability domain (baseline ECU, wireless connectivity, vehicle bus, gateway controls, cloud backend, mobile application).
+- **Class specifications** under `requirements/class_N/` are lightweight compositions that refine and scope the common requirements for that specific ECU class using StrictDoc relations (`RELATIONS: - TYPE: Parent ... ROLE: Refines`).
+- **Overarching front matter** (preface, disclaimer of liability, glossary) is maintained once in `requirements/overview/00_overview.sdoc`.
 
 ```text
 nmfta-vehicle_cybersecurity_requirements/
@@ -38,22 +41,29 @@ nmfta-vehicle_cybersecurity_requirements/
 │   │   └── 00_overview.sdoc         # Overarching preface, disclaimer, and glossary
 │   ├── shared/
 │   │   └── grammar.sgra             # Standardized StrictDoc grammar definition
+│   ├── common/                      # Canonical, modular requirement domains
+│   │   ├── baseline_ecu.sdoc        # Baseline ECU security requirements (AA, AC, CR, etc.)
+│   │   ├── wireless_connectivity.sdoc # Cellular, Wi-Fi, BLE, and wireless interfaces
+│   │   ├── vehicle_bus_connection.sdoc # CAN, J1939, Ethernet bus controls
+│   │   ├── vehicle_gateway_controls.sdoc # Architectural and central gateway filtering
+│   │   ├── cloud_backend.sdoc       # Cloud and server infrastructure requirements
+│   │   └── mobile_app.sdoc          # Mobile application security requirements
 │   ├── class_0_telematics/
-│   │   └── class_0_telematics.sdoc  # Master specification for Class 0
+│   │   └── class_0_telematics.sdoc  # Composes Baseline + Cloud + Comms + Bus + Mobile
 │   ├── class_1_wireless_multiseg/
-│   │   └── class_1_wireless_multiseg.sdoc
+│   │   └── class_1_wireless_multiseg.sdoc # Composes Baseline + Comms + Bus
 │   ├── class_2_gateway/
-│   │   └── class_2_gateway.sdoc     # Master specification for Class 2 (Gateways)
+│   │   └── class_2_gateway.sdoc     # Composes Baseline + Bus + Gateway Controls
 │   ├── class_3_multiseg_untrusted/
-│   │   └── class_3_multiseg_untrusted.sdoc
+│   │   └── class_3_multiseg_untrusted.sdoc # Composes Baseline + Bus
 │   ├── class_4_multiseg/
-│   │   └── class_4_multiseg.sdoc
+│   │   └── class_4_multiseg.sdoc    # Composes Baseline ECU controls
 │   ├── class_5_single_seg_high_risk/
-│   │   └── class_5_single_seg_high_risk.sdoc
+│   │   └── class_5_single_seg_high_risk.sdoc # Composes Baseline ECU controls
 │   ├── class_6_single_seg_med_risk/
-│   │   └── class_6_single_seg_med_risk.sdoc
+│   │   └── class_6_single_seg_med_risk.sdoc # Composes Baseline ECU controls
 │   └── class_7_single_seg_low_risk/
-│       └── class_7_single_seg_low_risk.sdoc
+│       └── class_7_single_seg_low_risk.sdoc # Composes Baseline ECU controls
 └── media/                           # Diagrams and image assets
 ```
 
@@ -128,22 +138,28 @@ Bench test attempting unauthorized OTA broadcast on UND and verifying rejection.
 <<<
 ```
 
-### Requirement Relations (Refinement & Traceability)
+### Requirement Relations & Class Scoping (Approach A)
 
-When a requirement refines or depends on another requirement, specify `RELATIONS`:
+In the modular architecture, class documents (`requirements/class_N/`) refine canonical requirements from `requirements/common/`. A class node links to its canonical parent via `RELATIONS`:
 
 ```sdoc
 [REQUIREMENT]
-UID: C2-CGW-S-005b
-CRITICALITY: High
+UID: C0-AA-010
+TITLE: Apply Baseline Application Authentication to Class 0
 STATEMENT: >>>
-The Central Gateway SHALL restrict J1939 diagnostic memory access commands.
+Class 0 telematics ECUs SHALL implement application authentication per Baseline ECU controls.
 <<<
 RELATIONS:
 - TYPE: Parent
-  VALUE: C2-AGW-S-007
+  VALUE: AA-010
   ROLE: Refines
 ```
+
+When authoring refined requirements or class-specific specializations:
+1. **Canonical Requirements (`requirements/common/`)**: Contain the authoritative definition, default criticality, publication references, and verification guidance.
+2. **Class Refinements (`requirements/class_N/`)**: Scope or specialize the requirement for that vehicle class, inheriting or tailoring parent statements. The questionnaire exporter automatically walks parent relations to resolve full statements, verification criteria, and criticalities into the exported supplier spreadsheets.
+3. **Multi-level Refinement**: A domain requirement (e.g. `CLOUD-AA-010`) may itself refine a baseline requirement (`AA-010`), and a class requirement (`C0-CLOUD-AA-010`) will refine `CLOUD-AA-010`. The tooling resolves ancestors at any depth.
+
 
 ---
 
