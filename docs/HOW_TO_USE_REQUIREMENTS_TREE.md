@@ -34,6 +34,8 @@ nmfta-vehicle_cybersecurity_requirements/
 ├── scripts/
 │   └── export_questionnaires.py     # Exports supplier Excel questionnaires
 ├── requirements/
+│   ├── overview/
+│   │   └── 00_overview.sdoc         # Overarching preface, disclaimer, and glossary
 │   ├── shared/
 │   │   └── grammar.sgra             # Standardized StrictDoc grammar definition
 │   ├── class_0_telematics/

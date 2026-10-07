@@ -79,17 +79,21 @@ class ExportQuestionnaires:
             wrap_format = workbook.add_format({"text_wrap": True})
 
             for document in self.traceability_index.document_tree.document_list:
-                sheet_title = document.title[:31].replace(":", "-").replace("/", "-")
-                worksheet = workbook.add_worksheet(name=sheet_title)
-
-                for idx, field in enumerate(fields):
-                    worksheet.write(0, idx, field)
-
                 document_iterator = SDocDocumentIterator(document)
                 req_nodes = []
                 for node, _ in document_iterator.all_content(print_fragments=False):
                     if isinstance(node, SDocNode) and node.node_type == "REQUIREMENT":
                         req_nodes.append(node)
+
+                # Skip overview or descriptive documents that do not define requirements
+                if not req_nodes:
+                    continue
+
+                sheet_title = document.title[:31].replace(":", "-").replace("/", "-")
+                worksheet = workbook.add_worksheet(name=sheet_title)
+
+                for idx, field in enumerate(fields):
+                    worksheet.write(0, idx, field)
 
                 # Sort by criticality descending
                 def sort_key(node: SDocNode):

@@ -1,0 +1,105 @@
+[DOCUMENT]
+TITLE: Vehicle Cybersecurity Requirements Overview and General Information
+
+[GRAMMAR]
+IMPORT_FROM_FILE: @vcr_grammar
+
+[TEXT]
+STATEMENT: >>>
+These recommended security requirements are intended to be informative, not directional in nature. While all reasonable steps have been taken to ensure that the recommendations are well-supported by our research and third-party verification, NMFTA and the parties contributing to these recommendations do not accept liability or responsibility for any damage or harm incurred as a result of actions taken based upon these recommendations.
+<<<
+
+[[SECTION]]
+TITLE: Preface and Disclaimer of Liability
+
+[TEXT]
+STATEMENT: >>>
+THE INFORMATION CONTAINED HEREIN IS PROVIDED “AS IS” WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
+INFORMATION IS WITH THE USER.
+
+NMFTA and contributing industry working group participants disclaim any
+liability for direct, indirect, incidental, special, or consequential damages
+resulting from the implementation, procurement, or use of these cybersecurity
+requirements or associated verification procedures.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Glossary and List of Abbreviations
+
+[TEXT]
+STATEMENT: >>>
+============== =======================================================
+Abbreviation   Term
+============== =======================================================
+ASVS           Application Security Verification Standard
+BSIMM          Building Security in Maturity Model
+CAIQ           Consensus Assessment Initiative Questionnaire
+CAN            Controller Area Network
+CGW            Central Gateway
+CTIA           Cellular Telecommunications and Internet Association
+Cyber ITL      Cyber Independent Testing Labs
+DHS            Department of Homeland Security
+DOT            Department of Transportation
+ECU            Electronic Control Unit
+ELD            Electronic Logging Device
+ETSI           European Telecommunications Standards Institute
+FM             Fleet Manager
+FMI            Fleet Management Information
+FMIS           Fleet Management Information System
+HMI            Human Machine Interface
+HDVCR          Heavy Duty Vehicle Cybersecurity Requirements
+IEC            International Electrotechnical Commission
+IS             Information System
+ISO            International Organization for Standardization
+IVG            Intelligent Vehicle Gateway
+MAC            Mandatory Access Controls
+MASVS          Mobile Application Security Verification Standard
+MSTG           Mobile Security Testing Guide
+NIST           National Institute of Standards and Technology
+NMFTA          National Motor Freight Traffic Association, Inc.
+OBD            On-Board Diagnostics
+OEM            Original Equipment Manufacturer
+OTA            Over-The-Air Update
+OWASP          Open Web Application Security Project
+RFP            Request for Proposal
+RFPCTL         Request for Proposal Contract Template Language
+TND            Trusted Network Domain
+TSP            Telematics Service Provider
+UID            Unique Identifier
+UND            Untrusted Network Domain
+VCR            Vehicle Cybersecurity Requirements
+VCRWG          Vehicle Cybersecurity Requirements Working Group
+WAN            Wide Area Network
+============== =======================================================
+
+Untrusted Network Domain (UND):
+    A network domain (or segment) that contains **any** of the following:
+    a) wireless communication or reachable wirelessly (e.g. J2497, ISO 15118, Bluetooth, Wi-Fi, cellular)
+    b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
+    c) a telematics device that does not satisfy the HD VCR requirements
+    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements
+
+Trusted Network Domain (TND):
+    A network domain (or segment) that **does not contain any** of the untrusted attributes listed above.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Acknowledgements
+
+[TEXT]
+STATEMENT: >>>
+We would like to acknowledge the contributions of DOT/Volpe Center, motor freight carrier members, and the participants of the NMFTA Vehicle Cybersecurity Requirements Working Group (VCRWG) and Telematics Security Requirements working group.
+
+Named participants include Derek Held of Zonar Systems, representatives from Geotab, Altaz Valani of Security Compass, Mark Zachos of DG Technologies, Richard M. Litwinczuk (Senior Cybersecurity Engineer, Land Cyber Mission Assurance Program DND), Jacob D'Aoust (Junior Researcher, DeepMicro Limited), as well as numerous fleet managers, motor carriers, and telematics service providers (TSPs).
+
+The authors also acknowledge the contributions of the NMFTA Request for Proposal Contract Template Language (RFPCTL) working group.
+<<<
+
+[[/SECTION]]

@@ -4,81 +4,12 @@ TITLE: Class 0 Telematics Security Requirements
 [GRAMMAR]
 IMPORT_FROM_FILE: @vcr_grammar
 
-[TEXT]
-STATEMENT: >>>
-These recommended security requirements are intended to be informative, not directional in nature. While all reasonable steps have been taken to ensure that the recommendations are well-supported by our research and third-party verification, NMFTA and the parties contributing to these recommendations do not accept liability or responsibility for any damage or harm incurred as a result of actions taken based upon these recommendations.
-<<<
-
-[[SECTION]]
-TITLE: Acknowledgements
-
-[TEXT]
-STATEMENT: >>>
-We would like to acknowledge the contributions of DOT/Volpe Center and the members of the Cybersecurity Requirements for Telematics Systems working group. At the time this report was published, named participants included Derek Held of Zonar Systems, several representatives from Geotab, Altaz Valani of Security Compass, Mark Zachos, President of DG Technologies, Richard M. Litwinczuk, Senior Cybersecurity Engineer, Land Cyber Mission Assurance Program DND, Jacob D'Aoust, Junior Researcher, DeepMicro Limited. The working group benefited greatly from the contributions of several other fleet managers and telematics service providers (TSPs) who wish to remain anonymous.
-
-The authors would also like to acknowledge the contributions of the NMFTA Request for Proposal Contract Template Language (RFPCTL) working group.
-<<<
-
-[[/SECTION]]
-
-[[SECTION]]
-TITLE: List of Abbreviations
-
-[TEXT]
-STATEMENT: >>>
-============== =======================================================
-Abbreviation   Term
-============== =======================================================
-ASVS           Application Security Verification Standard
-BSIMM          Building Security in Maturity Model
-CAIQ           Consensus Assessment Initiative Questionnaire
-CTIA           Cellular Telecommunications and Internet Association
-Cyber ITL      Cyber Independent Testing Labs
-DHS            Department of Homeland Security
-DOT            Department of Transportation
-DOT            Department of Transportation
-ELD            Electronic Logging Device
-ETSI           European Telecommunications Standards Institute
-FM             Fleet Manager
-FMI            Fleet Management Information
-HMI            Human Machine Interface
-IEC            International Electrotechnical Commission
-IS             Information System
-ISO            International Organization for Standardization
-IVG            Intelligent Vehicle Gateway
-MAC            Mandatory Access Controls
-MASVS          Mobile Application Security Verification Standard
-MSTG           Mobile Security Testing Guide
-NIST           National Institute of Standards and Technology
-NMFTA          National Motor Freight Traffic Association, Inc.
-OWASP          Open Web Application Security Project
-RFP            Request for Proposal
-RFPCTL         Request for Proposal Contract Template Language
-============== =======================================================
-<<<
-
-[[/SECTION]]
-
 [[SECTION]]
 TITLE: Foreword
 
 [TEXT]
 STATEMENT: >>>
 After the US DOT/Volpe published “Telematics Cybersecurity Primer for Agencies” in June 2017, we wanted to create resources for use by our motor freight carrier members to procure new telematics systems such as Electronic Logging Devices (ELD). Starting with the telematics cybersecurity controls and recommendations made by the Primer, a working group was assembled to complete a detailed list of testable cybersecurity requirements for all the components of a telematics system. We are fortunate to have been able to collaborate with DOT/Volpe and to see the efforts of the working group come to fruition through the publication of this report, which is a natural refinement of the security controls defined in the Primer.
-<<<
-
-[[/SECTION]]
-
-[[SECTION]]
-TITLE: Preface
-
-[TEXT]
-STATEMENT: >>>
-THE INFORMATION CONTAINED HEREIN IS PROVIDED “AS IS” WITHOUT WARRANTY OF
-ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
-INFORMATION IS WITH THE USER.
 <<<
 
 [[/SECTION]]
