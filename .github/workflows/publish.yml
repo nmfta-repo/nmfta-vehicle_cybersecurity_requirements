@@ -36,6 +36,10 @@ jobs:
           cp -pr media docs/html/nmfta-vehicle_cybersecurity_requirements/ || true
           cp -pr docs/reqif/* docs/html/
 
+      - name: Validate Cascaded Requirements Text Fidelity
+        run: |
+          python scripts/validate_cascaded_requirements.py
+
       - name: Run custom questionnaire export script
         run: |
           mkdir -p docs/html

@@ -10,22 +10,22 @@ Validates that:
    - Mobile App Component (50 requirements)
    cascade correctly in nmfta-vehicle_cybersecurity_requirements (Class 0 Telematics)
    and have identical parent/cascaded statement text, criticality, and metadata
-   relative to the reference nmfta-telematics_security_requirements repository.
+   relative to the baseline reference.
 
 2. All 34 gateway security requirements (AGW-S-*, CGW-S-*, J1939GW-S-*, NGW-S-*)
    in nmfta-vehicle_cybersecurity_requirements (requirements/common/vehicle_gateway_controls.sdoc
    and Class 2 gateway specializations) have identical requirement statements,
-   criticalities, titles, and verification criteria relative to the reference
-   vcr-experiment repository (01_gateways.sdoc).
+   criticalities, titles, and verification criteria relative to the baseline reference.
 
-Usage:
-    python scripts/validate_cascaded_requirements.py \\
-        --vcr-dir . \\
-        --tsrm-dir /path/to/nmfta-telematics_security_requirements \\
-        --vcr-exp-dir /path/to/vcr-experiment
+Supported Modes:
+- Hermetic Mode (Default for CI):
+  Uses the committed tests/reference_baselines.json snapshot. Does not require external clones.
+- Multi-Repo Mode:
+  Validates directly against live clones of nmfta-telematics_security_requirements and vcr-experiment.
 """
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -33,10 +33,9 @@ from typing import Dict, List, Optional, Tuple
 
 
 def normalize_whitespace(text: Optional[str]) -> str:
-    """Normalize whitespace and newlines for robust comparison."""
+    """Normalize whitespace and newlines for robust semantic comparison."""
     if not text:
         return ""
-    # Strip carriage returns and collapse multiple whitespace/newlines
     return re.sub(r"\s+", " ", text.strip())
 
 
@@ -116,44 +115,41 @@ def parse_sdoc_requirements(file_path: str) -> Dict[str, dict]:
 
 
 class RequirementValidator:
-    def __init__(self, vcr_dir: str, tsrm_dir: str, vcr_exp_dir: str):
+    def __init__(
+        self,
+        vcr_dir: str,
+        baseline_file: Optional[str] = None,
+        tsrm_dir: Optional[str] = None,
+        vcr_exp_dir: Optional[str] = None,
+    ):
         self.vcr_dir = os.path.abspath(vcr_dir)
-        self.tsrm_dir = os.path.abspath(tsrm_dir)
-        self.vcr_exp_dir = os.path.abspath(vcr_exp_dir)
+        self.baseline_file = os.path.abspath(baseline_file) if baseline_file else None
+        self.tsrm_dir = os.path.abspath(tsrm_dir) if tsrm_dir else None
+        self.vcr_exp_dir = os.path.abspath(vcr_exp_dir) if vcr_exp_dir else None
 
         self.vcr_requirements: Dict[str, dict] = {}
-        self.tsrm_requirements: Dict[str, dict] = {}
-        self.vcr_exp_requirements: Dict[str, dict] = {}
 
     def load_vcr_tree(self) -> None:
-        """Load all SDoc requirements from the target VCR repository."""
-        sdoc_files = [
-            os.path.join(self.vcr_dir, "requirements/common/baseline_ecu.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/common/vehicle_bus_connection.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/common/wireless_connectivity.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/common/cloud_backend.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/common/mobile_app.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/common/vehicle_gateway_controls.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_0_telematics/class_0_telematics.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_1_wireless_multiseg/class_1_wireless_multiseg.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_2_gateway/class_2_gateway.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_3_multiseg_untrusted/class_3_multiseg_untrusted.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_4_multiseg/class_4_multiseg.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_5_single_seg_high_risk/class_5_single_seg_high_risk.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_6_single_seg_med_risk/class_6_single_seg_med_risk.sdoc"),
-            os.path.join(self.vcr_dir, "requirements/class_7_single_seg_low_risk/class_7_single_seg_low_risk.sdoc"),
-        ]
+        """Dynamically load all SDoc requirements from the target VCR repository."""
+        req_dir = os.path.join(self.vcr_dir, "requirements")
+        if not os.path.exists(req_dir):
+            raise FileNotFoundError(f"requirements/ directory not found in {self.vcr_dir}")
 
-        for sdoc_path in sdoc_files:
-            if os.path.exists(sdoc_path):
-                reqs = parse_sdoc_requirements(sdoc_path)
-                self.vcr_requirements.update(reqs)
-            else:
-                print(f"Warning: Expected SDoc file not found: {sdoc_path}")
+        count = 0
+        for root, _, files in os.walk(req_dir):
+            for file in files:
+                if file.endswith(".sdoc"):
+                    sdoc_path = os.path.join(root, file)
+                    reqs = parse_sdoc_requirements(sdoc_path)
+                    self.vcr_requirements.update(reqs)
+                    count += 1
+        print(f"Scanned {count} SDoc files in VCR tree ({len(self.vcr_requirements)} requirements loaded).")
 
-    def resolve_ancestor_metadata(self, uid: str) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str]]:
+    def resolve_ancestor_metadata(
+        self, uid: str
+    ) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str]]:
         """
-        Walk up the parent relations in VCR to resolve:
+        Walk up parent relations in VCR to resolve:
         (criticality, title, immediate_statement, root_ancestor_statement)
         """
         node = self.vcr_requirements.get(uid)
@@ -181,24 +177,106 @@ class RequirementValidator:
 
         return crit, title, stmt, ancestor_stmt
 
-    def validate_tsrm_telematics(self) -> List[str]:
-        """Validate TSRM 4 telematics components against Class 0 in VCR."""
+    def validate_from_baseline_json(self) -> List[str]:
+        """Validate VCR against the hermetic reference_baselines.json snapshot."""
+        assert self.baseline_file is not None
+        if not os.path.exists(self.baseline_file):
+            return [f"Baseline file not found: {self.baseline_file}"]
+
+        with open(self.baseline_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        telematics_baseline: Dict[str, dict] = data.get("telematics", {})
+        gateways_baseline: Dict[str, dict] = data.get("gateways", {})
+
         errors: List[str] = []
 
+        # 1. Validate Telematics (230 requirements)
+        print(f"Checking {len(telematics_baseline)} Telematics requirements from baseline snapshot...")
+        for c0_uid, item in telematics_baseline.items():
+            comp = item["component"]
+            expected_crit = item["criticality"]
+            expected_stmt = item["cascaded_statement"]
+
+            if c0_uid not in self.vcr_requirements:
+                errors.append(f"[{comp}] Requirement {c0_uid} missing in VCR Class 0 specification")
+                continue
+
+            v_crit, v_title, v_stmt, v_ancestor_stmt = self.resolve_ancestor_metadata(c0_uid)
+
+            if normalize_whitespace(v_crit) != normalize_whitespace(expected_crit):
+                errors.append(
+                    f"[{comp}] {c0_uid}: Criticality mismatch: "
+                    f"Baseline='{expected_crit}', VCR='{v_crit}'"
+                )
+
+            if normalize_whitespace(v_ancestor_stmt) != normalize_whitespace(expected_stmt):
+                errors.append(
+                    f"[{comp}] {c0_uid}: Cascaded parent statement mismatch:\n"
+                    f"  Expected : {expected_stmt[:120]}...\n"
+                    f"  VCR Resolved : {v_ancestor_stmt[:120] if v_ancestor_stmt else 'None'}..."
+                )
+
+        print(f"Checking {len(gateways_baseline)} Gateway requirements from baseline snapshot...")
+        for uid, item in gateways_baseline.items():
+            expected_crit = item["criticality"]
+            expected_stmt = item["statement"]
+            expected_verif = item["verification"]
+
+            if uid not in self.vcr_requirements:
+                errors.append(f"[Gateway] Requirement {uid} missing in VCR common gateway controls")
+                continue
+
+            vcr_node = self.vcr_requirements[uid]
+
+            if normalize_whitespace(expected_crit) != normalize_whitespace(vcr_node["criticality"]):
+                errors.append(
+                    f"[Gateway] {uid}: Criticality mismatch: "
+                    f"Baseline='{expected_crit}', VCR='{vcr_node['criticality']}'"
+                )
+
+            if normalize_whitespace(expected_stmt) != normalize_whitespace(vcr_node["statement"]):
+                errors.append(
+                    f"[Gateway] {uid}: Statement mismatch:\n"
+                    f"  Baseline : {expected_stmt[:120]}...\n"
+                    f"  VCR      : {vcr_node['statement'][:120]}..."
+                )
+
+            if normalize_whitespace(expected_verif) != normalize_whitespace(vcr_node["verification"]):
+                errors.append(
+                    f"[Gateway] {uid}: Verification criteria mismatch:\n"
+                    f"  Baseline : {expected_verif[:120]}...\n"
+                    f"  VCR      : {vcr_node['verification'][:120]}..."
+                )
+
+            if uid.startswith("AGW-") or uid.startswith("CGW-"):
+                c2_uid = f"C2-{uid}"
+                if c2_uid not in self.vcr_requirements:
+                    errors.append(f"[Gateway] Class 2 specialization {c2_uid} missing in Class 2 document")
+                else:
+                    c2_node = self.vcr_requirements[c2_uid]
+                    if not c2_node["parents"] or c2_node["parents"][0] != uid:
+                        errors.append(f"[Gateway] {c2_uid} does not properly link to parent {uid}")
+
+        return errors
+
+    def validate_from_live_repos(self) -> List[str]:
+        """Validate VCR directly against live clones of TSRM and vcr-experiment."""
+        assert self.tsrm_dir is not None and self.vcr_exp_dir is not None
+        errors: List[str] = []
+
+        # TSRM Validation
         tsrm_master_file = os.path.join(self.tsrm_dir, "Telematics_Security_Requirements_Matrix.sdoc")
         if not os.path.exists(tsrm_master_file):
             return [f"TSRM master file missing: {tsrm_master_file}"]
 
         tsrm_master = parse_sdoc_requirements(tsrm_master_file)
-
         components = [
             ("Vehicle Connection", "_vehicle_connection_tsrm.sdoc"),
             ("Connectivity / Communications", "_connectivity_tsrm.sdoc"),
             ("Cloud or Back-end", "_cloud_tsrm.sdoc"),
             ("Mobile App", "_mobile_app_tsrm.sdoc"),
         ]
-
-        total_checked = 0
 
         for comp_name, comp_file in components:
             comp_path = os.path.join(self.tsrm_dir, comp_file)
@@ -210,9 +288,7 @@ class RequirementValidator:
             print(f"Checking TSRM component: {comp_name} ({len(comp_reqs)} requirements)...")
 
             for uid, tsrm_node in comp_reqs.items():
-                total_checked += 1
                 c0_uid = f"C0-{uid}"
-
                 if c0_uid not in self.vcr_requirements:
                     errors.append(f"[{comp_name}] Requirement {c0_uid} missing in VCR Class 0 specification")
                     continue
@@ -230,16 +306,14 @@ class RequirementValidator:
                 tsrm_crit = tsrm_parent["criticality"]
                 tsrm_parent_stmt = tsrm_parent["statement"]
 
-                vcr_crit, vcr_title, vcr_stmt, vcr_ancestor_stmt = self.resolve_ancestor_metadata(c0_uid)
+                vcr_crit, _, _, vcr_ancestor_stmt = self.resolve_ancestor_metadata(c0_uid)
 
-                # 1. Criticality match
                 if normalize_whitespace(vcr_crit) != normalize_whitespace(tsrm_crit):
                     errors.append(
                         f"[{comp_name}] {c0_uid}: Criticality mismatch: "
                         f"TSRM='{tsrm_crit}', VCR='{vcr_crit}'"
                     )
 
-                # 2. Cascaded statement match
                 if normalize_whitespace(vcr_ancestor_stmt) != normalize_whitespace(tsrm_parent_stmt):
                     errors.append(
                         f"[{comp_name}] {c0_uid}: Cascaded parent statement mismatch:\n"
@@ -247,37 +321,27 @@ class RequirementValidator:
                         f"  VCR Ancestor  : {vcr_ancestor_stmt[:120] if vcr_ancestor_stmt else 'None'}..."
                     )
 
-        print(f"Completed TSRM validation: {total_checked} requirements verified.")
-        return errors
-
-    def validate_gateways(self) -> List[str]:
-        """Validate gateway requirements against vcr-experiment."""
-        errors: List[str] = []
-
+        # Gateways Validation
         gw_file = os.path.join(self.vcr_exp_dir, "01_gateways.sdoc")
         if not os.path.exists(gw_file):
-            return [f"vcr-experiment gateways file missing: {gw_file}"]
+            errors.append(f"vcr-experiment gateways file missing: {gw_file}")
+            return errors
 
         exp_gw_reqs = parse_sdoc_requirements(gw_file)
         print(f"Checking Gateway requirements from vcr-experiment ({len(exp_gw_reqs)} requirements)...")
-
-        total_checked = 0
         for uid, exp_node in exp_gw_reqs.items():
-            total_checked += 1
             if uid not in self.vcr_requirements:
                 errors.append(f"[Gateway] Requirement {uid} missing in VCR common gateway controls")
                 continue
 
             vcr_node = self.vcr_requirements[uid]
 
-            # 1. Criticality
             if normalize_whitespace(exp_node["criticality"]) != normalize_whitespace(vcr_node["criticality"]):
                 errors.append(
                     f"[Gateway] {uid}: Criticality mismatch: "
                     f"vcr-experiment='{exp_node['criticality']}', VCR='{vcr_node['criticality']}'"
                 )
 
-            # 2. Statement
             if normalize_whitespace(exp_node["statement"]) != normalize_whitespace(vcr_node["statement"]):
                 errors.append(
                     f"[Gateway] {uid}: Statement mismatch:\n"
@@ -285,7 +349,6 @@ class RequirementValidator:
                     f"  VCR     : {vcr_node['statement'][:120]}..."
                 )
 
-            # 3. Verification criteria
             if normalize_whitespace(exp_node["verification"]) != normalize_whitespace(vcr_node["verification"]):
                 errors.append(
                     f"[Gateway] {uid}: Verification criteria mismatch:\n"
@@ -293,24 +356,21 @@ class RequirementValidator:
                     f"  VCR     : {vcr_node['verification'][:120]}..."
                 )
 
-            # 4. Check that Class 2 gateway specification references this gateway requirement
-            # (AGW and CGW requirements apply to Class 2 gateways)
             if uid.startswith("AGW-") or uid.startswith("CGW-"):
                 c2_uid = f"C2-{uid}"
                 if c2_uid not in self.vcr_requirements:
-                    errors.append(f"[Gateway] Class 2 gateway specialization {c2_uid} missing in Class 2 document")
+                    errors.append(f"[Gateway] Class 2 specialization {c2_uid} missing in Class 2 document")
                 else:
                     c2_node = self.vcr_requirements[c2_uid]
                     if not c2_node["parents"] or c2_node["parents"][0] != uid:
                         errors.append(f"[Gateway] {c2_uid} does not properly link to parent {uid}")
 
-        print(f"Completed Gateway validation: {total_checked} requirements verified.")
         return errors
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Validate cascaded requirement text and criticalities against reference repositories."
+        description="Validate cascaded requirement text and criticalities against reference baseline."
     )
     parser.add_argument(
         "--vcr-dir",
@@ -318,14 +378,19 @@ def main() -> int:
         help="Path to nmfta-vehicle_cybersecurity_requirements repository root (default: current directory)",
     )
     parser.add_argument(
+        "--baseline-file",
+        default="tests/reference_baselines.json",
+        help="Path to hermetic reference baseline JSON file (default: tests/reference_baselines.json)",
+    )
+    parser.add_argument(
         "--tsrm-dir",
-        default="/home/bengardiner/src/nmfta-telematics_security_requirements",
-        help="Path to nmfta-telematics_security_requirements repository root",
+        default=None,
+        help="Optional path to live nmfta-telematics_security_requirements repo (triggers live multi-repo validation)",
     )
     parser.add_argument(
         "--vcr-exp-dir",
-        default="/home/bengardiner/src/vcr-experiment",
-        help="Path to vcr-experiment repository root",
+        default=None,
+        help="Optional path to live vcr-experiment repo (triggers live multi-repo validation)",
     )
 
     args = parser.parse_args()
@@ -334,27 +399,34 @@ def main() -> int:
     print("NMFTA Requirement Cascading & Fidelity Validator")
     print("================================================================================")
     print(f"VCR Root            : {os.path.abspath(args.vcr_dir)}")
-    print(f"TSRM Reference      : {os.path.abspath(args.tsrm_dir)}")
-    print(f"VCR-Exp Reference   : {os.path.abspath(args.vcr_exp_dir)}")
+
+    use_live_repos = bool(args.tsrm_dir and args.vcr_exp_dir)
+    if use_live_repos:
+        print(f"Mode                : Live Multi-Repository Validation")
+        print(f"TSRM Reference      : {os.path.abspath(args.tsrm_dir)}")
+        print(f"VCR-Exp Reference   : {os.path.abspath(args.vcr_exp_dir)}")
+    else:
+        print(f"Mode                : Hermetic Baseline Validation (CI-Ready)")
+        print(f"Baseline Snapshot   : {os.path.abspath(args.baseline_file)}")
     print("================================================================================\n")
 
     validator = RequirementValidator(
         vcr_dir=args.vcr_dir,
+        baseline_file=args.baseline_file,
         tsrm_dir=args.tsrm_dir,
         vcr_exp_dir=args.vcr_exp_dir,
     )
 
     print("Loading VCR specification tree...")
     validator.load_vcr_tree()
-    print(f"Loaded {len(validator.vcr_requirements)} total requirements from VCR tree.\n")
-
-    tsrm_errors = validator.validate_tsrm_telematics()
-    print()
-    gw_errors = validator.validate_gateways()
     print()
 
-    all_errors = tsrm_errors + gw_errors
+    if use_live_repos:
+        all_errors = validator.validate_from_live_repos()
+    else:
+        all_errors = validator.validate_from_baseline_json()
 
+    print()
     print("================================================================================")
     print("Validation Results Summary")
     print("================================================================================")
@@ -366,7 +438,7 @@ def main() -> int:
     else:
         print("SUCCESS: All 230 TSRM telematics requirements and 34 Gateway requirements")
         print("         have identical cascaded statements, criticalities, and verification")
-        print("         criteria relative to the reference repositories!")
+        print("         criteria relative to the reference baseline!")
         return 0
 
 

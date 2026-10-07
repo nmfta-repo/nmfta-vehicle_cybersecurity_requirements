@@ -201,16 +201,21 @@ python scripts/export_questionnaires.py . --output-dir docs/html/
 
 ### Step 4: Validate Cascaded Requirements & Text Fidelity
 
-To verify that the cascaded requirement statements, criticalities, and verification criteria match upstream reference models:
+To verify that the cascaded requirement statements, criticalities, and verification criteria match reference baselines, run the validator script:
 
 ```bash
+# Hermetic mode (uses committed tests/reference_baselines.json - run automatically in CI):
+python scripts/validate_cascaded_requirements.py
+
+# Live multi-repo mode (validates directly against live clones):
 python scripts/validate_cascaded_requirements.py \
     --vcr-dir . \
     --tsrm-dir /path/to/nmfta-telematics_security_requirements \
     --vcr-exp-dir /path/to/vcr-experiment
 ```
 
-This ensures zero unintended text drift across telematics components and vehicle gateway controls.
+This verification step is integrated into GitHub Actions CI (`.github/workflows/publish.yml`) to ensure zero unintended text drift across telematics components and vehicle gateway controls on Pull Requests.
+
 
 
 ---
