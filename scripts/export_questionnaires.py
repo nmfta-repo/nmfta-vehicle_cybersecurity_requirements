@@ -130,22 +130,13 @@ class ExportQuestionnaires:
             )
             wrap_format = workbook.add_format({"text_wrap": True})
 
-            for document in self.traceability_index.document_tree.document_list:
-                # Only generate worksheets for ECU Class specifications
-                if not document.title.startswith("Class "):
-                    continue
+            def write_sheet(sheet_name: str, nodes: list):
+                if not nodes:
+                    return
 
-                document_iterator = SDocDocumentIterator(document)
-                req_nodes = []
-                for node, _ in document_iterator.all_content(print_fragments=False):
-                    if isinstance(node, SDocNode) and node.node_type == "REQUIREMENT":
-                        req_nodes.append(node)
-
-                if not req_nodes:
-                    continue
-
-                sheet_title = document.title[:31].replace(":", "-").replace("/", "-")
-                worksheet = workbook.add_worksheet(name=sheet_title)
+                # Clean sheet name and truncate to 31 chars (Excel limit)
+                safe_name = sheet_name[:31].replace(":", "-").replace("/", "-")
+                worksheet = workbook.add_worksheet(name=safe_name)
 
                 for idx, field in enumerate(fields):
                     worksheet.write(0, idx, field)
@@ -155,10 +146,10 @@ class ExportQuestionnaires:
                     crit_str, _ = self.resolve_ancestor_meta(node)
                     return criticality_order.get(crit_str, 0)
 
-                req_nodes.sort(key=sort_key, reverse=True)
+                nodes.sort(key=sort_key, reverse=True)
 
                 row = 0
-                for row, node in enumerate(req_nodes):
+                for row, node in enumerate(nodes):
                     uid = node.reserved_uid or ""
                     crit_str, display_text = self.resolve_ancestor_meta(node)
 
@@ -166,7 +157,7 @@ class ExportQuestionnaires:
                     worksheet.write(row + 1, 1, crit_str, wrap_format)
                     worksheet.write(row + 1, 2, display_text, wrap_format)
 
-                if req_nodes:
+                if nodes:
                     worksheet.add_table(
                         0,
                         0,
@@ -181,6 +172,44 @@ class ExportQuestionnaires:
                 ExcelGenerator._set_columns_width(
                     workbook, worksheet, column_widths, fields
                 )
+
+            # Define order of classes
+            for document in self.traceability_index.document_tree.document_list:
+                if not document.title.startswith("Class "):
+                    continue
+
+                if "Class 0" in document.title:
+                    # Class 0 decomposes into 4 architectural components matching the TSRM model
+                    component_map = {
+                        "Vehicle Bus Connection": "Class 0 - Vehicle Connection",
+                        "Wireless Connectivity": "Class 0 - Connectivity",
+                        "Cloud Component": "Class 0 - Cloud Back-end",
+                        "Mobile Application": "Class 0 - Mobile App",
+                    }
+                    for section in document.section_contents:
+                        if not hasattr(section, "section_contents") or not section.section_contents:
+                            continue
+                        sec_title = section.get_meta_field_value_by_title("TITLE") or ""
+                        matched_name = None
+                        for key, tab_name in component_map.items():
+                            if key in sec_title:
+                                matched_name = tab_name
+                                break
+                        if matched_name:
+                            req_nodes = [
+                                n for n in section.section_contents
+                                if isinstance(n, SDocNode) and n.node_type == "REQUIREMENT"
+                            ]
+                            write_sheet(matched_name, req_nodes)
+                else:
+                    document_iterator = SDocDocumentIterator(document)
+                    req_nodes = []
+                    for node, _ in document_iterator.all_content(print_fragments=False):
+                        if isinstance(node, SDocNode) and node.node_type == "REQUIREMENT":
+                            req_nodes.append(node)
+
+                    if req_nodes:
+                        write_sheet(document.title, req_nodes)
 
         print(f"Exported questionnaires to {workbook_path}")
 

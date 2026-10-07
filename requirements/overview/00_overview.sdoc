@@ -91,6 +91,28 @@ Trusted Network Domain (TND):
 [[/SECTION]]
 
 [[SECTION]]
+TITLE: Telematics Systems in Commercial Fleets: Scope & Evaluation Guidance
+
+[TEXT]
+STATEMENT: >>>
+Modern commercial motor vehicles frequently deploy **multiple distinct telematics systems** simultaneously. A single tractor or trailer may incorporate:
+
+- An OEM factory telematics gateway / off-vehicle connectivity unit.
+- An aftermarket Electronic Logging Device (ELD) or Fleet Management Information System (FMIS).
+- Component-specific telematics devices (e.g., Engine, Transmission, or Braking/ABS telematics units).
+- Camera, vision safety, and trailer tracking subsystems.
+
+Because each deployed telematics system introduces network interfaces and potential attack vectors into the vehicle, **fleets and purchasers must evaluate ALL telematics systems installed on the vehicle**. 
+
+When issuing supplier questionnaires or evaluating vendor compliance:
+- Procuring fleets MUST ensure that questionnaire recipients complete responses for **ALL** telematics systems present on or integrated with the vehicle.
+- A vendor or supplier providing multiple telematics subsystems must submit separate questionnaire responses for each individual system.
+- An assessment of only one system (e.g., the primary ELD) does not confer cybersecurity assurance to other co-existing telematics systems (e.g., powertrain or trailer telematics).
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
 TITLE: Acknowledgements
 
 [TEXT]

@@ -191,7 +191,14 @@ strictdoc export . --formats=html,reqif-sdoc --output-dir docs/
 python scripts/export_questionnaires.py . --output-dir docs/html/
 ```
 
-- Excel workbook `docs/html/vcr_questionnaires.xlsx` will contain separate worksheets for each class, sorted by criticality.
+- Excel workbook `docs/html/vcr_questionnaires.xlsx` will contain separate worksheets sorted by criticality:
+  - **Class 0 (Telematics)**: Generates 4 separate component worksheets matching the TSRM vendor submission model:
+    - `Class 0 - Vehicle Connection` (physical on-vehicle hardware and vehicle bus interfaces)
+    - `Class 0 - Connectivity` (cellular, Wi-Fi, BLE, and satellite wireless interfaces)
+    - `Class 0 - Cloud Back-end` (cloud hosting, server APIs, and fleet management portals)
+    - `Class 0 - Mobile App` (driver interfaces, cab displays, and mobile applications)
+  - **Classes 1 through 7**: Generates dedicated worksheets for each physical controller class.
+
 
 ---
 
