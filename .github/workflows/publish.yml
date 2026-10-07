@@ -1,0 +1,71 @@
+name: automated builds of html, reqif, and questionnaires
+
+# Controls when the action will run.
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule: # 12AM daily
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install xlsxwriter
+          git clone https://github.com/strictdoc-project/strictdoc/
+          python -m pip install strictdoc/[development]
+
+      - name: Run strictdoc exports (HTML, ReqIF)
+        run: |
+          mkdir -p docs/
+          strictdoc export . --formats=html,reqif-sdoc --output-dir docs/
+          cp -pr media docs/html/nmfta-vehicle_cybersecurity_requirements/ || true
+          cp -pr docs/reqif/* docs/html/
+
+      - name: Run custom questionnaire export script
+        run: |
+          mkdir -p docs/html
+          python scripts/export_questionnaires.py . --output-dir=docs/html/
+
+      - name: Upload HTML pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-pages
+          path: docs/html/
+
+      - name: Upload Requirements Interchange Format (ReqIF) export
+        uses: actions/upload-artifact@v4
+        with:
+          name: reqif-export
+          path: docs/reqif/output.reqif
+
+      - name: Upload supplier questionnaires
+        uses: actions/upload-artifact@v4
+        with:
+          name: questionnaires
+          path: docs/html/vcr_questionnaires.xlsx
+
+      - name: (optional) Deploy to GitHub Pages (will not be executed on PRs or nightlies)
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        if: ${{ github.event_name != 'pull_request' && github.event_name != 'schedule' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          build_dir: docs/html
+          email: ben.gardiner@nmfta.org
+          branch: gh-pages
+          jekyll: no
