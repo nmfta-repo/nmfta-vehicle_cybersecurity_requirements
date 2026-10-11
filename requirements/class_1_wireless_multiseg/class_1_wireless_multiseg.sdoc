@@ -26,6 +26,8 @@ TITLE: Baseline Security Requirements Applicability
 
 [REQUIREMENT]
 UID: C1-AA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AA-010.
 <<<
@@ -36,6 +38,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-010.
 <<<
@@ -46,6 +50,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-020.
 <<<
@@ -56,6 +62,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-030.
 <<<
@@ -66,6 +74,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-040.
 <<<
@@ -76,6 +86,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-041.
 <<<
@@ -86,6 +98,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-050.
 <<<
@@ -96,6 +110,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-060.
 <<<
@@ -106,6 +122,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-061
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-061.
 <<<
@@ -116,6 +134,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-062
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-062.
 <<<
@@ -126,6 +146,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-063
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-063.
 <<<
@@ -136,6 +158,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-070
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-070.
 <<<
@@ -146,6 +170,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-AC-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement AC-080.
 <<<
@@ -156,6 +182,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-CM-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement CM-010.
 <<<
@@ -166,6 +194,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-CM-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement CM-020.
 <<<
@@ -176,6 +206,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-CM-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement CM-030.
 <<<
@@ -186,6 +218,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-CM-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement CM-040.
 <<<
@@ -196,6 +230,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-IA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement IA-010.
 <<<
@@ -206,6 +242,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-IA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement IA-020.
 <<<
@@ -216,6 +254,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-IA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement IA-030.
 <<<
@@ -226,6 +266,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-IR-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement IR-010.
 <<<
@@ -236,6 +278,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-M-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement M-010.
 <<<
@@ -246,6 +290,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-M-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement M-020.
 <<<
@@ -256,6 +302,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-M-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement M-030.
 <<<
@@ -266,6 +314,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-M-031
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement M-031.
 <<<
@@ -276,6 +326,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-M-032
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement M-032.
 <<<
@@ -286,6 +338,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-M-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement M-040.
 <<<
@@ -296,6 +350,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-P-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement P-010.
 <<<
@@ -306,6 +362,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-P-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement P-020.
 <<<
@@ -316,6 +374,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-P-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement P-030.
 <<<
@@ -326,6 +386,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-PS-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement PS-010.
 <<<
@@ -336,6 +398,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-RA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement RA-010.
 <<<
@@ -346,6 +410,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-RA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement RA-020.
 <<<
@@ -356,6 +422,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SAA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SAA-010.
 <<<
@@ -366,6 +434,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SAA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SAA-020.
 <<<
@@ -376,6 +446,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SAA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SAA-030.
 <<<
@@ -386,6 +458,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SAA-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SAA-040.
 <<<
@@ -396,6 +470,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SAA-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SAA-050.
 <<<
@@ -406,6 +482,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-010.
 <<<
@@ -416,6 +494,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-011.
 <<<
@@ -426,6 +506,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-020.
 <<<
@@ -436,6 +518,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-030.
 <<<
@@ -446,6 +530,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-040.
 <<<
@@ -456,6 +542,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-050.
 <<<
@@ -466,6 +554,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-060.
 <<<
@@ -476,6 +566,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-090.
 <<<
@@ -486,6 +578,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-091
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-091.
 <<<
@@ -496,6 +590,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-092
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-092.
 <<<
@@ -506,6 +602,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-100
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-100.
 <<<
@@ -516,6 +614,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-110
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-110.
 <<<
@@ -526,6 +626,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-120.
 <<<
@@ -536,6 +638,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-130.
 <<<
@@ -546,6 +650,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SCP-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SCP-140.
 <<<
@@ -556,6 +662,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-010.
 <<<
@@ -566,6 +674,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-011.
 <<<
@@ -576,6 +686,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-020.
 <<<
@@ -586,6 +698,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-021
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-021.
 <<<
@@ -596,6 +710,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-030.
 <<<
@@ -606,6 +722,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-040.
 <<<
@@ -616,6 +734,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-041.
 <<<
@@ -626,6 +746,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-060.
 <<<
@@ -636,6 +758,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-070
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-070.
 <<<
@@ -646,6 +770,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-071
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-071.
 <<<
@@ -656,6 +782,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-080.
 <<<
@@ -666,6 +794,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-081
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-081.
 <<<
@@ -676,6 +806,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-090.
 <<<
@@ -686,6 +818,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-100
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-100.
 <<<
@@ -696,6 +830,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-110
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-110.
 <<<
@@ -706,6 +842,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-120.
 <<<
@@ -716,6 +854,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-130.
 <<<
@@ -726,6 +866,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-140.
 <<<
@@ -736,6 +878,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-150
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-150.
 <<<
@@ -746,6 +890,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-170
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-170.
 <<<
@@ -756,6 +902,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-171
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-171.
 <<<
@@ -766,6 +914,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-180
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-180.
 <<<
@@ -776,6 +926,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-190
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-190.
 <<<
@@ -786,6 +938,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-SII-200
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 devices SHALL satisfy baseline requirement SII-200.
 <<<
@@ -801,6 +955,8 @@ TITLE: Wireless Connectivity Security Requirements Applicability
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-010.
 <<<
@@ -811,6 +967,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-020.
 <<<
@@ -821,6 +979,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-030.
 <<<
@@ -831,6 +991,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-040.
 <<<
@@ -841,6 +1003,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-041.
 <<<
@@ -851,6 +1015,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-050.
 <<<
@@ -861,6 +1027,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-060.
 <<<
@@ -871,6 +1039,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-061
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-061.
 <<<
@@ -881,6 +1051,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-062
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-062.
 <<<
@@ -891,6 +1063,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-063
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-063.
 <<<
@@ -901,6 +1075,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-AC-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-AC-080.
 <<<
@@ -911,6 +1087,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-CM-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-010.
 <<<
@@ -921,6 +1099,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-CM-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-020.
 <<<
@@ -931,6 +1111,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-CM-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-030.
 <<<
@@ -941,6 +1123,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-CM-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-CM-040.
 <<<
@@ -951,6 +1135,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-IA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-IA-010.
 <<<
@@ -961,6 +1147,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-IA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-IA-020.
 <<<
@@ -971,6 +1159,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-IA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-IA-030.
 <<<
@@ -981,6 +1171,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-IR-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-IR-010.
 <<<
@@ -991,6 +1183,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-M-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-M-010.
 <<<
@@ -1001,6 +1195,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-M-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-M-040.
 <<<
@@ -1011,6 +1207,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-PS-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-PS-010.
 <<<
@@ -1021,6 +1219,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-RA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-RA-010.
 <<<
@@ -1031,6 +1231,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-RA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-RA-020.
 <<<
@@ -1041,6 +1243,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SAA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-010.
 <<<
@@ -1051,6 +1255,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SAA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-020.
 <<<
@@ -1061,6 +1267,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SAA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-030.
 <<<
@@ -1071,6 +1279,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SAA-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-040.
 <<<
@@ -1081,6 +1291,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SAA-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SAA-050.
 <<<
@@ -1091,6 +1303,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-010.
 <<<
@@ -1101,6 +1315,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-011.
 <<<
@@ -1111,6 +1327,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-020.
 <<<
@@ -1121,6 +1339,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-030.
 <<<
@@ -1131,6 +1351,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-040.
 <<<
@@ -1141,6 +1363,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-060.
 <<<
@@ -1151,6 +1375,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-090.
 <<<
@@ -1161,6 +1387,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-091
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-091.
 <<<
@@ -1171,6 +1399,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-120.
 <<<
@@ -1181,6 +1411,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-130.
 <<<
@@ -1191,6 +1423,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SCP-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SCP-140.
 <<<
@@ -1201,6 +1435,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-010.
 <<<
@@ -1211,6 +1447,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-011.
 <<<
@@ -1221,6 +1459,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-020.
 <<<
@@ -1231,6 +1471,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-021
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-021.
 <<<
@@ -1241,6 +1483,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-030.
 <<<
@@ -1251,6 +1495,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-040.
 <<<
@@ -1261,6 +1507,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-041.
 <<<
@@ -1271,6 +1519,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-060.
 <<<
@@ -1281,6 +1531,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-070
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-070.
 <<<
@@ -1291,6 +1543,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-071
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-071.
 <<<
@@ -1301,6 +1555,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-080.
 <<<
@@ -1311,6 +1567,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-081
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-081.
 <<<
@@ -1321,6 +1579,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-090.
 <<<
@@ -1331,6 +1591,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-110
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-110.
 <<<
@@ -1341,6 +1603,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-120.
 <<<
@@ -1351,6 +1615,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-130.
 <<<
@@ -1361,6 +1627,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-140.
 <<<
@@ -1371,6 +1639,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-150
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-150.
 <<<
@@ -1381,6 +1651,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-170
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-170.
 <<<
@@ -1391,6 +1663,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-171
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-171.
 <<<
@@ -1401,6 +1675,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-180
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-180.
 <<<
@@ -1411,6 +1687,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-COMMS-SII-200
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 wireless interfaces SHALL satisfy requirement COMMS-SII-200.
 <<<
@@ -1426,6 +1704,8 @@ TITLE: Vehicle Bus Connection Security Requirements Applicability
 
 [REQUIREMENT]
 UID: C1-VEH-AC-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-010.
 <<<
@@ -1436,6 +1716,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-020.
 <<<
@@ -1446,6 +1728,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-030.
 <<<
@@ -1456,6 +1740,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-040.
 <<<
@@ -1466,6 +1752,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-041.
 <<<
@@ -1476,6 +1764,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-050.
 <<<
@@ -1486,6 +1776,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-060.
 <<<
@@ -1496,6 +1788,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-061
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-061.
 <<<
@@ -1506,6 +1800,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-062
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-062.
 <<<
@@ -1516,6 +1812,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-063
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-063.
 <<<
@@ -1526,6 +1824,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-AC-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-AC-080.
 <<<
@@ -1536,6 +1836,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-CM-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-010.
 <<<
@@ -1546,6 +1848,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-CM-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-020.
 <<<
@@ -1556,6 +1860,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-CM-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-030.
 <<<
@@ -1566,6 +1872,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-CM-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-CM-040.
 <<<
@@ -1576,6 +1884,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-IA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IA-010.
 <<<
@@ -1586,6 +1896,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-IA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IA-020.
 <<<
@@ -1596,6 +1908,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-IA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IA-030.
 <<<
@@ -1606,6 +1920,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-IR-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-IR-010.
 <<<
@@ -1616,6 +1932,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-M-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-M-010.
 <<<
@@ -1626,6 +1944,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-M-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-M-040.
 <<<
@@ -1636,6 +1956,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-PS-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-PS-010.
 <<<
@@ -1646,6 +1968,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-RA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-RA-010.
 <<<
@@ -1656,6 +1980,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-RA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-RA-020.
 <<<
@@ -1666,6 +1992,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SAA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-010.
 <<<
@@ -1676,6 +2004,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SAA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-020.
 <<<
@@ -1686,6 +2016,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SAA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-030.
 <<<
@@ -1696,6 +2028,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SAA-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-040.
 <<<
@@ -1706,6 +2040,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SAA-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SAA-050.
 <<<
@@ -1716,6 +2052,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-010.
 <<<
@@ -1726,6 +2064,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-011.
 <<<
@@ -1736,6 +2076,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-020.
 <<<
@@ -1746,6 +2088,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-030.
 <<<
@@ -1756,6 +2100,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-040.
 <<<
@@ -1766,6 +2112,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-060.
 <<<
@@ -1776,6 +2124,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-100
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-100.
 <<<
@@ -1786,6 +2136,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SCP-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SCP-140.
 <<<
@@ -1796,6 +2148,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-010.
 <<<
@@ -1806,6 +2160,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-011.
 <<<
@@ -1816,6 +2172,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-020.
 <<<
@@ -1826,6 +2184,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-021
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-021.
 <<<
@@ -1836,6 +2196,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-030.
 <<<
@@ -1846,6 +2208,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-040.
 <<<
@@ -1856,6 +2220,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-041.
 <<<
@@ -1866,6 +2232,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-060.
 <<<
@@ -1876,6 +2244,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-070
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-070.
 <<<
@@ -1886,6 +2256,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-071
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-071.
 <<<
@@ -1896,6 +2268,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-080.
 <<<
@@ -1906,6 +2280,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-081
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-081.
 <<<
@@ -1916,6 +2292,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-090.
 <<<
@@ -1926,6 +2304,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-120.
 <<<
@@ -1936,6 +2316,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-130.
 <<<
@@ -1946,6 +2328,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-140.
 <<<
@@ -1956,6 +2340,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-150
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-150.
 <<<
@@ -1966,6 +2352,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-170
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-170.
 <<<
@@ -1976,6 +2364,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-171
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-171.
 <<<
@@ -1986,6 +2376,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-180
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-180.
 <<<
@@ -1996,6 +2388,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C1-VEH-SII-200
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 1 vehicle network interfaces SHALL satisfy requirement VEH-SII-200.
 <<<

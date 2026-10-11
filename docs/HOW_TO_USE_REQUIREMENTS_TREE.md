@@ -225,9 +225,18 @@ This verification step is integrated into GitHub Actions CI (`.github/workflows/
 1. **UID Discipline**:
    - Every requirement must have a globally unique `UID`.
    - Prefix class-specific requirements with the class identifier (e.g., `C0-*`, `C1-*`, `C2-*`).
-2. **Normative Language**:
+2. **Review Status & Lifecycle Tags**:
+   - Requirements that represent new class-level scoping or draft allocations are marked:
+     ```sdoc
+     STATUS: Draft
+     TAGS: NEEDS_WORKING_GROUP_REVIEW
+     ```
+   - Requirements preserved directly from authoritative reference repositories (all 230 TSRM Telematics controls and 34 Gateway controls from `vcr-experiment`) are accepted as canonical baselines and do not carry draft review tags.
+   - When a working group subgroup reviews and approves a class requirement, remove the `STATUS: Draft` / `TAGS: NEEDS_WORKING_GROUP_REVIEW` annotations (or transition `STATUS` to `Approved`).
+3. **Normative Language**:
    - Use standard RFC 2119 keywords (`SHALL`, `SHALL NOT`, `SHOULD`, `MAY`) in the `STATEMENT` field.
-3. **Actionable Verification**:
+4. **Actionable Verification**:
    - Include a concrete, testable procedure in the `VERIFICATION` field so that fleets and test labs can evaluate conformity.
-4. **Pull Request Validation**:
-   - All PRs trigger the automated GitHub Actions CI workflow (`.github/workflows/publish.yml`), which validates that StrictDoc parsing, HTML generation, ReqIF export, and questionnaire creation succeed with zero errors.
+5. **Pull Request Validation**:
+   - All PRs trigger the automated GitHub Actions CI workflow (`.github/workflows/publish.yml`), which validates that StrictDoc parsing, HTML generation, ReqIF export, questionnaire creation, and cascaded requirements text fidelity succeed with zero errors.
+

@@ -27,6 +27,8 @@ TITLE: Baseline Security Requirements Applicability
 
 [REQUIREMENT]
 UID: C5-AA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AA-010.
 <<<
@@ -37,6 +39,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-010.
 <<<
@@ -47,6 +51,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-020.
 <<<
@@ -57,6 +63,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-030.
 <<<
@@ -67,6 +75,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-040.
 <<<
@@ -77,6 +87,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-041.
 <<<
@@ -87,6 +99,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-050.
 <<<
@@ -97,6 +111,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-060.
 <<<
@@ -107,6 +123,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-061
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-061.
 <<<
@@ -117,6 +135,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-062
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-062.
 <<<
@@ -127,6 +147,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-063
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-063.
 <<<
@@ -137,6 +159,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-070
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-070.
 <<<
@@ -147,6 +171,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-AC-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement AC-080.
 <<<
@@ -157,6 +183,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-CM-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement CM-010.
 <<<
@@ -167,6 +195,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-CM-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement CM-020.
 <<<
@@ -177,6 +207,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-CM-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement CM-030.
 <<<
@@ -187,6 +219,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-CM-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement CM-040.
 <<<
@@ -197,6 +231,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-IA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement IA-010.
 <<<
@@ -207,6 +243,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-IA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement IA-020.
 <<<
@@ -217,6 +255,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-IA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement IA-030.
 <<<
@@ -227,6 +267,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-IR-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement IR-010.
 <<<
@@ -237,6 +279,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-M-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement M-010.
 <<<
@@ -247,6 +291,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-M-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement M-020.
 <<<
@@ -257,6 +303,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-M-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement M-030.
 <<<
@@ -267,6 +315,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-M-031
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement M-031.
 <<<
@@ -277,6 +327,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-M-032
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement M-032.
 <<<
@@ -287,6 +339,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-M-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement M-040.
 <<<
@@ -297,6 +351,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-P-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement P-010.
 <<<
@@ -307,6 +363,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-P-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement P-020.
 <<<
@@ -317,6 +375,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-P-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement P-030.
 <<<
@@ -327,6 +387,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-PS-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement PS-010.
 <<<
@@ -337,6 +399,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-RA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement RA-010.
 <<<
@@ -347,6 +411,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-RA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement RA-020.
 <<<
@@ -357,6 +423,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SAA-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SAA-010.
 <<<
@@ -367,6 +435,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SAA-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SAA-020.
 <<<
@@ -377,6 +447,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SAA-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SAA-030.
 <<<
@@ -387,6 +459,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SAA-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SAA-040.
 <<<
@@ -397,6 +471,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SAA-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SAA-050.
 <<<
@@ -407,6 +483,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-010.
 <<<
@@ -417,6 +495,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-011.
 <<<
@@ -427,6 +507,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-020.
 <<<
@@ -437,6 +519,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-030.
 <<<
@@ -447,6 +531,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-040.
 <<<
@@ -457,6 +543,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-050
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-050.
 <<<
@@ -467,6 +555,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-060.
 <<<
@@ -477,6 +567,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-090.
 <<<
@@ -487,6 +579,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-091
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-091.
 <<<
@@ -497,6 +591,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-092
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-092.
 <<<
@@ -507,6 +603,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-100
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-100.
 <<<
@@ -517,6 +615,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-110
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-110.
 <<<
@@ -527,6 +627,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-120.
 <<<
@@ -537,6 +639,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-130.
 <<<
@@ -547,6 +651,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SCP-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SCP-140.
 <<<
@@ -557,6 +663,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-010.
 <<<
@@ -567,6 +675,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-011
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-011.
 <<<
@@ -577,6 +687,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-020
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-020.
 <<<
@@ -587,6 +699,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-021
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-021.
 <<<
@@ -597,6 +711,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-030
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-030.
 <<<
@@ -607,6 +723,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-040
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-040.
 <<<
@@ -617,6 +735,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-041
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-041.
 <<<
@@ -627,6 +747,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-060
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-060.
 <<<
@@ -637,6 +759,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-070
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-070.
 <<<
@@ -647,6 +771,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-071
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-071.
 <<<
@@ -657,6 +783,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-080
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-080.
 <<<
@@ -667,6 +795,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-081
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-081.
 <<<
@@ -677,6 +807,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-090
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-090.
 <<<
@@ -687,6 +819,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-100
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-100.
 <<<
@@ -697,6 +831,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-110
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-110.
 <<<
@@ -707,6 +843,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-120
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-120.
 <<<
@@ -717,6 +855,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-130
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-130.
 <<<
@@ -727,6 +867,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-140
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-140.
 <<<
@@ -737,6 +879,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-150
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-150.
 <<<
@@ -747,6 +891,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-170
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-170.
 <<<
@@ -757,6 +903,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-171
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-171.
 <<<
@@ -767,6 +915,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-180
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-180.
 <<<
@@ -777,6 +927,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-190
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-190.
 <<<
@@ -787,6 +939,8 @@ RELATIONS:
 
 [REQUIREMENT]
 UID: C5-SII-200
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
 STATEMENT: >>>
 Class 5 devices SHALL satisfy baseline requirement SII-200.
 <<<
