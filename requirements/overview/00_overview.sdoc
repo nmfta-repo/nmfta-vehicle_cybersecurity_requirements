@@ -158,6 +158,22 @@ When issuing supplier questionnaires or evaluating vendor compliance:
 [[/SECTION]]
 
 [[SECTION]]
+TITLE: Requirements Structure and Options Handling (CONTAINS_OPTIONS)
+
+[TEXT]
+STATEMENT: >>>
+Note on Options for Requirements:
+=================================
+These specifications contain requirements where the working group cannot reasonably require a particular implementation option, only that one of the satisfactory ways to satisfy the requirement is implemented. Modelling these 'options' requirements as separate formal nodes is neither practical nor recommended: the sheer number of requirements captured for heavy vehicles means that the requirements must remain machine-readable and there is no machine-readable way to communicate options to implementors (for good reason).
+
+The approach taken across all VCR requirements documents is to:
+a) Include the options as notes to the implementers directly within the requirement statements or comments; and
+b) Tag all requirements with `CONTAINS_OPTIONS` in their `TAGS` field so that the entire list of requirements containing notes to the implementers can be indexed for easy reference by them.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
 TITLE: Acknowledgements
 
 [TEXT]

@@ -88,8 +88,6 @@ Note that (Intended) Gateways may optionally perform the following functions as 
 * These devices may be configurable by users with necessary authentication and authorization
 * These devices may report status of operation to users with necessary authentication and authorization
 * These devices may provide diagnostic commands to users with necessary authentication and authorization
-
-Note on options for requirements: This document contains requirements where the working group cannot reasonably require a particular implementation option, only that one of the satisfactory ways to satisfy the requirement is implemented. Modelling these 'options' requirements is not possible nor reccomended: the sheer number of requirements which will be captured for heavy vehicles means that the requirements must remain machine readable and there is no machine readable way to communicate options to implementors (for good reason). The approach that is taken is to a) include the options as notes to the implementers of these requirements and b) to tag all requirements with `CONTAINS_OPTIONS` so the entire list of requirements containing notes to the implementers can be indexed for easy reference by them.
 <<<
 
 [[SECTION]]
