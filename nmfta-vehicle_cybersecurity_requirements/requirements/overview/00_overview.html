@@ -1,0 +1,2990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="strictdoc, documentation, documentation-tool, requirements-management, requirements, documentation-generator, requirement-specifications, requirements-engineering, technical-documentation, requirements-specification"/>
+  <meta name="description" content="strictdoc. Software for technical documentation and requirements management."/>
+  <meta name="strictdoc-export-type" content="static">
+  <meta name="strictdoc-document-level" content="3">
+
+  <link rel="shortcut icon" href="../../../_static/favicon.svg" type="image/svg+xml" />
+
+  
+  
+  <link rel="stylesheet" href="../../../_static/base.css"/>
+  <link rel="stylesheet" href="../../../_static/layout.css"/>
+  <link rel="stylesheet" href="../../../_static/content.css"/>
+  <link rel="stylesheet" href="../../../_static/node.css"/>
+  <link rel="stylesheet" href="../../../_static/node_content.css"/>
+  <link rel="stylesheet" href="../../../_static/element.css"/>
+  <link rel="stylesheet" href="../../../_static/form.css"/>
+  <link rel="stylesheet" href="../../../_static/requirement__temporary.css"/>
+  <link rel="stylesheet" href="../../../_static/autogen.css"/>
+  <link rel="stylesheet" href="../../../_static/pygments.css"/>
+  
+  <link rel="stylesheet" href="../../../_static/media_zoom.css"/>
+
+
+  
+  
+  
+  
+
+  
+  
+  <script src="../../../_static/app_core.js"></script>
+
+  <script src="../../../_static/media_zoom.js"></script>
+
+  <script src="../../../_static/dropdown_menu.js"></script>
+
+  <script src="../../../_static/resizable_bar.js"></script>
+  <script src="../../../_static/collapsible_toc.js"></script>
+  <script src="../../../_static/project_tree_preserve_scroll.js"></script>
+  <script src="../../../_static/toc_highlighting.js"></script><script src="../../../_static/copy_to_clipboard.js"></script>
+
+  <meta name="strictdoc-project-hash" content="95361f014d08db91451daed8deb9c399">
+<meta name="strictdoc-search-index-timestamp" content="1792615258.665126">
+<meta name="strictdoc-search-index-path" content="../../../_static/static_html_search_index.js">
+
+
+<script src="../../../_static/app_core.js"></script>
+<script src="../../../_static/static_html_search.js" defer></script><script>
+  // configure mathjax to show equation numbers
+  window.MathJax = {
+    tex: {
+      tags: 'ams',
+    },
+    startup: {
+      // Defer the initial typeset off the critical render path:
+      // it is kicked at browser idle time below.
+      typeset: false,
+    },
+  };
+  // Typeset when the browser is idle instead of blocking first paint.
+  // Race handling: the MathJax script is loaded async, so when the idle
+  // callback fires it can be in one of three states:
+  // 1. fully started:    typesetPromise exists -> typeset directly;
+  // 2. loaded, starting: startup.promise exists -> typeset once startup
+  //                      is complete;
+  // 3. not executed yet: window.MathJax is still the plain config object
+  //                      above (no startup.promise) -> re-check shortly.
+  window.addEventListener('load', () => {
+    const kickMathJax = () => {
+      if (window.MathJax?.typesetPromise) {
+        MathJax.typesetPromise().catch(console.error);
+      } else if (window.MathJax?.startup?.promise) {
+        MathJax.startup.promise
+          .then(() => MathJax.typesetPromise())
+          .catch(console.error);
+      } else {
+        setTimeout(kickMathJax, 100);
+      }
+    };
+    ('requestIdleCallback' in window)
+      ? requestIdleCallback(kickMathJax, { timeout: 2000 })
+      : setTimeout(kickMathJax, 0);
+  });
+  </script>
+  <script id="MathJax-script" async src="../../../_static/mathjax/tex-mml-chtml.js"></script><script src="../../../_static/mermaid/mermaid.min.js"></script>
+    <script type="module">
+      // Defer the initial diagram rendering off the critical render path.
+      // mermaid.min.js is a classic script loaded before this module, so
+      // the mermaid global is guaranteed to exist here (no load race,
+      // unlike the async MathJax script above).
+      mermaid.initialize({ startOnLoad: false });
+      window.addEventListener('load', () => {
+        const kickMermaid = () => mermaid.run().catch(console.error);
+        ('requestIdleCallback' in window)
+          ? requestIdleCallback(kickMermaid, { timeout: 2000 })
+          : setTimeout(kickMermaid, 0);
+      });
+    </script>
+    <script>
+      // Re-render mermaid diagrams; idempotent for already rendered
+      // diagrams thanks to mermaid's data-processed marker.
+      function rerunMermaid() {
+        requestAnimationFrame(() => mermaid.run());
+      }// Lazily loaded document chunks (see frame_document_content.jinja.html)
+      // arrive after the initial idle-time rendering; re-run when one loads.
+      document.addEventListener("turbo:frame-load", (event) => {
+        if (!event.target.id?.startsWith("document-chunk-")) return;
+        rerunMermaid();
+      });
+    </script><script src="../../../_static/plantuml/viz-global.js"></script>
+    <script src="../../../_static/plantuml/plantuml-core.js"></script>
+    <script src="../../../_static/plantuml/plantuml.js"></script>
+    <script>
+      const kickPlantUML = () => window.strictdocRenderPlantUML().catch(console.error);
+      window.addEventListener('load', () => {
+        ('requestIdleCallback' in window)
+          ? requestIdleCallback(kickPlantUML, { timeout: 2000 })
+          : setTimeout(kickPlantUML, 0);
+      });// Lazily loaded document chunks (see frame_document_content.jinja.html)
+      // arrive after the initial idle-time rendering; re-run when one loads.
+      document.addEventListener("turbo:frame-load", (event) => {
+        if (!event.target.id?.startsWith("document-chunk-")) return;
+        requestAnimationFrame(kickPlantUML);
+      });
+    </script>
+  
+  
+
+
+  <title>Vehicle Cybersecurity Requirements Overview and General Information - Document</title>
+
+  
+</head>
+
+<body data-viewtype="document" data-turbo="false">
+
+<div class="mars">
+  
+</div>
+
+  <div class="layout" id="layout">
+
+    <nav class="layout_nav">
+      
+  <div class="nav">
+
+
+
+  <a
+    data-link="index"
+    class="nav_button"
+    href="../../../index.html"
+    title="Project index"
+    data-testid="project-tree-link-project-index"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <line x1="9" y1="4" x2="7" y2="4"></line>
+  <line x1="12" y1="9" x2="12" y2="7"></line>
+  <line x1="6" y1="10" x2="10" y2="6"></line>
+  <circle cx="4" cy="12" r="2.25"></circle>
+  <circle cx="12" cy="4" r="2.25"></circle>
+  <circle cx="4" cy="4" r="2.25"></circle>
+  <circle cx="12" cy="12" r="2.25"></circle>
+</svg>
+  </a><a
+    data-link="traceability-matrix"
+    class="nav_button"
+    href="../../../traceability_matrix.html"
+    title="Traceability matrix"
+    data-testid="project-tree-link-requirements-coverage"
+  >
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <line x1="2" y1="11" x2="14" y2="11"></line>
+  <line x1="10" y1="8" x2="14" y2="8"></line>
+  <line x1="2" y1="14" x2="14" y2="14"></line>
+  <polyline points="2 6 4.5 8 9.5 2"></polyline>
+</svg>
+  </a></div>
+
+    </nav>
+
+    <aside class="layout_tree">
+      
+  
+
+
+
+<div
+  js-resizable_bar="tree"
+  data-state="open"
+  data-position="left"
+>
+
+<div class="project_tree_with_ad">
+  <turbo-frame id="frame_aside_project_tree">
+  <div
+    class="tree"
+    js-project_tree_preserve_scroll="tree"
+    data-project-title="NMFTA Vehicle Cybersecurity Requirements"
+    data-testid="aside-project-tree"
+  >
+    
+        
+          <div
+            class="tree_folder"
+            data-level="0"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/</span>
+          </div>
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="1"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/</span>
+          </div>
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_0_telematics/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_0_telematics/class_0_telematics.html"
+          class="tree_item"
+          
+          data-folder="class_0_telematics"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 0 Telematics Security Requirements"
+            data-file_name="class_0_telematics.sdoc"
+          >Class 0 Telematics Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_1_wireless_multiseg/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_1_wireless_multiseg/class_1_wireless_multiseg.html"
+          class="tree_item"
+          
+          data-folder="class_1_wireless_multiseg"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 1 Multi-Segment with Wireless Security Requirements"
+            data-file_name="class_1_wireless_multiseg.sdoc"
+          >Class 1 Multi-Segment with Wireless Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_2_gateway/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_2_gateway/class_2_gateway.html"
+          class="tree_item"
+          
+          data-folder="class_2_gateway"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 2 Vehicle Gateway Security Requirements"
+            data-file_name="class_2_gateway.sdoc"
+          >Class 2 Vehicle Gateway Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_3_multiseg_untrusted/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_3_multiseg_untrusted/class_3_multiseg_untrusted.html"
+          class="tree_item"
+          
+          data-folder="class_3_multiseg_untrusted"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 3 Multi Segment with Untrusted Wired Connection Security Requirements"
+            data-file_name="class_3_multiseg_untrusted.sdoc"
+          >Class 3 Multi Segment with Untrusted Wired Connection Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_4_multiseg/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_4_multiseg/class_4_multiseg.html"
+          class="tree_item"
+          
+          data-folder="class_4_multiseg"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 4 Multi Segment Security Requirements"
+            data-file_name="class_4_multiseg.sdoc"
+          >Class 4 Multi Segment Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_5_single_seg_high_risk/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_5_single_seg_high_risk/class_5_single_seg_high_risk.html"
+          class="tree_item"
+          
+          data-folder="class_5_single_seg_high_risk"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 5 Single Segment High Risk Security Requirements"
+            data-file_name="class_5_single_seg_high_risk.sdoc"
+          >Class 5 Single Segment High Risk Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_6_single_seg_med_risk/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_6_single_seg_med_risk/class_6_single_seg_med_risk.html"
+          class="tree_item"
+          
+          data-folder="class_6_single_seg_med_risk"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 6 Single Segment Medium Risk Security Requirements"
+            data-file_name="class_6_single_seg_med_risk.sdoc"
+          >Class 6 Single Segment Medium Risk Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/class_7_single_seg_low_risk/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/class_7_single_seg_low_risk/class_7_single_seg_low_risk.html"
+          class="tree_item"
+          
+          data-folder="class_7_single_seg_low_risk"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Class 7 Single Segment Low Risk Security Requirements"
+            data-file_name="class_7_single_seg_low_risk.sdoc"
+          >Class 7 Single Segment Low Risk Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/common/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/common/baseline_ecu.html"
+          class="tree_item"
+          
+          data-folder="common"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Baseline ECU Cybersecurity Requirements"
+            data-file_name="baseline_ecu.sdoc"
+          >Baseline ECU Cybersecurity Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/common/cloud_backend.html"
+          class="tree_item"
+          
+          data-folder="common"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Cloud and Backend Security Requirements"
+            data-file_name="cloud_backend.sdoc"
+          >Cloud and Backend Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/common/mobile_app.html"
+          class="tree_item"
+          
+          data-folder="common"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Mobile App and Driver Interface Security Requirements"
+            data-file_name="mobile_app.sdoc"
+          >Mobile App and Driver Interface Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/common/vehicle_bus_connection.html"
+          class="tree_item"
+          
+          data-folder="common"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Vehicle Bus Connection Security Requirements"
+            data-file_name="vehicle_bus_connection.sdoc"
+          >Vehicle Bus Connection Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/common/vehicle_gateway_controls.html"
+          class="tree_item"
+          
+          data-folder="common"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Vehicle Network Gateway Security Requirements"
+            data-file_name="vehicle_gateway_controls.sdoc"
+          >Vehicle Network Gateway Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/common/wireless_connectivity.html"
+          class="tree_item"
+          
+          data-folder="common"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Wireless Connectivity Security Requirements"
+            data-file_name="wireless_connectivity.sdoc"
+          >Wireless Connectivity Security Requirements</div>
+        </a>
+        
+        
+        
+        
+      
+        
+          <div
+            class="tree_folder"
+            data-level="2"
+            data-testid="tree-folder-item"
+          >
+          <span class="tree_folder_path">/requirements/overview/</span>
+          </div>
+        
+      
+        
+        <a
+          href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/overview/00_overview.html"
+          class="tree_item"
+          
+          active="true"
+          
+          data-folder="overview"
+          data-testid="tree-document-link"
+        >
+          <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+          <div
+            class="document_title"
+            title="Vehicle Cybersecurity Requirements Overview and General Information"
+            data-file_name="00_overview.sdoc"
+          >Vehicle Cybersecurity Requirements Overview and General Information</div>
+        </a>
+        
+        
+        
+        
+      
+        
+      </div>
+</turbo-frame>
+  
+  <div id="ethical-ad-placement"></div>
+</div>
+</div>
+
+    </aside><aside
+        data-position="right"
+        class="layout_toc"
+      >
+        
+  
+
+
+
+<div
+  js-resizable_bar="toc"
+  data-state="open"
+  data-position="right"
+>
+<turbo-frame
+  id="frame-toc"
+  style="display: contents"
+>
+      <ul
+      data-testid="toc-list"
+      js-collapsible_list="list"
+      class="toc"
+      id="toc"
+      data-js-draggable-list><li data-nodeid="8be6e4bee89a485387ca1ce2c59b3cc7">
+        <a
+          href="#1-Preface-and-Disclaimer-of-Liability"
+          anchor="1-Preface-and-Disclaimer-of-Liability"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            1
+          </span>Preface and Disclaimer of Liability
+            </a></li><li data-nodeid="cfff740027284d8b9601077f5a2eaeed">
+        <a
+          href="#2-Glossary-and-List-of-Abbreviations"
+          anchor="2-Glossary-and-List-of-Abbreviations"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            2
+          </span>Glossary and List of Abbreviations
+            </a></li><li data-nodeid="7701a81e24ad4aa6aad9bb2b5a5fda0f">
+        <a
+          href="#3-Purpose-Architectural-Scope-Classification-Approach"
+          anchor="3-Purpose-Architectural-Scope-Classification-Approach"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            3
+          </span>Purpose, Architectural Scope &amp; Classification Approach
+            </a></li><li data-nodeid="b3e5c56838ca4e01a2ebdf04c4b88736">
+        <a
+          href="#4-Telematics-Systems-in-Commercial-Fleets-Special-Handling-Evaluation-Guidance"
+          anchor="4-Telematics-Systems-in-Commercial-Fleets-Special-Handling-Evaluation-Guidance"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            4
+          </span>Telematics Systems in Commercial Fleets: Special Handling &amp; Evaluation Guidance
+            </a></li><li data-nodeid="baf3e6c46cfb42cb97fdaf0c5624a923">
+        <a
+          href="#5-Requirements-Structure-and-Options-Handling-CONTAINS_OPTIONS"
+          anchor="5-Requirements-Structure-and-Options-Handling-CONTAINS_OPTIONS"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            5
+          </span>Requirements Structure and Options Handling (CONTAINS_OPTIONS)
+            </a></li><li data-nodeid="79550dab343c4bbd8c2ecc8bb6824d78">
+        <a
+          href="#6-Acknowledgements"
+          anchor="6-Acknowledgements"
+          data-turbo="false"
+        >
+          <span class="toc-section-number">
+            6
+          </span>Acknowledgements
+            </a></li></ul>
+</turbo-frame>
+</div>
+
+      </aside><header class="layout_header">
+      <div class="header">
+
+  
+  <div
+    class="header__project_name"
+    id="header-project-name"
+    title="NMFTA Vehicle Cybersecurity Requirements"
+  >NMFTA Vehicle Cybersecurity Requirements
+  </div>
+
+  
+      <svg
+  class="svg_icon"
+  viewBox="0 0 20 20"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  >
+  <path d="M12.5 4.5l-5 11"></path>
+</svg>
+      <turbo-frame id="header_document_title">
+  <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d=" M13,13 L13,8 C13,7.5 12.6,7 12,7 L9,7 C8.5,7 8,6.5 8,6 L8,3 C8,2.5 7.5,2 7,2 L4,2 C3.5,2 3,2.5 3,3 L3,13 C3,13.5 3.5,14 4,14 L12,14 C12.6,14 13,13.5 13,13 Z M13,9 L13,8 C13,7.5 13,7 12.5,6.5 L8.5,2.5 C8,2 7.5,2 7,2 L6,2"></path>
+</svg>
+  <div
+    class="header__document_title"
+    title="Vehicle Cybersecurity Requirements Overview and General Information"
+  >
+    Vehicle Cybersecurity Requirements Overview and General Information
+  </div>
+</turbo-frame>
+    
+      <svg
+  class="svg_icon"
+  viewBox="0 0 20 20"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  >
+  <path d="M12.5 4.5l-5 11"></path>
+</svg>
+      <turbo-frame
+  id="frame-viewtype-menu"
+  style="display: contents"
+>
+  <div class="viewtype">
+  <div
+    id="viewtype_handler"
+    class="viewtype__handler"
+    data-dropdown-handler
+    aria-expanded="false"
+    aria-controls="viewtype_menu"
+  >
+    <span>Document</span>
+    <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 10l3 3 3-3M5 6l3-3 3 3"></path>
+</svg>
+  </div>
+  <menu
+    id="viewtype_menu"
+    class="dropdown_menu"
+    aria-hidden="true"
+    aria-labelledby="viewtype_handler"
+  >
+    <li class="dropdown_menu_header">VIEWS</li>
+    <li>
+      <a
+        data-viewtype_link="document"
+        class="dropdown_menu_item"
+        title="Go to Document view"
+        href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/overview/00_overview.html">
+      Document</a>
+    </li><li>
+      <a
+        data-viewtype_link="table"
+        class="dropdown_menu_item"
+        title="Go to Table view"
+        href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/overview/00_overview-TABLE.html">
+      Table</a>
+    </li><li>
+      <a
+        data-viewtype_link="traceability"
+        class="dropdown_menu_item"
+        title="Go to Traceability view"
+        href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/overview/00_overview-TRACE.html">
+      Traceability</a>
+    </li><li>
+      <a
+        data-viewtype_link="deep_traceability"
+        class="dropdown_menu_item"
+        title="Go to Deep Traceability view"
+        href="../../../nmfta-vehicle_cybersecurity_requirements/requirements/overview/00_overview-DEEP-TRACE.html">
+      Deep Traceability</a>
+    </li></menu>
+</div>
+</turbo-frame>
+    
+  <div class="header__placeholder" data-testid="header-placeholder" id="header-placeholder"></div>
+
+  <div id="search" class="search-box">
+  <div class="search-input">
+      <input type="text" id="userinput" tabindex="2" placeholder="Search" autocorrect="off" spellcheck="false" autocomplete="off" data-testid="static-html-search-input">
+  </div>
+  <div id="search_results" class="search-results">
+    <div id="results_navigation" class="search-results-navigation">
+      <div id="results_count" class="search-results-count"></div>
+      <div class="search-results-navigation-buttons">
+        <span class="search-results-navigation-button" id="start" data-testid="static-html-search-button-start"></span>
+        <span class="search-results-navigation-button" id="previous" data-testid="static-html-search-button-previous"></span>
+        <span class="search-results-navigation-button" id="next" data-testid="static-html-search-button-next"></span>
+        <span class="search-results-navigation-button" id="end" data-testid="static-html-search-button-end"></span>
+      </div>
+    </div>
+    <div id="suggestions" class="search-suggestions"></div>
+  </div>
+</div></div>
+    </header>
+
+    <main class="layout_main">
+      
+  <div
+  class="main"
+  js-toc_highlighting-content_root
+  js-content-viewport
+>
+  <turbo-frame id="frame_document_content">
+      <div
+        class="content"
+      >
+        
+        
+
+        
+
+<turbo-frame id="article-9df76dd542ed47fd824b9b6bb1a1b13f">
+
+  <sdoc-node
+    data-editable_node="on"
+    node-role="root"
+    data-testid="node-root"
+  >
+
+    
+    
+
+  
+<h1 data-testid="document-title">
+  Vehicle Cybersecurity Requirements Overview and General Information
+  <span style="position: absolute; left: 0;" id="None-Vehicle-Cybersecurity-Requirements-Overview-and-General-Information" data-uid="None-Vehicle-Cybersecurity-Requirements-Overview-and-General-Information" data-anchor="None-Vehicle-Cybersecurity-Requirements-Overview-and-General-Information"></span>
+</h1>
+  
+
+
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-4a538e8535dd48bb86be8dc8fc0bbfd5">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="4a538e8535dd48bb86be8dc8fc0bbfd5"
+  data-anchor="4a538e8535dd48bb86be8dc8fc0bbfd5"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document">
+<p>These recommended security requirements are intended to be informative, not directional in nature. While all reasonable steps have been taken to ensure that the recommendations are well-supported by our research and third-party verification, NMFTA and the parties contributing to these recommendations do not accept liability or responsibility for any damage or harm incurred as a result of actions taken based upon these recommendations.</p>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-8be6e4bee89a485387ca1ce2c59b3cc7">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="narrative"
+      show-node-type-name="SECTION"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="1-Preface-and-Disclaimer-of-Liability"
+  data-anchor="1-Preface-and-Disclaimer-of-Liability"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="narrative"
+  data-level="1"
+  show-node-type-name="SECTION"
+  data-testid="requirement-style-narrative"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="1"
+  >
+    <h2><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen>1.&nbsp;Preface and Disclaimer of Liability</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></h2>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+      
+      
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-462c03ebfe604d52a2ef7d0253689bbf">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="462c03ebfe604d52a2ef7d0253689bbf"
+  data-anchor="462c03ebfe604d52a2ef7d0253689bbf"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document">
+<p>THE INFORMATION CONTAINED HEREIN IS PROVIDED “AS IS” WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
+INFORMATION IS WITH THE USER.</p>
+<p>NMFTA and contributing industry working group participants disclaim any
+liability for direct, indirect, incidental, special, or consequential damages
+resulting from the implementation, procurement, or use of these cybersecurity
+requirements or associated verification procedures.</p>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-cfff740027284d8b9601077f5a2eaeed">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="narrative"
+      show-node-type-name="SECTION"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="2-Glossary-and-List-of-Abbreviations"
+  data-anchor="2-Glossary-and-List-of-Abbreviations"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="narrative"
+  data-level="2"
+  show-node-type-name="SECTION"
+  data-testid="requirement-style-narrative"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="2"
+  >
+    <h2><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen>2.&nbsp;Glossary and List of Abbreviations</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></h2>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+      
+      
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-e842f11c4b9f474d86cee3a47193887e">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="e842f11c4b9f474d86cee3a47193887e"
+  data-anchor="e842f11c4b9f474d86cee3a47193887e"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document">
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Abbreviation</th>
+<th class="head">Term</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>ASVS</td>
+<td>Application Security Verification Standard</td>
+</tr>
+<tr><td>BSIMM</td>
+<td>Building Security in Maturity Model</td>
+</tr>
+<tr><td>CAIQ</td>
+<td>Consensus Assessment Initiative Questionnaire</td>
+</tr>
+<tr><td>CAN</td>
+<td>Controller Area Network</td>
+</tr>
+<tr><td>CGW</td>
+<td>Central Gateway</td>
+</tr>
+<tr><td>CTIA</td>
+<td>Cellular Telecommunications and Internet Association</td>
+</tr>
+<tr><td>Cyber ITL</td>
+<td>Cyber Independent Testing Labs</td>
+</tr>
+<tr><td>DHS</td>
+<td>Department of Homeland Security</td>
+</tr>
+<tr><td>DOT</td>
+<td>Department of Transportation</td>
+</tr>
+<tr><td>ECU</td>
+<td>Electronic Control Unit</td>
+</tr>
+<tr><td>ELD</td>
+<td>Electronic Logging Device</td>
+</tr>
+<tr><td>ETSI</td>
+<td>European Telecommunications Standards Institute</td>
+</tr>
+<tr><td>FM</td>
+<td>Fleet Manager</td>
+</tr>
+<tr><td>FMI</td>
+<td>Fleet Management Information</td>
+</tr>
+<tr><td>FMIS</td>
+<td>Fleet Management Information System</td>
+</tr>
+<tr><td>HMI</td>
+<td>Human Machine Interface</td>
+</tr>
+<tr><td>HDVCR</td>
+<td>Heavy Duty Vehicle Cybersecurity Requirements</td>
+</tr>
+<tr><td>IEC</td>
+<td>International Electrotechnical Commission</td>
+</tr>
+<tr><td>IS</td>
+<td>Information System</td>
+</tr>
+<tr><td>ISO</td>
+<td>International Organization for Standardization</td>
+</tr>
+<tr><td>IVG</td>
+<td>Intelligent Vehicle Gateway</td>
+</tr>
+<tr><td>MAC</td>
+<td>Mandatory Access Controls</td>
+</tr>
+<tr><td>MASVS</td>
+<td>Mobile Application Security Verification Standard</td>
+</tr>
+<tr><td>MSTG</td>
+<td>Mobile Security Testing Guide</td>
+</tr>
+<tr><td>NIST</td>
+<td>National Institute of Standards and Technology</td>
+</tr>
+<tr><td>NMFTA</td>
+<td>National Motor Freight Traffic Association, Inc.</td>
+</tr>
+<tr><td>OBD</td>
+<td>On-Board Diagnostics</td>
+</tr>
+<tr><td>OEM</td>
+<td>Original Equipment Manufacturer</td>
+</tr>
+<tr><td>OTA</td>
+<td>Over-The-Air Update</td>
+</tr>
+<tr><td>OWASP</td>
+<td>Open Web Application Security Project</td>
+</tr>
+<tr><td>RFP</td>
+<td>Request for Proposal</td>
+</tr>
+<tr><td>RFPCTL</td>
+<td>Request for Proposal Contract Template Language</td>
+</tr>
+<tr><td>TND</td>
+<td>Trusted Network Domain</td>
+</tr>
+<tr><td>TSP</td>
+<td>Telematics Service Provider</td>
+</tr>
+<tr><td>UID</td>
+<td>Unique Identifier</td>
+</tr>
+<tr><td>UND</td>
+<td>Untrusted Network Domain</td>
+</tr>
+<tr><td>VCR</td>
+<td>Vehicle Cybersecurity Requirements</td>
+</tr>
+<tr><td>VCRWG</td>
+<td>Vehicle Cybersecurity Requirements Working Group</td>
+</tr>
+<tr><td>WAN</td>
+<td>Wide Area Network</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Untrusted Network Domain (UND):</dt>
+<dd>A network domain (or segment) that contains <strong>any</strong> of the following:
+a) wireless communication or reachable wirelessly (e.g. J2497, ISO 15118, Bluetooth, Wi-Fi, cellular)
+b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
+c) a telematics device that does not satisfy the HD VCR requirements
+d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements</dd>
+<dt>Trusted Network Domain (TND):</dt>
+<dd>A network domain (or segment) that <strong>does not contain any</strong> of the untrusted attributes listed above.</dd>
+</dl>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-7701a81e24ad4aa6aad9bb2b5a5fda0f">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="narrative"
+      show-node-type-name="SECTION"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="3-Purpose-Architectural-Scope-Classification-Approach"
+  data-anchor="3-Purpose-Architectural-Scope-Classification-Approach"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="narrative"
+  data-level="3"
+  show-node-type-name="SECTION"
+  data-testid="requirement-style-narrative"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="3"
+  >
+    <h2><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen>3.&nbsp;Purpose, Architectural Scope &amp; Classification Approach</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></h2>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+      
+      
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-8e8cae582c7843d4ad1a016e14d95546">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="8e8cae582c7843d4ad1a016e14d95546"
+  data-anchor="8e8cae582c7843d4ad1a016e14d95546"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document">
+<p>The <strong>NMFTA Heavy-Duty Vehicle Cybersecurity Requirements (HD VCR)</strong> specification establishes a comprehensive, structured set of cybersecurity requirements and verification procedures for Electronic Control Units (ECUs) and interconnected subsystems in commercial motor vehicles.</p>
+<p>As modern commercial vehicles incorporate sophisticated electronic architectures, vehicle networks, and off-board connectivity, fleet managers and motor freight carriers bear increasing operational risk. The primary objectives of this specification are to:</p>
+<ol class="arabic simple">
+<li><strong>Empower Fleet Procurement</strong>: Provide commercial fleets, motor carriers, and vehicle purchasers with actionable, prioritized cybersecurity criteria for evaluating vehicles, systems, and supplier proposals (RFPs).</li>
+<li><strong>Standardize Supplier Expectations</strong>: Define unambiguous, testable security controls for OEMs, Tier-1 suppliers, and aftermarket device manufacturers.</li>
+<li><strong>Establish Verifiable Assurance</strong>: Equip purchasers and independent testing laboratories with concrete verification procedures to validate that required controls are present and effective upon delivery.</li>
+</ol>
+<div class="section" id="architectural-approach-ecu-classification">
+<h1>Architectural Approach &amp; ECU Classification:</h1>
+<p>Commercial vehicle architectures partition electronic controllers into distinct device classes based on their network topology, external interfaces, gatewaying responsibilities, and overall risk profile:</p>
+<ul class="simple">
+<li><strong>Class 0 (Telematics)</strong>: Systems possessing off-board Wide Area Network (WAN) connectivity (cellular, satellite, internet).</li>
+<li><strong>Class 1 (Multi-Segment with Wireless)</strong>: Controllers connected to multiple internal buses with short-range wireless interfaces (Bluetooth, Wi-Fi, TPMS RF).</li>
+<li><strong>Class 2 (Vehicle Gateway)</strong>: Dedicated routing, isolation, and message-filtering controllers (Central Gateway / CGW).</li>
+<li><strong>Class 3 (Multi-Segment with Untrusted Wired)</strong>: Controllers bridging internal networks to untrusted physical connectors (OBD-II, RP1226, trailer bridges).</li>
+<li><strong>Class 4 (Multi-Segment Trusted)</strong>: Multi-segment controllers where all attached buses are internal and trusted.</li>
+<li><strong>Class 5 (Single-Segment High Risk)</strong>: Single-segment controllers whose disruption presents critical operational or safety impact (e.g., emissions/aftertreatment, retarders).</li>
+<li><strong>Class 6 (Single-Segment Medium Risk)</strong>: Single-segment controllers of moderate operational risk (e.g., suspension, automated steering assists).</li>
+<li><strong>Class 7 (Single-Segment Low Risk)</strong>: Single-segment controllers of low fleet risk (e.g., cab convenience, HVAC, door modules).</li>
+</ul>
+<p>For physical vehicle controllers (Classes 1 through 7), requirements apply directly to the physical ECU hardware and its firmware. However, telematics systems (Class 0) represent a distributed system architecture requiring specialized decomposition, as described in the following section.</p>
+</div>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-b3e5c56838ca4e01a2ebdf04c4b88736">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="narrative"
+      show-node-type-name="SECTION"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="4-Telematics-Systems-in-Commercial-Fleets-Special-Handling-Evaluation-Guidance"
+  data-anchor="4-Telematics-Systems-in-Commercial-Fleets-Special-Handling-Evaluation-Guidance"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="narrative"
+  data-level="4"
+  show-node-type-name="SECTION"
+  data-testid="requirement-style-narrative"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="4"
+  >
+    <h2><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen>4.&nbsp;Telematics Systems in Commercial Fleets: Special Handling &amp; Evaluation Guidance</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></h2>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+      
+      
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-0d0a83bdfe0649b89f253b4be31392b4">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="0d0a83bdfe0649b89f253b4be31392b4"
+  data-anchor="0d0a83bdfe0649b89f253b4be31392b4"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document">
+<div class="section" id="special-handling-for-class-0-telematics-systems">
+<h1>Special Handling for Class 0 Telematics Systems:</h1>
+<p>Unlike traditional on-vehicle ECUs (Classes 1 through 7) which are evaluated as individual physical modules, <strong>Class 0 Telematics Systems</strong> encompass a distributed ecosystem extending beyond the vehicle. A telematics solution typically spans four distinct architectural components:
+1. An on-vehicle physical unit (<em>Vehicle Connection Component</em>),
+2. A wireless pipe (<em>Connectivity or Communications Component</em>),
+3. An off-board server infrastructure (<em>Cloud or Back-End Component</em>), and
+4. A driver interface (<em>Mobile App or Driver Display Component</em>).</p>
+<p>Because of this distributed nature, the telematics requirements derived from the NMFTA Telematics Security Requirements Matrix (TSRM) are handled specially:
+- The specification partitions telematics controls across the four component boundaries.
+- The supplier questionnaires generate four dedicated evaluation worksheets so that procuring fleets can obtain specific attestations from the respective engineering and operations teams.</p>
+</div>
+<div class="section" id="scope-guidance-multiple-telematics-systems-per-vehicle">
+<h1>Scope Guidance: Multiple Telematics Systems per Vehicle:</h1>
+<p>Modern commercial motor vehicles frequently deploy <strong>multiple distinct telematics systems</strong> simultaneously. A single tractor or trailer may incorporate:</p>
+<ul class="simple">
+<li>An OEM factory telematics gateway / off-vehicle connectivity unit.</li>
+<li>An aftermarket Electronic Logging Device (ELD) or Fleet Management Information System (FMIS).</li>
+<li>Component-specific telematics devices (e.g., Engine, Transmission, or Braking/ABS telematics units).</li>
+<li>Camera, vision safety, and trailer tracking subsystems.</li>
+</ul>
+<p>Because each deployed telematics system introduces network interfaces and potential attack vectors into the vehicle, <strong>fleets and purchasers must evaluate ALL telematics systems installed on the vehicle</strong>.</p>
+<p>When issuing supplier questionnaires or evaluating vendor compliance:
+- Procuring fleets MUST ensure that questionnaire recipients complete responses for <strong>ALL</strong> telematics systems present on or integrated with the vehicle.
+- A vendor or supplier providing multiple telematics subsystems must submit separate questionnaire responses for each individual system.
+- An assessment of only one system (e.g., the primary ELD) does not confer cybersecurity assurance to other co-existing telematics systems (e.g., powertrain or trailer telematics).</p>
+</div>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-baf3e6c46cfb42cb97fdaf0c5624a923">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="narrative"
+      show-node-type-name="SECTION"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="5-Requirements-Structure-and-Options-Handling-CONTAINS_OPTIONS"
+  data-anchor="5-Requirements-Structure-and-Options-Handling-CONTAINS_OPTIONS"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="narrative"
+  data-level="5"
+  show-node-type-name="SECTION"
+  data-testid="requirement-style-narrative"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="5"
+  >
+    <h2><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen>5.&nbsp;Requirements Structure and Options Handling (CONTAINS_OPTIONS)</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></h2>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+      
+      
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-0b202887845041a79e282da8a72b56c5">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="0b202887845041a79e282da8a72b56c5"
+  data-anchor="0b202887845041a79e282da8a72b56c5"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document" id="note-on-options-for-requirements">
+<h1 class="title">Note on Options for Requirements:</h1>
+<p>These specifications contain requirements where the working group cannot reasonably require a particular implementation option, only that one of the satisfactory ways to satisfy the requirement is implemented. Modelling these 'options' requirements as separate formal nodes is neither practical nor recommended: the sheer number of requirements captured for heavy vehicles means that the requirements must remain machine-readable and there is no machine-readable way to communicate options to implementors (for good reason).</p>
+<p>The approach taken across all VCR requirements documents is to:
+a) Include the options as notes to the implementers directly within the requirement statements or comments; and
+b) Tag all requirements with <cite>CONTAINS_OPTIONS</cite> in their <cite>TAGS</cite> field so that the entire list of requirements containing notes to the implementers can be indexed for easy reference by them.</p>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-79550dab343c4bbd8c2ecc8bb6824d78">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="narrative"
+      show-node-type-name="SECTION"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="6-Acknowledgements"
+  data-anchor="6-Acknowledgements"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="narrative"
+  data-level="6"
+  show-node-type-name="SECTION"
+  data-testid="requirement-style-narrative"
+>
+  
+  
+  
+  <sdoc-node-title
+    data-level="6"
+  >
+    <h2><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen>6.&nbsp;Acknowledgements</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></h2>
+  </sdoc-node-title>
+
+
+
+  
+    
+    <sdoc-scope class="node_fields_group-secondary">
+      
+      
+      
+    </sdoc-scope>
+    
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+  
+  
+    
+
+
+
+
+
+
+
+
+<turbo-frame id="article-a15f35cd0ad34103a7818f9cef7e74bb">
+
+  <sdoc-node
+    data-editable_node="on"
+    show-anchors
+    node-role="requirement"
+    
+      node-view="plain"
+      show-node-type-name="TEXT"
+    data-included-document="False"
+    data-testid="node-requirement"
+  >
+
+    
+    <sdoc-anchor
+  id="a15f35cd0ad34103a7818f9cef7e74bb"
+  data-anchor="a15f35cd0ad34103a7818f9cef7e74bb"
+  node-role="requirement"
+  
+  
+>
+  </sdoc-anchor>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+<sdoc-node-content
+  node-view="plain"
+  data-level=""
+  show-node-type-name="TEXT"
+  data-testid="requirement-style-plain"
+>
+  
+  
+  
+
+
+
+  
+    
+    <sdoc-node-field-label>STATEMENT:</sdoc-node-field-label>
+    <sdoc-node-field
+      data-field-label="statement"
+    ><sdoc-field>
+  <sdoc-field-content>
+    <sdoc-autogen><div class="document">
+<p>We would like to acknowledge the contributions of DOT/Volpe Center, motor freight carrier members, and the participants of the NMFTA Vehicle Cybersecurity Requirements Working Group (VCRWG) and Telematics Security Requirements working group.</p>
+<p>Named participants include Derek Held of Zonar Systems, representatives from Geotab, Altaz Valani of Security Compass, Mark Zachos of DG Technologies, Richard M. Litwinczuk (Senior Cybersecurity Engineer, Land Cyber Mission Assurance Program DND), Jacob D'Aoust (Junior Researcher, DeepMicro Limited), as well as numerous fleet managers, motor carriers, and telematics service providers (TSPs).</p>
+<p>The authors also acknowledge the contributions of the NMFTA Request for Proposal Contract Template Language (RFPCTL) working group.</p>
+</div>
+</sdoc-autogen>
+  </sdoc-field-content>
+  <sdoc-field-service>
+
+    <div class="copy_to_clipboard">
+      <div class="copy_to_clipboard-cover" data-copy-clipboard-target="cover">
+        <div title="Click to copy" class="copy_to_clipboard-button action_button" data-copy-clipboard-target="button">
+          <span style="display: contents;" data-copy-clipboard-target="copyIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8,2 L12,2 C13,2 14,3 14,4 L14,8 C14,9 13,10 12,10 L8,10 C7,10 6,9 6,8 L6,4 C6,3 7,2 8,2 Z"/>
+  <path d="M10,12 C10,13 9,14 8,14 L4,14 C3,14 2,13 2,12 L2,8 C2,7 3,6 4,6"/>
+</svg>
+          </span>
+          <span style="display: none;" data-copy-clipboard-target="doneIcon">
+            <svg
+  class="svg_icon"
+  viewBox="0 0 16 16"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2.5,8.5 C2.5,8.5 3.5,9.5 6,12 C11,7 13.5,4.5 13.5,4.5" />
+</svg>
+          </span>
+        </div>
+      </div>
+    </div>
+
+  </sdoc-field-service>
+</sdoc-field></sdoc-node-field>
+    
+    
+    
+
+
+
+  
+    
+
+
+
+  
+
+</sdoc-node-content>
+
+
+    
+    
+
+  </sdoc-node>
+</turbo-frame>
+  
+
+      </div>
+</turbo-frame>
+</div>
+
+    </main>
+
+    <footer class="layout_footer">
+      <div class="footer">
+        Built with
+        <a
+          class="strictdoc__link"
+          href="https://github.com/strictdoc-project/strictdoc"
+          target="_blank"
+        ><svg
+  height="16px"
+  width="16px"
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .line {
+      fill: none;
+      stroke-width: 6;
+      stroke: currentColor;
+    }
+    .node {
+      fill: currentColor;
+      stroke: none;
+    }
+  </style>
+
+  <path
+    class="line"
+    d="M 76,35 50,20 24,35 76,65 50,80 24,65"/>
+
+  <circle id="sdoc_n_7" class="node" cx="24" cy="65" r="9.0"/>
+  <circle id="sdoc_n_6" class="node" cx="50" cy="80" r="9.0"/>
+  <circle id="sdoc_n_5" class="node" cx="76" cy="65" r="9.0"/>
+  <circle id="sdoc_n_4" class="node" cx="50" cy="50" r="9.0"/>
+  <circle id="sdoc_n_3" class="node" cx="24" cy="35" r="9.0"/>
+  <circle id="sdoc_n_2" class="node" cx="50" cy="20" r="9.0"/>
+  <circle id="sdoc_n_1" class="node" cx="76" cy="35" r="9.0"/>
+</svg>StrictDoc</a>
+        <a
+          class="strictdoc__version"
+          href="https://github.com/strictdoc-project/strictdoc/releases/tag/0.30.3"
+          target="_blank"
+        >
+          <svg height="16" viewBox="0 0 16 16" version="1.1" width="16" >
+            <path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"/>
+          </svg>
+          0.30.3
+        </a>
+      </div>
+    </footer>
+
+    <aside class="layout_aside">
+      
+    </aside>
+
+  </div>
+  
+  <div id="modal"></div>
+  <div id="confirm"></div>
+  
+
+</body>
+</html>
