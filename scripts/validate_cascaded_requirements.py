@@ -496,6 +496,7 @@ def main() -> int:
 
     if use_live_repos:
         all_errors = validator.validate_from_live_repos()
+        all_errors.extend(validator.validate_generic_ecu_requirements())
     else:
         all_errors = validator.validate_from_baseline_json()
 
