@@ -258,6 +258,79 @@ class RequirementValidator:
                     if not c2_node["parents"] or c2_node["parents"][0] != uid:
                         errors.append(f"[Gateway] {c2_uid} does not properly link to parent {uid}")
 
+        errors.extend(self.validate_generic_ecu_requirements())
+
+        return errors
+
+    def validate_generic_ecu_requirements(self) -> List[str]:
+        """Validate generic ECU requirements (HW-010, RB-010, SPL-010) and their hierarchy."""
+        errors: List[str] = []
+        generic_uids = ["HW-010", "RB-010", "SPL-010"]
+
+        print(f"Checking generic ECU requirements ({', '.join(generic_uids)})...")
+        for uid in generic_uids:
+            if uid not in self.vcr_requirements:
+                errors.append(f"[Generic ECU] Baseline requirement {uid} missing in VCR baseline")
+                continue
+            node = self.vcr_requirements[uid]
+            if not node["statement"]:
+                errors.append(f"[Generic ECU] Baseline requirement {uid} missing statement")
+            if not node["verification"]:
+                errors.append(f"[Generic ECU] Baseline requirement {uid} missing verification criteria")
+            if not node["criticality"]:
+                errors.append(f"[Generic ECU] Baseline requirement {uid} missing criticality")
+
+            # Check vehicle bus connection wrapper
+            veh_uid = f"VEH-{uid}"
+            if veh_uid not in self.vcr_requirements:
+                errors.append(f"[Generic ECU] Vehicle connection wrapper {veh_uid} missing")
+            else:
+                veh_node = self.vcr_requirements[veh_uid]
+                if not veh_node["parents"] or veh_node["parents"][0] != uid:
+                    errors.append(f"[Generic ECU] {veh_uid} does not properly link to parent {uid}")
+
+            # Check Class 0 (only on-board VEH component, NOT cloud or mobile)
+            c0_veh_uid = f"C0-VEH-{uid}"
+            if c0_veh_uid not in self.vcr_requirements:
+                errors.append(f"[Generic ECU] Class 0 vehicle connection {c0_veh_uid} missing")
+            else:
+                c0_node = self.vcr_requirements[c0_veh_uid]
+                if not c0_node["parents"] or c0_node["parents"][0] != veh_uid:
+                    errors.append(f"[Generic ECU] {c0_veh_uid} does not link to {veh_uid}")
+
+            if f"C0-CLOUD-{uid}" in self.vcr_requirements:
+                errors.append(f"[Generic ECU] Unexpected cloud requirement C0-CLOUD-{uid} found")
+            if f"C0-APP-{uid}" in self.vcr_requirements:
+                errors.append(f"[Generic ECU] Unexpected mobile requirement C0-APP-{uid} found")
+
+            # Check Classes 1..3 (both baseline and vehicle bus)
+            for c_num in [1, 2, 3]:
+                c_uid = f"C{c_num}-{uid}"
+                if c_uid not in self.vcr_requirements:
+                    errors.append(f"[Generic ECU] Class {c_num} baseline requirement {c_uid} missing")
+                else:
+                    c_node = self.vcr_requirements[c_uid]
+                    if not c_node["parents"] or c_node["parents"][0] != uid:
+                        errors.append(f"[Generic ECU] {c_uid} does not link to parent {uid}")
+
+                c_veh_uid = f"C{c_num}-VEH-{uid}"
+                if c_veh_uid not in self.vcr_requirements:
+                    errors.append(f"[Generic ECU] Class {c_num} vehicle connection {c_veh_uid} missing")
+                else:
+                    c_veh_node = self.vcr_requirements[c_veh_uid]
+                    if not c_veh_node["parents"] or c_veh_node["parents"][0] != veh_uid:
+                        errors.append(f"[Generic ECU] {c_veh_uid} does not link to parent {veh_uid}")
+
+            # Check Classes 4..7 (baseline)
+            for c_num in [4, 5, 6, 7]:
+                c_uid = f"C{c_num}-{uid}"
+                if c_uid not in self.vcr_requirements:
+                    errors.append(f"[Generic ECU] Class {c_num} baseline requirement {c_uid} missing")
+                else:
+                    c_node = self.vcr_requirements[c_uid]
+                    if not c_node["parents"] or c_node["parents"][0] != uid:
+                        errors.append(f"[Generic ECU] {c_uid} does not link to parent {uid}")
+
         return errors
 
     def validate_from_live_repos(self) -> List[str]:
@@ -423,6 +496,7 @@ def main() -> int:
 
     if use_live_repos:
         all_errors = validator.validate_from_live_repos()
+        all_errors.extend(validator.validate_generic_ecu_requirements())
     else:
         all_errors = validator.validate_from_baseline_json()
 
@@ -437,8 +511,9 @@ def main() -> int:
         return 1
     else:
         print("SUCCESS: All 230 TSRM telematics requirements and 34 Gateway requirements")
-        print("         have identical cascaded statements, criticalities, and verification")
-        print("         criteria relative to the reference baseline!")
+        print("         have identical cascaded statements, criticalities, and verification criteria.")
+        print("         Generic ECU requirements (HW-010, RB-010, SPL-010) passed baseline")
+        print("         field-presence and hierarchy-link checks.")
         return 0
 
 

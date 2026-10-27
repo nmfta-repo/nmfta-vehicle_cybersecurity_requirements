@@ -583,3 +583,34 @@ RELATIONS:
 - TYPE: Parent
   VALUE: SII-200
   ROLE: Refines
+
+[REQUIREMENT]
+UID: VEH-HW-010
+STATEMENT: >>>
+This Vehicle Connection component must satisfy requirement HW-010
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: HW-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: VEH-RB-010
+STATEMENT: >>>
+This Vehicle Connection component must satisfy requirement RB-010
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: RB-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: VEH-SPL-010
+STATEMENT: >>>
+This Vehicle Connection component must satisfy requirement SPL-010
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SPL-010
+  ROLE: Refines
+

@@ -960,4 +960,40 @@ RELATIONS:
   VALUE: SII-200
   ROLE: Refines
 
+[REQUIREMENT]
+UID: C7-HW-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
+STATEMENT: >>>
+Class 7 devices SHALL satisfy baseline requirement HW-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: HW-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C7-RB-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
+STATEMENT: >>>
+Class 7 devices SHALL satisfy baseline requirement RB-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: RB-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C7-SPL-010
+STATUS: Draft
+TAGS: NEEDS_WORKING_GROUP_REVIEW
+STATEMENT: >>>
+Class 7 devices SHALL satisfy baseline requirement SPL-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SPL-010
+  ROLE: Refines
+
 [[/SECTION]]
