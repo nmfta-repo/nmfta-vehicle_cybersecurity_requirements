@@ -2335,7 +2335,7 @@ High
 TITLE: Rollback Resistance
 STATEMENT: >>>
 The device SHALL prevent rollback to a previous version of firmware and previous versions of cryptographic keys:
-a) The device SHALL reject installation, staging, or booting of any firmware version older than the currently installed authorized version, using secure monotonic version counters, eFuses, or equivalent anti-rollback mechanisms;
+a) The device SHALL reject installation, staging, or booting of any firmware version older than the last successfully booted and validated authorized version, using secure monotonic version counters, eFuses, or equivalent anti-rollback mechanisms; the protected minimum accepted version SHALL advance only after the new firmware has successfully booted and passed initialization validation;
 b) Once the system has been securely upgraded to a new firmware version and initialization is confirmed, any superseded version of firmware retained for fail-safe or fallback purposes SHALL be erased or invalidated to prevent rollback attacks; and
 c) Following a cryptographic key update or replacement operation, any previous version of the cryptographic key SHALL be securely erased and invalidated.
 <<<
