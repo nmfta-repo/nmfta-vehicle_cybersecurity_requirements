@@ -2271,5 +2271,149 @@ VERIFICATION: >>>
 Inspection of vendor process documentation confirming participation in information sharing group.
 <<<
 
+[REQUIREMENT]
+UID: HW-010
+CATEGORY: >>>
+Protecting Data on Devices
+<<<
+CRITICALITY: >>>
+High
+<<<
+TITLE: Secure Hardware Platform
+STATEMENT: >>>
+The device SHALL be implemented on a secure hardware platform (such as an MCU incorporating a Secure Hardware Extension / SHE+ or Hardware Security Module / HSM) that:
+a) Resists physical exfiltration of data, including preventing unauthorized reading out of configuration data, cryptographic keys, and firmware via physical debug/test interfaces (e.g., JTAG, SWD, or BDM);
+b) Enforces cryptographic verification of firmware during the boot process (secure boot) and does not permit reprogramming by unauthorized firmware;
+c) Stores cryptographic keys in isolated, secure storage such that if software executing on the MCU is compromised (e.g., by a Remote Code Execution / RCE vulnerability), the keys cannot be read out; and
+d) Incorporates hardware-accelerated cryptographic operations.
+<<<
+COMMENT: >>>
+Modern automotive secure microcontrollers include hardware security modules such as SHE, SHE+, or HSMs that provide isolated key storage, hardware cryptographic acceleration, and secure boot. Hardware encryption and tamper resistance ensure that sensitive cryptographic assets remain protected even in the event of an application software compromise.
+<<<
+PUB_REFS: >>>
+NIST SP 800-53 r5 SC-12 – CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT
+Protect cryptographic keys from unauthorized access, modification, and disclosure.
+
+NIST SP 800-53 r5 SC-28 – PROTECTION OF INFORMATION AT REST
+Protect the confidentiality and integrity of information at rest using cryptographic mechanisms.
+
+NIST SP 800-53 r5 SI-7 (9) – SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY | VERIFY BOOT PROCESS
+Verify the integrity of the boot process of system components.
+
+NIST SP 800-53 r5 SI-7 (10) – SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY | PROTECTION OF BOOT FIRMWARE
+Implement mechanisms to protect the integrity of boot firmware.
+
+SAE J3101 Section 6, 7, 9.1, 10 – Requirements for Hardware-Protected Security for Ground Vehicle Applications
+Requirements for Hardware Security Module, Secure Key Storage, Authenticated Boot, and Debug Interface Protection.
+
+SAE J3061 Appendix F – VEHICLE LEVEL CONSIDERATIONS, Security Mechanisms, b.
+Access control mechanisms to restrict access to critical Electronic Control Units (ECUs), critical modes of every ECU, and their data.
+
+AUTOSAR TR Secure Hardware Extensions (SHE+)
+Specification of Secure Hardware Extensions providing secure boot, cryptographic key isolation, and hardware-accelerated cryptographic operations.
+
+ISO/SAE 21434:2021 Section 10 – Cybersecurity requirements for hardware-based security mechanisms and secure key storage.
+
+UL 1376 Clause 1.5 – Hardware root of trust: Device implements a hardware based root of trust for updates and boot authentication.
+
+UL 1376 Clause 3.9 – Least privilege: Systems must utilize hardware-based features to protect sensitive code and data.
+<<<
+VERIFICATION: >>>
+1. Debug Interface Verification: Perform physical inspection and test bench verification on production hardware samples to ensure that debug interfaces (JTAG, SWD, BDM) are disabled, permanently fused, or cryptographically locked to prevent unauthorized data, firmware, or key exfiltration.
+2. Secure Boot Verification: Attempt to boot or program an unsigned, unauthorized, or modified firmware binary onto the device. Verify that the secure boot process detects the invalid signature and rejects execution/programming.
+3. Key Isolation Verification: Inspect hardware architecture and firmware interfaces to verify that cryptographic keys stored within the secure hardware element (HSM/SHE+) cannot be exported or read out by MCU application software, and verify cryptographic acceleration via functional performance testing.
+<<<
+
+[REQUIREMENT]
+UID: RB-010
+CATEGORY: >>>
+Protecting Firmware on Devices
+<<<
+CRITICALITY: >>>
+High
+<<<
+TITLE: Rollback Resistance
+STATEMENT: >>>
+The device SHALL prevent rollback to a previous version of firmware and previous versions of cryptographic keys:
+a) The device SHALL reject installation, staging, or booting of any firmware version older than the currently installed authorized version, using secure monotonic version counters, eFuses, or equivalent anti-rollback mechanisms;
+b) Once the system has been securely upgraded to a new firmware version and initialization is confirmed, any superseded version of firmware retained for fail-safe or fallback purposes SHALL be erased or invalidated to prevent rollback attacks; and
+c) Following a cryptographic key update or replacement operation, any previous version of the cryptographic key SHALL be securely erased and invalidated.
+<<<
+COMMENT: >>>
+Rollback (downgrade) attacks attempt to force a system into booting an older, legitimate version of firmware that contains known exploitable vulnerabilities. While retaining an older version temporarily protects against bricking if power is lost during programming, once the system is securely upgraded, the previous version must be invalidated or erased. The same principle applies to cryptographic keys, where superseded or revoked keys must be permanently expunged.
+<<<
+PUB_REFS: >>>
+NIST SP 800-193 Section 4.2.1 – Platform Firmware Resiliency Guidelines: Firmware Update Authentication and Anti-Rollback Protections
+Verify authenticity and integrity of firmware updates and ensure version sequencing prevents rollback to versions with known security vulnerabilities.
+
+NIST SP 800-53 r5 SI-2 – FLAW REMEDIATION
+Prevent the re-introduction of previously remediated vulnerabilities.
+
+NIST SP 800-53 r5 SI-7 (15) – SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY | CODE AUTHENTICATION
+Cryptographically authenticate software and firmware updates and prevent unauthorized version rollback.
+
+NIST SP 800-53 r5 SC-12 – CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT
+Ensure proper retirement, zeroization, and revocation of superseded cryptographic keys.
+
+FMCSA GDL 35 – Prevent the attacker from reinstalling a legitimate but known-vulnerable version (rollback attack).
+
+FMCSA GDL 36 – Make sure you can revoke and replace cryptographic keys.
+
+ISO/SAE 21434:2021 Section 10 – Software update controls and prevention of unauthorized version downgrades.
+
+UNECE WP.29 Regulation No. 156 (UN R156) Section 7.2 – Software Update and Software Update Management Systems: Verification of version sequence and protection against unauthorized rollback.
+
+UL 1376 Clause 1.3 – Software update authentication: Software updates must be cryptographically authenticated, and provide anti-roll back features.
+<<<
+VERIFICATION: >>>
+1. Firmware Anti-Rollback Test: Attempt to flash and boot a legitimate, previously signed firmware release with a version number lower than the active version. Verify that the device rejects the downgrade attempt and remains on the current version.
+2. Fallback Erasure/Invalidation Verification: Conduct a full firmware update cycle. Upon successful boot and validation of the new firmware, inspect flash memory and partition state to verify that the older fallback firmware copy is erased, overwritten, or cryptographically invalidated.
+3. Key Deletion Verification: Perform a cryptographic key update or revocation procedure. Verify that subsequent operations attempting to utilize the superseded or retired key are rejected and that key material cannot be extracted from non-volatile storage.
+<<<
+
+[REQUIREMENT]
+UID: SPL-010
+CATEGORY: >>>
+Software Resiliency / Code Protections
+<<<
+CRITICALITY: >>>
+High
+<<<
+TITLE: Secure Programming Language
+STATEMENT: >>>
+Software and firmware implemented on the device SHALL utilize a memory-safe programming language, a formally verified language subset (such as SPARK Ada or Rust), or formal verification methods:
+a) Network-facing, security-critical, and management firmware components SHALL be implemented using languages or formally verified subsets that eliminate common programming weaknesses, such as buffer overflows, memory corruption, and arbitrary remote code execution (RCE) vulnerabilities; and
+b) If languages without inherent memory safety (e.g., C or C++) are used for system components, the vendor SHALL provide formal verification proofs, mathematical model-checking, or comprehensive static analysis demonstrating the provable absence of buffer overflows, undefined behaviors, and zero exploitable RCE vulnerabilities.
+<<<
+COMMENT: >>>
+Well-known programming weaknesses such as buffer overflows, out-of-bounds writes, and memory corruption account for the vast majority of arbitrary remote code execution vulnerabilities in embedded firmware. Developing in memory-safe languages or mathematically verified language subsets (such as SPARK Ada or Rust) enables formal verification to prove the complete absence of run-time memory safety defects.
+<<<
+PUB_REFS: >>>
+NIST SP 800-53 r5 SI-16 – MEMORY PROTECTION
+Implement controls to protect system memory from unauthorized code execution, buffer overflow, and memory corruption.
+
+NIST SP 800-53 r5 SA-8 – SECURITY AND PRIVACY ENGINEERING PRINCIPLES
+Apply secure software engineering principles, including sound architecture and choice of safe implementation languages.
+
+ISO/SAE 21434:2021 Clause 10.4.1, 10.4.2 – Cybersecurity implementation and software design criteria: Selection of secure programming languages, defensive coding standards, and formal verification methods.
+
+CISA, NSA, FBI, and International Partners: "The Case for Memory Safe Roadmaps" / Cybersecurity Technical Report: Exploring Memory Safety (2023)
+Guidance recommending the elimination of memory safety vulnerabilities through adoption of memory-safe programming languages and verifiable subsets.
+
+MISRA C:2012 / MISRA C:2023 & MISRA Compliance:2020
+Guidelines for the use of the C language in critical systems to minimize undefined behaviors and runtime vulnerabilities.
+
+FMCSA GDL 22 – Leverage security controls built in to the operating system and development toolchain.
+
+FMCSA GDL 26 – Filter input to any device or interface that gets digitally processed.
+
+OWASP Embedded Application Security Best Practices: E1 – Buffer and Stack Overflow Protection.
+<<<
+VERIFICATION: >>>
+1. Language and Toolchain Audit: Review vendor engineering design documentation, build manifests, and source code inventories to verify the adoption of memory-safe languages (e.g., SPARK Ada, Rust) or safe language subsets for security-relevant and network-facing modules.
+2. Formal Verification and Static Analysis Inspection: Where C/C++ components exist, inspect automated formal verification reports (e.g., SPARK formal proofs, Frama-C, Polyspace, or MISRA-compliant static analysis tooling) demonstrating 100% verification of memory safety, bounds checks, and zero unresolved memory-corruption or RCE defects.
+3. Dynamic Analysis and Fuzzing: Execute automated dynamic testing, protocol fuzzing, and address sanitizer (ASan) instrumentation against device inputs and parsers to confirm the absence of buffer overflow or crash conditions.
+<<<
+
 [[/SECTION]]
 
