@@ -510,10 +510,10 @@ def main() -> int:
             print(f"  - {err}")
         return 1
     else:
-        print("SUCCESS: All 230 TSRM telematics requirements, 34 Gateway requirements,")
-        print("         and generic ECU security requirements (HW-010, RB-010, SPL-010)")
-        print("         have identical cascaded statements, criticalities, verification")
-        print("         criteria, and correct hierarchy propagation!")
+        print("SUCCESS: All 230 TSRM telematics requirements and 34 Gateway requirements")
+        print("         have identical cascaded statements, criticalities, and verification criteria.")
+        print("         Generic ECU requirements (HW-010, RB-010, SPL-010) passed baseline")
+        print("         field-presence and hierarchy-link checks.")
         return 0
 
 
