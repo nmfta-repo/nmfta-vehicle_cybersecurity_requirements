@@ -91,6 +91,103 @@ Trusted Network Domain (TND):
 [[/SECTION]]
 
 [[SECTION]]
+TITLE: Requirements Structure in This Document
+
+[TEXT]
+STATEMENT: >>>
+Each requirement captured is augmented with *Criticality*, *Verification
+Steps*, *Public Requirements References,* etc. e.g. see https://nmfta-repo.github.io/nmfta-vehicle_cybersecurity_requirements/?a=AA-010
+
+   **UID**
+
+shows a unique value assigned to the requirement for easy reference
+
+   **CATEGORY**
+
+groups like requirements together
+
+   **CRITICALITY**
+
+assigns a ‘priority’: a recommendation to the purchaser for each
+requirement:
+
+-  **High**: the working group advises that purchasers do not accept
+   proposals that do not meet all ‘High’ criticality requirements
+
+-  **Medium**: the working group advises that purchasers may accept
+   proposals that do not meet ‘Medium’ criticality requirements when the
+   failure is justifiable or mitigated by the OEM
+
+-  **Low**: the working group advises that purchasers may accept
+   proposals that do not meet ‘Low’ criticality requirements
+
+..
+
+   **CHILDREN**
+
+Captures the applicable component categories; shows to which of the components of the system that this requirement applies by listing the child requirements that are specific to any of the classes of components.
+
+   **PUB_REFS**
+
+Captures the public requirements references / descriptions from external authoritative requirements as were known to the working group at the time of this draft. These references are included so that
+
+-  Purchasers can easily refer to the referenced sections of the
+   document for further clarification on what are acceptable norms when
+   evaluating OEM responses to RFPs AND
+
+-  OEMs can use the referenced sections of the documents for
+   establishing common language and terms in the responses to RFPs to
+   amortize the costs of developing detailed responses.
+
+..
+
+   **STATEMENT**
+
+Shows the requirement as it applies to the components of a system.
+The working group made every effort to make these
+requirements shorter and more succinct than the authoritative external
+references.
+
+   **VERIFICATION**
+
+shows the steps which can be executed by purchasers to confirm that a
+given system satisfies this requirement. There are
+several cases where the working group does not expect that purchasers
+will perform their own verification. Where it is recommended that either
+a third party be engaged to provide an analysis which can be used by the
+purchasers to verify OEM claims, or that the OEM perform a
+demonstration that the requirement is satisfied which can be observed
+and confirmed by the purchaser. In such cases, rationale will be given.
+Due to the costly nature of delegating to a third party or of preparing
+a demonstration, this will only be recommended in cases where the
+requirement has been listed as having high *Criticality*. Because of the
+high *Criticality* of these requirements, it would be ideal to verify
+them relying on both a third party and a demonstration; the
+recommendation of the working group is that one or the other is
+sufficient.
+
+-  In the context of verification via reports from a third party it is
+   acceptable to either, as a purchaser, contract the third party for
+   testing or to verify documentation provided by a third party
+   contracted by the OEM.
+
+-  In the context of demonstration by the OEM, it is important that
+   the purchaser ensure the demonstration covers the non-functional
+   aspects of these requirements, (e.g. for secure boot it is not
+   sufficient to demonstrate that valid images are bootable, but rather
+   it is necessary to demonstrate that tampered images are not
+   bootable.)
+
+..
+
+   **COMMENT**
+
+Shows comments or notes from the working group.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
 TITLE: Purpose, Architectural Scope & Classification Approach
 
 [TEXT]
