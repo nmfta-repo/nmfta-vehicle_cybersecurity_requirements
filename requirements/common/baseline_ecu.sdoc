@@ -1437,7 +1437,7 @@ CRITICALITY: >>>
 High
 <<<
 STATEMENT: >>>
-The OEM’s system shall provide a means to download unstructured customer data in an industry-standard format. This download will occur over secured communication protocols.
+The OEM’s system shall provide a means to download unstructured customer data. This download will occur over secured communication protocols.
 <<<
 COMMENT: >>>
 Customer data is business critical and access is required
