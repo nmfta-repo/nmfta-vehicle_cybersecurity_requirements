@@ -6,7 +6,7 @@ def create_config() -> ProjectConfig:
         project_title="NMFTA Vehicle Cybersecurity Requirements",
         include_doc_paths=[
             "requirements/shared/grammar.sgra",
-            "requirements/overview/00_overview.sdoc",
+            "docs/overview.sdoc",
             "requirements/class_0_telematics/class_0_telematics.sdoc",
             "requirements/class_1_wireless_multiseg/class_1_wireless_multiseg.sdoc",
             "requirements/class_2_gateway/class_2_gateway.sdoc",
