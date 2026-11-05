@@ -28,7 +28,7 @@ Commercial truck architectures partition ECUs into distinct device classes based
 The repository employs a DRY (Don't Repeat Yourself) modular architecture:
 - **Canonical requirements** are defined once under `requirements/common/` by capability domain (baseline ECU, wireless connectivity, vehicle bus, gateway controls, cloud backend, mobile application).
 - **Class specifications** under `requirements/class_N/` are lightweight compositions that refine and scope the common requirements for that specific ECU class using StrictDoc relations (`RELATIONS: - TYPE: Parent ... ROLE: Refines`).
-- **Overarching front matter** (preface, disclaimer of liability, glossary) is maintained once in `requirements/overview/00_overview.sdoc`.
+- **Overarching front matter** (preface, disclaimer of liability, glossary) is maintained once in `docs/overview.sdoc`.
 
 ```text
 nmfta-vehicle_cybersecurity_requirements/
@@ -37,8 +37,6 @@ nmfta-vehicle_cybersecurity_requirements/
 ├── scripts/
 │   └── export_questionnaires.py     # Exports supplier Excel questionnaires
 ├── requirements/
-│   ├── overview/
-│   │   └── 00_overview.sdoc         # Overarching preface, disclaimer, and glossary
 │   ├── shared/
 │   │   └── grammar.sgra             # Standardized StrictDoc grammar definition
 │   ├── common/                      # Canonical, modular requirement domains
@@ -64,6 +62,8 @@ nmfta-vehicle_cybersecurity_requirements/
 │   │   └── class_6_single_seg_med_risk.sdoc # Composes Baseline ECU controls
 │   └── class_7_single_seg_low_risk/
 │       └── class_7_single_seg_low_risk.sdoc # Composes Baseline ECU controls
+├── docs/
+│   └── overview.sdoc                  # Overarching preface, disclaimer, and glossary
 └── media/                           # Diagrams and image assets
 ```
 
