@@ -7,7 +7,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-0-Telematics-Security-Requirements" },
 
-  {"_LINK":"65bdbd84a885464296379f0de268b5c3" },
+  {"_LINK":"e6cf55c7a3e7431496f4da0a512a2bf8" },
 
   {"_LINK":"1-Vehicle-Bus-Connection-Security-Requirements-Applicability" },
 
@@ -481,7 +481,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-1-Multi-Segment-with-Wireless-Security-Requirements" },
 
-  {"_LINK":"617529c7d89744449abfeeecf3fef4e5" },
+  {"_LINK":"94c538f7e54a411dafef6ad4ae6f699c" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -543,8 +543,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C1-P-020","_LINK":"C1-P-020" },
 
-  {"UID":"C1-P-030","_LINK":"C1-P-030" },
-
   {"UID":"C1-PS-010","_LINK":"C1-PS-010" },
 
   {"UID":"C1-RA-010","_LINK":"C1-RA-010" },
@@ -570,8 +568,6 @@ window.StrictDoc.project.map = {
   {"UID":"C1-SCP-030","_LINK":"C1-SCP-030" },
 
   {"UID":"C1-SCP-040","_LINK":"C1-SCP-040" },
-
-  {"UID":"C1-SCP-050","_LINK":"C1-SCP-050" },
 
   {"UID":"C1-SCP-060","_LINK":"C1-SCP-060" },
 
@@ -887,7 +883,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-2-Vehicle-Gateway-Security-Requirements" },
 
-  {"_LINK":"eef3bc5a4103425e9b9dc8e3ac7c3a22" },
+  {"_LINK":"4684a8a05c68407aba9e2555115ce61a" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -904,14 +900,6 @@ window.StrictDoc.project.map = {
   {"UID":"C2-AC-041","_LINK":"C2-AC-041" },
 
   {"UID":"C2-AC-050","_LINK":"C2-AC-050" },
-
-  {"UID":"C2-AC-060","_LINK":"C2-AC-060" },
-
-  {"UID":"C2-AC-061","_LINK":"C2-AC-061" },
-
-  {"UID":"C2-AC-062","_LINK":"C2-AC-062" },
-
-  {"UID":"C2-AC-063","_LINK":"C2-AC-063" },
 
   {"UID":"C2-AC-070","_LINK":"C2-AC-070" },
 
@@ -949,8 +937,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C2-P-020","_LINK":"C2-P-020" },
 
-  {"UID":"C2-P-030","_LINK":"C2-P-030" },
-
   {"UID":"C2-PS-010","_LINK":"C2-PS-010" },
 
   {"UID":"C2-RA-010","_LINK":"C2-RA-010" },
@@ -976,8 +962,6 @@ window.StrictDoc.project.map = {
   {"UID":"C2-SCP-030","_LINK":"C2-SCP-030" },
 
   {"UID":"C2-SCP-040","_LINK":"C2-SCP-040" },
-
-  {"UID":"C2-SCP-050","_LINK":"C2-SCP-050" },
 
   {"UID":"C2-SCP-060","_LINK":"C2-SCP-060" },
 
@@ -1058,14 +1042,6 @@ window.StrictDoc.project.map = {
   {"UID":"C2-VEH-AC-041","_LINK":"C2-VEH-AC-041" },
 
   {"UID":"C2-VEH-AC-050","_LINK":"C2-VEH-AC-050" },
-
-  {"UID":"C2-VEH-AC-060","_LINK":"C2-VEH-AC-060" },
-
-  {"UID":"C2-VEH-AC-061","_LINK":"C2-VEH-AC-061" },
-
-  {"UID":"C2-VEH-AC-062","_LINK":"C2-VEH-AC-062" },
-
-  {"UID":"C2-VEH-AC-063","_LINK":"C2-VEH-AC-063" },
 
   {"UID":"C2-VEH-AC-080","_LINK":"C2-VEH-AC-080" },
 
@@ -1237,7 +1213,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-3-Multi-Segment-with-Untrusted-Wired-Connection-Security-Requirements" },
 
-  {"_LINK":"3000d90b5c124fdab1cabcc16b1e5dc1" },
+  {"_LINK":"b37be2077efb4a45ba0f522b08f36372" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1254,14 +1230,6 @@ window.StrictDoc.project.map = {
   {"UID":"C3-AC-041","_LINK":"C3-AC-041" },
 
   {"UID":"C3-AC-050","_LINK":"C3-AC-050" },
-
-  {"UID":"C3-AC-060","_LINK":"C3-AC-060" },
-
-  {"UID":"C3-AC-061","_LINK":"C3-AC-061" },
-
-  {"UID":"C3-AC-062","_LINK":"C3-AC-062" },
-
-  {"UID":"C3-AC-063","_LINK":"C3-AC-063" },
 
   {"UID":"C3-AC-070","_LINK":"C3-AC-070" },
 
@@ -1299,8 +1267,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C3-P-020","_LINK":"C3-P-020" },
 
-  {"UID":"C3-P-030","_LINK":"C3-P-030" },
-
   {"UID":"C3-PS-010","_LINK":"C3-PS-010" },
 
   {"UID":"C3-RA-010","_LINK":"C3-RA-010" },
@@ -1326,8 +1292,6 @@ window.StrictDoc.project.map = {
   {"UID":"C3-SCP-030","_LINK":"C3-SCP-030" },
 
   {"UID":"C3-SCP-040","_LINK":"C3-SCP-040" },
-
-  {"UID":"C3-SCP-050","_LINK":"C3-SCP-050" },
 
   {"UID":"C3-SCP-060","_LINK":"C3-SCP-060" },
 
@@ -1408,14 +1372,6 @@ window.StrictDoc.project.map = {
   {"UID":"C3-VEH-AC-041","_LINK":"C3-VEH-AC-041" },
 
   {"UID":"C3-VEH-AC-050","_LINK":"C3-VEH-AC-050" },
-
-  {"UID":"C3-VEH-AC-060","_LINK":"C3-VEH-AC-060" },
-
-  {"UID":"C3-VEH-AC-061","_LINK":"C3-VEH-AC-061" },
-
-  {"UID":"C3-VEH-AC-062","_LINK":"C3-VEH-AC-062" },
-
-  {"UID":"C3-VEH-AC-063","_LINK":"C3-VEH-AC-063" },
 
   {"UID":"C3-VEH-AC-080","_LINK":"C3-VEH-AC-080" },
 
@@ -1517,7 +1473,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-4-Multi-Segment-Security-Requirements" },
 
-  {"_LINK":"8f5ddd4ee233463bbb12464d76bbd465" },
+  {"_LINK":"11049203184d4716aca60cbd02cf3a72" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1534,14 +1490,6 @@ window.StrictDoc.project.map = {
   {"UID":"C4-AC-041","_LINK":"C4-AC-041" },
 
   {"UID":"C4-AC-050","_LINK":"C4-AC-050" },
-
-  {"UID":"C4-AC-060","_LINK":"C4-AC-060" },
-
-  {"UID":"C4-AC-061","_LINK":"C4-AC-061" },
-
-  {"UID":"C4-AC-062","_LINK":"C4-AC-062" },
-
-  {"UID":"C4-AC-063","_LINK":"C4-AC-063" },
 
   {"UID":"C4-AC-070","_LINK":"C4-AC-070" },
 
@@ -1579,8 +1527,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C4-P-020","_LINK":"C4-P-020" },
 
-  {"UID":"C4-P-030","_LINK":"C4-P-030" },
-
   {"UID":"C4-PS-010","_LINK":"C4-PS-010" },
 
   {"UID":"C4-RA-010","_LINK":"C4-RA-010" },
@@ -1606,10 +1552,6 @@ window.StrictDoc.project.map = {
   {"UID":"C4-SCP-030","_LINK":"C4-SCP-030" },
 
   {"UID":"C4-SCP-040","_LINK":"C4-SCP-040" },
-
-  {"UID":"C4-SCP-050","_LINK":"C4-SCP-050" },
-
-  {"UID":"C4-SCP-060","_LINK":"C4-SCP-060" },
 
   {"UID":"C4-SCP-090","_LINK":"C4-SCP-090" },
 
@@ -1679,7 +1621,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-5-Single-Segment-High-Risk-Security-Requirements" },
 
-  {"_LINK":"fc890b1624d44412b475dd5b7a2fd730" },
+  {"_LINK":"27831e1a878f42a5afba75e2fbb7070c" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1696,14 +1638,6 @@ window.StrictDoc.project.map = {
   {"UID":"C5-AC-041","_LINK":"C5-AC-041" },
 
   {"UID":"C5-AC-050","_LINK":"C5-AC-050" },
-
-  {"UID":"C5-AC-060","_LINK":"C5-AC-060" },
-
-  {"UID":"C5-AC-061","_LINK":"C5-AC-061" },
-
-  {"UID":"C5-AC-062","_LINK":"C5-AC-062" },
-
-  {"UID":"C5-AC-063","_LINK":"C5-AC-063" },
 
   {"UID":"C5-AC-070","_LINK":"C5-AC-070" },
 
@@ -1741,8 +1675,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C5-P-020","_LINK":"C5-P-020" },
 
-  {"UID":"C5-P-030","_LINK":"C5-P-030" },
-
   {"UID":"C5-PS-010","_LINK":"C5-PS-010" },
 
   {"UID":"C5-RA-010","_LINK":"C5-RA-010" },
@@ -1768,10 +1700,6 @@ window.StrictDoc.project.map = {
   {"UID":"C5-SCP-030","_LINK":"C5-SCP-030" },
 
   {"UID":"C5-SCP-040","_LINK":"C5-SCP-040" },
-
-  {"UID":"C5-SCP-050","_LINK":"C5-SCP-050" },
-
-  {"UID":"C5-SCP-060","_LINK":"C5-SCP-060" },
 
   {"UID":"C5-SCP-090","_LINK":"C5-SCP-090" },
 
@@ -1841,7 +1769,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-6-Single-Segment-Medium-Risk-Security-Requirements" },
 
-  {"_LINK":"31bd2e6ad5934696a6b68e857ea812a0" },
+  {"_LINK":"07610c3b9ca747fe94353acb50b9b579" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1858,14 +1786,6 @@ window.StrictDoc.project.map = {
   {"UID":"C6-AC-041","_LINK":"C6-AC-041" },
 
   {"UID":"C6-AC-050","_LINK":"C6-AC-050" },
-
-  {"UID":"C6-AC-060","_LINK":"C6-AC-060" },
-
-  {"UID":"C6-AC-061","_LINK":"C6-AC-061" },
-
-  {"UID":"C6-AC-062","_LINK":"C6-AC-062" },
-
-  {"UID":"C6-AC-063","_LINK":"C6-AC-063" },
 
   {"UID":"C6-AC-070","_LINK":"C6-AC-070" },
 
@@ -1903,8 +1823,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C6-P-020","_LINK":"C6-P-020" },
 
-  {"UID":"C6-P-030","_LINK":"C6-P-030" },
-
   {"UID":"C6-PS-010","_LINK":"C6-PS-010" },
 
   {"UID":"C6-RA-010","_LINK":"C6-RA-010" },
@@ -1930,10 +1848,6 @@ window.StrictDoc.project.map = {
   {"UID":"C6-SCP-030","_LINK":"C6-SCP-030" },
 
   {"UID":"C6-SCP-040","_LINK":"C6-SCP-040" },
-
-  {"UID":"C6-SCP-050","_LINK":"C6-SCP-050" },
-
-  {"UID":"C6-SCP-060","_LINK":"C6-SCP-060" },
 
   {"UID":"C6-SCP-090","_LINK":"C6-SCP-090" },
 
@@ -2003,7 +1917,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-7-Single-Segment-Low-Risk-Security-Requirements" },
 
-  {"_LINK":"cae2c16a113f440db92abab3bc6bd9b8" },
+  {"_LINK":"6ab59cd8b1cb450b9a5af94823bedbc2" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -2020,14 +1934,6 @@ window.StrictDoc.project.map = {
   {"UID":"C7-AC-041","_LINK":"C7-AC-041" },
 
   {"UID":"C7-AC-050","_LINK":"C7-AC-050" },
-
-  {"UID":"C7-AC-060","_LINK":"C7-AC-060" },
-
-  {"UID":"C7-AC-061","_LINK":"C7-AC-061" },
-
-  {"UID":"C7-AC-062","_LINK":"C7-AC-062" },
-
-  {"UID":"C7-AC-063","_LINK":"C7-AC-063" },
 
   {"UID":"C7-AC-070","_LINK":"C7-AC-070" },
 
@@ -2065,8 +1971,6 @@ window.StrictDoc.project.map = {
 
   {"UID":"C7-P-020","_LINK":"C7-P-020" },
 
-  {"UID":"C7-P-030","_LINK":"C7-P-030" },
-
   {"UID":"C7-PS-010","_LINK":"C7-PS-010" },
 
   {"UID":"C7-RA-010","_LINK":"C7-RA-010" },
@@ -2092,10 +1996,6 @@ window.StrictDoc.project.map = {
   {"UID":"C7-SCP-030","_LINK":"C7-SCP-030" },
 
   {"UID":"C7-SCP-040","_LINK":"C7-SCP-040" },
-
-  {"UID":"C7-SCP-050","_LINK":"C7-SCP-050" },
-
-  {"UID":"C7-SCP-060","_LINK":"C7-SCP-060" },
 
   {"UID":"C7-SCP-090","_LINK":"C7-SCP-090" },
 
@@ -2167,7 +2067,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1-Baseline-Security-Requirements" },
 
-  {"_LINK":"6e78100dc812409d996b8a03ecd60d13" },
+  {"_LINK":"c387369d7bf442ac9c1398166eb42186" },
 
   {"UID":"AA-010","_LINK":"AA-010" },
 
@@ -2675,11 +2575,11 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Vehicle-Network-Gateway-Security-Requirements" },
 
-  {"_LINK":"72d08daf9d73452182cbb1a7ae7e8c64" },
+  {"_LINK":"5d0c78722f534fab90ca755ed559b66f" },
 
   {"_LINK":"1-Security-Requirements-for-Abstract-Intended-Gateways" },
 
-  {"_LINK":"fee4f1853b2c46e39269e70a4ddbe6be" },
+  {"_LINK":"45d7eb0283214ed5b934fb903294beb4" },
 
   {"UID":"AGW-S-000","_LINK":"AGW-S-000" },
 
@@ -2707,13 +2607,13 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1.13-Security-Requirements-for-CAN-Gateways" },
 
-  {"_LINK":"24a66ee1af0a47a09444d96e72263bfc" },
+  {"_LINK":"afdb6ca75e064543b20b5a1efb002dfa" },
 
   {"UID":"CGW-S-001","_LINK":"CGW-S-001" },
 
   {"_LINK":"1.13.2-Preserves-Atomic-Multicast-CGW-S-005-Series" },
 
-  {"_LINK":"baf597c8cec84ce8943dd9a52cc08370" },
+  {"_LINK":"732626bcdb2d496988853eab0cdf0a69" },
 
   {"UID":"CGW-S-005a","_LINK":"CGW-S-005a" },
 
@@ -2733,7 +2633,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1.13.3.3-Prevents-CAN-Protocol-Attacks-CGW-S-008-Series" },
 
-  {"_LINK":"321b3308d1c345fda3ce3e57ab05ca7e" },
+  {"_LINK":"23240445b10e42b3b25e485028c8d800" },
 
   {"UID":"CGW-S-008a","_LINK":"CGW-S-008a" },
 
@@ -2749,7 +2649,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1.14-Security-Requirements-for-J1939-Gateways" },
 
-  {"_LINK":"90f1e95e18184b269c761354544770ad" },
+  {"_LINK":"df820a1963fc48709bc097a84b2eeaf9" },
 
   {"UID":"J1939GW-S-039","_LINK":"J1939GW-S-039" },
 
@@ -2759,7 +2659,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"2-Security-Requirements-for-Abstract-Unintended-Gateways" },
 
-  {"_LINK":"1c891895e24643afba6b8605b8d5fa09" },
+  {"_LINK":"5c0e58fe89ca401c9b2be7684ef5ec3e" },
 
   {"UID":"NGW-S-001","_LINK":"NGW-S-001" },
 
@@ -2905,29 +2805,29 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Vehicle-Cybersecurity-Requirements-Overview-and-General-Information" },
 
-  {"_LINK":"4a538e8535dd48bb86be8dc8fc0bbfd5" },
+  {"_LINK":"7055bb12341749b8941f0d175cef09c7" },
 
   {"_LINK":"1-Preface-and-Disclaimer-of-Liability" },
 
-  {"_LINK":"462c03ebfe604d52a2ef7d0253689bbf" },
+  {"_LINK":"1e2e88e361b8434590185b760e6c9857" },
 
   {"_LINK":"2-Glossary-and-List-of-Abbreviations" },
 
-  {"_LINK":"e842f11c4b9f474d86cee3a47193887e" },
+  {"_LINK":"e359207cd7ef47c5970032f06521c781" },
 
   {"_LINK":"3-Purpose-Architectural-Scope-Classification-Approach" },
 
-  {"_LINK":"8e8cae582c7843d4ad1a016e14d95546" },
+  {"_LINK":"282fb08e58a04ba69b6692f4cf588317" },
 
   {"_LINK":"4-Telematics-Systems-in-Commercial-Fleets-Special-Handling-Evaluation-Guidance" },
 
-  {"_LINK":"0d0a83bdfe0649b89f253b4be31392b4" },
+  {"_LINK":"5b21227f8fbf4582a093de43d9b56f8a" },
 
   {"_LINK":"5-Requirements-Structure-and-Options-Handling-CONTAINS_OPTIONS" },
 
-  {"_LINK":"0b202887845041a79e282da8a72b56c5" },
+  {"_LINK":"c4d6b9a0c37c46599d9698c4da938638" },
 
   {"_LINK":"6-Acknowledgements" },
 
-  {"_LINK":"a15f35cd0ad34103a7818f9cef7e74bb" }, ],
+  {"_LINK":"1f28c3b1c6394859a7f4ef4019a91ad7" }, ],
 };
