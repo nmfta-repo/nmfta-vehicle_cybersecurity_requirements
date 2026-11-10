@@ -1561,7 +1561,7 @@ CRITICALITY: >>>
 Medium
 <<<
 STATEMENT: >>>
-The OEM shall implement/deploy secure over the air update systems including assurances of integrity&authenticity. Also rollback protections and a means of denying the use of old potentially compromised signing keys.
+The OEM shall implement/deploy secure over the air update systems including assurances of integrity & authenticity. Als a means of denying the use of old potentially compromised signing keys.
 <<<
 PUB_REFS: >>>
 FASTR Connectivity and Cloud Work Group, 2018, SOTA recommendations
@@ -1569,8 +1569,6 @@ FASTR Connectivity and Cloud Work Group, 2018, SOTA recommendations
 FMCSA GDL 33 Make sure that the update has not been altered during transit (integrity).
 
 FMCSA GDL 34 Make sure the update comes from a legitimate source (authenticity).
-
-FMCSA GDL 35 Prevent the attacker from reinstalling a legitimate but known-vulnerable version (rollback attack).
 
 FMCSA GDL 36 Make sure you can revoke and replace cryptographic keys.
 
