@@ -2285,9 +2285,8 @@ TITLE: Secure Hardware Platform
 STATEMENT: >>>
 The device SHALL be implemented on a secure hardware platform (such as an MCU incorporating a Secure Hardware Extension / SHE+ or Hardware Security Module / HSM) that:
 a) Resists physical exfiltration of data, including preventing unauthorized reading out of configuration data, cryptographic keys, and firmware via physical debug/test interfaces (e.g., JTAG, SWD, or BDM);
-b) Enforces cryptographic verification of firmware during the boot process (secure boot) and does not permit reprogramming by unauthorized firmware;
-c) Stores cryptographic keys in isolated, secure storage such that if software executing on the MCU is compromised (e.g., by a Remote Code Execution / RCE vulnerability), the keys cannot be read out; and
-d) Incorporates hardware-accelerated cryptographic operations.
+b) Stores cryptographic keys in isolated, secure storage such that if software executing on the MCU is compromised (e.g., by a Remote Code Execution / RCE vulnerability), the keys cannot be read out; and
+c) Incorporates hardware-accelerated cryptographic operations including CMAC and TRNG.
 <<<
 COMMENT: >>>
 Modern automotive secure microcontrollers include hardware security modules such as SHE, SHE+, or HSMs that provide isolated key storage, hardware cryptographic acceleration, and secure boot. Hardware encryption and tamper resistance ensure that sensitive cryptographic assets remain protected even in the event of an application software compromise.
