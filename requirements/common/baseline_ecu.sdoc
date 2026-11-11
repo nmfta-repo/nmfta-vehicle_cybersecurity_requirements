@@ -2360,7 +2360,7 @@ High
 TITLE: Rollback Resistance
 STATEMENT: >>>
 The device SHALL prevent rollback to a previous version of firmware:
-a) The device SHALL reject installation, staging, or booting of any firmware version older than the last successfully booted and validated authorized version, using secure monotonic version counters, eFuses, or equivalent anti-rollback mechanisms; the protected minimum accepted version SHALL advance only after the new firmware has successfully booted and passed initialization validation;
+a) The device SHALL reject installation, staging, or booting of any firmware version older than the last successfully booted and validated authorized version (e.g. using secure monotonic version counters, eFuses, or equivalent anti-rollback mechanisms); the protected minimum accepted version SHALL advance only after the new firmware has successfully booted and passed initialization validation;
 b) in the case of A/B boot architectures the OEM is encouraged to consider the interaction between this and the rollback prevention and to document the design choice for review by the fleet; and
 <<<
 COMMENT: >>>
