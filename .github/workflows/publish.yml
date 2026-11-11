@@ -60,8 +60,9 @@ jobs:
         run: |
           {
             echo "## Pull request HTML"
-            echo "Download the [HTML pages]($ARTIFACT_URL), extract them, and serve the extracted directory locally with \`python3 -m http.server\`."
-            echo "Then open http://localhost:8000/ in your browser."
+            echo "Download the [HTML pages]($ARTIFACT_URL), extract them, and then"
+            echo "a. open index.html OR" 
+            echo "b. serve the extracted directory locally with \`python3 -m http.server\`. + open http://localhost:8000/ in your browser."
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload Requirements Interchange Format (ReqIF) export
