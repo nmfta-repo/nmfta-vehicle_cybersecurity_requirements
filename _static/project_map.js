@@ -7,41 +7,41 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Vehicle-Cybersecurity-Requirements-Overview-and-General-Information" },
 
-  {"_LINK":"099704f1685644fca72edfa0221c2db3" },
+  {"_LINK":"373b821634ed4c858229338c61e60f3c" },
 
   {"_LINK":"1-Preface-and-Disclaimer-of-Liability" },
 
-  {"_LINK":"3039f100adff4170b671f776fafa0142" },
+  {"_LINK":"712dccccb34745849ba098dfe4c9643d" },
 
   {"_LINK":"2-Glossary-and-List-of-Abbreviations" },
 
-  {"_LINK":"d8efe22c8242494981c5c4edd5f4807a" },
+  {"_LINK":"5f8616067ee94953a5f091bb2d0473c2" },
 
   {"_LINK":"3-Requirements-Structure-in-This-Document" },
 
-  {"_LINK":"f612139a5d88437e9e82e2a188b6abd7" },
+  {"_LINK":"171eb5d9626740f8bb427c40055005a0" },
 
   {"_LINK":"4-Purpose-Architectural-Scope-Classification-Approach" },
 
-  {"_LINK":"60f7fd1b6cdb493cb5765f6bab584b4d" },
+  {"_LINK":"b77623d34987454e8b5f700c7da8380e" },
 
   {"_LINK":"5-Telematics-Systems-in-Commercial-Fleets-Special-Handling-Evaluation-Guidance" },
 
-  {"_LINK":"f63b44c17e9342429b388959b38aaec3" },
+  {"_LINK":"44028260075b49c1b9b5b50283f56cae" },
 
   {"_LINK":"6-Requirements-Structure-and-Options-Handling-CONTAINS_OPTIONS" },
 
-  {"_LINK":"1b6c1db7fd0d436384dc1183ba7964c2" },
+  {"_LINK":"fad56d08852c4767968280748ac74d2e" },
 
   {"_LINK":"7-Acknowledgements" },
 
-  {"_LINK":"f4a6ccef8b7e4481b291e567e137f05d" }, ],
+  {"_LINK":"1485ecd0c4e242f28650e150af0b70e4" }, ],
  "nmfta-vehicle_cybersecurity_requirements/requirements/class_0_telematics/class_0_telematics.html": [
 
 
   {"_LINK":"None-Class-0-Telematics-Security-Requirements" },
 
-  {"_LINK":"002a18b6c94c4e86b4be5731c8d70b2c" },
+  {"_LINK":"5215d45b81d949f8b5aff581972ae914" },
 
   {"_LINK":"1-Vehicle-Bus-Connection-Security-Requirements-Applicability" },
 
@@ -515,7 +515,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-1-Multi-Segment-with-Wireless-Security-Requirements" },
 
-  {"_LINK":"85a1a37d84844febaed84eab1683fca6" },
+  {"_LINK":"3946dc7158e24d289100d327c3f7812a" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -917,7 +917,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-2-Vehicle-Gateway-Security-Requirements" },
 
-  {"_LINK":"44ee59b5bb5243d298da7665e24a5afe" },
+  {"_LINK":"c200e405498549e5a49478e968c31b98" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1247,7 +1247,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-3-Multi-Segment-with-Untrusted-Wired-Connection-Security-Requirements" },
 
-  {"_LINK":"7eb8d83ece8c4ba09bd8cedde61d6feb" },
+  {"_LINK":"c7e91ca4475149a08b2f64b9201a64c8" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1507,7 +1507,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-4-Multi-Segment-Security-Requirements" },
 
-  {"_LINK":"92d209ad0009415fac08fd41a62d04e4" },
+  {"_LINK":"9da61c2f8b2449afa437f88c9939cefa" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1655,7 +1655,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-5-Single-Segment-High-Risk-Security-Requirements" },
 
-  {"_LINK":"ce4acfc2cf1d4a33af904dfb8c1928b7" },
+  {"_LINK":"b00ada37c5d54a5a96ea8d982421c838" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1803,7 +1803,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-6-Single-Segment-Medium-Risk-Security-Requirements" },
 
-  {"_LINK":"1cf94b8b1432460385eaf81f46a53888" },
+  {"_LINK":"fc6aedbb0784437d80cff15c8a902e5a" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -1951,7 +1951,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Class-7-Single-Segment-Low-Risk-Security-Requirements" },
 
-  {"_LINK":"1401875eabfc4cd8b824173032fae96b" },
+  {"_LINK":"0d9eac21172441ba8c12313f45fbf4f8" },
 
   {"_LINK":"1-Baseline-Security-Requirements-Applicability" },
 
@@ -2101,7 +2101,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1-Baseline-Security-Requirements" },
 
-  {"_LINK":"3bd9b120b14a41f6b100a6cd7ca12e77" },
+  {"_LINK":"7b85cbc8e67f4da080cca0123a78cef5" },
 
   {"UID":"AA-010","_LINK":"AA-010" },
 
@@ -2609,11 +2609,11 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"None-Vehicle-Network-Gateway-Security-Requirements" },
 
-  {"_LINK":"1765a4c7b54c473a8fb0202e4bfc0631" },
+  {"_LINK":"b9ce822e17d64ae3b26a1262d3f2759c" },
 
   {"_LINK":"1-Security-Requirements-for-Abstract-Intended-Gateways" },
 
-  {"_LINK":"39e65a0356324b179be05be4d2f39b5a" },
+  {"_LINK":"a937b0640e80496a8c365c9470d6c4cf" },
 
   {"UID":"AGW-S-000","_LINK":"AGW-S-000" },
 
@@ -2641,13 +2641,13 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1.13-Security-Requirements-for-CAN-Gateways" },
 
-  {"_LINK":"33b59ec6ad8b42b488146656d7079ab3" },
+  {"_LINK":"888c4cd63aa84102aed2ef5511b38740" },
 
   {"UID":"CGW-S-001","_LINK":"CGW-S-001" },
 
   {"_LINK":"1.13.2-Preserves-Atomic-Multicast-CGW-S-005-Series" },
 
-  {"_LINK":"a52e40160c7f4bf78abb91e9c5be9c9d" },
+  {"_LINK":"3eb01d03c5a3406e8ab8bf429a325dd3" },
 
   {"UID":"CGW-S-005a","_LINK":"CGW-S-005a" },
 
@@ -2667,7 +2667,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1.13.3.3-Prevents-CAN-Protocol-Attacks-CGW-S-008-Series" },
 
-  {"_LINK":"cd08fcdd1d4241919145b05274e18f5d" },
+  {"_LINK":"44fb579b61b54c9e970b49396cf7880f" },
 
   {"UID":"CGW-S-008a","_LINK":"CGW-S-008a" },
 
@@ -2683,7 +2683,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"1.14-Security-Requirements-for-J1939-Gateways" },
 
-  {"_LINK":"6697abdf77bf44db856dbb950fecb020" },
+  {"_LINK":"bc967ee2e32c41e3a89a24694ce9acd7" },
 
   {"UID":"J1939GW-S-039","_LINK":"J1939GW-S-039" },
 
@@ -2693,7 +2693,7 @@ window.StrictDoc.project.map = {
 
   {"_LINK":"2-Security-Requirements-for-Abstract-Unintended-Gateways" },
 
-  {"_LINK":"3605994372004db1a7dc677e1c91f292" },
+  {"_LINK":"3ff1a3df82cd468c825f8b004c00f682" },
 
   {"UID":"NGW-S-001","_LINK":"NGW-S-001" },
 
