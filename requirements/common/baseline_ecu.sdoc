@@ -874,7 +874,7 @@ CRITICALITY: >>>
 Medium
 <<<
 STATEMENT: >>>
-OEM shall have risk assessments conducted at an industry accepted rate. Resulting risk assessment documentation should include all components and the overall system that is within the OEM's control. The rate suggested is twice per product release; both at product design and at integration phases
+OEM shall have risk assessments conducted at an industry accepted rate. Resulting risk assessment documentation should include all components and the overall system that is within the OEM's control.
 <<<
 PUB_REFS: >>>
 NIST 800-53 r5 RA-3 – RISK ASSESSMENT
