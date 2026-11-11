@@ -1700,7 +1700,7 @@ CRITICALITY: >>>
 High
 <<<
 STATEMENT: >>>
-The OEM shall utilize a boot verification process built with (asymmetric) cryptographic digital signatures and implemented such that the public key used for verification or the hash of the public key used for verification is protected from being tampered on the device.
+The OEM shall utilize a boot verification process implemented such that boot verification key material is protected from tampering and disclosure.
 <<<
 COMMENT: >>>
 Secure boot underpins the access control which protects the vehicle networks
