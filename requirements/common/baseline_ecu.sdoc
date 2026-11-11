@@ -2372,20 +2372,33 @@ VERIFICATION: >>>
 
 [REQUIREMENT]
 UID: SPL-010
+TAGS: CONTAINS_OPTIONS
 CATEGORY: >>>
 Software Resiliency / Code Protections
 <<<
 CRITICALITY: >>>
 High
 <<<
-TITLE: Secure Programming Language
+TITLE: Secure Programming Language or Proofs
 STATEMENT: >>>
-Software and firmware implemented on the device SHALL utilize a memory-safe programming language, a formally verified language subset (such as SPARK Ada or Rust), or formal verification methods:
-a) Network-facing, security-critical, and management firmware components SHALL be implemented using languages or formally verified subsets that eliminate common programming weaknesses, such as buffer overflows, memory corruption, and arbitrary remote code execution (RCE) vulnerabilities; and
-b) If languages without inherent memory safety (e.g., C or C++) are used for system components, the vendor SHALL provide formal verification proofs, mathematical model-checking, or comprehensive static analysis demonstrating the provable absence of buffer overflows, undefined behaviors, and zero exploitable RCE vulnerabilities.
+Software and firmware implemented on the device SHALL utilize a memory-safe programming language, a formally verified language subset (such as SPARK Ada or Rust), or formal verification methods.
+<<<
+
+[REQUIREMENT]
+UID: SPL-010a
+CATEGORY: >>>
+Software Resiliency / Code Protections
+<<<
+CRITICALITY: >>>
+High
+<<<
+TITLE: Memory-safe Programming Language or Subset
+STATEMENT: >>>
+Network-facing, security-critical, and management software and firmware components implemented on the device SHALL utilize a memory-safe programming language, a formally verified language subset (such as SPARK Ada or Rust), or formal verification methods.
 <<<
 COMMENT: >>>
 Well-known programming weaknesses such as buffer overflows, out-of-bounds writes, and memory corruption account for the vast majority of arbitrary remote code execution vulnerabilities in embedded firmware. Developing in memory-safe languages or mathematically verified language subsets (such as SPARK Ada or Rust) enables formal verification to prove the complete absence of run-time memory safety defects.
+These formally verified subsets eliminate common programming weaknesses, such as buffer overflows, memory corruption, and arbitrary remote code execution (RCE) vulnerabilities.
 <<<
 PUB_REFS: >>>
 NIST SP 800-53 r5 SI-16 – MEMORY PROTECTION
@@ -2404,15 +2417,53 @@ Guidelines for the use of the C language in critical systems to minimize undefin
 
 FMCSA GDL 22 – Leverage security controls built in to the operating system and development toolchain.
 
+OWASP Embedded Application Security Best Practices: E1 – Buffer and Stack Overflow Protection.
+<<<
+VERIFICATION: >>>
+1. Language and Toolchain Audit: Review vendor engineering design documentation, build manifests, and source code inventories to verify the adoption of memory-safe languages (e.g., SPARK Ada, Rust) or safe language subsets for security-relevant and network-facing modules.
+2. Dynamic Analysis and Fuzzing: Execute automated dynamic testing, protocol fuzzing, and address sanitizer (ASan) instrumentation against device inputs and parsers to confirm the absence of buffer overflow or crash conditions.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SPL-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: SPL-010b
+CATEGORY: >>>
+Software Resiliency / Code Protections
+<<<
+CRITICALITY: >>>
+High
+<<<
+TITLE: Formally Verified Programming
+STATEMENT: >>>
+Network-facing, security-critical, and management software and firmware components implemented on the device SHALL utilize, when languages without inherent memory safety (e.g., C or C++) are used for system components, the vendor SHALL provide formal verification proofs, mathematical model-checking, or comprehensive static analysis demonstrating the provable absence of buffer overflows, undefined behaviors, and zero exploitable RCE vulnerabilities.
+<<<
+PUB_REFS: >>>
+NIST SP 800-53 r5 SI-16 – MEMORY PROTECTION
+Implement controls to protect system memory from unauthorized code execution, buffer overflow, and memory corruption.
+
+NIST SP 800-53 r5 SA-8 – SECURITY AND PRIVACY ENGINEERING PRINCIPLES
+Apply secure software engineering principles, including sound architecture and choice of safe implementation languages.
+
+MISRA C:2012 / MISRA C:2023 & MISRA Compliance:2020
+Guidelines for the use of the C language in critical systems to minimize undefined behaviors and runtime vulnerabilities.
+
+FMCSA GDL 22 – Leverage security controls built in to the operating system and development toolchain.
+
 FMCSA GDL 26 – Filter input to any device or interface that gets digitally processed.
 
 OWASP Embedded Application Security Best Practices: E1 – Buffer and Stack Overflow Protection.
 <<<
 VERIFICATION: >>>
-1. Language and Toolchain Audit: Review vendor engineering design documentation, build manifests, and source code inventories to verify the adoption of memory-safe languages (e.g., SPARK Ada, Rust) or safe language subsets for security-relevant and network-facing modules.
-2. Formal Verification and Static Analysis Inspection: Where C/C++ components exist, inspect automated formal verification reports (e.g., SPARK formal proofs, Frama-C, Polyspace, or MISRA-compliant static analysis tooling) demonstrating 100% verification of memory safety, bounds checks, and zero unresolved memory-corruption or RCE defects.
-3. Dynamic Analysis and Fuzzing: Execute automated dynamic testing, protocol fuzzing, and address sanitizer (ASan) instrumentation against device inputs and parsers to confirm the absence of buffer overflow or crash conditions.
+1. Formal Verification and Static Analysis Inspection: Where C/C++ components exist, inspect automated formal verification reports (e.g., SPARK formal proofs, Frama-C, Polyspace, or MISRA-compliant static analysis tooling) demonstrating 100% verification of memory safety, bounds checks, and zero unresolved memory-corruption or RCE defects.
+2. Dynamic Analysis and Fuzzing: Execute automated dynamic testing, protocol fuzzing, and address sanitizer (ASan) instrumentation against device inputs and parsers to confirm the absence of buffer overflow or crash conditions.
 <<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SPL-010
+  ROLE: Refines
 
 [[/SECTION]]
 
