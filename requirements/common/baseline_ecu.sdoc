@@ -1415,7 +1415,7 @@ CRITICALITY: >>>
 Medium
 <<<
 STATEMENT: >>>
-The OEM's system shall separate execution domains and/or processes (i.e. process isolation within both the telematics device and back-end system and between the serial communications in the telematics device and the interface to the vehicle network)
+The OEM's system shall separate execution domains and/or processes (e.g. process isolation within both the telematics device and back-end system and between the serial communications in the telematics device and the interface to the vehicle network)
 <<<
 PUB_REFS: >>>
 NIST 800-53 r5 SC-39 - PROCESS ISOLATION
