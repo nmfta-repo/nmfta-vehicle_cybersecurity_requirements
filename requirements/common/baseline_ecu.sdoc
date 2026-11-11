@@ -1389,6 +1389,32 @@ Test that root certificate trust can be removed. This should result in failure t
 <<<
 
 [REQUIREMENT]
+UID: SCP-093
+CATEGORY: >>>
+System and Communication Protocols
+<<<
+CRITICALITY: >>>
+High
+<<<
+TITLE: Key Revocation
+STATEMENT: >>>
+The device SHALL prevent rollback to aprevious versions of cryptographic keys:
+cFollowing a cryptographic key update or replacement operation, any previous version of the cryptographic key SHALL be securely erased and invalidated.
+<<<
+COMMENT: >>>
+Rollback (downgrade) attacks attempt to force a system into booting an older, legitimate version of firmware that contains known exploitable vulnerabilities. The same principle applies to cryptographic keys, where superseded or revoked keys must be permanently expunged.
+<<<
+PUB_REFS: >>>
+NIST SP 800-53 r5 SC-12 – CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT
+Ensure proper retirement, zeroization, and revocation of superseded cryptographic keys.
+
+FMCSA GDL 36 – Make sure you can revoke and replace cryptographic keys.
+<<<
+VERIFICATION: >>>
+Key Deletion Verification: Perform a cryptographic key update or revocation procedure. Verify that subsequent operations attempting to utilize the superseded or retired key are rejected and that key material cannot be extracted from non-volatile storage.
+<<<
+
+[REQUIREMENT]
 UID: SCP-092
 CATEGORY: >>>
 System and Communication Protocols
@@ -2333,13 +2359,12 @@ High
 <<<
 TITLE: Rollback Resistance
 STATEMENT: >>>
-The device SHALL prevent rollback to a previous version of firmware and previous versions of cryptographic keys:
+The device SHALL prevent rollback to a previous version of firmware:
 a) The device SHALL reject installation, staging, or booting of any firmware version older than the last successfully booted and validated authorized version, using secure monotonic version counters, eFuses, or equivalent anti-rollback mechanisms; the protected minimum accepted version SHALL advance only after the new firmware has successfully booted and passed initialization validation;
 b) in the case of A/B boot architectures the OEM is encouraged to consider the interaction between this and the rollback prevention and to document the design choice for review by the fleet; and
-c) Following a cryptographic key update or replacement operation, any previous version of the cryptographic key SHALL be securely erased and invalidated.
 <<<
 COMMENT: >>>
-Rollback (downgrade) attacks attempt to force a system into booting an older, legitimate version of firmware that contains known exploitable vulnerabilities. While retaining an older version temporarily protects against bricking if power is lost during programming, once the system is securely upgraded, the previous version must be invalidated or erased. The same principle applies to cryptographic keys, where superseded or revoked keys must be permanently expunged.
+Rollback (downgrade) attacks attempt to force a system into booting an older, legitimate version of firmware that contains known exploitable vulnerabilities. While retaining an older version temporarily protects against bricking if power is lost during programming, once the system is securely upgraded, the previous version must be invalidated or erased.
 <<<
 PUB_REFS: >>>
 NIST SP 800-193 Section 4.2.1 – Platform Firmware Resiliency Guidelines: Firmware Update Authentication and Anti-Rollback Protections
@@ -2351,12 +2376,7 @@ Prevent the re-introduction of previously remediated vulnerabilities.
 NIST SP 800-53 r5 SI-7 (15) – SOFTWARE, FIRMWARE, AND INFORMATION INTEGRITY | CODE AUTHENTICATION
 Cryptographically authenticate software and firmware updates and prevent unauthorized version rollback.
 
-NIST SP 800-53 r5 SC-12 – CRYPTOGRAPHIC KEY ESTABLISHMENT AND MANAGEMENT
-Ensure proper retirement, zeroization, and revocation of superseded cryptographic keys.
-
 FMCSA GDL 35 – Prevent the attacker from reinstalling a legitimate but known-vulnerable version (rollback attack).
-
-FMCSA GDL 36 – Make sure you can revoke and replace cryptographic keys.
 
 ISO/SAE 21434:2021 Section 10 – Software update controls and prevention of unauthorized version downgrades.
 
@@ -2367,7 +2387,6 @@ UL 1376 Clause 1.3 – Software update authentication: Software updates must be 
 VERIFICATION: >>>
 1. Firmware Anti-Rollback Test: Attempt to flash and boot a legitimate, previously signed firmware release with a version number lower than the active version. Verify that the device rejects the downgrade attempt and remains on the current version.
 2. Fallback Erasure/Invalidation Verification: Conduct a full firmware update cycle. Upon successful boot and validation of the new firmware, inspect flash memory and partition state to verify that the older fallback firmware copy is erased, overwritten, or cryptographically invalidated.
-3. Key Deletion Verification: Perform a cryptographic key update or revocation procedure. Verify that subsequent operations attempting to utilize the superseded or retired key are rejected and that key material cannot be extracted from non-volatile storage.
 <<<
 
 [REQUIREMENT]
