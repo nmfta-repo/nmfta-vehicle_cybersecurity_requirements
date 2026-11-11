@@ -216,6 +216,19 @@ python scripts/validate_cascaded_requirements.py \
 
 This verification step is integrated into GitHub Actions CI (`.github/workflows/publish.yml`) to ensure zero unintended text drift across telematics components and vehicle gateway controls on Pull Requests.
 
+### Reviewing pull request HTML
+
+For every pull request targeting `main`, the build uploads an `html-pages`
+artifact. In the pull request's **Checks** tab, open the automated build and
+follow the download link in its summary, or download `html-pages` from the
+workflow run's **Artifacts** section. GitHub requires you to sign in to download
+artifacts.
+
+Extract the archive, open a terminal in the extracted directory, and run
+`python3 -m http.server`. Open `http://localhost:8000/` in your browser. Each
+new pull request commit creates a new build and artifact; use the latest
+successful run to review the current changes.
+
 
 
 ---

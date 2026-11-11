@@ -47,10 +47,23 @@ jobs:
           python scripts/export_questionnaires.py . --output-dir=docs/html/
 
       - name: Upload HTML pages
+        id: html
         uses: actions/upload-artifact@v4
         with:
           name: html-pages
           path: docs/html/
+
+      - name: Add pull request HTML download to summary
+        if: github.event_name == 'pull_request'
+        env:
+          ARTIFACT_URL: ${{ steps.html.outputs.artifact-url }}
+        run: |
+          {
+            echo "## Pull request HTML"
+            echo "Download the [HTML pages]($ARTIFACT_URL), extract them, and then"
+            echo "a. open index.html OR" 
+            echo "b. serve the extracted directory locally with \`python3 -m http.server\`. + open http://localhost:8000/ in your browser."
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload Requirements Interchange Format (ReqIF) export
         uses: actions/upload-artifact@v4
