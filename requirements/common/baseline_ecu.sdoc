@@ -1234,7 +1234,7 @@ CRITICALITY: >>>
 Medium
 <<<
 STATEMENT: >>>
-Data of the categories above will be protected using cryptographic keys which are not correlated to any public information about the devices.
+Data protected at rest will be protected using cryptographic keys which are not correlated to any public information about the devices.
 
 Public information is any information that is visible (externally or internally) on the device or discoverable by searches based on that visible information.
 <<<
