@@ -1,0 +1,59 @@
+name: Link PR HTML artifact
+
+on:
+  workflow_run:
+    workflows: ["automated builds of html, reqif, and questionnaires"]
+    types: [completed]
+
+permissions:
+  actions: read
+  pull-requests: write
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Link HTML artifact on matching pull requests
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const { owner, repo } = context.repo;
+            const pulls = await github.paginate(github.rest.repos.listPullRequestsAssociatedWithCommit, {
+              owner, repo, commit_sha: run.head_sha, per_page: 100
+            });
+            const matching = pulls.filter(pr =>
+              pr.state === 'open' && pr.base.ref === 'main' &&
+              pr.head.sha === run.head_sha && pr.head.ref === run.head_branch
+            );
+            if (matching.length === 0) {
+              core.info('No open pull request still points to this build.');
+              return;
+            }
+
+            const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
+              owner, repo, run_id: run.id, per_page: 100
+            });
+            const artifact = artifacts
+              .filter(item => item.name === 'html-pages' && !item.expired)
+              .sort((a, b) => b.created_at.localeCompare(a.created_at))[0];
+            if (!artifact) {
+              core.setFailed('The successful build has no available html-pages artifact.');
+              return;
+            }
+
+            const marker = `<!-- pr-html-artifact: ${artifact.id} -->`;
+            const url = `${context.serverUrl}/${owner}/${repo}/actions/runs/${run.id}/artifacts/${artifact.id}`;
+            const body = `${marker}
+            **Pull request HTML** for commit \`${run.head_sha}\`: [Download html-pages](${url}).
+
+            Sign in to GitHub, extract the archive, and serve it with \`python3 -m http.server\`; then open http://localhost:8000/. Use the artifact for the latest successful build of the current commit.`;
+            for (const pr of matching) {
+              const comments = await github.paginate(github.rest.issues.listComments, {
+                owner, repo, issue_number: pr.number, per_page: 100
+              });
+              if (!comments.some(comment => comment.user?.login === 'github-actions[bot]' && comment.body?.includes(marker))) {
+                await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body });
+              }
+            }
