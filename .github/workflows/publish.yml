@@ -52,6 +52,7 @@ jobs:
         with:
           name: html-pages
           path: docs/html/
+          if-no-files-found: error
 
       - name: Add pull request HTML download to summary
         if: github.event_name == 'pull_request'

@@ -219,10 +219,10 @@ This verification step is integrated into GitHub Actions CI (`.github/workflows/
 ### Reviewing pull request HTML
 
 For every pull request targeting `main`, the build uploads an `html-pages`
-artifact. In the pull request's **Checks** tab, open the automated build and
-follow the download link in its summary, or download `html-pages` from the
-workflow run's **Artifacts** section. GitHub requires you to sign in to download
-artifacts.
+artifact. After a successful build, a separate workflow posts a download link
+in the pull request conversation, identifying the commit it built. The link is
+also available in the build summary under **Checks** and in the workflow run's
+**Artifacts** section. GitHub requires you to sign in to download artifacts.
 
 Extract the archive, open a terminal in the extracted directory, and run
 `python3 -m http.server`. Open `http://localhost:8000/` in your browser. Each
