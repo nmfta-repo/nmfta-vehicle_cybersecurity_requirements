@@ -8,9 +8,9 @@ IMPORT_FROM_FILE: @vcr_grammar
 STATEMENT: >>>
 This document specifies cybersecurity requirements for Class 4 vehicle components: **Multi Segment**.
 
-Class 4 devices are truck modules that are not intended to be Vehicle Gateways but nonetheless are connected to two or more vehicle network segments where all of the segments are trusted (internal closed vehicle subnets).
+Class 4 devices are Internal Potential Pivots (IPPs) connected to two or more trusted vehicle networks (internal closed vehicle subnets). Devices that satisfy the behaviors detailed in the Internal Gateway definition are also allocated to Class 4.
 
-Examples include:
+Examples of Class 4 IPPs and Internal Gateways include:
 - Steering Controller (Front Axle Steering / FAS / VDS / MCS) (J1939 SA 19)
 - Electronic Clutch Actuator (J1939 SA 03)
 - Headway Controller (J1939 SA 42)
@@ -864,4 +864,3 @@ RELATIONS:
   ROLE: Refines
 
 [[/SECTION]]
-

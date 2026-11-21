@@ -8,9 +8,9 @@ IMPORT_FROM_FILE: @vcr_grammar
 STATEMENT: >>>
 This document specifies cybersecurity requirements for Class 2 vehicle components: **Vehicle Gateway**.
 
-Class 2 devices are truck modules intended to perform gateway functions (transport, translate, transform, filter, or encapsulate data) between two or more vehicle network segments.
+Class 2 devices are Boundary Gateways, or devices that satisfy the behaviors detailed in the Boundary Gateway definition, between two or more vehicle networks, one of them being untrusted.
 
-Examples include:
+Examples of Boundary Gateways include:
 - Onboard Diagnostics Connector Gateway (Central Gateway / CGW) (J1939 SA 39, 17, 44, 49, 50, 77)
 - 3rd Party Equipment Gateway (J1939 SA 249)
 - Telematics Interface Gateway
@@ -1870,4 +1870,3 @@ RELATIONS:
   ROLE: Refines
 
 [[/SECTION]]
-

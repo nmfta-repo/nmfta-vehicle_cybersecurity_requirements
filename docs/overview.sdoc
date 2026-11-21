@@ -91,6 +91,32 @@ Trusted Network Domain (TND):
 [[/SECTION]]
 
 [[SECTION]]
+TITLE: Terms & Definitions
+
+[TEXT]
+STATEMENT: >>>
+Gateway functions:
+    Functions that mediate communication between vehicle networks, including transport, routing, translate, transform, filter, rate limit, encapsulate/de-encapsulate, proxy, and enforce.
+
+Boundary Gateway:
+    A device connected to two or more vehicle networks, at least one of which is an Untrusted Network Domain (UND), that performs one or more gateway functions between those networks.
+
+Boundary Potential Pivot (BPP):
+    A device connected to two or more vehicle networks, at least one of which is an UND, that does not perform gateway functions but could provide a path between those networks if compromised.
+
+Internal Gateway:
+    A device connected to two or more Trusted Network Domains (TNDs) that performs one or more gateway functions between those networks.
+
+Internal Potential Pivot (IPP):
+    A device connected to two or more TNDs that does not perform gateway functions but could provide a path between those networks if compromised.
+
+Untrustworthy Gateway:
+    A Boundary Gateway or Internal Gateway that does not satisfy the HD VCR requirements. The network domains to which it connects are UNDs, per criterion d) of the Untrusted Network Domain definition above.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
 TITLE: Requirements Structure in This Document
 
 [TEXT]
@@ -205,10 +231,10 @@ Architectural Approach & ECU Classification:
 Commercial vehicle architectures partition electronic controllers into distinct device classes based on their network topology, external interfaces, gatewaying responsibilities, and overall risk profile:
 
 - **Class 0 (Telematics)**: Systems possessing off-board Wide Area Network (WAN) connectivity (cellular, satellite, internet).
-- **Class 1 (Multi-Segment with Wireless)**: Controllers connected to multiple internal buses with short-range wireless interfaces (Bluetooth, Wi-Fi, TPMS RF).
-- **Class 2 (Vehicle Gateway)**: Dedicated routing, isolation, and message-filtering controllers (Central Gateway / CGW).
-- **Class 3 (Multi-Segment with Untrusted Wired)**: Controllers bridging internal networks to untrusted physical connectors (OBD-II, RP1226, trailer bridges).
-- **Class 4 (Multi-Segment Trusted)**: Multi-segment controllers where all attached buses are internal and trusted.
+- **Class 1 (Multi-Segment with Wireless)**: Boundary Potential Pivots and Boundary Gateways with at least one wireless interface.
+- **Class 2 (Vehicle Gateway)**: Boundary Gateways between two or more vehicle networks, one of them untrusted.
+- **Class 3 (Multi-Segment with Untrusted Wired)**: Boundary Potential Pivots connected to untrusted physical networks (OBD-II, RP1226, trailer bridges).
+- **Class 4 (Multi-Segment Trusted)**: Internal Potential Pivots and Internal Gateways connected to trusted networks.
 - **Class 5 (Single-Segment High Risk)**: Single-segment controllers whose disruption presents critical operational or safety impact (e.g., emissions/aftertreatment, retarders).
 - **Class 6 (Single-Segment Medium Risk)**: Single-segment controllers of moderate operational risk (e.g., suspension, automated steering assists).
 - **Class 7 (Single-Segment Low Risk)**: Single-segment controllers of low fleet risk (e.g., cab convenience, HVAC, door modules).
@@ -283,4 +309,3 @@ The authors also acknowledge the contributions of the NMFTA Request for Proposal
 <<<
 
 [[/SECTION]]
-
