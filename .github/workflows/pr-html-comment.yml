@@ -48,7 +48,7 @@ jobs:
             const body = `${marker}
             **Pull request HTML** for commit \`${run.head_sha}\`: [Download html-pages](${url}).
 
-            Sign in to GitHub, extract the archive, and serve it with \`python3 -m http.server\`; then open http://localhost:8000/. Use the artifact for the latest successful build of the current commit.`;
+            These pages must be served over HTTP; opening \`index.html\` directly will not work. Sign in to GitHub and extract the archive, open a terminal in the extracted directory, and run \`python3 -m http.server 8000\`. Then visit http://localhost:8000/. Use the artifact for the latest successful build of the current commit.`;
             for (const pr of matching) {
               const comments = await github.paginate(github.rest.issues.listComments, {
                 owner, repo, issue_number: pr.number, per_page: 100
