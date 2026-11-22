@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 1 vehicle components: **Multi Segment with Wireless**.
+This section specifies cybersecurity requirements for Class 1 vehicle components: **Multi Segment with Wireless**.
 
 Class 1 devices include truck modules with at least one wireless interface (such as Bluetooth, Wi-Fi, cellular, TPMS RF, or wireless sensor bridges). If a module performs the behaviors detailed in the Boundary Gateway, Internal Gateway, or Untrustworthy Gateway definition, it is that gateway type; a module that could perform Boundary Gateway or Internal Gateway behaviors if controlled by an attacker is a Boundary Potential Pivot or Internal Potential Pivot, respectively.
 

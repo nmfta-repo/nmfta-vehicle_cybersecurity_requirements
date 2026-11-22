@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 5 vehicle components: **Single Segment High Risk**.
+This section specifies cybersecurity requirements for Class 5 vehicle components: **Single Segment High Risk**.
 
 Class 5 devices are truck modules connected to a single vehicle network segment found to have a high overall fleet risk based on system criticality and vehicle operational impact.
 

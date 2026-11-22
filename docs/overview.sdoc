@@ -91,8 +91,8 @@ Untrustworthy Network Domain (*UND*):
 
     a) wireless communication or reachable wirelessly (e.g. J2497, ISO 15118, Bluetooth, Wi-Fi, cellular)
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
-    c) a telematics device that does not satisfy the applicable Class 0 requirements in this document
-    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the requirements in this document applicable to its class (Class 1, 2, 3, or 4)
+    c) a telematics device that does not satisfy the applicable Class 0 requirements in this section
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the requirements in this section applicable to its class (Class 1, 2, 3, or 4)
 
 Trustworthy Network Domain (*TND*):
     A network domain (or segment) that does not contain any of the untrustworthy attributes listed above.
@@ -153,7 +153,7 @@ No potential-pivot category is defined for an Untrustworthy Gateway.
 [[/SECTION]]
 
 [[SECTION]]
-TITLE: Requirements Structure in This Document
+TITLE: Requirements Structure in This Section
 
 [TEXT]
 STATEMENT: >>>
@@ -274,7 +274,7 @@ STATEMENT: >>>
 
 For current commercial vehicle architectures, we partition the components into distinct device classes based on their network topology, external interfaces, gatewaying responsibilities, and overall risk profile. They are listed in the table below.
 
-All of the devices identified by the VCRWG are captured below, organized by their device class. This list can be useful when a particular device cannot be found easily in the order sheet view. Also, if the device the fleet and OEM are interested in classifying cannot be found here, then some device class characteristics (heuristics) are provided for determining membership of such devices which were unknown to the VCRWG at the time of drafting this document.
+All of the devices identified by the VCRWG are captured below, organized by their device class. This list can be useful when a particular device cannot be found easily in the order sheet view. Also, if the device the fleet and OEM are interested in classifying cannot be found here, then some device class characteristics (heuristics) are provided for determining membership of such devices which were unknown to the VCRWG at the time of drafting this section.
 
 .. list-table:: Device Classes, Reference Devices, and Classification Heuristics
    :widths: 20 50 30

@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 7 vehicle components: **Single Segment Low Risk**.
+This section specifies cybersecurity requirements for Class 7 vehicle components: **Single Segment Low Risk**.
 
 Class 7 devices are truck modules connected to a single vehicle network segment found to have a low overall fleet risk.
 

@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 2 vehicle components: **Vehicle Gateway**.
+This section specifies cybersecurity requirements for Class 2 vehicle components: **Vehicle Gateway**.
 
 Class 2 devices are truck modules intended to perform gateway functions (transport, translate, transform, filter, or encapsulate data) between two or more vehicle network segments.
 
