@@ -91,8 +91,8 @@ Untrustworthy Network Domain (*UND*):
 
     a) wireless communication or reachable wirelessly (e.g. J2497, ISO 15118, Bluetooth, Wi-Fi, cellular)
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
-    c) a telematics device that does not satisfy the HD VCR requirements
-    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements
+    c) a telematics device that does not satisfy the applicable Class 0 requirements in this document
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the requirements in this document applicable to its class (Class 1, 2, 3, or 4)
 
 Trustworthy Network Domain (*TND*):
     A network domain (or segment) that does not contain any of the untrustworthy attributes listed above.

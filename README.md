@@ -55,16 +55,16 @@ Note 2: the analysis makes the distinction between *Untrustworthy Network Domain
 <dd>A <em>UND</em> is a network domain (or segment) that contains <strong>any</strong> of the following:<br>
     a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, BlueTooth, WiFi)<br>
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)<br>
-    c) a telematics device that does not satisfy the HD VCR requirements<br>
-    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements<br>
+    c) a telematics device that does not satisfy the applicable Class 0 requirements in this document<br>
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the requirements in this document applicable to its class (Class 1, 2, 3, or 4)<br>
 </dd>
 
 <dt>Trustworthy Network Domain (<em>TND</em>):</dt>
 <dd>A <em>TND</em> is a network domain (or segment) that <strong>does not contain any</strong> of the untrustworthy attributes listed above:<br>
     a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, BlueTooth, WiFi)<br>
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)<br>
-    c) a telematics device that does not satisfy the HD VCR requirements<br>
-    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements<br>
+    c) a telematics device that does not satisfy the applicable Class 0 requirements in this document<br>
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the requirements in this document applicable to its class (Class 1, 2, 3, or 4)<br>
 </dd>
 </dl>
 
