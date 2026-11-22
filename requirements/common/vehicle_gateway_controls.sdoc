@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document captures security requirements for vehicle network gateway devices: both devices intended to be gateways and those devices which *could be a gateway* (due to malicious code). There will be devices which are connected to multiple vehicle networks but not all of them are intended to perform gatewaying functions. The design intent of the device dictactes what security requirements it must satisfy.
+This document captures security requirements for Boundary Gateways and Boundary Potential Pivots, as defined in the Terms and Definitions section of the overview. Boundary Gateways perform gateway functions between an Untrustworthy Network Domain (*UND*) and a Trustworthy Network Domain (*TND*); Boundary Potential Pivots could do so if controlled by an attacker.
 
 These recommended security requirements are intended to be informative, not directional in nature. While all reasonable steps have been taken to ensure that the recommendations are well-supported by our research and third-party verification, NMFTA and the parties contributing to these recommendations do not accept liability or responsibility for any damage or harm incurred as a result of actions taken based upon these recommendations.
 
@@ -18,7 +18,7 @@ Untrustworthy Network Domain (*UND*):
     a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, Bluetooth, Wi-Fi)
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
     c) a telematics device that does not satisfy the HD VCR requirements
-    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements
 
 Trustworthy Network Domain (*TND*):
     A *TND* is a network domain (or segment) that **does not contain any** of (those above):
@@ -57,32 +57,9 @@ The TPMS gateways on RP1226 databus connect to a wireless medium and are on the 
       TND   │  requirements │ UND │   Connector  │ UND │   Gateway    │      UND
             +───────────────+     +──────────────+     +──────────────+
 
-Then we can define (Intended) Gateways
+The gateway types and gateway functions used in this document are defined in the Terms and Definitions section of the overview. A device connected only to TNDs may be an Internal Gateway or Internal Potential Pivot; those types are not covered by the boundary-specific requirements in this document.
 
-(Intended) Gateway:
-    A device which has connections to multiple vehicle network domains (or segments) and performs one or more gateway functions between a Untrustworthy Network Domain (*UND*) and Trustworthy Network Domains (*TND*). (Intended) Gateways must satisfy the requirements in section *Security Requirements for Abstract (Intended) Gateways*.
-
-Unintended Gateway:
-    A device which has connections to two or more vehicle network domains (or segments), one or more of which are connections to Untrustworthy Network Domains (*UNDs*), and performs none of the gateway functions. These devices could perform gateway functions (due to malicious code) but are not intended to. Unintended Gateways must satisfy the requirements in section *Security Requirements for Abstract Unintended Gateways*.
-
-Interior Device:
-    A device which has connections to one or more vehicle network domains (or segments), and none of those connections are to Untrustworthy Network Domains (*UNDs*). These devices may or may not perform gateway functions. None of the requirements of either *Security Requirements for Abstract (Intended) Gateways* or *Security Requirements for Abstract Unintended Gateways* are applicable to these devices; however, there will be generic security requirements that should be found to be applicable during procurement and/or development (as per e.g. ISO 21434 / UNECE WP.29).
-
-The gateway functions that duck type the gateway devices are as follows:
-
-Transports:
-    These devices transport/'move' information between two separate network 'domains,' **bi-directionally.**
-
-Translates:
-    These devices translate/transform the information between the separate network domains but intentions of the data are preserved.
-
-Filter/Drop/Rate-Limit:
-    These devices select which information is transported based on rules matching content or metadata before (ingress) or after (egress) processing steps in preparation for transport/translate/encapsulate or other forwarding actions. These devices select which information is transported in a time varying fashion for the purposes of limiting the rate at which the information is put on a network domain.
-
-Encapsulates:
-    These devices encapsulate information as it is transported and/or translated between the network domains.
-
-Note that (Intended) Gateways may optionally perform the following functions as well -- and to do so would be beneficial; however, performing one or more of these functions does not make a device a gateway as were the case with the gateway functions above.
+Boundary Gateways may also perform the following functions; performing one or more of these functions alone does not make a device a gateway:
 
 * These devices may be controllable by users with necessary authentication and authorization
 * These devices may be configurable by users with necessary authentication and authorization
@@ -91,11 +68,11 @@ Note that (Intended) Gateways may optionally perform the following functions as 
 <<<
 
 [[SECTION]]
-TITLE: Security Requirements for Abstract (Intended) Gateways
+TITLE: Security Requirements for Abstract Boundary Gateways
 
 [TEXT]
 STATEMENT: >>>
-The following requirements must be satisfied by any device intended to be a gateway on *any type of* vehicle networks. There are CAN-specific and J1939-sepcific requirements in the CGW- and J1939GW- series below.
+The following requirements must be satisfied by any device that performs the behaviors detailed in the Boundary Gateway definition on any type of vehicle network. There are CAN-specific and J1939-specific requirements in the CGW- and J1939GW- series below.
 <<<
 
 [REQUIREMENT]
@@ -904,11 +881,11 @@ RELATIONS:
 [[/SECTION]]
 
 [[SECTION]]
-TITLE: Security Requirements for Abstract Unintended Gateways
+TITLE: Security Requirements for Abstract Boundary Potential Pivots
 
 [TEXT]
 STATEMENT: >>>
-Security requirements that must be satisfied by any device which *could be* a gateway (due to malicious code) but is not intended to be one.
+Security requirements that must be satisfied by any device that could perform the behaviors detailed in the Boundary Gateway definition if controlled by an attacker.
 <<<
 
 [REQUIREMENT]

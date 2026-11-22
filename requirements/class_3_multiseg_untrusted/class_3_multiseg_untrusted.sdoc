@@ -8,7 +8,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 STATEMENT: >>>
 This document specifies cybersecurity requirements for Class 3 vehicle components: **Multi Segment with Untrusted Wired Connection**.
 
-Class 3 devices are truck modules that are not intended to be Vehicle Gateways but nonetheless are connected to two or more vehicle network segments where one or more of those segments are untrusted (e.g. diagnostic ports, trailer bridges, or networks exposed to external physical connections).
+Class 3 devices are truck modules connected to two or more vehicle network segments, at least one of which is an Untrustworthy Network Domain (UND), that do not perform Boundary Gateway or Untrustworthy Gateway behaviors but could perform Boundary Gateway behaviors if controlled by an attacker (a Boundary Potential Pivot). Examples include modules connected to diagnostic ports, trailer bridges, or networks exposed to external physical connections.
 
 Examples include:
 - Tractor/Trailer Bridge #1 / #2 (J1939 SA 32, 138, 39)

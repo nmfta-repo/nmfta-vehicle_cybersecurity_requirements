@@ -68,24 +68,86 @@ OTA            Over-The-Air Update
 OWASP          Open Web Application Security Project
 RFP            Request for Proposal
 RFPCTL         Request for Proposal Contract Template Language
-TND            Trusted Network Domain
+TND            Trustworthy Network Domain
 TSP            Telematics Service Provider
 UID            Unique Identifier
-UND            Untrusted Network Domain
+UND            Untrustworthy Network Domain
 VCR            Vehicle Cybersecurity Requirements
 VCRWG          Vehicle Cybersecurity Requirements Working Group
 WAN            Wide Area Network
 ============== =======================================================
 
-Untrusted Network Domain (UND):
-    A network domain (or segment) that contains **any** of the following:
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Terms and Definitions
+
+[TEXT]
+STATEMENT: >>>
+Untrustworthy Network Domain (*UND*):
+    A network domain (or segment) that contains any of the following:
+
     a) wireless communication or reachable wirelessly (e.g. J2497, ISO 15118, Bluetooth, Wi-Fi, cellular)
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)
     c) a telematics device that does not satisfy the HD VCR requirements
-    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements
 
-Trusted Network Domain (TND):
-    A network domain (or segment) that **does not contain any** of the untrusted attributes listed above.
+Trustworthy Network Domain (*TND*):
+    A network domain (or segment) that does not contain any of the untrustworthy attributes listed above.
+
+Gateway functions:
+    A device performs gateway functions when it performs one or more of the following behaviors between network domains:
+
+    * transport
+    * routing
+    * translation
+    * transformation
+    * filtering
+    * rate limiting
+    * encapsulation or de-encapsulation
+    * proxying
+    * enforcing
+
+Boundary Gateway:
+    A device that performs gateway functions between an UND and a TND.
+    Topology: UND <-> TND, or an UND <-> multiple TNDs.
+    Examples:
+
+    * OBD Gateway
+    * Diagnostic Gateway
+    * Telematics Gateway with one or more vehicle network connections
+    * Wireless Access Gateway
+    * Central Vehicle Gateway
+    * Secure Domain Controller
+
+Boundary Potential Pivot (*BPP*):
+    A device that could be a Boundary Gateway if controlled by an attacker.
+
+Internal Gateway:
+    A device that performs gateway functions between two or more TNDs.
+    Topology: TND <-> TND.
+    Examples:
+
+    * CAN-to-CAN Gateway
+    * Ethernet-to-CAN Gateway
+    * Domain Controller
+    * Network Segmentation Gateway
+
+Internal Potential Pivot (*IPP*):
+    A device that could be an Internal Gateway if controlled by an attacker.
+
+Untrustworthy Gateway:
+    A device that performs gateway functions between two or more UNDs.
+    Topology: UND <-> UND.
+    Examples:
+
+    * Cellular-to-Wi-Fi Gateway
+    * Bluetooth-to-Cellular Gateway
+    * Diagnostic Interface-to-Telematics Interface Gateway
+
+No potential-pivot category is defined for an Untrustworthy Gateway.
 <<<
 
 [[/SECTION]]
@@ -223,12 +285,12 @@ All of the devices identified by the VCRWG are captured below, organized by thei
      - Heuristic
    * - Class 0 Telematics
      - - Engine Telematics (J1939 SA 249)
-       - OEM Telematics (aka Telematics GateWay (TGW) / Off Vehicle Gateway / Communications Unit / Communications Telematics (CTP-FB)) (J1939 SA 249, 251)
+       - OEM Telematics (aka Telematics Gateway (TGW) / Off Vehicle Gateway / Communications Unit / Communications Telematics (CTP-FB)) (J1939 SA 249, 251; Boundary Gateway when it performs the defined gateway behaviors)
        - Brake Telematics
        - Transmission Telematics
        - Exterior Camera Telematics
        - Interior Camera Telematics
-     - Components of a telematics system or truck modules that otherwise connect to cellular, satellite or other Wide Area Networks (WANs), or the internet
+     - Components of a telematics system or truck modules that otherwise connect to cellular, satellite or other Wide Area Networks (WANs), or the internet; a module that performs the behaviors detailed in the Boundary Gateway definition is a Boundary Gateway
    * - Class 1 Multi Segment with Wireless
      - - Antilock Brake System (ABS) (J1939 SA 11)
        - Brakes - System Controller (J1939 SA 11)
@@ -239,12 +301,12 @@ All of the devices identified by the VCRWG are captured below, organized by thei
        - Brakes - Drive Axle #2 (J1939 SA 14)
        - Vehicle Navigation (J1939 SA 84)
        - Radio (aka Head Unit / Infotainment) (J1939 SA 76, 84)
-     - Truck modules that may or may not be intended to perform gateway functions (transport, translate, transform, filter or encapsulate data) and has at least one wireless interface
+     - Truck modules with at least one wireless interface. If a module performs the behaviors detailed in the Boundary Gateway, Internal Gateway, or Untrustworthy Gateway definition, it is that gateway type; a module that could perform Boundary Gateway or Internal Gateway behaviors if controlled by an attacker is a Boundary Potential Pivot or Internal Potential Pivot, respectively.
    * - Class 2 Vehicle Gateway
-     - - Onboard Diagnostics Connector Gateway (aka Gateway (CGW)) (J1939 SA 39, 17, 44, 49, 50, 77)
-       - 3rd Party Equipment Gateway (J1939 SA 249)
-       - Telematics Interface Gateway
-     - Truck modules intended to perform gateway functions (transport, translate, transform, filter or encapsulate data) between two or more vehicle network segments
+     - - Onboard Diagnostics Connector Gateway (aka Gateway (CGW)) (J1939 SA 39, 17, 44, 49, 50, 77; Boundary Gateway)
+       - 3rd Party Equipment Gateway (J1939 SA 249; Boundary Gateway or Untrustworthy Gateway depending on the connected domains)
+       - Telematics Interface Gateway (Boundary Gateway)
+     - Truck modules connected between two or more vehicle network segments, one of which is an Untrustworthy Network Domain (UND), that perform the behaviors detailed in the Boundary Gateway or Untrustworthy Gateway definition.
    * - Class 3 Multi Segment with Untrusted Wired Connection
      - - Tractor/Trailer Bridge #2 (J1939 SA 138, 39)
        - Thermal Management System Controller (J1939 SA 49)
@@ -279,7 +341,7 @@ All of the devices identified by the VCRWG are captured below, organized by thei
        - ADAS Adaptive Cruise Control (aka Bendix Fusion) (J1939 SA 42)
        - Predictive Cruise Control (aka E-Horizon / Intelligent Predictive Powertrain Control (IPPC)) (J1939 SA 75)
        - Lighting - Operator Controls (J1939 SA 71)
-     - Truck modules that are not intended to be Vehicle Gateways but nonetheless are connected to two or more vehicle network segments where one or more of those segments are untrusted.
+     - Truck modules connected to two or more vehicle network segments, at least one of which is an Untrustworthy Network Domain (UND), that do not perform Boundary Gateway or Untrustworthy Gateway behaviors but could perform Boundary Gateway behaviors if controlled by an attacker (a Boundary Potential Pivot).
    * - Class 4 Multi Segment
      - - Oil Sensor (J1939 SA 00)
        - Retarder - Engine (J1939 SA 15)
@@ -301,7 +363,8 @@ All of the devices identified by the VCRWG are captured below, organized by thei
        - Axle - Drive #2 (J1939 SA 10)
        - Mirrors (J1939 SA 40)
        - Switch Field (aka Additional Switches / Modular Switch Field (MSF)) (J1939 SA 138)
-     - Truck modules that are not intended to be Vehicle Gateways but nonetheless are connected to two or more vehicle network segments where all of the segments are trusted.
+       - CAN-to-CAN Gateway, Ethernet-to-CAN Gateway, Domain Controller, or Network Segmentation Gateway (Internal Gateway)
+     - Truck modules connected to two or more vehicle network segments where all segments are Trustworthy Network Domains (TNDs). A module that performs the behaviors detailed in the Internal Gateway definition is an Internal Gateway; one that could do so if controlled by an attacker is an Internal Potential Pivot.
    * - Class 5 Single Segment High Risk
      - - Power TakeOff (Front or Secondary) (J1939 SA 07)
        - Idle Control System (J1939 SA 68)

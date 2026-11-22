@@ -48,23 +48,23 @@ Note 1: the analysis (and hence the rationales below) assumes that the Next Gene
 the devices using J2497 for those other functions(especially diagnostics) should be classified instead as class
 2 *Multi Segment with Wireless*.
 
-Note 2: the analysis makes the distinction between *Untrusted Network Domains* and *Trusted Network Domains* of the vehicle networks.
+Note 2: the analysis makes the distinction between *Untrustworthy Network Domains* and *Trustworthy Network Domains* of the vehicle networks.
 
 <dl>
-<dt>Untrusted Network Domain (<em>UND</em>):</dt>
+<dt>Untrustworthy Network Domain (<em>UND</em>):</dt>
 <dd>A <em>UND</em> is a network domain (or segment) that contains <strong>any</strong> of the following:<br>
     a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, BlueTooth, WiFi)<br>
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)<br>
     c) a telematics device that does not satisfy the HD VCR requirements<br>
-    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements<br>
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements<br>
 </dd>
 
-<dt>Trusted Network Domain (<em>TND</em>):</dt>
-<dd>A <em>TND</em> is a network domain (or segment) that <strong>does not contain any</strong> of the following:<br>
+<dt>Trustworthy Network Domain (<em>TND</em>):</dt>
+<dd>A <em>TND</em> is a network domain (or segment) that <strong>does not contain any</strong> of the untrustworthy attributes listed above:<br>
     a) wireless communication or reachable wirelessly (e.g J2497, ISO 15118, BlueTooth, WiFi)<br>
     b) an interface for aftermarket devices or operator access (e.g. an OBD port, RP1226 connector)<br>
     c) a telematics device that does not satisfy the HD VCR requirements<br>
-    d) a multi-network device (e.g. intended or unintended gateway) that does not satisfy the HD VCR requirements<br>
+    d) a multi-network device (e.g. a gateway or potential pivot) that does not satisfy the HD VCR requirements<br>
 </dd>
 </dl>
 
