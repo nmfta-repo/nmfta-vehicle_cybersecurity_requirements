@@ -279,7 +279,7 @@ All of the devices and services identified by the VCRWG are captured below. This
    :widths: 20 50 30
    :header-rows: 1
 
-   * - Class or Category
+   * - Class
      - Devices, Services, or Software
      - Heuristic
    * - Class 0 Telematics
