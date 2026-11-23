@@ -6,15 +6,13 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This section specifies cybersecurity requirements for Class 0 vehicle systems: **Telematics, Fleet Management Information Systems (FMIS), and Electronic Logging Devices (ELDs)**.
-
-Telematics systems deployed in commercial motor vehicles are distributed systems that encompass multiple distinct components rather than a single isolated ECU. The Class 0 connectivity requirements apply to the cellular, satellite, Wi-Fi, BLE, or wide area communications pipeline that transfers data between the vehicle and off-vehicle systems. Cloud services and external software that interface with the truck are categorized separately as CLOUD and MOBILE, respectively, and may apply independently of Class 0.
+This section specifies cybersecurity requirements for Class 0 vehicle systems: **Telematics, Fleet Management Information Systems (FMIS), and Electronic Logging Devices (ELDs)**. Class 0 telematics systems are distributed systems; the *Telematics Systems in Commercial Fleets: Special Handling & Evaluation Guidance* section of the overview describes their components and the VCR requirement sets that cover them.
 
 Instructions for Preparing and Responding to Questionnaires:
 ============================================================
 - **Evaluate All Telematics Systems**: A single tractor or trailer may incorporate multiple telematics systems (e.g., OEM factory gateway, aftermarket ELD/FMIS, powertrain telematics, camera/vision safety subsystems). A complete vehicle assessment requires separate responses for **each** distinct telematics system present.
 - **Connectivity Worksheet**: The supplier questionnaire provides a dedicated *Class 0 - Connectivity* worksheet for the Class 0 wireless interfaces.
-- **Separate Categories**: Evaluate applicable CLOUD services and MOBILE software using their respective category questionnaires, including when those services or software interface with devices outside Class 0.
+- **CLOUD and MOBILE Questionnaires**: Evaluate applicable CLOUD services and MOBILE software using their respective questionnaires, including when those services or software interface with devices outside Class 0.
 - **Distributed Responsibilities**: OEMs, suppliers, and procurement teams should route each questionnaire to the responsible engineering and operations teams.
 <<<
 

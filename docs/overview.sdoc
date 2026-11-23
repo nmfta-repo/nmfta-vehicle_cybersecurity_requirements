@@ -454,7 +454,12 @@ TITLE: Telematics Systems in Commercial Fleets: Special Handling & Evaluation Gu
 STATEMENT: >>>
 Special Handling for Class 0 Telematics Systems:
 ================================================
-Unlike traditional on-vehicle ECUs (Classes 1 through 7), **Class 0 Telematics Systems** include vehicle and wide-area internet connections, related CLOUD services, and MOBILE / PC software. Class 0 requirements address the system's vehicle and internet connections, while CLOUD services and MOBILE / PC software are evaluated according to their respective heuristics.
+Unlike traditional on-vehicle ECUs (Classes 1 through 7), **Class 0 Telematics Systems** are distributed systems made up of multiple components rather than a single isolated ECU. The VCR addresses the components of these systems through the following requirements:
+- The cellular, satellite, Wi-Fi, BLE, or other wide-area communications pipeline transferring data between the vehicle and off-vehicle systems is covered by the Class 0 connectivity requirements (e.g., `C0-COMMS-AC-010`, refining `COMMS-AC-010`).
+- Cloud services and their systems that interface with the truck are covered by the CLOUD requirements (e.g., `CLOUD-AA-010`, refining `AA-010`).
+- Mobile / PC software that interfaces with the truck is covered by the MOBILE requirements (e.g., `MOBILE-AC-010`, refining `AC-010`).
+
+CLOUD and MOBILE requirements may also apply to services or software that interface with devices outside a Class 0 system.
 
 Because of this distributed nature, the telematics requirements derived from the NMFTA Telematics Security Requirements Matrix (TSRM) are handled specially:
 - The supplier questionnaire includes a dedicated Class 0 connectivity worksheet.
