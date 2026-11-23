@@ -616,6 +616,36 @@ RELATIONS:
   VALUE: VEH-SII-200
   ROLE: Refines
 
+[REQUIREMENT]
+UID: C0-VEH-HW-010
+STATEMENT: >>>
+Class 0 vehicle network interfaces SHALL satisfy requirement VEH-HW-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-HW-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C0-VEH-RB-010
+STATEMENT: >>>
+Class 0 vehicle network interfaces SHALL satisfy requirement VEH-RB-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-RB-010
+  ROLE: Refines
+
+[REQUIREMENT]
+UID: C0-VEH-SPL-010
+STATEMENT: >>>
+Class 0 vehicle network interfaces SHALL satisfy requirement VEH-SPL-010.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: VEH-SPL-010
+  ROLE: Refines
+
 [[/SECTION]]
 
 [[SECTION]]
