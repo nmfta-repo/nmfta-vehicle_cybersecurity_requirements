@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "description": "Hermetic golden baseline of TSRM terminal categories (172 requirements) and Gateway (34 gateway controls) specifications for CI validation.",
+  "description": "Hermetic golden baseline of TSRM Class 0 connectivity and terminal category requirements (172 total) and Gateway (34 gateway controls) specifications for CI validation.",
   "telematics": {
     "C0-COMMS-AC-010": {
       "component": "Connectivity / Communications",

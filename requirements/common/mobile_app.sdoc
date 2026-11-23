@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-Applicability heuristic: Software that provides a human-machine interface for interacting with the truck or its systems, without telematics-specific restrictions.
+Applicability heuristic: Software implementing a human-machine interface (HMI) for interacting with the truck or its systems, with telematics-specific scope removed.
 
 Examples include PC-based OEM diagnostic software and mobile diagnostic applications.
 <<<

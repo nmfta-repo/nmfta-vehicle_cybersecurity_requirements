@@ -298,7 +298,7 @@ All of the devices and services identified by the VCRWG are captured below. This
    * - MOBILE / PC Software
      - - PC-based OEM diagnostic software
        - Mobile diagnostic application
-     - Software that provides a human-machine interface for interacting with the truck or its systems, without telematics-specific restrictions.
+     - Software implementing a human-machine interface (HMI) for interacting with the truck or its systems, with telematics-specific scope removed.
    * - Class 1 Multi Segment with Wireless
      - - Antilock Brake System (ABS) (J1939 SA 11)
        - Brakes - System Controller (J1939 SA 11)

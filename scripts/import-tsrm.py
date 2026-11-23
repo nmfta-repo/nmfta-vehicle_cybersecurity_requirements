@@ -189,7 +189,7 @@ def append_include(to_filename, inc_filename, section_title):
 
 
 # create:
-# a) one sheet per applicable component with parent references and stub text (x4) and:
+# a) one sheet per applicable component with parent references and stub text (x3) and:
 # b) a master sheet with everything but the component applicabilities
 #    TODO: also split tests into sub-requirements
 TsrmExcelPreparer('tsrm.xls').do_prep()
@@ -201,7 +201,7 @@ write_document(ExcelToSDocConverter.convert('out/main_tsrm.xls',
 
 # convert each component sheet to an sdoc
 write_document(ExcelToSDocConverter.convert('out/mobile_app_tsrm.xls',
-                                            "NMFTA Telematics (Mobile App Component) Security Requirements"
+                                            "NMFTA Telematics (MOBILE / PC Software) Security Requirements"
                                             ), 'out/mobile_app_tsrm.sinc')
 write_document(ExcelToSDocConverter.convert('out/connectivity_tsrm.xls',
                                             "NMFTA Telematics (Connectivity or Communications Component) Security Requirements"
@@ -218,4 +218,4 @@ for f in ['out/mobile_app_tsrm.sinc',
 
 append_include('out/00_tsrm.sdoc', 'cloud_tsrm.sinc', "NMFTA Telematics (Cloud Component) Security Requirements")
 append_include('out/00_tsrm.sdoc', 'connectivity_tsrm.sinc', "NMFTA Telematics (Connectivity or Communications Component) Security Requirements")
-append_include('out/00_tsrm.sdoc', 'mobile_app_tsrm.sinc', "NMFTA Telematics (Mobile App Component) Security Requirements")
+append_include('out/00_tsrm.sdoc', 'mobile_app_tsrm.sinc', "NMFTA Telematics (MOBILE / PC Software) Security Requirements")
