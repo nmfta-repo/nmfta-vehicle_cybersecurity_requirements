@@ -6,9 +6,9 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 4 vehicle components: **Multi Segment**.
+This section specifies cybersecurity requirements for Class 4 vehicle components: **Multi Segment**.
 
-Class 4 devices are truck modules that are not intended to be Vehicle Gateways but nonetheless are connected to two or more vehicle network segments where all of the segments are trusted (internal closed vehicle subnets).
+Class 4 devices are truck modules connected to two or more vehicle network segments where all segments are Trustworthy Network Domains (TNDs). A module that performs the behaviors detailed in the Internal Gateway definition is an Internal Gateway; one that could do so if controlled by an attacker is an Internal Potential Pivot.
 
 Examples include:
 - Steering Controller (Front Axle Steering / FAS / VDS / MCS) (J1939 SA 19)

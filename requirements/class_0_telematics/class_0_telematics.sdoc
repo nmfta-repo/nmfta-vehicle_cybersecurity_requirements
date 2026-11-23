@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 0 vehicle systems: **Telematics, Fleet Management Information Systems (FMIS), and Electronic Logging Devices (ELDs)**.
+This section specifies cybersecurity requirements for Class 0 vehicle systems: **Telematics, Fleet Management Information Systems (FMIS), and Electronic Logging Devices (ELDs)**.
 
 Telematics systems deployed in commercial motor vehicles are distributed systems that encompass multiple distinct components rather than a single isolated ECU. To provide clear evaluation boundaries and support modular procurement, Class 0 decomposes a telematics system into **four architectural components**:
 

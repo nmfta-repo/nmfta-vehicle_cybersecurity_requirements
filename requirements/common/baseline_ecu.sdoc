@@ -1001,7 +1001,7 @@ ISO/IEC 27001 ISMS
 VERIFICATION: >>>
 Inspection of OEM-supplied documentation detailing their ISMP/ISMS.
 
-Note that an ISMP is broad and includes aspects which are covered by other requirements in this document. In cases where there is both a requirement here and in the ISMP, ensure that the requirement in this document is satisfied over what is stated in an ISMP.
+Note that an ISMP is broad and includes aspects which are covered by other requirements in this section. In cases where there is both a requirement here and in the ISMP, ensure that the requirement in this section is satisfied over what is stated in an ISMP.
 <<<
 
 [REQUIREMENT]

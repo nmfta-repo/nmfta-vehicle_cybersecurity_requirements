@@ -6,7 +6,7 @@ IMPORT_FROM_FILE: @vcr_grammar
 
 [TEXT]
 STATEMENT: >>>
-This document specifies cybersecurity requirements for Class 6 vehicle components: **Single Segment Medium Risk**.
+This section specifies cybersecurity requirements for Class 6 vehicle components: **Single Segment Medium Risk**.
 
 Class 6 devices are truck modules connected to a single vehicle network segment found to have a medium overall fleet risk.
 
