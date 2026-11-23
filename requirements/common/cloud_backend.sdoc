@@ -1,8 +1,15 @@
 [DOCUMENT]
-TITLE: Cloud and Backend Security Requirements
+TITLE: CLOUD Service Security Requirements
 
 [GRAMMAR]
 IMPORT_FROM_FILE: @vcr_grammar
+
+[TEXT]
+STATEMENT: >>>
+Applicability heuristic: Any internet-connected service (and its systems) that interfaces with the truck.
+
+Examples include an OEM over-the-air update service, a telematics backend, and a fleet management portal.
+<<<
 
 [REQUIREMENT]
 UID: CLOUD-AA-010
@@ -603,4 +610,3 @@ RELATIONS:
 - TYPE: Parent
   VALUE: SII-200
   ROLE: Refines
-

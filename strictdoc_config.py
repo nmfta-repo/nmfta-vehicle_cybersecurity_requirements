@@ -18,7 +18,6 @@ def create_config() -> ProjectConfig:
             "requirements/common/baseline_ecu.sdoc",
             "requirements/common/cloud_backend.sdoc",
             "requirements/common/mobile_app.sdoc",
-            "requirements/common/vehicle_bus_connection.sdoc",
             "requirements/common/vehicle_gateway_controls.sdoc",
             "requirements/common/wireless_connectivity.sdoc",
         ],

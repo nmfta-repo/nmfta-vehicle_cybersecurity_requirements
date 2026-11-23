@@ -29,7 +29,6 @@ def write_document(document, output_path):
 class TsrmExcelPreparer:
     cloud_yn_column: int
     connectivity_comms_yn_column: int
-    vehicle_connection_yn_column: int
     mobile_app_yn_column: int
     all_columns_to_preserve: list
 
@@ -107,9 +106,9 @@ class TsrmExcelPreparer:
         assert self.mobile_app_yn_column != -1
         self.all_columns_to_preserve.remove(self.mobile_app_yn_column)
 
-        self.vehicle_connection_yn_column = self.get_any_header_column('VEHICLE_CONNECTION')
-        assert self.vehicle_connection_yn_column != -1
-        self.all_columns_to_preserve.remove(self.vehicle_connection_yn_column)
+        vehicle_connection_column = self.get_any_header_column('VEHICLE_CONNECTION')
+        assert vehicle_connection_column != -1
+        self.all_columns_to_preserve.remove(vehicle_connection_column)
 
         self.connectivity_comms_yn_column = self.get_any_header_column('CONNECTIVITY_OR_COMMUNICATIONS')
         assert self.connectivity_comms_yn_column != -1
@@ -171,7 +170,6 @@ class TsrmExcelPreparer:
         self.create_filtered_workbook(None, 'out/main_tsrm.xls')
 
         self.create_stub_workbook(self.mobile_app_yn_column, 'MOBILE', 'out/mobile_app_tsrm.xls')
-        self.create_stub_workbook(self.vehicle_connection_yn_column, 'VEH', 'out/vehicle_connection_tsrm.xls')
         self.create_stub_workbook(self.connectivity_comms_yn_column, 'COMMS', 'out/connectivity_tsrm.xls')
         self.create_stub_workbook(self.cloud_yn_column, 'CLOUD', 'out/cloud_tsrm.xls')
         return
@@ -205,9 +203,6 @@ write_document(ExcelToSDocConverter.convert('out/main_tsrm.xls',
 write_document(ExcelToSDocConverter.convert('out/mobile_app_tsrm.xls',
                                             "NMFTA Telematics (Mobile App Component) Security Requirements"
                                             ), 'out/mobile_app_tsrm.sinc')
-write_document(ExcelToSDocConverter.convert('out/vehicle_connection_tsrm.xls',
-                                            "NMFTA Telematics (Vehicle Connection Component) Security Requirements"
-                                            ), 'out/vehicle_connection_tsrm.sinc')
 write_document(ExcelToSDocConverter.convert('out/connectivity_tsrm.xls',
                                             "NMFTA Telematics (Connectivity or Communications Component) Security Requirements"
                                             ), 'out/connectivity_tsrm.sinc')
@@ -217,12 +212,10 @@ write_document(ExcelToSDocConverter.convert('out/cloud_tsrm.xls',
 
 # replace the [DOCUMENT]...[GRAMMAR].... stuff with [FRAGMENT] in the .sinc files
 for f in ['out/mobile_app_tsrm.sinc',
-          'out/vehicle_connection_tsrm.sinc',
           'out/connectivity_tsrm.sinc',
           'out/cloud_tsrm.sinc']:
     sdoc_to_fragment(f)
 
 append_include('out/00_tsrm.sdoc', 'cloud_tsrm.sinc', "NMFTA Telematics (Cloud Component) Security Requirements")
 append_include('out/00_tsrm.sdoc', 'connectivity_tsrm.sinc', "NMFTA Telematics (Connectivity or Communications Component) Security Requirements")
-append_include('out/00_tsrm.sdoc', 'vehicle_connection_tsrm.sinc', "NMFTA Telematics (Vehicle Connection Component) Security Requirements")
 append_include('out/00_tsrm.sdoc', 'mobile_app_tsrm.sinc', "NMFTA Telematics (Mobile App Component) Security Requirements")

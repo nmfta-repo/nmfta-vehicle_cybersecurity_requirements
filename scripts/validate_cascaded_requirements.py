@@ -3,12 +3,11 @@
 validate_cascaded_requirements.py
 
 Validates that:
-1. All 230 telematics requirements across the 4 TSRM components:
-   - Vehicle Connection Component (58 requirements)
-   - Connectivity / Communications Component (62 requirements)
+1. All 172 telematics terminal-category requirements:
+   - Class 0 Connectivity / Communications (62 requirements)
    - Cloud Component (60 requirements)
-   - Mobile App Component (50 requirements)
-   cascade correctly in nmfta-vehicle_cybersecurity_requirements (Class 0 Telematics)
+   - Mobile App / PC Software (50 requirements)
+   cascade correctly in nmfta-vehicle_cybersecurity_requirements
    and have identical cascaded statement text and criticality to their ultimate
    parent requirements, parsed through StrictDoc.
 
@@ -197,19 +196,19 @@ class RequirementValidator:
 
         errors: List[str] = []
 
-        # 1. Validate Telematics (230 requirements)
-        print(f"Checking {len(telematics_baseline)} Telematics requirements from baseline snapshot...")
-        for c0_uid, item in telematics_baseline.items():
+        # 1. Validate terminal-category requirements
+        print(f"Checking {len(telematics_baseline)} terminal-category requirements from baseline snapshot...")
+        for uid, item in telematics_baseline.items():
             comp = item["component"]
 
-            if c0_uid not in self.vcr_requirements:
-                errors.append(f"[{comp}] Requirement {c0_uid} missing in VCR Class 0 specification")
+            if uid not in self.vcr_requirements:
+                errors.append(f"[{comp}] Requirement {uid} missing in VCR specification")
                 continue
 
-            v_crit, v_title, v_stmt, v_ancestor_stmt = self.resolve_ancestor_metadata(c0_uid)
-            ultimate_parent = self.ultimate_parent(c0_uid)
+            v_crit, v_title, v_stmt, v_ancestor_stmt = self.resolve_ancestor_metadata(uid)
+            ultimate_parent = self.ultimate_parent(uid)
             if not ultimate_parent:
-                errors.append(f"[{comp}] {c0_uid}: Ultimate parent requirement could not be resolved")
+                errors.append(f"[{comp}] {uid}: Ultimate parent requirement could not be resolved")
                 continue
 
             expected_crit = ultimate_parent["criticality"]
@@ -217,13 +216,13 @@ class RequirementValidator:
 
             if normalize_whitespace(v_crit) != normalize_whitespace(expected_crit):
                 errors.append(
-                    f"[{comp}] {c0_uid}: Criticality mismatch: "
+                    f"[{comp}] {uid}: Criticality mismatch: "
                     f"Ultimate parent='{expected_crit}', VCR='{v_crit}'"
                 )
 
             if normalize_whitespace(v_ancestor_stmt) != normalize_whitespace(expected_stmt):
                 errors.append(
-                    f"[{comp}] {c0_uid}: Cascaded parent statement mismatch:\n"
+                    f"[{comp}] {uid}: Cascaded parent statement mismatch:\n"
                     f"  Ultimate parent : {expected_stmt[:120] if expected_stmt else 'None'}...\n"
                     f"  VCR Resolved : {v_ancestor_stmt[:120] if v_ancestor_stmt else 'None'}..."
                 )
@@ -283,13 +282,12 @@ class RequirementValidator:
 
         _, tsrm_requirements = parse_strictdoc_requirements(self.tsrm_dir)
         components = [
-            ("Vehicle Connection", "_vehicle_connection_tsrm.sdoc"),
-            ("Connectivity / Communications", "_connectivity_tsrm.sdoc"),
-            ("Cloud or Back-end", "_cloud_tsrm.sdoc"),
-            ("Mobile App", "_mobile_app_tsrm.sdoc"),
+            ("Connectivity / Communications", "_connectivity_tsrm.sdoc", "C0-"),
+            ("Cloud or Back-end", "_cloud_tsrm.sdoc", ""),
+            ("Mobile App / PC Software", "_mobile_app_tsrm.sdoc", ""),
         ]
 
-        for comp_name, comp_file in components:
+        for comp_name, comp_file, uid_prefix in components:
             comp_path = os.path.join(self.tsrm_dir, comp_file)
             if not os.path.exists(comp_path):
                 errors.append(f"TSRM component file missing: {comp_path}")
@@ -303,9 +301,9 @@ class RequirementValidator:
             print(f"Checking TSRM component: {comp_name} ({len(comp_reqs)} requirements)...")
 
             for uid, tsrm_node in comp_reqs.items():
-                c0_uid = f"C0-{uid}"
-                if c0_uid not in self.vcr_requirements:
-                    errors.append(f"[{comp_name}] Requirement {c0_uid} missing in VCR Class 0 specification")
+                vcr_uid = f"{uid_prefix}{uid}"
+                if vcr_uid not in self.vcr_requirements:
+                    errors.append(f"[{comp_name}] Requirement {vcr_uid} missing in VCR specification")
                     continue
 
                 if not tsrm_node["parents"]:
@@ -321,17 +319,17 @@ class RequirementValidator:
                 tsrm_crit = tsrm_parent["criticality"]
                 tsrm_parent_stmt = tsrm_parent["statement"]
 
-                vcr_crit, _, _, vcr_ancestor_stmt = self.resolve_ancestor_metadata(c0_uid)
+                vcr_crit, _, _, vcr_ancestor_stmt = self.resolve_ancestor_metadata(vcr_uid)
 
                 if normalize_whitespace(vcr_crit) != normalize_whitespace(tsrm_crit):
                     errors.append(
-                        f"[{comp_name}] {c0_uid}: Criticality mismatch: "
+                        f"[{comp_name}] {vcr_uid}: Criticality mismatch: "
                         f"TSRM='{tsrm_crit}', VCR='{vcr_crit}'"
                     )
 
                 if normalize_whitespace(vcr_ancestor_stmt) != normalize_whitespace(tsrm_parent_stmt):
                     errors.append(
-                        f"[{comp_name}] {c0_uid}: Cascaded parent statement mismatch:\n"
+                        f"[{comp_name}] {vcr_uid}: Cascaded parent statement mismatch:\n"
                         f"  TSRM Ancestor : {tsrm_parent_stmt[:120]}...\n"
                         f"  VCR Ancestor  : {vcr_ancestor_stmt[:120] if vcr_ancestor_stmt else 'None'}..."
                     )
