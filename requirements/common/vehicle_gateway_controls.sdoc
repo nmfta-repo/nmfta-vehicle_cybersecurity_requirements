@@ -885,7 +885,7 @@ TITLE: Security Requirements for Abstract Boundary Potential Pivots
 
 [TEXT]
 STATEMENT: >>>
-Security requirements that must be satisfied by any device that could perform the behaviors detailed in the Boundary Gateway definition if controlled by an attacker.
+Security requirements that must be satisfied by any device that does not perform gateway functions in normal operation but could perform the behaviors detailed in the Boundary Gateway definition if controlled by an attacker.
 <<<
 
 [REQUIREMENT]
