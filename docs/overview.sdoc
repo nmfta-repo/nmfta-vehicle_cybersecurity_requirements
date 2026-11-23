@@ -123,7 +123,7 @@ Boundary Gateway:
     * Secure Domain Controller
 
 Boundary Potential Pivot (*BPP*):
-    A device that could be a Boundary Gateway if controlled by an attacker.
+    A device that does not perform gateway functions in normal operation but could be a Boundary Gateway if controlled by an attacker.
 
 Internal Gateway:
     A device that performs gateway functions between two or more TNDs.
@@ -136,7 +136,7 @@ Internal Gateway:
     * Network Segmentation Gateway
 
 Internal Potential Pivot (*IPP*):
-    A device that could be an Internal Gateway if controlled by an attacker.
+    A device that does not perform gateway functions in normal operation but could be an Internal Gateway if controlled by an attacker.
 
 Untrustworthy Gateway:
     A device that performs gateway functions between two or more UNDs.
