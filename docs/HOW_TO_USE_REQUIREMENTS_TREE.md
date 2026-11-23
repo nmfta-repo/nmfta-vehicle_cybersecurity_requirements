@@ -158,7 +158,7 @@ RELATIONS:
 When authoring refined requirements or class-specific specializations:
 1. **Canonical Requirements (`requirements/common/`)**: Contain the authoritative definition, default criticality, publication references, and verification guidance.
 2. **Class Refinements (`requirements/class_N/`)**: Scope or specialize the requirement for that vehicle class, inheriting or tailoring parent statements. The questionnaire exporter automatically walks parent relations to resolve full statements, verification criteria, and criticalities into the exported supplier spreadsheets.
-3. **Multi-level Refinement**: A category requirement (e.g. `CLOUD-AA-010`) may itself refine a baseline requirement (`AA-010`). The tooling resolves ancestors at any depth.
+3. **Multi-level Refinement**: A specifically-allocated requirement (e.g. `CLOUD-AA-010`) may itself refine a baseline requirement (`AA-010`). The tooling resolves ancestors at any depth.
 
 
 ---
