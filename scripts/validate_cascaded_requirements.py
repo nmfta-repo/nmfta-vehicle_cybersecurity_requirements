@@ -3,7 +3,7 @@
 validate_cascaded_requirements.py
 
 Validates that:
-1. All 172 telematics terminal-category requirements:
+1. All 172 Class 0 connectivity and terminal-category requirements:
    - Class 0 Connectivity / Communications (62 requirements)
    - Cloud Component (60 requirements)
    - Mobile App / PC Software (50 requirements)
@@ -197,7 +197,7 @@ class RequirementValidator:
         errors: List[str] = []
 
         # 1. Validate terminal-category requirements
-        print(f"Checking {len(telematics_baseline)} terminal-category requirements from baseline snapshot...")
+        print(f"Checking {len(telematics_baseline)} Class 0 and terminal-category requirements from baseline snapshot...")
         for uid, item in telematics_baseline.items():
             comp = item["component"]
 
