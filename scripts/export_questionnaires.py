@@ -175,16 +175,9 @@ class ExportQuestionnaires:
 
             # Define order of classes
             for document in self.traceability_index.document_tree.document_list:
-                if not document.title.startswith("Class "):
-                    continue
-
                 if "Class 0" in document.title:
-                    # Class 0 decomposes into 4 architectural components matching the TSRM model
                     component_map = {
-                        "Vehicle Bus Connection": "Class 0 - Vehicle Connection",
                         "Wireless Connectivity": "Class 0 - Connectivity",
-                        "Cloud Component": "Class 0 - Cloud Back-end",
-                        "Mobile Application": "Class 0 - Mobile App",
                     }
                     for section in document.section_contents:
                         if not hasattr(section, "section_contents") or not section.section_contents:
@@ -201,7 +194,7 @@ class ExportQuestionnaires:
                                 if isinstance(n, SDocNode) and n.node_type == "REQUIREMENT"
                             ]
                             write_sheet(matched_name, req_nodes)
-                else:
+                elif document.title.startswith("Class "):
                     document_iterator = SDocDocumentIterator(document)
                     req_nodes = []
                     for node, _ in document_iterator.all_content(print_fragments=False):
@@ -210,6 +203,18 @@ class ExportQuestionnaires:
 
                     if req_nodes:
                         write_sheet(document.title, req_nodes)
+                elif document.title == "CLOUD Service Security Requirements":
+                    req_nodes = [
+                        node for node, _ in SDocDocumentIterator(document).all_content(print_fragments=False)
+                        if isinstance(node, SDocNode) and node.node_type == "REQUIREMENT"
+                    ]
+                    write_sheet("CLOUD - Cloud/Back-end", req_nodes)
+                elif document.title == "MOBILE / PC Software Security Requirements":
+                    req_nodes = [
+                        node for node, _ in SDocDocumentIterator(document).all_content(print_fragments=False)
+                        if isinstance(node, SDocNode) and node.node_type == "REQUIREMENT"
+                    ]
+                    write_sheet("MOBILE - PC Software", req_nodes)
 
         print(f"Exported questionnaires to {workbook_path}")
 

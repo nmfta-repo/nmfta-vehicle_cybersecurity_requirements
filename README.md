@@ -301,7 +301,7 @@ Note 2: the analysis makes the distinction between *Untrustworthy Network Domain
 
 ### Device Classes and Classification Heuristics
 
-All devices identified by the VCRWG are organized by their device class along with classification heuristics for determining membership of unknown devices. This reference table of device classes, reference devices, and classification heuristics is maintained in the [Vehicle Cybersecurity Requirements Overview document](https://nmfta-repo.github.io/nmfta-vehicle_cybersecurity_requirements/nmfta-vehicle_cybersecurity_requirements/docs/overview.html#5-device-classes-and-classification-heuristics) (see also [`docs/overview.sdoc`](docs/overview.sdoc)).
+All devices and services identified by the VCRWG are organized by device class or terminal category along with classification heuristics for determining membership of unknown items. This reference table is maintained in the [Vehicle Cybersecurity Requirements Overview document](https://nmfta-repo.github.io/nmfta-vehicle_cybersecurity_requirements/nmfta-vehicle_cybersecurity_requirements/docs/overview.html#5-device-classes-and-classification-heuristics) (see also [`docs/overview.sdoc`](docs/overview.sdoc)).
 
 
 # Cybersecurity Requirements
