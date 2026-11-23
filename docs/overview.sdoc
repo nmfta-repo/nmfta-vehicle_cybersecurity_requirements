@@ -273,7 +273,7 @@ STATEMENT: >>>
 
 For current commercial vehicle architectures, we group components by their network topology, external interfaces, gatewaying responsibilities, and overall risk profile. The resulting device classes, services, and software are listed in the table below.
 
-All of the devices and services identified by the VCRWG are captured below. This list can be useful when an item cannot be found easily in the order sheet view. If the fleet and OEM are interested in classifying an item not listed here, the heuristics below help determine its class or appropriate entry.
+All of the devices and services identified by the VCRWG are captured below. This list can be useful when a particular device cannot be found easily in the order sheet view. If the fleet and OEM are interested in classifying an item not listed here, the heuristics below help determine its class or appropriate entry.
 
 .. list-table:: Device Classes, Services, Software, Examples, and Heuristics
    :widths: 20 50 30
