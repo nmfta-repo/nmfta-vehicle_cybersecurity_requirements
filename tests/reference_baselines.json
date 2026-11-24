@@ -436,6 +436,13 @@
       "criticality": "Low",
       "cascaded_statement": "The vendor shall participate in a cybersecurity information sharing and analysis group in the heavy vehicle industry"
     },
+    "C0-SCP-100": {
+      "component": "Connectivity / Communications",
+      "tsrm_uid": "SCP-100",
+      "parent_uid": "SCP-100",
+      "criticality": "Medium",
+      "cascaded_statement": "The OEM's system shall separate execution domains and/or processes (i.e. process isolation within both the telematics device and back-end system and between the serial communications in the telematics device and the interface to the vehicle network)"
+    },
     "CLOUD-AA-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AA-010",

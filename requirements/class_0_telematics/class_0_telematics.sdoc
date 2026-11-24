@@ -639,4 +639,14 @@ RELATIONS:
   VALUE: COMMS-SII-200
   ROLE: Refines
 
+[REQUIREMENT]
+UID: C0-SCP-100
+STATEMENT: >>>
+Class 0 telematics systems SHALL satisfy baseline requirement SCP-100.
+<<<
+RELATIONS:
+- TYPE: Parent
+  VALUE: SCP-100
+  ROLE: Refines
+
 [[/SECTION]]

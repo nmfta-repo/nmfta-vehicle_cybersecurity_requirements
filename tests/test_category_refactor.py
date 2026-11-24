@@ -27,6 +27,7 @@ class CategoryRefactorTests(unittest.TestCase):
             encoding="utf-8"
         )
         self.assertIn("UID: C0-COMMS-AC-010", class0)
+        self.assertIn("UID: C0-SCP-100", class0)
         self.assertNotIn("UID: C1-COMMS-", class1)
         self.assertNotIn("UID: C0-CLOUD-", class0)
         self.assertNotIn("UID: C0-MOBILE-", class0)
@@ -46,13 +47,13 @@ class CategoryRefactorTests(unittest.TestCase):
             uid
             for uid in class0_uids
             if uid.startswith("C0-COMMS-")
-        } | terminal_uids
+        } | {"C0-SCP-100"} | terminal_uids
 
         baseline = json.loads(
             (ROOT / "tests/reference_baselines.json").read_text(encoding="utf-8")
         )["telematics"]
         self.assertEqual(set(baseline), expected)
-        self.assertEqual(len(expected), 172)
+        self.assertEqual(len(expected), 173)
 
     def test_new_categories_have_heuristics_and_examples(self):
         cloud = (REQUIREMENTS / "common/cloud_backend.sdoc").read_text(encoding="utf-8")
