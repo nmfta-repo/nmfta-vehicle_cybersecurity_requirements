@@ -28,6 +28,9 @@ jobs:
           git clone --depth 1 https://github.com/strictdoc-project/strictdoc/ /tmp/strictdoc
           python -m pip install /tmp/strictdoc[development]
 
+      - name: Run category refactor tests
+        run: python -m unittest discover -s tests -p 'test_category_refactor.py' -v
+
       - name: Run strictdoc exports (HTML, ReqIF)
         run: |
           mkdir -p docs/
