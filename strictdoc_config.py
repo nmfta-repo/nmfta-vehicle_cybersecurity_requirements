@@ -7,8 +7,8 @@ def create_config() -> ProjectConfig:
         include_doc_paths=[
             "requirements/shared/grammar.sgra",
             "docs/overview.sdoc",
-            "requirements/common/baseline_ecu.sdoc",
-            "requirements/common/vehicle_gateway_controls.sdoc",
+            "requirements/all_common/baseline_ecu.sdoc",
+            "requirements/all_common/vehicle_gateway_controls.sdoc",
             "requirements/class_0_telematics/class_0_telematics.sdoc",
             "requirements/class_1_wireless_multiseg/class_1_wireless_multiseg.sdoc",
             "requirements/class_2_gateway/class_2_gateway.sdoc",

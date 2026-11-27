@@ -26,7 +26,7 @@ Commercial truck architectures partition ECUs into distinct device classes based
 ## 2. Directory Layout & Modular Architecture
 
 The repository employs a DRY (Don't Repeat Yourself) modular architecture:
-- **Canonical requirements** are defined under `requirements/common/` by capability domain (baseline ECU controls, gateway controls).
+- **Canonical requirements** are defined under `requirements/all_common/` by capability domain (baseline ECU controls, gateway controls).
 - **Terminal category requirements** are maintained in dedicated category directories:
   - `requirements/cloud/` (`cloud.sdoc`): Cloud services, server APIs, and backend infrastructure.
   - `requirements/mobile/` (`mobile_app.sdoc`): Mobile applications, handheld devices, and PC-based diagnostic software.
@@ -44,7 +44,7 @@ nmfta-vehicle_cybersecurity_requirements/
 ├── requirements/
 │   ├── shared/
 │   │   └── grammar.sgra             # Standardized StrictDoc grammar definition
-│   ├── common/                      # Canonical, modular requirement domains
+│   ├── all_common/                  # Canonical, modular requirement domains
 │   │   ├── baseline_ecu.sdoc        # Baseline ECU security requirements (AA, AC, CR, etc.)
 │   │   └── vehicle_gateway_controls.sdoc # Architectural and central gateway filtering
 │   ├── cloud/                       # Terminal category: Cloud services and APIs
@@ -146,7 +146,7 @@ Bench test attempting unauthorized OTA broadcast on UND and verifying rejection.
 
 ### Requirement Relations & Class Scoping (Approach A)
 
-In the modular architecture, class documents (`requirements/class_N/`) refine canonical requirements from `requirements/common/`. A class node links to its canonical parent via `RELATIONS`:
+In the modular architecture, class documents (`requirements/class_N/`) refine canonical requirements from `requirements/all_common/`. A class node links to its canonical parent via `RELATIONS`:
 
 ```sdoc
 [REQUIREMENT]
@@ -162,7 +162,7 @@ RELATIONS:
 ```
 
 When authoring refined requirements or class-specific specializations:
-1. **Canonical & Category Requirements (`requirements/common/`, `requirements/cloud/`, `requirements/mobile/`)**: Contain the authoritative definition, default criticality, publication references, and verification guidance.
+1. **Canonical & Category Requirements (`requirements/all_common/`, `requirements/cloud/`, `requirements/mobile/`)**: Contain the authoritative definition, default criticality, publication references, and verification guidance.
 2. **Class Refinements (`requirements/class_N/`)**: Scope or specialize the requirement for that vehicle class, inheriting or tailoring parent statements. The questionnaire exporter automatically walks parent relations to resolve full statements, verification criteria, and criticalities into the exported supplier spreadsheets.
 3. **Multi-level Refinement**: A specifically-allocated requirement (e.g. `CLOUD-AA-010`) may itself refine a baseline requirement (`AA-010`). The tooling resolves ancestors at any depth.
 
@@ -184,8 +184,14 @@ pip install strictdoc xlsxwriter
 
 ### Step 2: Build Documentation (HTML & ReqIF)
 
+On Linux/macOS:
 ```bash
 strictdoc export . --formats=html,reqif-sdoc --output-dir docs/
+```
+
+On Windows (PowerShell):
+```powershell
+.\buildme.ps1
 ```
 
 - HTML documentation will be generated in `docs/html/index.html`.

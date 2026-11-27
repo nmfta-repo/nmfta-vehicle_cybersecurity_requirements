@@ -34,6 +34,9 @@ class CategoryRefactorTests(unittest.TestCase):
         self.assertFalse((REQUIREMENTS / "common/vehicle_bus_connection.sdoc").exists())
         self.assertFalse((REQUIREMENTS / "common/cloud_backend.sdoc").exists())
         self.assertFalse((REQUIREMENTS / "common/mobile_app.sdoc").exists())
+        self.assertFalse((REQUIREMENTS / "all_common/vehicle_bus_connection.sdoc").exists())
+        self.assertFalse((REQUIREMENTS / "all_common/cloud_backend.sdoc").exists())
+        self.assertFalse((REQUIREMENTS / "all_common/mobile_app.sdoc").exists())
         self.assertTrue((REQUIREMENTS / "cloud/cloud.sdoc").exists())
         self.assertTrue((REQUIREMENTS / "mobile/mobile_app.sdoc").exists())
 

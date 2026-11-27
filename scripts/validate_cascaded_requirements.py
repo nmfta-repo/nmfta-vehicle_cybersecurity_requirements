@@ -12,7 +12,7 @@ Validates that:
    parent requirements, parsed through StrictDoc.
 
 2. All 34 gateway security requirements (AGW-S-*, CGW-S-*, J1939GW-S-*, NGW-S-*)
-   in nmfta-vehicle_cybersecurity_requirements (requirements/common/vehicle_gateway_controls.sdoc
+   in nmfta-vehicle_cybersecurity_requirements (requirements/all_common/vehicle_gateway_controls.sdoc
    and Class 2 gateway specializations) have identical requirement statements,
    criticalities, titles, and verification criteria relative to the baseline reference.
 
