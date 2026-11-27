@@ -32,13 +32,17 @@ class CategoryRefactorTests(unittest.TestCase):
         self.assertNotIn("UID: C0-CLOUD-", class0)
         self.assertNotIn("UID: C0-MOBILE-", class0)
         self.assertFalse((REQUIREMENTS / "common/vehicle_bus_connection.sdoc").exists())
+        self.assertFalse((REQUIREMENTS / "common/cloud_backend.sdoc").exists())
+        self.assertFalse((REQUIREMENTS / "common/mobile_app.sdoc").exists())
+        self.assertTrue((REQUIREMENTS / "cloud/cloud.sdoc").exists())
+        self.assertTrue((REQUIREMENTS / "mobile/mobile_app.sdoc").exists())
 
     def test_terminal_requirements_are_in_cascade_baseline(self):
         terminal_uids = (
             requirement_uids(
-                REQUIREMENTS / "common/cloud_backend.sdoc"
+                REQUIREMENTS / "cloud/cloud.sdoc"
             )
-            | requirement_uids(REQUIREMENTS / "common/mobile_app.sdoc")
+            | requirement_uids(REQUIREMENTS / "mobile/mobile_app.sdoc")
         )
         class0_uids = requirement_uids(
             REQUIREMENTS / "class_0_telematics/class_0_telematics.sdoc"
@@ -56,8 +60,8 @@ class CategoryRefactorTests(unittest.TestCase):
         self.assertEqual(len(expected), 173)
 
     def test_new_categories_have_heuristics_and_examples(self):
-        cloud = (REQUIREMENTS / "common/cloud_backend.sdoc").read_text(encoding="utf-8")
-        mobile = (REQUIREMENTS / "common/mobile_app.sdoc").read_text(encoding="utf-8")
+        cloud = (REQUIREMENTS / "cloud/cloud.sdoc").read_text(encoding="utf-8")
+        mobile = (REQUIREMENTS / "mobile/mobile_app.sdoc").read_text(encoding="utf-8")
 
         for document in (cloud, mobile):
             self.assertIn("Applicability heuristic:", document)

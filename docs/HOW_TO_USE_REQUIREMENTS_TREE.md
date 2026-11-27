@@ -26,34 +26,39 @@ Commercial truck architectures partition ECUs into distinct device classes based
 ## 2. Directory Layout & Modular Architecture
 
 The repository employs a DRY (Don't Repeat Yourself) modular architecture:
-- **Canonical requirements** are defined once under `requirements/common/` by capability domain (baseline ECU, wireless connectivity, vehicle bus, gateway controls, cloud backend, mobile application).
-- **Class specifications** under `requirements/class_N/` are lightweight compositions that refine and scope the common requirements for that specific ECU class using StrictDoc relations (`RELATIONS: - TYPE: Parent ... ROLE: Refines`).
+- **Canonical requirements** are defined under `requirements/common/` by capability domain (baseline ECU controls, gateway controls).
+- **Terminal category requirements** are maintained in dedicated category directories:
+  - `requirements/cloud/` (`cloud.sdoc`): Cloud services, server APIs, and backend infrastructure.
+  - `requirements/mobile/` (`mobile_app.sdoc`): Mobile applications, handheld devices, and PC-based diagnostic software.
+- **Class specifications** under `requirements/class_N/` are lightweight compositions that refine and scope the common and category requirements for that specific ECU class using StrictDoc relations (`RELATIONS: - TYPE: Parent ... ROLE: Refines`).
 - **Overarching front matter** (preface, disclaimer of liability, glossary) is maintained once in `docs/overview.sdoc`.
 
 ```text
 nmfta-vehicle_cybersecurity_requirements/
+├── buildme.ps1                      # Windows PowerShell build script (clean export & asset copy)
 ├── strictdoc_config.py              # Root StrictDoc configuration
 ├── .github/workflows/publish.yml    # CI workflow for pull requests and main builds
 ├── scripts/
-│   └── export_questionnaires.py     # Exports supplier Excel questionnaires
+│   ├── export_questionnaires.py     # Exports supplier Excel questionnaires
+│   └── validate_cascaded_requirements.py # Validates requirement fidelity against baseline
 ├── requirements/
 │   ├── shared/
 │   │   └── grammar.sgra             # Standardized StrictDoc grammar definition
 │   ├── common/                      # Canonical, modular requirement domains
 │   │   ├── baseline_ecu.sdoc        # Baseline ECU security requirements (AA, AC, CR, etc.)
-│   │   ├── wireless_connectivity.sdoc # Cellular, Wi-Fi, BLE, and wireless interfaces
-│   │   ├── vehicle_bus_connection.sdoc # CAN, J1939, Ethernet bus controls
-│   │   ├── vehicle_gateway_controls.sdoc # Architectural and central gateway filtering
-│   │   ├── cloud_backend.sdoc       # Cloud and server infrastructure requirements
+│   │   └── vehicle_gateway_controls.sdoc # Architectural and central gateway filtering
+│   ├── cloud/                       # Terminal category: Cloud services and APIs
+│   │   └── cloud.sdoc               # Cloud and server infrastructure requirements
+│   ├── mobile/                      # Terminal category: Mobile applications and PC software
 │   │   └── mobile_app.sdoc          # Mobile application security requirements
 │   ├── class_0_telematics/
-│   │   └── class_0_telematics.sdoc  # Composes Baseline + Cloud + Comms + Bus + Mobile
+│   │   └── class_0_telematics.sdoc  # Composes Baseline + Wireless Connectivity
 │   ├── class_1_wireless_multiseg/
-│   │   └── class_1_wireless_multiseg.sdoc # Composes Baseline + Comms + Bus
+│   │   └── class_1_wireless_multiseg.sdoc # Composes Baseline
 │   ├── class_2_gateway/
-│   │   └── class_2_gateway.sdoc     # Composes Baseline + Bus + Gateway Controls
+│   │   └── class_2_gateway.sdoc     # Composes Baseline + Gateway Controls
 │   ├── class_3_multiseg_untrusted/
-│   │   └── class_3_multiseg_untrusted.sdoc # Composes Baseline + Bus
+│   │   └── class_3_multiseg_untrusted.sdoc # Composes Baseline
 │   ├── class_4_multiseg/
 │   │   └── class_4_multiseg.sdoc    # Composes Baseline ECU controls
 │   ├── class_5_single_seg_high_risk/
@@ -63,7 +68,8 @@ nmfta-vehicle_cybersecurity_requirements/
 │   └── class_7_single_seg_low_risk/
 │       └── class_7_single_seg_low_risk.sdoc # Composes Baseline ECU controls
 ├── docs/
-│   └── overview.sdoc                  # Overarching preface, disclaimer, and glossary
+│   ├── overview.sdoc                # Overarching preface, disclaimer, and glossary
+│   └── HOW_TO_USE_REQUIREMENTS_TREE.md # This guide
 └── media/                           # Diagrams and image assets
 ```
 
@@ -156,7 +162,7 @@ RELATIONS:
 ```
 
 When authoring refined requirements or class-specific specializations:
-1. **Canonical Requirements (`requirements/common/`)**: Contain the authoritative definition, default criticality, publication references, and verification guidance.
+1. **Canonical & Category Requirements (`requirements/common/`, `requirements/cloud/`, `requirements/mobile/`)**: Contain the authoritative definition, default criticality, publication references, and verification guidance.
 2. **Class Refinements (`requirements/class_N/`)**: Scope or specialize the requirement for that vehicle class, inheriting or tailoring parent statements. The questionnaire exporter automatically walks parent relations to resolve full statements, verification criteria, and criticalities into the exported supplier spreadsheets.
 3. **Multi-level Refinement**: A specifically-allocated requirement (e.g. `CLOUD-AA-010`) may itself refine a baseline requirement (`AA-010`). The tooling resolves ancestors at any depth.
 
@@ -192,12 +198,11 @@ python scripts/export_questionnaires.py . --output-dir docs/html/
 ```
 
 - Excel workbook `docs/html/vcr_questionnaires.xlsx` will contain separate worksheets sorted by criticality:
-  - **Class 0 (Telematics)**: Generates 4 separate component worksheets matching the TSRM vendor submission model:
-    - `Class 0 - Vehicle Connection` (physical on-vehicle hardware and vehicle bus interfaces)
-    - `Class 0 - Connectivity` (cellular, Wi-Fi, BLE, and satellite wireless interfaces)
-    - `Class 0 - Cloud Back-end` (cloud hosting, server APIs, and fleet management portals)
-    - `Class 0 - Mobile App` (driver interfaces, cab displays, and mobile applications)
+  - **Class 0 (Telematics)**: Generates a dedicated worksheet for telematics connectivity (`Class 0 - Connectivity`).
   - **Classes 1 through 7**: Generates dedicated worksheets for each physical controller class.
+  - **Terminal Categories**:
+    - `CLOUD - Cloud/Back-end` (cloud hosting, server APIs, and fleet management portals)
+    - `MOBILE - PC Software` (driver interfaces, cab displays, and PC-based OEM diagnostic software)
 
 ### Step 4: Validate Cascaded Requirements & Text Fidelity
 
