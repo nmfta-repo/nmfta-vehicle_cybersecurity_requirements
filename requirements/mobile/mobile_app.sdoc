@@ -1,13 +1,20 @@
 [DOCUMENT]
-TITLE: Mobile App and Driver Interface Security Requirements
+TITLE: MOBILE / PC Software Security Requirements
 
 [GRAMMAR]
 IMPORT_FROM_FILE: @vcr_grammar
 
+[TEXT]
+STATEMENT: >>>
+Applicability heuristic: Software implementing a human-machine interface (HMI) for interacting with the truck or its systems, with telematics-specific scope removed.
+
+Examples include PC-based OEM diagnostic software and mobile diagnostic applications.
+<<<
+
 [REQUIREMENT]
 UID: MOBILE-AC-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement AC-010
+This MOBILE / PC Software category must satisfy requirement AC-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -17,7 +24,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-AC-030
 STATEMENT: >>>
-This Mobile App component must satisfy requirement AC-030
+This MOBILE / PC Software category must satisfy requirement AC-030
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -27,7 +34,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-AC-040
 STATEMENT: >>>
-This Mobile App component must satisfy requirement AC-040
+This MOBILE / PC Software category must satisfy requirement AC-040
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -37,7 +44,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-AC-041
 STATEMENT: >>>
-This Mobile App component must satisfy requirement AC-041
+This MOBILE / PC Software category must satisfy requirement AC-041
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -47,7 +54,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-AC-050
 STATEMENT: >>>
-This Mobile App component must satisfy requirement AC-050
+This MOBILE / PC Software category must satisfy requirement AC-050
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -57,7 +64,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-AC-080
 STATEMENT: >>>
-This Mobile App component must satisfy requirement AC-080
+This MOBILE / PC Software category must satisfy requirement AC-080
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -67,7 +74,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-CM-020
 STATEMENT: >>>
-This Mobile App component must satisfy requirement CM-020
+This MOBILE / PC Software category must satisfy requirement CM-020
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -77,7 +84,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-CM-030
 STATEMENT: >>>
-This Mobile App component must satisfy requirement CM-030
+This MOBILE / PC Software category must satisfy requirement CM-030
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -87,7 +94,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-CM-040
 STATEMENT: >>>
-This Mobile App component must satisfy requirement CM-040
+This MOBILE / PC Software category must satisfy requirement CM-040
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -97,7 +104,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-IA-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement IA-010
+This MOBILE / PC Software category must satisfy requirement IA-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -107,7 +114,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-IA-030
 STATEMENT: >>>
-This Mobile App component must satisfy requirement IA-030
+This MOBILE / PC Software category must satisfy requirement IA-030
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -117,7 +124,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-IR-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement IR-010
+This MOBILE / PC Software category must satisfy requirement IR-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -127,7 +134,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-M-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement M-010
+This MOBILE / PC Software category must satisfy requirement M-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -137,7 +144,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-PS-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement PS-010
+This MOBILE / PC Software category must satisfy requirement PS-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -147,7 +154,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-RA-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement RA-010
+This MOBILE / PC Software category must satisfy requirement RA-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -157,7 +164,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-RA-020
 STATEMENT: >>>
-This Mobile App component must satisfy requirement RA-020
+This MOBILE / PC Software category must satisfy requirement RA-020
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -167,7 +174,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SAA-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SAA-010
+This MOBILE / PC Software category must satisfy requirement SAA-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -177,7 +184,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SAA-020
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SAA-020
+This MOBILE / PC Software category must satisfy requirement SAA-020
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -187,7 +194,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SAA-030
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SAA-030
+This MOBILE / PC Software category must satisfy requirement SAA-030
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -197,7 +204,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SAA-040
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SAA-040
+This MOBILE / PC Software category must satisfy requirement SAA-040
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -207,7 +214,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SAA-050
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SAA-050
+This MOBILE / PC Software category must satisfy requirement SAA-050
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -217,7 +224,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-010
+This MOBILE / PC Software category must satisfy requirement SCP-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -227,7 +234,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-011
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-011
+This MOBILE / PC Software category must satisfy requirement SCP-011
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -237,7 +244,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-020
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-020
+This MOBILE / PC Software category must satisfy requirement SCP-020
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -247,7 +254,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-030
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-030
+This MOBILE / PC Software category must satisfy requirement SCP-030
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -257,7 +264,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-040
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-040
+This MOBILE / PC Software category must satisfy requirement SCP-040
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -267,7 +274,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-090
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-090
+This MOBILE / PC Software category must satisfy requirement SCP-090
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -277,7 +284,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-091
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-091
+This MOBILE / PC Software category must satisfy requirement SCP-091
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -287,7 +294,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-120
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-120
+This MOBILE / PC Software category must satisfy requirement SCP-120
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -297,7 +304,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-130
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-130
+This MOBILE / PC Software category must satisfy requirement SCP-130
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -307,7 +314,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SCP-140
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SCP-140
+This MOBILE / PC Software category must satisfy requirement SCP-140
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -317,7 +324,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-010
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-010
+This MOBILE / PC Software category must satisfy requirement SII-010
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -327,7 +334,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-011
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-011
+This MOBILE / PC Software category must satisfy requirement SII-011
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -337,7 +344,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-020
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-020
+This MOBILE / PC Software category must satisfy requirement SII-020
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -347,7 +354,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-021
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-021
+This MOBILE / PC Software category must satisfy requirement SII-021
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -357,7 +364,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-030
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-030
+This MOBILE / PC Software category must satisfy requirement SII-030
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -367,7 +374,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-070
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-070
+This MOBILE / PC Software category must satisfy requirement SII-070
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -377,7 +384,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-071
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-071
+This MOBILE / PC Software category must satisfy requirement SII-071
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -387,7 +394,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-080
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-080
+This MOBILE / PC Software category must satisfy requirement SII-080
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -397,7 +404,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-081
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-081
+This MOBILE / PC Software category must satisfy requirement SII-081
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -407,7 +414,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-090
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-090
+This MOBILE / PC Software category must satisfy requirement SII-090
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -417,7 +424,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-120
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-120
+This MOBILE / PC Software category must satisfy requirement SII-120
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -427,7 +434,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-130
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-130
+This MOBILE / PC Software category must satisfy requirement SII-130
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -437,7 +444,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-140
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-140
+This MOBILE / PC Software category must satisfy requirement SII-140
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -447,7 +454,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-150
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-150
+This MOBILE / PC Software category must satisfy requirement SII-150
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -457,7 +464,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-170
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-170
+This MOBILE / PC Software category must satisfy requirement SII-170
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -467,7 +474,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-171
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-171
+This MOBILE / PC Software category must satisfy requirement SII-171
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -477,7 +484,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-180
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-180
+This MOBILE / PC Software category must satisfy requirement SII-180
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -487,7 +494,7 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-190
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-190
+This MOBILE / PC Software category must satisfy requirement SII-190
 <<<
 RELATIONS:
 - TYPE: Parent
@@ -497,10 +504,9 @@ RELATIONS:
 [REQUIREMENT]
 UID: MOBILE-SII-200
 STATEMENT: >>>
-This Mobile App component must satisfy requirement SII-200
+This MOBILE / PC Software category must satisfy requirement SII-200
 <<<
 RELATIONS:
 - TYPE: Parent
   VALUE: SII-200
   ROLE: Refines
-

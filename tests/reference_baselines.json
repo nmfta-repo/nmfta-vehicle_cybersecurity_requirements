@@ -1,413 +1,7 @@
 {
   "version": "1.0",
-  "description": "Hermetic golden baseline of TSRM (230 telematics requirements) and Gateway (34 gateway controls) specifications for CI validation.",
+  "description": "Hermetic golden baseline of TSRM Class 0 connectivity and terminal category requirements (172 total) and Gateway (34 gateway controls) specifications for CI validation.",
   "telematics": {
-    "C0-VEH-AC-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-010",
-      "parent_uid": "AC-010",
-      "criticality": "Medium",
-      "cascaded_statement": "Vendor devices will implement least privilege for the memory spaces of processes handling protected data. i.e. data in-use, of the categories of sensitive protected data above, or shall be segmented from software components which do not handle such data. Acceptable segmentations include Mandatory Filesystem Access Controls and Mandatory Volatile Memory Access Controls."
-    },
-    "C0-VEH-AC-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-020",
-      "parent_uid": "AC-020",
-      "criticality": "High",
-      "cascaded_statement": "All actions taken by the vendor's telematics system that are capable of supporting access controls shall be configured such that each user account or process/service account are assigned only the minimal privileges required to perform the specific, intended, actions of the user or process/service account."
-    },
-    "C0-VEH-AC-030": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-030",
-      "parent_uid": "AC-030",
-      "criticality": "High",
-      "cascaded_statement": "The vendor's system shall employ cryptographic authentication to prevent unauthorized access to telematics systems and data."
-    },
-    "C0-VEH-AC-040": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-040",
-      "parent_uid": "AC-040",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall identify all instances where the telematics system includes actions that cannot support access authentication and/or execute with elevated privileges"
-    },
-    "C0-VEH-AC-041": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-041",
-      "parent_uid": "AC-041",
-      "criticality": "Medium",
-      "cascaded_statement": "Identifying information about the connected devices will not be made available without authentication first."
-    },
-    "C0-VEH-AC-050": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-050",
-      "parent_uid": "AC-050",
-      "criticality": "Medium",
-      "cascaded_statement": "All remote access methods and possible remote actions to/on telematics system shall be documented."
-    },
-    "C0-VEH-AC-060": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-060",
-      "parent_uid": "AC-060",
-      "criticality": "Medium",
-      "cascaded_statement": "For all components of the system, the vendor shall provide a listing of all wireless communication interfaces to the system and specify how the interfaces can be configured and/or disabled."
-    },
-    "C0-VEH-AC-061": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-061",
-      "parent_uid": "AC-061",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall not use any deprecated encryption+authentication on any Wi-Fi interface of the device. At the time of drafting this includes WEP, WPS or open/none."
-    },
-    "C0-VEH-AC-062": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-062",
-      "parent_uid": "AC-062",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall implement, for all Bluetooth interfaces,  pairing that must be specifically allowed by physical controls on the device and be time-limited. Furthermore, pairing will not use legacy pairing or passkey entry."
-    },
-    "C0-VEH-AC-063": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-063",
-      "parent_uid": "AC-063",
-      "criticality": "Medium",
-      "cascaded_statement": "Any and all software or firmware implementing wireless interface encrytion+authentication (those satisfying AC-061 and AC-062 above) will be prepared for future deprecation of methods. i.e. That software/firmware is upgradable."
-    },
-    "C0-VEH-AC-080": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-AC-080",
-      "parent_uid": "AC-080",
-      "criticality": "Medium",
-      "cascaded_statement": "All authentication offered on device-local interfaces shall expect credentials which are unique to each device instance and uncorrelated to any and all public information about the device."
-    },
-    "C0-VEH-CM-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-CM-010",
-      "parent_uid": "CM-010",
-      "criticality": "Medium",
-      "cascaded_statement": "All components of the vendor's system shall be configured to utilize the principle of least functionality and use only the services necessary for secure operations of the system. Additionally, customers should have the option of disabling any features they do not want or do not need by having unnecessary services’ executables removed or at least disabled such that their execution (by even superuser) is not possible in deployed systems."
-    },
-    "C0-VEH-CM-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-CM-020",
-      "parent_uid": "CM-020",
-      "criticality": "High",
-      "cascaded_statement": "The vendor’s devices shall have all services used for troubleshooting disabled or properly protected from unauthorized access and use."
-    },
-    "C0-VEH-CM-030": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-CM-030",
-      "parent_uid": "CM-030",
-      "criticality": "High",
-      "cascaded_statement": "Vendor ensures that any and all interfaces used for testing or debug are unavailable in production builds of the devices"
-    },
-    "C0-VEH-CM-040": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-CM-040",
-      "parent_uid": "CM-040",
-      "criticality": "High",
-      "cascaded_statement": "The vendors’ devices shall have a default system configuration that ensures security ‘out of the box’. In other words, the default configuration should be the most-secure and any additional features should be disabled by default and have their security implications communicated in documentation."
-    },
-    "C0-VEH-IA-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-IA-010",
-      "parent_uid": "IA-010",
-      "criticality": "Medium",
-      "cascaded_statement": "All remote hosts of the vendor's system shall be configured to uniquely identify and authenticate all other remote hosts of the system and/or any other interfacing systems."
-    },
-    "C0-VEH-IA-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-IA-020",
-      "parent_uid": "IA-020",
-      "criticality": "Medium",
-      "cascaded_statement": "Any authenticators (unique identification) for devices used in vendor’s systems shall be uncorrelated to any and all public information about the device, e.g. lot number, product number, serial number MAC address are all unacceptable inputs to device identifiers.\n\nWhere public information is any information that is visible (externally or internally) on the device or discoverable by searches based on that visible information."
-    },
-    "C0-VEH-IA-030": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-IA-030",
-      "parent_uid": "IA-030",
-      "criticality": "Medium",
-      "cascaded_statement": "Cryptographic modules used in the vendors system shall be compliant with Federal Information Processing Standards (FIPS) 140-2: Level 1."
-    },
-    "C0-VEH-IR-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-IR-010",
-      "parent_uid": "IR-010",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall have a documented incident response plan (IRP) in place which provides the carriers with a point of contact for components used within their telematics system"
-    },
-    "C0-VEH-M-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-M-010",
-      "parent_uid": "M-010",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall have procedures in place to ensure that components outside of the carrier’s direct control are not updated or modified without prior coordination and approval by an organization-defined individual or role"
-    },
-    "C0-VEH-M-040": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-M-040",
-      "parent_uid": "M-040",
-      "criticality": "High",
-      "cascaded_statement": "Vendors must provide manual backup/override capabilities to their safety related services to ensure that any failure of the device does not result in a safety issue."
-    },
-    "C0-VEH-PS-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-PS-010",
-      "parent_uid": "PS-010",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall have personnel security policies & procedures, position risk categorization, personnel screening, personnel termination, personnel transfer, access agreements and third-party personnel security."
-    },
-    "C0-VEH-RA-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-RA-010",
-      "parent_uid": "RA-010",
-      "criticality": "Medium",
-      "cascaded_statement": "Vendor shall have risk assessments conducted at an industry accepted rate. Resulting risk assessment documentation should include all components and the overall system that is within the vendor's control. The rate suggested is twice per product release; both at product design and at integration phases"
-    },
-    "C0-VEH-RA-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-RA-020",
-      "parent_uid": "RA-020",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall use the results of risk assessments to influence systems development and processes."
-    },
-    "C0-VEH-SAA-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SAA-010",
-      "parent_uid": "SAA-010",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall have an Information Security Management Plan (ISMP)."
-    },
-    "C0-VEH-SAA-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SAA-020",
-      "parent_uid": "SAA-020",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall have penetration testing performed, to an industry accepted best practice, at an industry accepted pace.\n\nPenetration testing can be performed by teams internal to the TSP; industry best practice is to have external pentesting performed periodically also."
-    },
-    "C0-VEH-SAA-030": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SAA-030",
-      "parent_uid": "SAA-030",
-      "criticality": "Medium",
-      "cascaded_statement": "Vendor shall have Security Testing and Evaluation (ST&E) of the system and/or components that includes all results of the security testing and evaluation, including discovered vulnerabilities and a plan/process to mitigate discovered vulnerabilities or weaknesses in the system."
-    },
-    "C0-VEH-SAA-040": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SAA-040",
-      "parent_uid": "SAA-040",
-      "criticality": "Low",
-      "cascaded_statement": "The vendor shall perform due diligence to ensure its suppliers also meet the vendor's security requirements"
-    },
-    "C0-VEH-SAA-050": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SAA-050",
-      "parent_uid": "SAA-050",
-      "criticality": "High",
-      "cascaded_statement": "Cryptographic keys used in the vendors’ systems must be generated, stored and managed according to industry best practice."
-    },
-    "C0-VEH-SCP-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-010",
-      "parent_uid": "SCP-010",
-      "criticality": "High",
-      "cascaded_statement": "Communication paths that traverse outside controlled boundaries must protect confidentiality and integrity of data"
-    },
-    "C0-VEH-SCP-011": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-011",
-      "parent_uid": "SCP-011",
-      "criticality": "Medium",
-      "cascaded_statement": "Communication path cryptographic protections must not use identities, keys or shared secrets which are common across multiple deployed devices"
-    },
-    "C0-VEH-SCP-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-020",
-      "parent_uid": "SCP-020",
-      "criticality": "High",
-      "cascaded_statement": "Measures will be taken by vendors to protect the confidentiality of any information at rest on the devices that could be interpreted as Sensitive and/or Personally Identifiable Information. This sensitive information is defined in SCP-030 where ‘at rest’ is understood to mean any state where the data is in a non-volatile storage medium, e.g. eMMC not RAM."
-    },
-    "C0-VEH-SCP-030": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-030",
-      "parent_uid": "SCP-030",
-      "criticality": "Medium",
-      "cascaded_statement": "Vendors will supply documentation detailing what data is and is not protected at rest by cryptography.\n\nVendors are encouraged to expand the list of categories of data which will be protected on-device."
-    },
-    "C0-VEH-SCP-040": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-040",
-      "parent_uid": "SCP-040",
-      "criticality": "Medium",
-      "cascaded_statement": "Data of the categories above will be protected using cryptographic keys which are not correlated to any public information about the devices.\n\nPublic information is any information that is visible (externally or internally) on the device or discoverable by searches based on that visible information."
-    },
-    "C0-VEH-SCP-060": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-060",
-      "parent_uid": "SCP-060",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall enforce controls integrated into the telematics device to limit the possible commands and data transmitted to the vehicle network."
-    },
-    "C0-VEH-SCP-100": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-100",
-      "parent_uid": "SCP-100",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor's system shall separate execution domains and/or processes (i.e. process isolation within both the telematics device and back-end system and between the serial communications in the telematics device and the interface to the vehicle network)"
-    },
-    "C0-VEH-SCP-140": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SCP-140",
-      "parent_uid": "SCP-140",
-      "criticality": "Low",
-      "cascaded_statement": "Vendors must ensure that their authentication mechanism is protected against brute force attacks. This includes ensuring that any password storage functions provide sufficient security through the use of industry best practice hashing mechanisms (such as BCrypt), as well as providing limits on access to sensitive services."
-    },
-    "C0-VEH-SII-010": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-010",
-      "parent_uid": "SII-010",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall have a process for remediating flaws in deployed telematics devices and backend systems.\n\nIn the case of telematics devices, firmware update capabilities are important to be able to remediate all flaws that could be located in the device."
-    },
-    "C0-VEH-SII-011": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-011",
-      "parent_uid": "SII-011",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall implement/deploy secure over the air update systems including assurances of integrity&authenticity. Also rollback protections and a means of denying the use of old potentially compromised signing keys."
-    },
-    "C0-VEH-SII-020": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-020",
-      "parent_uid": "SII-020",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall have a capability to mitigate vulnerabilities across all of the telematics devices, backend applications, and systems. Identified vulnerabilities are remediated or mitigated using suitable compensating controls on a timeline predicated by the severity of the vulnerability identified."
-    },
-    "C0-VEH-SII-021": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-021",
-      "parent_uid": "SII-021",
-      "criticality": "Medium",
-      "cascaded_statement": "Identified vulnerabilities are remediated or mitigated using suitable compensating controls on a timeline predicated by the severity of the vulnerability identified. Taking no longer than the following elapsed times: high in 30d, moderate in 90d and low in 180d.\n\nVendors shall provide a document that defines vulnerabilities severities (e.g. CVSS). Negotiation of mutually aggregable exceptions to the remediation timelines is acceptable to compensate for cases where the complexity of remediation or mitigations of the vulnerability is prohibitively expensive to execute in the prescribed timeline. In general, the timelines of remediation can be agreed -to in a SLA."
-    },
-    "C0-VEH-SII-030": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-030",
-      "parent_uid": "SII-030",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall use digitally signed software on telematics devices and prohibit execution of unsigned or invalidly signed software."
-    },
-    "C0-VEH-SII-040": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-040",
-      "parent_uid": "SII-040",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall utilize a boot verification process built with (asymmetric) cryptographic digital signatures and implemented such that the public key used for verification or the hash of the public key used for verification is protected from being tampered on the device."
-    },
-    "C0-VEH-SII-041": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-041",
-      "parent_uid": "SII-041",
-      "criticality": "Medium",
-      "cascaded_statement": "Vendors shall implement a hardware based root of trust for boot authentication of the device."
-    },
-    "C0-VEH-SII-060": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-060",
-      "parent_uid": "SII-060",
-      "criticality": "Low",
-      "cascaded_statement": "The vendor shall provide a means (and document the process) for customers to verify the firmware in their devices."
-    },
-    "C0-VEH-SII-070": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-070",
-      "parent_uid": "SII-070",
-      "criticality": "High",
-      "cascaded_statement": "The vendor shall utilize an array of code safety features across the entire collection of executables in its devices: ASLR, DEP, CFI, Stack Guards, Fortification, and RELRO. Unless that code safety feature is not applicable on the system architecture, in which case it should be noted."
-    },
-    "C0-VEH-SII-071": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-071",
-      "parent_uid": "SII-071",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall use the techniques of sanitizing/filtering inputs, segmenting memory spaces of input parsers from other execution and/or using provably correct or memory safe languages for input processing."
-    },
-    "C0-VEH-SII-080": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-080",
-      "parent_uid": "SII-080",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall design security components that fail-secure to protect integrity of systems and data."
-    },
-    "C0-VEH-SII-081": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-081",
-      "parent_uid": "SII-081",
-      "criticality": "Low",
-      "cascaded_statement": "The vendor shall utilize protective mechanisms to protect components from unauthorized runtime/volatile modification of code."
-    },
-    "C0-VEH-SII-090": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-090",
-      "parent_uid": "SII-090",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall maintain a responsible disclosure program that allows for vulnerabilities discovered in the system (device, mobile app or backend) by researchers, and other external entities to be reported, tracked and mitigated.\n\nVulnerability programs should include sufficient legal provisions to provide for a “Legal Safe Harbor” for researchers."
-    },
-    "C0-VEH-SII-120": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-120",
-      "parent_uid": "SII-120",
-      "criticality": "Low",
-      "cascaded_statement": "The vendor shall have a vulnerability management process that includes steps to triage any found vulnerabilities and plan remediation."
-    },
-    "C0-VEH-SII-130": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-130",
-      "parent_uid": "SII-130",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall verify code and best practice standards prior to deployment including:\n\nStatic Code Analysis / Static Application Security Testing (SCA/SAST)\n\nDependency Scanning for known vulnerabilities in third party components"
-    },
-    "C0-VEH-SII-140": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-140",
-      "parent_uid": "SII-140",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall implement ongoing monitoring and protection against malicious code in production using a well governed process that addresses all entry and exit points in the system."
-    },
-    "C0-VEH-SII-150": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-150",
-      "parent_uid": "SII-150",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall verify code according to best-practice coding standards"
-    },
-    "C0-VEH-SII-170": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-170",
-      "parent_uid": "SII-170",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall actively monitor resources such as NIST Common Vulnerabilities and Exposures (CVE), Bugtraq, for security alerts and advisories related to the telematics system’s components"
-    },
-    "C0-VEH-SII-171": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-171",
-      "parent_uid": "SII-171",
-      "criticality": "Medium",
-      "cascaded_statement": "The vendor shall notify their customers of any vulnerabilities discovered in the telematics systems components via monitoring or vulnerability disclosure programs. The notification to customers will happen in a timely manner."
-    },
-    "C0-VEH-SII-180": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-180",
-      "parent_uid": "SII-180",
-      "criticality": "Medium",
-      "cascaded_statement": "Remediation SLA or objectives are defined and are adhered to by the security and development teams. Identified vulnerabilities are remediated or mitigated using suitable compensating controls"
-    },
-    "C0-VEH-SII-200": {
-      "component": "Vehicle Connection",
-      "tsrm_uid": "VEH-SII-200",
-      "parent_uid": "SII-200",
-      "criticality": "Low",
-      "cascaded_statement": "The vendor shall participate in a cybersecurity information sharing and analysis group in the heavy vehicle industry"
-    },
     "C0-COMMS-AC-010": {
       "component": "Connectivity / Communications",
       "tsrm_uid": "COMMS-AC-010",
@@ -842,770 +436,777 @@
       "criticality": "Low",
       "cascaded_statement": "The vendor shall participate in a cybersecurity information sharing and analysis group in the heavy vehicle industry"
     },
-    "C0-CLOUD-AA-010": {
+    "C0-SCP-100": {
+      "component": "Connectivity / Communications",
+      "tsrm_uid": "SCP-100",
+      "parent_uid": "SCP-100",
+      "criticality": "Medium",
+      "cascaded_statement": "The OEM's system shall separate execution domains and/or processes (i.e. process isolation within both the telematics device and back-end system and between the serial communications in the telematics device and the interface to the vehicle network)"
+    },
+    "CLOUD-AA-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AA-010",
       "parent_uid": "AA-010",
       "criticality": "Medium",
       "cascaded_statement": "The vendor's system shall record event and system logs"
     },
-    "C0-CLOUD-AC-010": {
+    "CLOUD-AC-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AC-010",
       "parent_uid": "AC-010",
       "criticality": "Medium",
       "cascaded_statement": "Vendor devices will implement least privilege for the memory spaces of processes handling protected data. i.e. data in-use, of the categories of sensitive protected data above, or shall be segmented from software components which do not handle such data. Acceptable segmentations include Mandatory Filesystem Access Controls and Mandatory Volatile Memory Access Controls."
     },
-    "C0-CLOUD-AC-030": {
+    "CLOUD-AC-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AC-030",
       "parent_uid": "AC-030",
       "criticality": "High",
       "cascaded_statement": "The vendor's system shall employ cryptographic authentication to prevent unauthorized access to telematics systems and data."
     },
-    "C0-CLOUD-AC-040": {
+    "CLOUD-AC-040": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AC-040",
       "parent_uid": "AC-040",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall identify all instances where the telematics system includes actions that cannot support access authentication and/or execute with elevated privileges"
     },
-    "C0-CLOUD-AC-041": {
+    "CLOUD-AC-041": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AC-041",
       "parent_uid": "AC-041",
       "criticality": "Medium",
       "cascaded_statement": "Identifying information about the connected devices will not be made available without authentication first."
     },
-    "C0-CLOUD-AC-050": {
+    "CLOUD-AC-050": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AC-050",
       "parent_uid": "AC-050",
       "criticality": "Medium",
       "cascaded_statement": "All remote access methods and possible remote actions to/on telematics system shall be documented."
     },
-    "C0-CLOUD-AC-070": {
+    "CLOUD-AC-070": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-AC-070",
       "parent_uid": "AC-070",
       "criticality": "Medium",
       "cascaded_statement": "Authentication attempts to the vendor’s devices and backends shall be rate-limited to an industry accepted rate."
     },
-    "C0-CLOUD-CM-020": {
+    "CLOUD-CM-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-CM-020",
       "parent_uid": "CM-020",
       "criticality": "High",
       "cascaded_statement": "The vendor’s devices shall have all services used for troubleshooting disabled or properly protected from unauthorized access and use."
     },
-    "C0-CLOUD-CM-030": {
+    "CLOUD-CM-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-CM-030",
       "parent_uid": "CM-030",
       "criticality": "High",
       "cascaded_statement": "Vendor ensures that any and all interfaces used for testing or debug are unavailable in production builds of the devices"
     },
-    "C0-CLOUD-CM-040": {
+    "CLOUD-CM-040": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-CM-040",
       "parent_uid": "CM-040",
       "criticality": "High",
       "cascaded_statement": "The vendors’ devices shall have a default system configuration that ensures security ‘out of the box’. In other words, the default configuration should be the most-secure and any additional features should be disabled by default and have their security implications communicated in documentation."
     },
-    "C0-CLOUD-IA-010": {
+    "CLOUD-IA-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-IA-010",
       "parent_uid": "IA-010",
       "criticality": "Medium",
       "cascaded_statement": "All remote hosts of the vendor's system shall be configured to uniquely identify and authenticate all other remote hosts of the system and/or any other interfacing systems."
     },
-    "C0-CLOUD-IA-030": {
+    "CLOUD-IA-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-IA-030",
       "parent_uid": "IA-030",
       "criticality": "Medium",
       "cascaded_statement": "Cryptographic modules used in the vendors system shall be compliant with Federal Information Processing Standards (FIPS) 140-2: Level 1."
     },
-    "C0-CLOUD-IR-010": {
+    "CLOUD-IR-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-IR-010",
       "parent_uid": "IR-010",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have a documented incident response plan (IRP) in place which provides the carriers with a point of contact for components used within their telematics system"
     },
-    "C0-CLOUD-M-010": {
+    "CLOUD-M-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-M-010",
       "parent_uid": "M-010",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have procedures in place to ensure that components outside of the carrier’s direct control are not updated or modified without prior coordination and approval by an organization-defined individual or role"
     },
-    "C0-CLOUD-M-020": {
+    "CLOUD-M-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-M-020",
       "parent_uid": "M-020",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have procedures in place to test backup restoration processes of their own systems and their own facilities on at least an annual basis."
     },
-    "C0-CLOUD-M-030": {
+    "CLOUD-M-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-M-030",
       "parent_uid": "M-030",
       "criticality": "High",
       "cascaded_statement": "The vendor must have a disposal of goods policy which covers the management of all computer equipment and storage media dealing with customer information including but not limited to PII and customer business operations data."
     },
-    "C0-CLOUD-M-031": {
+    "CLOUD-M-031": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-M-031",
       "parent_uid": "M-031",
       "criticality": "Medium",
       "cascaded_statement": "The vendor's disposal of goods policy must forbid disposal in skips, dumps or landfills until it has been processed to purge or clear previously stored information."
     },
-    "C0-CLOUD-M-032": {
+    "CLOUD-M-032": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-M-032",
       "parent_uid": "M-032",
       "criticality": "Low",
       "cascaded_statement": "The vendor's processes to remove previously stored information must include acceptable processes for magnetic media, solid-state media, printers, scanners, laptops, smartphones, server and desktop computers."
     },
-    "C0-CLOUD-P-010": {
+    "CLOUD-P-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-P-010",
       "parent_uid": "P-010",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have a System Security Plan (SSP) which details a clear and concise understanding of authorization boundaries of the telematics system."
     },
-    "C0-CLOUD-P-020": {
+    "CLOUD-P-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-P-020",
       "parent_uid": "P-020",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have a documented Information Security Architecture (ISA) for the telematics system."
     },
-    "C0-CLOUD-P-030": {
+    "CLOUD-P-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-P-030",
       "parent_uid": "P-030",
       "criticality": "High",
       "cascaded_statement": "The vendor shall provide interfaces to their backend using the Open Telematics API -- enabling carriers to have failover to other providers to avoid interruptions due to single point of failure in provider telematics services."
     },
-    "C0-CLOUD-PS-010": {
+    "CLOUD-PS-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-PS-010",
       "parent_uid": "PS-010",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have personnel security policies & procedures, position risk categorization, personnel screening, personnel termination, personnel transfer, access agreements and third-party personnel security."
     },
-    "C0-CLOUD-RA-010": {
+    "CLOUD-RA-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-RA-010",
       "parent_uid": "RA-010",
       "criticality": "Medium",
       "cascaded_statement": "Vendor shall have risk assessments conducted at an industry accepted rate. Resulting risk assessment documentation should include all components and the overall system that is within the vendor's control. The rate suggested is twice per product release; both at product design and at integration phases"
     },
-    "C0-CLOUD-RA-020": {
+    "CLOUD-RA-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-RA-020",
       "parent_uid": "RA-020",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall use the results of risk assessments to influence systems development and processes."
     },
-    "C0-CLOUD-SAA-010": {
+    "CLOUD-SAA-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SAA-010",
       "parent_uid": "SAA-010",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have an Information Security Management Plan (ISMP)."
     },
-    "C0-CLOUD-SAA-020": {
+    "CLOUD-SAA-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SAA-020",
       "parent_uid": "SAA-020",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have penetration testing performed, to an industry accepted best practice, at an industry accepted pace.\n\nPenetration testing can be performed by teams internal to the TSP; industry best practice is to have external pentesting performed periodically also."
     },
-    "C0-CLOUD-SAA-030": {
+    "CLOUD-SAA-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SAA-030",
       "parent_uid": "SAA-030",
       "criticality": "Medium",
       "cascaded_statement": "Vendor shall have Security Testing and Evaluation (ST&E) of the system and/or components that includes all results of the security testing and evaluation, including discovered vulnerabilities and a plan/process to mitigate discovered vulnerabilities or weaknesses in the system."
     },
-    "C0-CLOUD-SAA-040": {
+    "CLOUD-SAA-040": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SAA-040",
       "parent_uid": "SAA-040",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall perform due diligence to ensure its suppliers also meet the vendor's security requirements"
     },
-    "C0-CLOUD-SAA-050": {
+    "CLOUD-SAA-050": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SAA-050",
       "parent_uid": "SAA-050",
       "criticality": "High",
       "cascaded_statement": "Cryptographic keys used in the vendors’ systems must be generated, stored and managed according to industry best practice."
     },
-    "C0-CLOUD-SCP-010": {
+    "CLOUD-SCP-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-010",
       "parent_uid": "SCP-010",
       "criticality": "High",
       "cascaded_statement": "Communication paths that traverse outside controlled boundaries must protect confidentiality and integrity of data"
     },
-    "C0-CLOUD-SCP-011": {
+    "CLOUD-SCP-011": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-011",
       "parent_uid": "SCP-011",
       "criticality": "Medium",
       "cascaded_statement": "Communication path cryptographic protections must not use identities, keys or shared secrets which are common across multiple deployed devices"
     },
-    "C0-CLOUD-SCP-020": {
+    "CLOUD-SCP-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-020",
       "parent_uid": "SCP-020",
       "criticality": "High",
       "cascaded_statement": "Measures will be taken by vendors to protect the confidentiality of any information at rest on the devices that could be interpreted as Sensitive and/or Personally Identifiable Information. This sensitive information is defined in SCP-030 where ‘at rest’ is understood to mean any state where the data is in a non-volatile storage medium, e.g. eMMC not RAM."
     },
-    "C0-CLOUD-SCP-030": {
+    "CLOUD-SCP-030": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-030",
       "parent_uid": "SCP-030",
       "criticality": "Medium",
       "cascaded_statement": "Vendors will supply documentation detailing what data is and is not protected at rest by cryptography.\n\nVendors are encouraged to expand the list of categories of data which will be protected on-device."
     },
-    "C0-CLOUD-SCP-040": {
+    "CLOUD-SCP-040": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-040",
       "parent_uid": "SCP-040",
       "criticality": "Medium",
       "cascaded_statement": "Data of the categories above will be protected using cryptographic keys which are not correlated to any public information about the devices.\n\nPublic information is any information that is visible (externally or internally) on the device or discoverable by searches based on that visible information."
     },
-    "C0-CLOUD-SCP-050": {
+    "CLOUD-SCP-050": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-050",
       "parent_uid": "SCP-050",
       "criticality": "High",
       "cascaded_statement": "All customer-related data will be logically segmented (e.g. encrypted with segmented keys) such that it is possible to produce all data related to one customer without inadvertently exposing any data of any others."
     },
-    "C0-CLOUD-SCP-090": {
+    "CLOUD-SCP-090": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-090",
       "parent_uid": "SCP-090",
       "criticality": "High",
       "cascaded_statement": "The vendor's system shall implement protection of communications sessions against attacks including session hijacking and traffic manipulation. Where a session is understood to mean a time-limited authenticated login with the cloud/back-end.\n\nSessions shall be invalidated at logout.\n\nSessions must be randomized and uniquely identified.\n\nProtections must be implemented to restrict certificate authorities to a short (maximum 3) list of those expected by the vendor, i.e. secure communications must implement certificate pinning to a short whitelist of certificate authorities.\n\nCertificate pinning shall be implemented on all telematics device to server communications (e.g. telematics gateways or IVGs). Administrative ‘backend’ systems may be exempt from this requirement to allow for stream inspection by enterprise intrusion detection systems."
     },
-    "C0-CLOUD-SCP-091": {
+    "CLOUD-SCP-091": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-091",
       "parent_uid": "SCP-091",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall implement checks for expired certificates and ensure the ability to remove trust in any given root certificate authority from their systems and devices PKI implementations."
     },
-    "C0-CLOUD-SCP-092": {
+    "CLOUD-SCP-092": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-092",
       "parent_uid": "SCP-092",
       "criticality": "Medium",
       "cascaded_statement": "The vendors’ systems shall implement protection of remote communication sessions by implementation of an inactivity timer that disconnects / de-authenticates the user after no more than 5 minutes of inactivity."
     },
-    "C0-CLOUD-SCP-110": {
+    "CLOUD-SCP-110": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-110",
       "parent_uid": "SCP-110",
       "criticality": "High",
       "cascaded_statement": "The vendor’s system shall provide a means to download unstructured customer data in an industry-standard format (Open Telematics API). This download will occur over secured communication protocols."
     },
-    "C0-CLOUD-SCP-120": {
+    "CLOUD-SCP-120": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-120",
       "parent_uid": "SCP-120",
       "criticality": "Medium",
       "cascaded_statement": "The vendor’s software shall not contain any credentials that are shared among other copies of software; e.g. the software cannot contain hardcoded API keys or API passwords"
     },
-    "C0-CLOUD-SCP-130": {
+    "CLOUD-SCP-130": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SCP-130",
       "parent_uid": "SCP-130",
       "criticality": "Medium",
       "cascaded_statement": "Vendors shall limit hardware support for deprecated or insecure communications protocols. This includes those with known vulnerabilities."
     },
-    "C0-CLOUD-SII-010": {
+    "CLOUD-SII-010": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-010",
       "parent_uid": "SII-010",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have a process for remediating flaws in deployed telematics devices and backend systems.\n\nIn the case of telematics devices, firmware update capabilities are important to be able to remediate all flaws that could be located in the device."
     },
-    "C0-CLOUD-SII-011": {
+    "CLOUD-SII-011": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-011",
       "parent_uid": "SII-011",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall implement/deploy secure over the air update systems including assurances of integrity&authenticity. Also rollback protections and a means of denying the use of old potentially compromised signing keys."
     },
-    "C0-CLOUD-SII-020": {
+    "CLOUD-SII-020": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-020",
       "parent_uid": "SII-020",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have a capability to mitigate vulnerabilities across all of the telematics devices, backend applications, and systems. Identified vulnerabilities are remediated or mitigated using suitable compensating controls on a timeline predicated by the severity of the vulnerability identified."
     },
-    "C0-CLOUD-SII-021": {
+    "CLOUD-SII-021": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-021",
       "parent_uid": "SII-021",
       "criticality": "Medium",
       "cascaded_statement": "Identified vulnerabilities are remediated or mitigated using suitable compensating controls on a timeline predicated by the severity of the vulnerability identified. Taking no longer than the following elapsed times: high in 30d, moderate in 90d and low in 180d.\n\nVendors shall provide a document that defines vulnerabilities severities (e.g. CVSS). Negotiation of mutually aggregable exceptions to the remediation timelines is acceptable to compensate for cases where the complexity of remediation or mitigations of the vulnerability is prohibitively expensive to execute in the prescribed timeline. In general, the timelines of remediation can be agreed -to in a SLA."
     },
-    "C0-CLOUD-SII-070": {
+    "CLOUD-SII-070": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-070",
       "parent_uid": "SII-070",
       "criticality": "High",
       "cascaded_statement": "The vendor shall utilize an array of code safety features across the entire collection of executables in its devices: ASLR, DEP, CFI, Stack Guards, Fortification, and RELRO. Unless that code safety feature is not applicable on the system architecture, in which case it should be noted."
     },
-    "C0-CLOUD-SII-071": {
+    "CLOUD-SII-071": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-071",
       "parent_uid": "SII-071",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall use the techniques of sanitizing/filtering inputs, segmenting memory spaces of input parsers from other execution and/or using provably correct or memory safe languages for input processing."
     },
-    "C0-CLOUD-SII-080": {
+    "CLOUD-SII-080": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-080",
       "parent_uid": "SII-080",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall design security components that fail-secure to protect integrity of systems and data."
     },
-    "C0-CLOUD-SII-081": {
+    "CLOUD-SII-081": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-081",
       "parent_uid": "SII-081",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall utilize protective mechanisms to protect components from unauthorized runtime/volatile modification of code."
     },
-    "C0-CLOUD-SII-090": {
+    "CLOUD-SII-090": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-090",
       "parent_uid": "SII-090",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall maintain a responsible disclosure program that allows for vulnerabilities discovered in the system (device, mobile app or backend) by researchers, and other external entities to be reported, tracked and mitigated.\n\nVulnerability programs should include sufficient legal provisions to provide for a “Legal Safe Harbor” for researchers."
     },
-    "C0-CLOUD-SII-100": {
+    "CLOUD-SII-100": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-100",
       "parent_uid": "SII-100",
       "criticality": "High",
       "cascaded_statement": "The vendor must monitor information systems for attack and unauthorized access including employing automated analysis tools"
     },
-    "C0-CLOUD-SII-110": {
+    "CLOUD-SII-110": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-110",
       "parent_uid": "SII-110",
       "criticality": "Medium",
       "cascaded_statement": "The vendor conducts regular vulnerability scans of operating environment to verify software components in use have been patched according to remediation SLAs."
     },
-    "C0-CLOUD-SII-120": {
+    "CLOUD-SII-120": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-120",
       "parent_uid": "SII-120",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall have a vulnerability management process that includes steps to triage any found vulnerabilities and plan remediation."
     },
-    "C0-CLOUD-SII-130": {
+    "CLOUD-SII-130": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-130",
       "parent_uid": "SII-130",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall verify code and best practice standards prior to deployment including:\n\nStatic Code Analysis / Static Application Security Testing (SCA/SAST)\n\nDependency Scanning for known vulnerabilities in third party components"
     },
-    "C0-CLOUD-SII-140": {
+    "CLOUD-SII-140": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-140",
       "parent_uid": "SII-140",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall implement ongoing monitoring and protection against malicious code in production using a well governed process that addresses all entry and exit points in the system."
     },
-    "C0-CLOUD-SII-150": {
+    "CLOUD-SII-150": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-150",
       "parent_uid": "SII-150",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall verify code according to best-practice coding standards"
     },
-    "C0-CLOUD-SII-170": {
+    "CLOUD-SII-170": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-170",
       "parent_uid": "SII-170",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall actively monitor resources such as NIST Common Vulnerabilities and Exposures (CVE), Bugtraq, for security alerts and advisories related to the telematics system’s components"
     },
-    "C0-CLOUD-SII-171": {
+    "CLOUD-SII-171": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-171",
       "parent_uid": "SII-171",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall notify their customers of any vulnerabilities discovered in the telematics systems components via monitoring or vulnerability disclosure programs. The notification to customers will happen in a timely manner."
     },
-    "C0-CLOUD-SII-180": {
+    "CLOUD-SII-180": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-180",
       "parent_uid": "SII-180",
       "criticality": "Medium",
       "cascaded_statement": "Remediation SLA or objectives are defined and are adhered to by the security and development teams. Identified vulnerabilities are remediated or mitigated using suitable compensating controls"
     },
-    "C0-CLOUD-SII-200": {
+    "CLOUD-SII-200": {
       "component": "Cloud or Back-end",
       "tsrm_uid": "CLOUD-SII-200",
       "parent_uid": "SII-200",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall participate in a cybersecurity information sharing and analysis group in the heavy vehicle industry"
     },
-    "C0-MOBILE-AC-010": {
+    "MOBILE-AC-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-AC-010",
       "parent_uid": "AC-010",
       "criticality": "Medium",
       "cascaded_statement": "Vendor devices will implement least privilege for the memory spaces of processes handling protected data. i.e. data in-use, of the categories of sensitive protected data above, or shall be segmented from software components which do not handle such data. Acceptable segmentations include Mandatory Filesystem Access Controls and Mandatory Volatile Memory Access Controls."
     },
-    "C0-MOBILE-AC-030": {
+    "MOBILE-AC-030": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-AC-030",
       "parent_uid": "AC-030",
       "criticality": "High",
       "cascaded_statement": "The vendor's system shall employ cryptographic authentication to prevent unauthorized access to telematics systems and data."
     },
-    "C0-MOBILE-AC-040": {
+    "MOBILE-AC-040": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-AC-040",
       "parent_uid": "AC-040",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall identify all instances where the telematics system includes actions that cannot support access authentication and/or execute with elevated privileges"
     },
-    "C0-MOBILE-AC-041": {
+    "MOBILE-AC-041": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-AC-041",
       "parent_uid": "AC-041",
       "criticality": "Medium",
       "cascaded_statement": "Identifying information about the connected devices will not be made available without authentication first."
     },
-    "C0-MOBILE-AC-050": {
+    "MOBILE-AC-050": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-AC-050",
       "parent_uid": "AC-050",
       "criticality": "Medium",
       "cascaded_statement": "All remote access methods and possible remote actions to/on telematics system shall be documented."
     },
-    "C0-MOBILE-AC-080": {
+    "MOBILE-AC-080": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-AC-080",
       "parent_uid": "AC-080",
       "criticality": "Medium",
       "cascaded_statement": "All authentication offered on device-local interfaces shall expect credentials which are unique to each device instance and uncorrelated to any and all public information about the device."
     },
-    "C0-MOBILE-CM-020": {
+    "MOBILE-CM-020": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-CM-020",
       "parent_uid": "CM-020",
       "criticality": "High",
       "cascaded_statement": "The vendor’s devices shall have all services used for troubleshooting disabled or properly protected from unauthorized access and use."
     },
-    "C0-MOBILE-CM-030": {
+    "MOBILE-CM-030": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-CM-030",
       "parent_uid": "CM-030",
       "criticality": "High",
       "cascaded_statement": "Vendor ensures that any and all interfaces used for testing or debug are unavailable in production builds of the devices"
     },
-    "C0-MOBILE-CM-040": {
+    "MOBILE-CM-040": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-CM-040",
       "parent_uid": "CM-040",
       "criticality": "High",
       "cascaded_statement": "The vendors’ devices shall have a default system configuration that ensures security ‘out of the box’. In other words, the default configuration should be the most-secure and any additional features should be disabled by default and have their security implications communicated in documentation."
     },
-    "C0-MOBILE-IA-010": {
+    "MOBILE-IA-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-IA-010",
       "parent_uid": "IA-010",
       "criticality": "Medium",
       "cascaded_statement": "All remote hosts of the vendor's system shall be configured to uniquely identify and authenticate all other remote hosts of the system and/or any other interfacing systems."
     },
-    "C0-MOBILE-IA-030": {
+    "MOBILE-IA-030": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-IA-030",
       "parent_uid": "IA-030",
       "criticality": "Medium",
       "cascaded_statement": "Cryptographic modules used in the vendors system shall be compliant with Federal Information Processing Standards (FIPS) 140-2: Level 1."
     },
-    "C0-MOBILE-IR-010": {
+    "MOBILE-IR-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-IR-010",
       "parent_uid": "IR-010",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have a documented incident response plan (IRP) in place which provides the carriers with a point of contact for components used within their telematics system"
     },
-    "C0-MOBILE-M-010": {
+    "MOBILE-M-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-M-010",
       "parent_uid": "M-010",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have procedures in place to ensure that components outside of the carrier’s direct control are not updated or modified without prior coordination and approval by an organization-defined individual or role"
     },
-    "C0-MOBILE-PS-010": {
+    "MOBILE-PS-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-PS-010",
       "parent_uid": "PS-010",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have personnel security policies & procedures, position risk categorization, personnel screening, personnel termination, personnel transfer, access agreements and third-party personnel security."
     },
-    "C0-MOBILE-RA-010": {
+    "MOBILE-RA-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-RA-010",
       "parent_uid": "RA-010",
       "criticality": "Medium",
       "cascaded_statement": "Vendor shall have risk assessments conducted at an industry accepted rate. Resulting risk assessment documentation should include all components and the overall system that is within the vendor's control. The rate suggested is twice per product release; both at product design and at integration phases"
     },
-    "C0-MOBILE-RA-020": {
+    "MOBILE-RA-020": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-RA-020",
       "parent_uid": "RA-020",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall use the results of risk assessments to influence systems development and processes."
     },
-    "C0-MOBILE-SAA-010": {
+    "MOBILE-SAA-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SAA-010",
       "parent_uid": "SAA-010",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have an Information Security Management Plan (ISMP)."
     },
-    "C0-MOBILE-SAA-020": {
+    "MOBILE-SAA-020": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SAA-020",
       "parent_uid": "SAA-020",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have penetration testing performed, to an industry accepted best practice, at an industry accepted pace.\n\nPenetration testing can be performed by teams internal to the TSP; industry best practice is to have external pentesting performed periodically also."
     },
-    "C0-MOBILE-SAA-030": {
+    "MOBILE-SAA-030": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SAA-030",
       "parent_uid": "SAA-030",
       "criticality": "Medium",
       "cascaded_statement": "Vendor shall have Security Testing and Evaluation (ST&E) of the system and/or components that includes all results of the security testing and evaluation, including discovered vulnerabilities and a plan/process to mitigate discovered vulnerabilities or weaknesses in the system."
     },
-    "C0-MOBILE-SAA-040": {
+    "MOBILE-SAA-040": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SAA-040",
       "parent_uid": "SAA-040",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall perform due diligence to ensure its suppliers also meet the vendor's security requirements"
     },
-    "C0-MOBILE-SAA-050": {
+    "MOBILE-SAA-050": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SAA-050",
       "parent_uid": "SAA-050",
       "criticality": "High",
       "cascaded_statement": "Cryptographic keys used in the vendors’ systems must be generated, stored and managed according to industry best practice."
     },
-    "C0-MOBILE-SCP-010": {
+    "MOBILE-SCP-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-010",
       "parent_uid": "SCP-010",
       "criticality": "High",
       "cascaded_statement": "Communication paths that traverse outside controlled boundaries must protect confidentiality and integrity of data"
     },
-    "C0-MOBILE-SCP-011": {
+    "MOBILE-SCP-011": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-011",
       "parent_uid": "SCP-011",
       "criticality": "Medium",
       "cascaded_statement": "Communication path cryptographic protections must not use identities, keys or shared secrets which are common across multiple deployed devices"
     },
-    "C0-MOBILE-SCP-020": {
+    "MOBILE-SCP-020": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-020",
       "parent_uid": "SCP-020",
       "criticality": "High",
       "cascaded_statement": "Measures will be taken by vendors to protect the confidentiality of any information at rest on the devices that could be interpreted as Sensitive and/or Personally Identifiable Information. This sensitive information is defined in SCP-030 where ‘at rest’ is understood to mean any state where the data is in a non-volatile storage medium, e.g. eMMC not RAM."
     },
-    "C0-MOBILE-SCP-030": {
+    "MOBILE-SCP-030": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-030",
       "parent_uid": "SCP-030",
       "criticality": "Medium",
       "cascaded_statement": "Vendors will supply documentation detailing what data is and is not protected at rest by cryptography.\n\nVendors are encouraged to expand the list of categories of data which will be protected on-device."
     },
-    "C0-MOBILE-SCP-040": {
+    "MOBILE-SCP-040": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-040",
       "parent_uid": "SCP-040",
       "criticality": "Medium",
       "cascaded_statement": "Data of the categories above will be protected using cryptographic keys which are not correlated to any public information about the devices.\n\nPublic information is any information that is visible (externally or internally) on the device or discoverable by searches based on that visible information."
     },
-    "C0-MOBILE-SCP-090": {
+    "MOBILE-SCP-090": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-090",
       "parent_uid": "SCP-090",
       "criticality": "High",
       "cascaded_statement": "The vendor's system shall implement protection of communications sessions against attacks including session hijacking and traffic manipulation. Where a session is understood to mean a time-limited authenticated login with the cloud/back-end.\n\nSessions shall be invalidated at logout.\n\nSessions must be randomized and uniquely identified.\n\nProtections must be implemented to restrict certificate authorities to a short (maximum 3) list of those expected by the vendor, i.e. secure communications must implement certificate pinning to a short whitelist of certificate authorities.\n\nCertificate pinning shall be implemented on all telematics device to server communications (e.g. telematics gateways or IVGs). Administrative ‘backend’ systems may be exempt from this requirement to allow for stream inspection by enterprise intrusion detection systems."
     },
-    "C0-MOBILE-SCP-091": {
+    "MOBILE-SCP-091": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-091",
       "parent_uid": "SCP-091",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall implement checks for expired certificates and ensure the ability to remove trust in any given root certificate authority from their systems and devices PKI implementations."
     },
-    "C0-MOBILE-SCP-120": {
+    "MOBILE-SCP-120": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-120",
       "parent_uid": "SCP-120",
       "criticality": "Medium",
       "cascaded_statement": "The vendor’s software shall not contain any credentials that are shared among other copies of software; e.g. the software cannot contain hardcoded API keys or API passwords"
     },
-    "C0-MOBILE-SCP-130": {
+    "MOBILE-SCP-130": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-130",
       "parent_uid": "SCP-130",
       "criticality": "Medium",
       "cascaded_statement": "Vendors shall limit hardware support for deprecated or insecure communications protocols. This includes those with known vulnerabilities."
     },
-    "C0-MOBILE-SCP-140": {
+    "MOBILE-SCP-140": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SCP-140",
       "parent_uid": "SCP-140",
       "criticality": "Low",
       "cascaded_statement": "Vendors must ensure that their authentication mechanism is protected against brute force attacks. This includes ensuring that any password storage functions provide sufficient security through the use of industry best practice hashing mechanisms (such as BCrypt), as well as providing limits on access to sensitive services."
     },
-    "C0-MOBILE-SII-010": {
+    "MOBILE-SII-010": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-010",
       "parent_uid": "SII-010",
       "criticality": "High",
       "cascaded_statement": "The vendor shall have a process for remediating flaws in deployed telematics devices and backend systems.\n\nIn the case of telematics devices, firmware update capabilities are important to be able to remediate all flaws that could be located in the device."
     },
-    "C0-MOBILE-SII-011": {
+    "MOBILE-SII-011": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-011",
       "parent_uid": "SII-011",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall implement/deploy secure over the air update systems including assurances of integrity&authenticity. Also rollback protections and a means of denying the use of old potentially compromised signing keys."
     },
-    "C0-MOBILE-SII-020": {
+    "MOBILE-SII-020": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-020",
       "parent_uid": "SII-020",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall have a capability to mitigate vulnerabilities across all of the telematics devices, backend applications, and systems. Identified vulnerabilities are remediated or mitigated using suitable compensating controls on a timeline predicated by the severity of the vulnerability identified."
     },
-    "C0-MOBILE-SII-021": {
+    "MOBILE-SII-021": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-021",
       "parent_uid": "SII-021",
       "criticality": "Medium",
       "cascaded_statement": "Identified vulnerabilities are remediated or mitigated using suitable compensating controls on a timeline predicated by the severity of the vulnerability identified. Taking no longer than the following elapsed times: high in 30d, moderate in 90d and low in 180d.\n\nVendors shall provide a document that defines vulnerabilities severities (e.g. CVSS). Negotiation of mutually aggregable exceptions to the remediation timelines is acceptable to compensate for cases where the complexity of remediation or mitigations of the vulnerability is prohibitively expensive to execute in the prescribed timeline. In general, the timelines of remediation can be agreed -to in a SLA."
     },
-    "C0-MOBILE-SII-030": {
+    "MOBILE-SII-030": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-030",
       "parent_uid": "SII-030",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall use digitally signed software on telematics devices and prohibit execution of unsigned or invalidly signed software."
     },
-    "C0-MOBILE-SII-070": {
+    "MOBILE-SII-070": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-070",
       "parent_uid": "SII-070",
       "criticality": "High",
       "cascaded_statement": "The vendor shall utilize an array of code safety features across the entire collection of executables in its devices: ASLR, DEP, CFI, Stack Guards, Fortification, and RELRO. Unless that code safety feature is not applicable on the system architecture, in which case it should be noted."
     },
-    "C0-MOBILE-SII-071": {
+    "MOBILE-SII-071": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-071",
       "parent_uid": "SII-071",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall use the techniques of sanitizing/filtering inputs, segmenting memory spaces of input parsers from other execution and/or using provably correct or memory safe languages for input processing."
     },
-    "C0-MOBILE-SII-080": {
+    "MOBILE-SII-080": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-080",
       "parent_uid": "SII-080",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall design security components that fail-secure to protect integrity of systems and data."
     },
-    "C0-MOBILE-SII-081": {
+    "MOBILE-SII-081": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-081",
       "parent_uid": "SII-081",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall utilize protective mechanisms to protect components from unauthorized runtime/volatile modification of code."
     },
-    "C0-MOBILE-SII-090": {
+    "MOBILE-SII-090": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-090",
       "parent_uid": "SII-090",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall maintain a responsible disclosure program that allows for vulnerabilities discovered in the system (device, mobile app or backend) by researchers, and other external entities to be reported, tracked and mitigated.\n\nVulnerability programs should include sufficient legal provisions to provide for a “Legal Safe Harbor” for researchers."
     },
-    "C0-MOBILE-SII-120": {
+    "MOBILE-SII-120": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-120",
       "parent_uid": "SII-120",
       "criticality": "Low",
       "cascaded_statement": "The vendor shall have a vulnerability management process that includes steps to triage any found vulnerabilities and plan remediation."
     },
-    "C0-MOBILE-SII-130": {
+    "MOBILE-SII-130": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-130",
       "parent_uid": "SII-130",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall verify code and best practice standards prior to deployment including:\n\nStatic Code Analysis / Static Application Security Testing (SCA/SAST)\n\nDependency Scanning for known vulnerabilities in third party components"
     },
-    "C0-MOBILE-SII-140": {
+    "MOBILE-SII-140": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-140",
       "parent_uid": "SII-140",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall implement ongoing monitoring and protection against malicious code in production using a well governed process that addresses all entry and exit points in the system."
     },
-    "C0-MOBILE-SII-150": {
+    "MOBILE-SII-150": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-150",
       "parent_uid": "SII-150",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall verify code according to best-practice coding standards"
     },
-    "C0-MOBILE-SII-170": {
+    "MOBILE-SII-170": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-170",
       "parent_uid": "SII-170",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall actively monitor resources such as NIST Common Vulnerabilities and Exposures (CVE), Bugtraq, for security alerts and advisories related to the telematics system’s components"
     },
-    "C0-MOBILE-SII-171": {
+    "MOBILE-SII-171": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-171",
       "parent_uid": "SII-171",
       "criticality": "Medium",
       "cascaded_statement": "The vendor shall notify their customers of any vulnerabilities discovered in the telematics systems components via monitoring or vulnerability disclosure programs. The notification to customers will happen in a timely manner."
     },
-    "C0-MOBILE-SII-180": {
+    "MOBILE-SII-180": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-180",
       "parent_uid": "SII-180",
       "criticality": "Medium",
       "cascaded_statement": "Remediation SLA or objectives are defined and are adhered to by the security and development teams. Identified vulnerabilities are remediated or mitigated using suitable compensating controls"
     },
-    "C0-MOBILE-SII-190": {
+    "MOBILE-SII-190": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-190",
       "parent_uid": "SII-190",
       "criticality": "Low",
       "cascaded_statement": "The vendor’s software will have software resiliency measures included that will slow the progress of tampering and reverse engineering efforts."
     },
-    "C0-MOBILE-SII-200": {
+    "MOBILE-SII-200": {
       "component": "Mobile App",
       "tsrm_uid": "MOBILE-SII-200",
       "parent_uid": "SII-200",

@@ -271,16 +271,16 @@ TITLE: Device Classes and Classification Heuristics
 [TEXT]
 STATEMENT: >>>
 
-For current commercial vehicle architectures, we partition the components into distinct device classes based on their network topology, external interfaces, gatewaying responsibilities, and overall risk profile. They are listed in the table below.
+For current commercial vehicle architectures, we group components by their network topology, external interfaces, gatewaying responsibilities, and overall risk profile. The resulting device classes, services, and software are listed in the table below.
 
-All of the devices identified by the VCRWG are captured below, organized by their device class. This list can be useful when a particular device cannot be found easily in the order sheet view. Also, if the device the fleet and OEM are interested in classifying cannot be found here, then some device class characteristics (heuristics) are provided for determining membership of such devices which were unknown to the VCRWG at the time of drafting this document.
+All of the devices and services identified by the VCRWG are captured below. This list can be useful when a particular device cannot be found easily in the order sheet view. If the fleet and OEM are interested in classifying an item not listed here, the heuristics below help determine its class or appropriate entry.
 
-.. list-table:: Device Classes, Reference Devices, and Classification Heuristics
+.. list-table:: Device Classes, Services, Software, Examples, and Heuristics
    :widths: 20 50 30
    :header-rows: 1
 
    * - Class
-     - Devices
+     - Devices, Services, or Software
      - Heuristic
    * - Class 0 Telematics
      - - Engine Telematics (J1939 SA 249)
@@ -290,6 +290,15 @@ All of the devices identified by the VCRWG are captured below, organized by thei
        - Exterior Camera Telematics
        - Interior Camera Telematics
      - Components of a telematics system or truck modules that otherwise connect to cellular, satellite or other Wide Area Networks (WANs), or the internet; a module that performs the behaviors detailed in the Boundary Gateway definition is a Boundary Gateway
+   * - CLOUD
+     - - OEM over-the-air update service
+       - Telematics backend
+       - Fleet management portal
+     - Any internet-connected service (and its systems) that interfaces with the truck.
+   * - MOBILE / PC Software
+     - - PC-based OEM diagnostic software
+       - Mobile diagnostic application
+     - Software implementing a human-machine interface (HMI) for interacting with the truck or its systems, with telematics-specific scope removed.
    * - Class 1 Multi Segment with Wireless
      - - Antilock Brake System (ABS) (J1939 SA 11)
        - Brakes - System Controller (J1939 SA 11)
@@ -445,15 +454,16 @@ TITLE: Telematics Systems in Commercial Fleets: Special Handling & Evaluation Gu
 STATEMENT: >>>
 Special Handling for Class 0 Telematics Systems:
 ================================================
-Unlike traditional on-vehicle ECUs (Classes 1 through 7) which are evaluated as individual physical modules, **Class 0 Telematics Systems** encompass a distributed ecosystem extending beyond the vehicle. A telematics solution typically spans four distinct architectural components:
-1. An on-vehicle physical unit (*Vehicle Connection Component*),
-2. A wireless pipe (*Connectivity or Communications Component*),
-3. An off-board server infrastructure (*Cloud or Back-End Component*), and
-4. A driver interface (*Mobile App or Driver Display Component*).
+Unlike traditional on-vehicle ECUs (Classes 1 through 7), **Class 0 Telematics Systems** are distributed systems made up of multiple components rather than a single isolated ECU. The VCR addresses the components of these systems through the following requirements:
+- The cellular, satellite, Wi-Fi, BLE, or other wide-area communications pipeline transferring data between the vehicle and off-vehicle systems is covered by the Class 0 connectivity requirements (e.g., `C0-COMMS-AC-010`, refining `AC-010` directly).
+- Cloud services and their systems that interface with the truck are covered by the CLOUD requirements (e.g., `CLOUD-AA-010`, refining `AA-010`).
+- Mobile / PC software that interfaces with the truck is covered by the MOBILE requirements (e.g., `MOBILE-AC-010`, refining `AC-010`).
+
+CLOUD and MOBILE requirements may also apply to services or software that interface with devices outside a Class 0 system.
 
 Because of this distributed nature, the telematics requirements derived from the NMFTA Telematics Security Requirements Matrix (TSRM) are handled specially:
-- The specification partitions telematics controls across the four component boundaries.
-- The supplier questionnaires generate four dedicated evaluation worksheets so that procuring fleets can obtain specific attestations from the respective engineering and operations teams.
+- The supplier questionnaire includes a dedicated Class 0 connectivity worksheet.
+- CLOUD and MOBILE requirements are provided in separate category worksheets so that procuring fleets can obtain attestations from the responsible engineering and operations teams.
 
 Scope Guidance: Multiple Telematics Systems per Vehicle:
 ========================================================
