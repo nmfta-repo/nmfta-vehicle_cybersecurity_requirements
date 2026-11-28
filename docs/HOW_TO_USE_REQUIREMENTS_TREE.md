@@ -191,7 +191,7 @@ strictdoc export . --formats=html,reqif-sdoc --output-dir docs/
 
 On Windows (PowerShell):
 ```powershell
-.\buildme.ps1
+strictdoc export . --formats="html,reqif-sdoc" --output-dir docs/
 ```
 
 - HTML documentation will be generated in `docs/html/index.html`.
